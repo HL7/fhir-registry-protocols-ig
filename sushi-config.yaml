@@ -25,8 +25,13 @@ contact:
     telecom:
       - system: email
         value: mailto:kboone@ainq.com
+  - name: Dave Pyke
+    telecom:
+      - system: email
+        value: mailto:dpyke@ainq.com
 description: TBD.
 jurisdiction: "http://unstats.un.org/unsd/methods/m49/m49.htm#001"
+dependencies: hl7.fhir.us.core:4.0.0
 
 pages:
   index.md:
@@ -104,21 +109,20 @@ menu:
 
   Architecture &amp; Implementation:
     Architecture: Architecture_and_Implementation.html
+    Technology Environment: technology_environment.html
     Security Considerations: security_considerations.html
     Actors: actors.html
-    Transactions: transactions.html
+    Profiles and Extensions: profiles_and_extensions.html
+    Terminology: vocabulary.html
+
+  Transactions: transactions.html
     Create or Update Registry Definitions: transaction-CURD.html
     Search for and Retrieve Registry Submission Definitions: transaction-SRRD.html
     Create or Update Registry Submission: transaction-CURS.html
     Retrieve Registry Submission Data: transaction-RRSD.html
     Validate Registry Submission: transaction-VRS.html
-    Profiles and Extensions: profiles_and_extensions.html
-    Technology Environment: technology_environment.html
 
-  Testing &amp; Conformance:
-    Profiles and Extensions: profiles_and_extensions.html
-    Terminology Resources: vocabulary.html
-    Test Plan: test_plan.html
+  Testing &amp; Conformance: test_plan.html
 
   Artifact Index: artifacts.html
 
