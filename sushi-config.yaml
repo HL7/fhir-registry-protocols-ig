@@ -37,64 +37,62 @@ pages:
   index.md:
     title: Home
     generation: markdown
-    introduction.md:
-      title: Introduction
-      generation: markdown
-    use_cases.md:
-      title: Use Cases
-      generation: markdown
-    glossary.md:
-      title: Glossary of Terms
-      generation: markdown
+  introduction.md:
+    title: Introduction
+    generation: markdown
+  use_cases.md:
+    title: Use Cases
+    generation: markdown
+  glossary.md:
+    title: Glossary of Terms
+    generation: markdown
   Architecture_and_Implementation.md:
     title: Architecture and Implementation
     generation: markdown
-    security_considerations.md:
-      title: Security Considerations
-      generation: markdown
-    actors.md:
-      title: Actors
-      generation: markdown
-    technology_environment.md:
-      title: Technology Environment
-      generation: markdown
+  security_considerations.md:
+    title: Security Considerations
+    generation: markdown
+  actors.md:
+    title: Actors
+    generation: markdown
+  technology_environment.md:
+    title: Technology Environment
+    generation: markdown
   transactions.md:
     title: Transactions
+     generation: markdown
+  transaction-CURD.md:
+    title: Create / Update Registry Definitions
     generation: markdown
-    transaction-CURD.md:
-      title: Create / Update Registry Definitions
-      generation: markdown
-    transaction-SRRD.md:
-      title: Search for and Retrieve Registry Submission Definitions
-      generation: markdown
-    transaction-CURS.md:
-      title: Create / Update Registry Submission
-      generation: markdown
-    transaction-RRSD.md:
-      title: Retrieve Registry Submission Data
-      generation: markdown
-    transaction-VRS.md:
-      title: Validate Registry Submission
-      generation: markdown
+  transaction-SRRD.md:
+    title: Search for and Retrieve Registry Submission Definitions
+    generation: markdown
+  transaction-CURS.md:
+    title: Create / Update Registry Submission
+    generation: markdown
+  transaction-RRSD.md:
+    title: Retrieve Registry Submission Data
+    generation: markdown
+  transaction-VRS.md:
+    title: Validate Registry Submission
+    generation: markdown
 
   conformance.md:
     title:  Testing and Conformance
     generation: markdown
-    profiles_and_extensions.md:
-      title: Profiles and Extensions
-      generation: markdown
-    vocabulary.md:
-      title: Terminology Resources
-      generation: markdown
-    test_plan.md:
-      title: Test Plan
-      generation: markdown
-    examples.md:
-      title: Examples
-      generation: markdown
+  profiles_and_extensions.md:
+    title: Profiles and Extensions
+    generation: markdown
+  vocabulary.md:
+    title: Terminology Resources
+    generation: markdown
+  test_plan.md:
+    title: Test Plan
+    generation: markdown
+  examples.md:
+    title: Examples
+    generation: markdown
 
-dependencies:
-# hl7.fhir.us.core: 3.1.0
 
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
 # │  To use a provided input/includes/menu.xml file, delete the "menu" property below.             │
