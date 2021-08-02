@@ -115,7 +115,7 @@ menu:
     Profiles and Extensions: profiles_and_extensions.html
     Terminology: vocabulary.html
 
-  Transactions: transactions.html
+  Transactions: 
     Create or Update Registry Definitions: transaction-CURD.html
     Search for and Retrieve Registry Submission Definitions: transaction-SRRD.html
     Create or Update Registry Submission: transaction-CURS.html
