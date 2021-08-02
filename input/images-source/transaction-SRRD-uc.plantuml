@@ -1,0 +1,12 @@
+@startuml
+
+agent "Registry Submission Definition Creator" as RSDC
+
+agent "Registry Submission Definition Repository" as RSDR
+
+agent "Registry Submitter" as RS
+usecase (Search / Retrieve Registry Definition) as (SRRD)
+RSDC --> (SRRD)
+RSDR --> (SRRD)
+RS --> (SRRD)
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+hide footbox
+participant "Registry Submitter" as RS
+participant "Registry Submission Data Source" as RSDS
+"RS" -> "RSDS" : 1. 
+activate "RS"
+activate "RSDS"
+return
+deactivate "RSDS"
+@enduml

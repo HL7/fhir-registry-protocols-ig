@@ -1,0 +1,17 @@
+@startuml
+hide footbox
+participant "Registry Submission Definition Creator" as RSDC
+participant "Registry Submitter [Registry Submitter]" as RS
+"RSDC" -> "RS" : 1. Read submission definition artifacts.
+activate "RSDC"
+activate "RS"
+return
+deactivate "RSDC"
+deactivate "RS"
+"RSDC" -> "RS" : 2. Read submission definition artifacts.
+activate "RSDC"
+activate "RS"
+return
+deactivate "RSDC"
+deactivate "RS"
+@enduml

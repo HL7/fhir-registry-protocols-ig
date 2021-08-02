@@ -1,0 +1,16 @@
+@startuml
+skinparam FolderBorderColor white
+skinparam FolderFontColor white
+skinparam Shadowing false
+folder Actors {
+agent "Registry Submission Definition Creator" as RSDC
+agent "Registry Submission Definition Repository" as RSDR
+agent "Registry Submitter" as RS
+agent "Registry Submission Data Source" as RSDS
+agent "Registry Submission Consumer" as RSC
+RSDC -- RSDR : "Search / Retrieve Registry Definition [SRRD] ↓\nCreate / Update Registry Definition [CURD] ↓"
+RSDR -- RS : "Search / Retrieve Registry Definition [SRRD] ↑"
+RS -- RSDS : "Retrieve Registry Submission Data [RRSD] ↓"
+RS -- RSC : "Create / Update Registry Submission [CURS] ↓\nValidate Registry Submission [VRS] ↓"
+}
+@enduml

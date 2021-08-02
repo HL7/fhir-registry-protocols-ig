@@ -1,0 +1,10 @@
+@startuml
+hide footbox
+participant "Registry Submitter" as RS
+participant "Registry Submission Consumer" as RSC
+"RS" -> "RSC" : 1. 
+activate "RS"
+activate "RSC"
+return
+deactivate "RSC"
+@enduml

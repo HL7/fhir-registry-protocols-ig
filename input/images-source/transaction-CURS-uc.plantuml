@@ -1,0 +1,9 @@
+@startuml
+
+agent "Registry Submitter" as RS
+
+agent "Registry Submission Consumer" as RSC
+usecase (Create / Update Registry Submission) as (CURS)
+RS --> (CURS)
+RSC --> (CURS)
+@enduml

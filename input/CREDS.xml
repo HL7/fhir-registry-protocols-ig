@@ -1,0 +1,440 @@
+<profile xmlns="http://ainq.com/ig-definition" id="CREDS" chapter='1'
+	base='http://hl7.org/fhir/uv/fhir-registry-protocols-ig'>
+	<domain id="CIC">
+		<org>HL7</org>
+		<name>Protocols for Clinical Registry Extraction and Data Submission (CREDS) IG</name>
+		<description></description>
+		<overview />
+	</domain>
+	<name>Protocols for Clinical Registry Extraction and Data Submission</name>
+	<description>The IG demonstrates a process and workflow to support the needs of clinical registries
+		to define how registry
+		submissions can be automatically extracted from multiple data sources and combined into a
+		registry submission. It profiles the
+		definitional resources needed to collect data and construct a registry
+		submission using existing FHIR resource profiles.
+	</description>
+	<!-- overview is optional -->
+	<overview />
+	<!-- option is optional and repeatable -->
+	<!-- standard is repeatable -->
+	<standard id="FHIR-R4">
+		<name>HL7 FHIR Release 4.0</name>
+		<url>http://www.hl7.org/FHIR/R4</url>
+	</standard>
+	<standard id="RFC-7230">
+		<url>https://ietf.org/rfc/rfc7230.html</url>
+		<name>Hypertext Transfer Protocol - HTTP/1.1</name>
+	</standard>
+	<standard id="RFC-7540">
+		<url>https://ietf.org/rfc/rfc7540.html</url>
+		<name>Hypertext Transfer Protocol - HTTP/2</name>
+	</standard>
+	<standard id="RFC-3986">
+		<url>https://ietf.org/rfc/rfc3986.html</url>
+		<name>Uniform Resource Identifier (URI): Generic Syntax</name>
+	</standard>
+	<standard id="RFC-4627">
+		<url>https://ietf.org/rfc/rfc4627.html</url>
+		<name>The application/json Media Type for JavaScript Object Notation (JSON)</name>
+	</standard>
+	<standard id="RFC-6585">
+		<url>https://ietf.org/rfc/rfc6585.html</url>
+		<name>Additional HTTP Status Codes</name>
+	</standard>
+	<!-- Include CDA R2 and HL7 Version 2 and FHIR Path in the list of standards -->
+	<standard id="NDJSON">
+		<url>http://ndjson.org/</url>
+		<name>Newline Delimited JSON</name>
+	</standard>
+
+	<!-- usecase is optional and repeatable -->
+	<usecase id="DefineSubmission" actors="RSDC RSDR" transactions="CURD"
+		content="RegistryLogicalModel SubmissionTransformation">
+		<name>Define Submission</name>
+		<description>The registry authority defines the logical data model which describes the data to be submitted to the registry,
+			and the transforms
+			which format data stored using that model to the appropriate submission format.
+		</description>
+		<overview />
+		<alias actor="RSDC" name="Registry Authority" />
+		<alias actor="RSDR" name="Registry Definition Repository" />
+		<step id="DefineSubmission-1" from="RSDC" to="RSDR" returns="now">
+			<name>Create submission definition artifacts.</name>
+			<description>The Registry Authority creates the definition and submits it to a repository for distribution to registry
+				submitters.</description>
+			<overview></overview>
+		</step>
+		<step id="DefineSubmission-2" from="RSDC" to="RSDR" returns="now">
+			<name>Update submission definition artifacts.</name>
+			<description>A previously submitted definition artifact is updated to add data submission requirements.</description>
+			<overview></overview>
+		</step>
+		<step id="DefineSubmission-3" from="RSDC" to="RSDR" returns="now">
+			<name>Create submission definition artifacts.</name>
+			<description>The Registry Authority creates a transformation and submits it to a repository for distribution to registry
+				submitters.</description>
+			<overview></overview>
+		</step>
+		<step id="DefineSubmission-4" from="RSDC" to="RSDR" returns="now">
+			<name>Update submission definition artifacts.</name>
+			<description>The Registry Authority updates a transformation and submits it to a repository for distribution to registry
+				submitters.</description>
+			<overview></overview>
+		</step>
+	</usecase>
+	<usecase id="ReadSubmission" actors="RS RSDR" transactions="SRSD" content="">
+		<name>Search and Read Submission Definition</name>
+		<description>A registry submitter reads the logical data model and transformations .</description>
+		<overview />
+		<alias actor="RSDR" name="Registry Definition Repository" />
+		<alias actor="RS" name="Registry Submitter" />
+		<step id="ReadSubmission-1" from="RSDC" to="RS" returns="now">
+			<name>Read submission definition artifacts.</name>
+			<description>The Registry Submitter searches for registry submission definitions and transforms contained in a repository
+			</description>
+			<overview></overview>
+		</step>
+		<step id="ReadSubmission-2" from="RSDC" to="RS" returns="now">
+			<name>Read submission definition artifacts.</name>
+			<description>The Registry Submitter read the registry submission definitions and transforms contained in a repository
+				necessary
+				for creating a submission.
+			</description>
+			<overview></overview>
+		</step>
+	</usecase>
+	<usecase id="GetOrRefreshPatientData" actors="RS RSDS" transactions="RRSD">
+		<alias actor="RSDS" name="Registry Submission Data Source" />
+		<alias actor="RS" name="Registry Submitter" />
+		<name>Get or Refresh Patient Data</name>
+		<description>Collect new or refresh existing patient data from data sources.</description>
+		<step id='GetOrRefreshPatientData-1' from="RS" to="RS">
+			<name>Identify data sources to query for new, missing or stale data</name>
+			<description></description>
+		</step>
+		<step id='GetOrRefreshPatientData-2' from="RS" to="RSDS">
+			<name>Retrieve data from selected data sources</name>
+			<description></description>
+		</step>
+		<step id='GetOrRefreshPatientData-3' from="RS" to="RS">
+			<name>Extract essential data for submission from the selected data sources</name>
+			<description></description>
+		</step>
+		<step id='GetOrRefreshPatientData-4' from="RS" to="RS">
+			<name>Store essential data for later submission.</name>
+			<description></description>
+		</step>
+	</usecase>
+	<usecase id="GetPatientList" actors="RS RSDC" transactions="RRSD">
+		<name>Get PatientList</name>
+		<description>A registry submitter retrieves the list of patients for whom a submission must be created.</description>
+		<overview>The registry submitter identifies patients for who a submission is necessary from a data source.
+			[Need to determine how triggers for this are determined](#tbd)
+		</overview>
+	</usecase>
+	<usecase id="GetWorkQueue" actors="RS ???" transactions="???">
+		<name>Get Work Queue</name>
+		<description>A registry submitter reads reads the work queue for submissions to be created.</description>
+		<overview>[This is likely needed by the Registry Submitter, but may be internal and not part of this profile](#tbd)</overview>
+	</usecase>
+	<usecase id="RequestMissingOrClarifyExistingData" actors="RS RSDS" transactions="RCD">
+		<name>Get missing, or request clarification on existing patient data</name>
+		<description>A registry submitter requests missing information or clarification of existing information.</description>
+		<overview>[This is likely an optional transaction using CommunicationRequest and Communication to a Data Source that does not
+			exist yet](#tbd)</overview>
+	</usecase>
+
+	<actor id="RSDC">
+		<name>Registry Submission Definition Creator</name>
+		<description>
+			The
+			<ref actor="RSDC" />
+			manages the definitional artifacts (logical model and transforms) supporting a clinical registry
+		</description>
+		<overview></overview>
+		<requires-tx transaction="CURD" as="client">
+			<role>Creates or updates registry submission definition resources</role>
+		</requires-tx>
+		<requires-tx transaction="SRRD" as="client" role="RS">
+			<role>Searches for or reads existing registry submission definition resources</role>
+		</requires-tx>
+	</actor>
+
+	<actor id="RSDR">
+		<name>Registry Submission Definition Repository</name>
+		<description>
+			The Registry Submission Definition Repository holds the definitions for the registry submission logical model
+			and the tranformations data conforming to that logical model to the submission format.
+		</description>
+		<overview></overview>
+		<requires-tx transaction="CURD" as="server">
+			<role>Stores registry submission definition resources</role>
+		</requires-tx>
+		<requires-tx transaction="SRRD" as="server">
+			<role>Responds to requests to search or read for registry submission definition resources</role>
+		</requires-tx>
+	</actor>
+	<actor id="RS">
+		<name>Registry Submitter</name>
+		<description>The Registry Submitter is responsible for submitting data to a clinical registry.</description>
+		<overview></overview>
+		<requires-tx transaction="SRRD" as="client">
+			<role>Searches for or reads existing registry submission definition resources</role>
+		</requires-tx>
+		<requires-tx transaction="RRSD" as="client">
+			<role>Searches for or reads registry submission data</role>
+		</requires-tx>
+		<requires-tx transaction="RMCD" as="client">
+			<role>Makes requests for missing data or clarifications of existing data</role>
+		</requires-tx>
+		<requires-tx transaction="CURS" as="client">
+			<role>Creates or updates a registry submission</role>
+		</requires-tx>
+		<supports-tx transaction="VRS" as="client">
+			<role>Requests validation of a registry submission</role>
+		</supports-tx>
+	</actor>
+	<actor id="RSDS">
+		<name>Registry Submission Data Source</name>
+		<description>
+			The Registry Submission Data Source makes clinical data available to a registry submitter so that it can be
+			submitted to a registry.
+		</description>
+		<overview></overview>
+		<requires-tx transaction="RRSD" as="server">
+			<role>Responds to requests to searches for or reads registry submission data</role>
+		</requires-tx>
+		<supports-tx transaction="RMCD" as="server">
+			<role>Responds to requests for missing data or clarifications of existing data</role>
+		</supports-tx>
+	</actor>
+	<actor id="RSC">
+		<name>Registry Submission Consumer</name>
+		<description>
+			The Registry Submission Consumer accepts and validates registry submissions on behalf of a clinical registry.
+		</description>
+		<overview></overview>
+		<requires-tx transaction="CURS" as="client">
+			<role>Stores a registry submission</role>
+		</requires-tx>
+		<requires-tx transaction="VRS" as="client">
+			<role>Validates a registry submission</role>
+		</requires-tx>
+	</actor>
+
+	<transaction id="SRRD" standards="FHIR-R4 RFC-7230">
+		<name>Search / Retrieve Registry Definition</name>
+		<description>Search for and Retrieve Registry Submission Definitions</description>
+		<overview></overview>
+		<message id="SRRD-1" from="RS" to="RSDR">
+			<name>Search Request</name>
+			<description></description>
+			<trigger id="TRIGGER1">
+				<name></name>
+				<description></description>
+				<overview></overview>
+			</trigger>
+			<semantics>
+				<description>The client sends a query using an HTTP GET or POST transaction to
+the server requesting information on available resources.
+				</description>
+				<interaction protocol='fhir'>
+					<!-- Common parameter requirements -->
+					<group id='formats'>
+						<name>Formats</name>
+						<description>All servers **shall** support the _format parameter for any read or search and the standard values
+							defined by FHIR for JSON and XML output. This value **shall** override the Accept: header when present in an exchange.
+							Servers **shall** also support the Accept: header, and **shall** support any value in Accept: that can be given to _format
+							for consistency. Servers are also free to support other output formats (e.g. turtle as defined in the base FHIR
+							specifications, or other formats such as CSV which might be easier for clients to present or use). Servers
+							should support other commonly used expressions representing JSON or XML outputs without complaint, including
+							those specified in prior releases (e.g., the DSTU2 application/xml+fhir or application/json+fhir types that
+							have since changed in R4).
+						</description>
+						<parameter name='_format' min='0' max='1' values='application/fhir+xml application/fhir+json' expect='shall' />
+						<!-- Servers **should** support all values for format, clients may use Accept header or _format -->
+						<parameter name='_format' min='0' max='1'
+							values='xml json text/xml application/json application/xml application/xml+fhir application/json+fhir' expect='should'
+							client='should-not' />
+						<parameter name='Accept:' min='0' max='1' values='application/fhir+xml application/fhir+json' expect='shall' />
+						<parameter name='Accept:' min='0' max='1'
+							values='xml json text/xml application/json application/xml application/xml+fhir application/json+fhir' expect='should'
+							client='should-not' />
+					</group>
+					<group id='count'>
+						<description>The server **shall** support the _count parameter for queries. Servers **should** use a default
+							value for _count if no value is provided to avoid server overloading. This guide recommends a default value of 100 based on
+							existing implementation experience.
+						</description>
+						<parameter name='_count' min='0' max='1' expect='shall' />
+					</group>
+					<group id='includes'>
+						<name>Include Support</name>
+						<description>To reduce transaction overhead, a client system may wish to retrieve all the resources referenced by the
+							selected resource when obtaining it. This can be accomplished by using a search with an _id parameter, combined with
+							_include=*.
+						</description>
+						<overview>This guide does not further specify specify resource includes beyond required support for *.
+							Systems that support _include gernally handle _include=*, in fact, in some ways it is easier to implement
+							than more selective _include operations. Recursive includes can be a source of server loading issues, as
+							an incorrectly implemented include with recursive includes could wind up retrieving far more data than
+							the client expected. Thus, these are not recommended.
+						</overview>
+						<parameter name='_include' min='0' max='1' values='*' type='string' expect='shall' />
+						<parameter name='_include:iterate' type='string' expect='should-not' />
+					</group>
+					<operation name='read' resources='StructureDefinition StructureMap' expect='shall'>
+						<name>Read on Required Resources</name>
+						<description>A client **shall** be able to read individual resources that are returned or referenced within resources
+							returned by a query.
+						</description>
+					</operation>
+					<operation id='search' name='search' resources='StructureDefinition StructureMap' expect='shall'>
+						<name>Search on Definition Resources</name>
+						<description>A client system **shall** be able to retrieve the definition data by publisher, condition, description or
+							other text.</description>
+						<overview></overview>
+						<group id="_id">
+							<name>Search by _id</name>
+							<description>A client **shall** be able to read individual resources that are returned or referenced within resources
+								returned by a query. Client systems may save resource references for future use, retrieving them later as
+								needed. To reduce overhead, a client system may also wish to retrieve the resources referenced by the
+								selected resource. This can be accomplished by using a search with an _id parameter, combined with _include=*
+							</description>
+							<!-- Parameter describes each parameter that **shall** be supported in the interaction To require support for multiple parameters,
+								list each that can be used name - name of the parameter type - type of the parameter (specified by protocol, e.g. header, query parameter,
+								post body parameter for http) can be omitted if the value can be understood in the protocol comp - comparators supported min - The
+								minimum number of values this parameter **shall** have when requested by a client (0 = optional in an interaction) max - The maximum
+								number of values this parameter the **shall** be supported by a server (0 = not permitted, * = no limit) expect - shall|should|should-not -->
+							<parameter name='_id' min='1' max='*' type='token' expect='shall' />
+						</group>
+						<group>
+							<name>Search by url, name, identifier, publisher, condition or status</name>
+							<description>A client **shall** be able to query for resources by url, name, identifier, publisher, condition or status.
+							</description>
+							<parameter name='url' min='0' max='*' type='string' expect='shall' />
+							<parameter name='name' min='0' max='*' type='string' expect='shall' />
+							<parameter name='identifier' min='0' max='*' type='token' expect='shall' />
+							<parameter name='publisher' min='0' max='*' type='string' expect='shall' />
+							<parameter name='context' min='0' max='*' type='token' expect='shall' />
+							<parameter name='status' min='0' max='*' type='token' expect='shall' />
+						</group>
+						<group id="date">
+							<name>Search by Date</name>
+							<description>A client **shall** be able to search by relevant dates,
+								e.g., the date of _lastUpdate of a previously retrieved resource to see if it has changed (e.g., in cases
+								where data needs to be refreshed).
+							</description>
+							<overview>All date searches **shall** allow a range to be specified, but need not allow more than one range. Approximate
+								ranges are not required
+								to be supported because server support for these is not commonly available, nor implemented in readily reproducable
+								fashions (the definition of an approximate date can have different meanings for different servers). Simple eq, le, lt,
+								ge, and gt **should** be sufficient to specify date ranges.
+							</overview>
+							<parameter name='_lastUpdated' comp='eq lt gt ge le' type='date' min='0' max='2' expect='shall' />
+							<parameter name='date' comp='eq lt gt ge le' min='0' max='2' type='date' expect='shall' />
+						</group>
+						<group id="text">
+							<name>Search by Text or Code</name>
+							<description>A client system **should** be able to search for definition resources
+								associated with by text within the definition. This requirement can be met through support of the
+								&lt;a href='http://hl7.org/fhir/search.html#text'>_text or _content search parameters&lt;/a>.</description>
+							<parameter name='_text' min='0' max='*' type='string' expect='should' />
+							<parameter name='_content' min='0' max='*' type='string' expect='should' />
+						</group>
+					</operation>
+				</interaction>
+			</semantics>
+		</message>
+		<message ref="SRRD-1" from="RSDC" to="RSDR"/>
+	</transaction>
+
+	<transaction id="CURD" standards="FHIR-R4 RFC-7230">
+		<name>Create / Update Registry Definition</name>
+		<description></description>
+		<overview></overview>
+		<message from="RSDC" to="RSDR">
+			<name>Create or Update Registry Submission Definition</name>
+			<description></description>
+			<trigger id="Create Definition">
+				<name>Create or Update Registry Submission Definition</name>
+				<description>A SubmissionDefinitionCreator requests creation of a new Submission Definition</description>
+				<overview>A logical model or submission transformation created by the Registry Submission Definition Creator
+					is communicated to the Registry Submission Definition Source.
+				</overview>
+			</trigger>
+			<semantics>
+				<description>
+					A StructureDefinition is created or updated by the
+					<ref actor='SubmissionDefinitionCreator' />
+					on the
+					<ref actor='SubmissionDefinitionSource' />
+					.
+				</description>
+				<overview>The MeasureReport sends a MeasureReport to the MeasureConsumer using the FHIR
+					[create](https://www.hl7.org/fhir/http.html#create) or [update](https://www.hl7.org/fhir/http.html#update) interactions.
+					A MeasureSource supporting the CSV option sends the CSV file to the MeasureConsumer using the $report-csv operation.
+				</overview>
+				<interaction protocol='fhir'>
+					<group ref='formats' />
+					<!-- what about xml+fhir and json+fhir variants? -->
+					<operation name='create' resources='StructureDefinition StructureMap' expect='shall' />
+					<operation name='update' resources='StructureDefinition StructureMap' expect='shall' />
+				</interaction>
+			</semantics>
+			<action by="RSDC">
+				<name>Create StructureDefinition Resource</name>
+				<description>
+					The
+					<ref actor="RSDC" />
+					creates resources and sends them to a
+					<ref actor="RSDR" />
+				</description>
+				<overview>The Measure Source performs the FHIR create
+					operation on the MeasureReport resource at a Measure Consumer.
+				</overview>
+			</action>
+			<result>
+				<name>Accept Resource</name>
+				<description>The Measure Consumer reports success using 200 OK, 201 Created, or 204 No Content to indicate a successful
+					create or update.</description>
+				<overview />
+			</result>
+		</message>
+	</transaction>
+
+	<transaction id="RRSD" standards="FHIR-R4 RFC-7230">
+		<name>Retrieve Registry Submission Data</name>
+		<description>Search for and Retrieve Registry Submission Data</description>
+		<overview></overview>
+		<message from="RS" to="RSDS" />
+	</transaction>
+	<transaction id="CURS" standards="FHIR-R4 RFC-7230">
+		<name>Create / Update Registry Submission</name>
+		<description></description>
+		<overview></overview>
+		<message from="RS" to="RSC" />
+	</transaction>
+	<transaction id="VRS" standards="FHIR-R4 RFC-7230">
+		<name>Validate Registry Submission</name>
+		<description></description>
+		<overview></overview>
+		<message from="RS" to="RSC" />
+	</transaction>
+	<transaction id="RMCD" standards="FHIR-R4 RFC-7230">
+		<name>Request for Missing Data</name>
+		<description>This transaction is supports requests missing data or clarifications of existing data.</description>
+		<overview></overview>
+		<message from="RS" to="RSC" />
+	</transaction>
+
+	<content id="RegistryLogicalModel">
+		<name></name>
+		<description></description>
+	</content>
+	<content id="RegistrySubmissionTransformation">
+		<name></name>
+		<description></description>
+	</content>
+</profile>

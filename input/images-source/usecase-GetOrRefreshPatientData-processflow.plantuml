@@ -1,0 +1,26 @@
+@startuml
+hide footbox
+participant "Registry Submitter [Registry Submitter]" as RS
+participant "Registry Submission Data Source [Registry Submission Data Source]" as RSDS
+"RS" -> "RS" : 1. Identify data sources to query for new, missing or stale data
+activate "RS"
+activate "RS"
+deactivate "RS"
+deactivate "RS"
+"RS" -> "RSDS" : 2. Retrieve data from selected data sources
+activate "RS"
+activate "RSDS"
+return
+deactivate "RS"
+deactivate "RSDS"
+"RS" -> "RS" : 3. Extract essential data for submission from the selected data sources
+activate "RS"
+activate "RS"
+deactivate "RS"
+deactivate "RS"
+"RS" -> "RS" : 4. Store essential data for later submission.
+activate "RS"
+activate "RS"
+deactivate "RS"
+deactivate "RS"
+@enduml

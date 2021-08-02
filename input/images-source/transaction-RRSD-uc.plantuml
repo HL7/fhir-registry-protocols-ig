@@ -1,0 +1,9 @@
+@startuml
+
+agent "Registry Submitter" as RS
+
+agent "Registry Submission Data Source" as RSDS
+usecase (Retrieve Registry Submission Data) as (RRSD)
+RS --> (RRSD)
+RSDS --> (RRSD)
+@enduml

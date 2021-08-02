@@ -1,0 +1,16 @@
+@startuml
+hide footbox
+participant "Registry Submitter" as RS
+participant "Registry Submission Definition Repository" as RSDR
+participant "Registry Submission Definition Creator" as RSDC
+"RS" -> "RSDR" : 1. Search Request
+activate "RS"
+activate "RSDR"
+return
+deactivate "RSDR"
+"RSDC" -> "RSDR" : 2. Search Request
+activate "RSDC"
+activate "RSDR"
+return
+deactivate "RSDR"
+@enduml

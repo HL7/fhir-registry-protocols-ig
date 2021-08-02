@@ -11,9 +11,81 @@
 
 <ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
   <li>
-    <a href="index.html">Home</a>
+    <a href="index.html">IG Home</a>
   </li>
   <li>
-    <a href="artifacts.html">Artifacts</a>
+    <a href="toc.html">Contents</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Introduction
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="introduction.html">Scope</a>
+      </li>
+      <li>
+        <a href="use_cases.html">Use Cases</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Architecture &amp; Implementation
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="Architecture_and_Implementation.html">Architecture</a>
+      </li>
+      <li>
+        <a href="security_considerations.html">Security Considerations</a>
+      </li>
+      <li>
+        <a href="actors.html">Actors</a>
+      </li>
+      <li>
+        <a href="transactions.html">Transactions</a>
+      </li>
+      <li>
+        <a href="transaction-CURD.html">Create or Update Registry Definitions</a>
+      </li>
+      <li>
+        <a href="transaction-SRRD.html">Search for and Retrieve Registry Submission Definitions</a>
+      </li>
+      <li>
+        <a href="transaction-CURS.html">Create or Update Registry Submission</a>
+      </li>
+      <li>
+        <a href="transaction-RRSD.html">Retrieve Registry Submission Data</a>
+      </li>
+      <li>
+        <a href="transaction-VRS.html">Validate Registry Submission</a>
+      </li>
+      <li>
+        <a href="profiles_and_extensions.html">Profiles and Extensions</a>
+      </li>
+      <li>
+        <a href="technology_environment.html">Technology Environment</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Testing &amp; Conformance
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="profiles_and_extensions.html">Profiles and Extensions</a>
+      </li>
+      <li>
+        <a href="vocabulary.html">Terminology Resources</a>
+      </li>
+      <li>
+        <a href="test_plan.html">Test Plan</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifact Index</a>
   </li>
 </ul>
