@@ -2,8 +2,8 @@
 # │  The properties below are used to create the ImplementationGuide resource. For a list of       │
 # │  supported properties, see: https://fshschool.org/docs/sushi/configuration/                    │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-id: hl7.fhir.uv.fhir-registry-protocols-ig
-canonical: http://hl7.org/fhir/uv/fhir-registry-protocols-ig
+id: hl7.fhir.us.fhir-registry-protocols-ig
+canonical: http://hl7.org/fhir/us/fhir-registry-protocols-ig
 name: FHIRRegistryProtocolsIG
 title: Protocols for Clinical Registry Extraction and Data Submission (CREDS) IG
 status: draft
@@ -25,86 +25,62 @@ contact:
     telecom:
       - system: email
         value: mailto:kboone@ainq.com
-  - name: Dave Pyke
-    telecom:
-      - system: email
-        value: mailto:dpyke@ainq.com
+
 description: TBD.
-jurisdiction: "http://unstats.un.org/unsd/methods/m49/m49.htm#001"
-dependencies: hl7.fhir.us.core:4.0.0
+jurisdiction: urn:iso:std:iso:3166#US "United States of America"
+dependencies: 
+  hl7.fhir.us.core: 4.0.0
 
 pages:
   index.md:
     title: Home
-    generation: markdown
   introduction.md:
     title: Introduction
-    generation: markdown
   use_cases.md:
     title: Use Cases
-    generation: markdown
   glossary.md:
     title: Glossary of Terms
-    generation: markdown
   Architecture_and_Implementation.md:
     title: Architecture and Implementation
-    generation: markdown
   security_considerations.md:
     title: Security Considerations
-    generation: markdown
   actors.md:
     title: Actors
-    generation: markdown
   technology_environment.md:
     title: Technology Environment
-    generation: markdown
   transactions.md:
     title: Transactions
-     generation: markdown
   transaction-CURD.md:
     title: Create / Update Registry Definitions
-    generation: markdown
   transaction-SRRD.md:
     title: Search for and Retrieve Registry Submission Definitions
-    generation: markdown
   transaction-CURS.md:
     title: Create / Update Registry Submission
-    generation: markdown
   transaction-RRSD.md:
     title: Retrieve Registry Submission Data
-    generation: markdown
   transaction-VRS.md:
     title: Validate Registry Submission
-    generation: markdown
-
   conformance.md:
     title:  Testing and Conformance
-    generation: markdown
   profiles_and_extensions.md:
     title: Profiles and Extensions
-    generation: markdown
   vocabulary.md:
     title: Terminology Resources
-    generation: markdown
   test_plan.md:
     title: Test Plan
-    generation: markdown
   examples.md:
     title: Examples
-    generation: markdown
 
 
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
 # │  To use a provided input/includes/menu.xml file, delete the "menu" property below.             │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 menu:
-
   IG Home: index.html
   Contents: toc.html
   Introduction:
     Scope: introduction.html
     Use Cases: use_cases.html
-
   Architecture &amp; Implementation:
     Architecture: Architecture_and_Implementation.html
     Technology Environment: technology_environment.html
@@ -112,15 +88,12 @@ menu:
     Actors: actors.html
     Profiles and Extensions: profiles_and_extensions.html
     Terminology: vocabulary.html
-
   Transactions: 
     Create or Update Registry Definitions: transaction-CURD.html
     Search for and Retrieve Registry Submission Definitions: transaction-SRRD.html
     Create or Update Registry Submission: transaction-CURS.html
     Retrieve Registry Submission Data: transaction-RRSD.html
     Validate Registry Submission: transaction-VRS.html
-
-  Testing &amp; Conformance: test_plan.html
-
+  Testing and Conformance: test_plan.html
   Artifact Index: artifacts.html
 

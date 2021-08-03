@@ -38,14 +38,27 @@
         <a href="Architecture_and_Implementation.html">Architecture</a>
       </li>
       <li>
+        <a href="technology_environment.html">Technology Environment</a>
+      </li>
+      <li>
         <a href="security_considerations.html">Security Considerations</a>
       </li>
       <li>
         <a href="actors.html">Actors</a>
       </li>
       <li>
-        <a href="transactions.html">Transactions</a>
+        <a href="profiles_and_extensions.html">Profiles and Extensions</a>
       </li>
+      <li>
+        <a href="vocabulary.html">Terminology</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Transactions
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
       <li>
         <a href="transaction-CURD.html">Create or Update Registry Definitions</a>
       </li>
@@ -61,29 +74,10 @@
       <li>
         <a href="transaction-VRS.html">Validate Registry Submission</a>
       </li>
-      <li>
-        <a href="profiles_and_extensions.html">Profiles and Extensions</a>
-      </li>
-      <li>
-        <a href="technology_environment.html">Technology Environment</a>
-      </li>
     </ul>
   </li>
-  <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Testing &amp; Conformance
-      <b class="caret"></b>
-    </a>
-    <ul class="dropdown-menu">
-      <li>
-        <a href="profiles_and_extensions.html">Profiles and Extensions</a>
-      </li>
-      <li>
-        <a href="vocabulary.html">Terminology Resources</a>
-      </li>
-      <li>
-        <a href="test_plan.html">Test Plan</a>
-      </li>
-    </ul>
+  <li>
+    <a href="test_plan.html">Testing and Conformance</a>
   </li>
   <li>
     <a href="artifacts.html">Artifact Index</a>
