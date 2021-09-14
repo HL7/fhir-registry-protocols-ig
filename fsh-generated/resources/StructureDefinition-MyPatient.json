@@ -11,7 +11,7 @@
       "valueCode": "patient"
     }
   ],
-  "url": "http://hl7.org/fhir/uv/fhir-registry-protocols-ig/StructureDefinition/MyPatient",
+  "url": "http://hl7.org/fhir/us/fhir-registry-protocols-ig/StructureDefinition/MyPatient",
   "version": "0.1.0",
   "name": "MyPatient",
   "status": "active",
