@@ -1,0 +1,249 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "cathPCI-report",
+  "url": "http://acc.org/cathpci/StructureDefinition/cathPCI-report",
+  "identifier" : "urn:uuid:32ec776f-aa2f-4dbf-876d-daba4ea5a516",
+  "version" : "2021-09-07",
+  "name" : "CathPCI-Report",
+  "title" : "Cath-PCI Submission Report",
+  "status" : "active",
+  "derivation": "specialization",
+  "contact" : {
+     "name": "Jane Smith",
+      "telecom": {
+          "system": "email",
+          "value": "noreply@acc.org",
+          "use": "work"
+        }}
+        ,
+        "description": "This is an example of the data that would be used for a Cath-PCI Submission",
+        "kind": "resource",
+        "abstract": "false",
+        "type": "cathPCI",
+        "baseDefinition": "http://hl7.org/fhir/us/fhir-registry-protocols-ig/StructureDefinition/cathPCI",
+        "derivation": "specialization",
+        "differential": {
+         "derivation" : "constraint",
+         "mapping": [
+            {
+               "identity": "FHIR"
+            },
+            {
+               "identity": "CDA"
+            },
+            {
+               "identity": "HL7V2"
+            }
+        ],
+           "element": [ 
+              {
+                 "id": "CathPCI",
+                 "path": "CathPCI"
+              },
+              {
+                 "id": "CathPCI.lastName",
+                 "path": "CathPCI.lastName",
+                 "fixedcanonical": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient",
+                 "mapping": [
+                    {
+                       "identity" : {
+                       "fixedstring" : "FHIR.Demographics.LastName"
+                       }, 
+                       "language" : {
+                       "fixedcode" : "application/fhir"
+                       },
+                       "map" : {
+                       "fixedstring" : "Patient.name.family"
+                       }
+                    },
+                    {
+                       "identity" : {
+                       "fixedstring" : "CDA.Demographics.LastName"
+                       }, 
+                       "language" : {
+                       "fixedcode" : "application/hl7-sda+xml"
+                       },
+                       "map" : {
+                       "fixedstring" : "c266:/ClinicalDocument/recordTarget/patientRole/patient/name/family"
+                       }
+                     },
+                     {
+                        "identity" : {
+                        "fixedstring" : "V2.Demographics.LastName"
+                        }, 
+                        "language" : {
+                        "fixedcode" : "application/edi-hl7v2"
+                        },
+                        "map" : {
+                        "fixedstring" : "QBP:PID.5.1"
+                        } 
+                     }
+                  ]
+               },
+               {
+                  "id": "CathPCI.lastName",
+                  "path": "CathPCI.lastName",
+                  "fixedcanonical": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient",
+                  "mapping": [
+                    {
+                       "identity" : {
+                       "fixedstring" : "FHIR.Demographics.LastName"
+                       }, 
+                       "language" : {
+                       "fixedcode" : "application/fhir"
+                       },
+                       "map" : {
+                       "fixedstring" : "Patient.name.family"
+                       }
+                    },
+                    {
+                       "identity" : {
+                       "fixedstring" : "CDA.Demographics.LastName"
+                       }, 
+                       "language" : {
+                       "fixedcode" : "application/hl7-sda+xml"
+                       },
+                       "map" : {
+                       "fixedstring" : "c266:/ClinicalDocument/recordTarget/patientRole/patient/name/family"
+                       }
+                     },
+                     {
+                        "identity" : {
+                        "fixedstring" : "V2.Demographics.LastName"
+                        }, 
+                        "language" : {
+                        "fixedcode" : "application/edi-hl7v2"
+                        },
+                        "map" : {
+                        "fixedstring" : "ADT_A01:PID.5.1"
+                        }  
+                     }
+                  ]              
+               },
+              {
+              "id": "CathPCI.firstName",
+              "path": "CathPCI.firstName",
+              "fixedcanonical": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient",
+              "mapping": [
+                 {
+                    "identity" : {
+                    "fixedstring" : "FHIR.Demographics.FirstName"
+                    }, 
+                    "language" : {
+                    "fixedcode" : "application/fhir"
+                    },
+                    "map" : {
+                    "fixedstring" : "Patient.name.given[0]"
+                    }
+                 },
+                 {
+                    "identity" : {
+                    "fixedstring" : "CDA.Demographics.firstName"
+                    }, 
+                    "language" : {
+                    "fixedcode" : "application/hl7-sda+xml"
+                    },
+                    "map" : {
+                    "fixedstring" : "c266:/ClinicalDocument/recordTarget/patientRole/patient/name/given[1]"
+                    }
+                  },
+                  {
+                     "identity" : {
+                     "fixedstring" : "V2.Demographics.middleName"
+                     }, 
+                     "language" : {
+                     "fixedcode" : "application/edi-hl7v2"
+                     },
+                     "map" : {
+                     "fixedstring" : "ADT_A01:PID.5.2"
+                     }
+                  }
+              ] 
+            },   
+                  {
+                     "id": "CathPCI.middleName",
+                     "path": "CathPCI.middleName",
+                     "fixedcanonical": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient",
+                     "mapping": [
+                        {
+                           "identity" : {
+                           "fixedstring" : "FHIR.Demographics.MiddleName"
+                           }, 
+                           "language" : {
+                           "fixedcode" : "application/fhir"
+                           },
+                           "map" : {
+                           "fixedstring" : "Patient.name.given"
+                           }
+                        },
+                        {
+                           "identity" : {
+                           "fixedstring" : "CDA.Demographics.firstName"
+                           }, 
+                           "language" : {
+                           "fixedcode" : "application/hl7-sda+xml"
+                           },
+                           "map" : {
+                           "fixedstring" : "c266:/ClinicalDocument/recordTarget/patientRole/patient/name/given[1]"
+                           }
+                         },
+                         {
+                            "identity" : {
+                            "fixedstring" : "V2.Demographics.middleName"
+                            }, 
+                            "language" : {
+                            "fixedcode" : "application/edi-hl7v2"
+                            },
+                            "map" : {
+                            "fixedstring" : "ADT_A01:PID.5.3"
+                            }
+                         }
+                        ]
+                     },
+                     {               
+                         "id": "CathPCI.Episode-Unique-Key",
+                         "path": "CathPCI.Episode-Unique-Key",
+                         "fixedcanonical": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter",
+                         "mapping": [
+                            {
+                               "identity" : {
+                               "fixedstring" : "FHIR.Demographics.Episode-Unique-Key"
+                               }, 
+                               "language" : {
+                               "fixedcode" : "application/fhir"
+                               },
+                               "map" : {
+                               "fixedstring" : "iif(Encounter.identifier(type.code='VN').value, Encounter.identifier(type.code='VN').value, Encounter.identifier[0].value)"
+                               }
+                            },
+                            {
+                               "identity" : {
+                               "fixedstring" : "CDA.Demographics.Episode-Unique-Key"
+                               }, 
+                               "language" : {
+                               "fixedcode" : "application/hl7-sda+xml"
+                               },
+                               "map" : {
+                               "fixedstring" : "/ClinicalDocument/component/section/entry/encounter/id/extension"
+                               }
+                             },
+                             {
+                                "identity" : {
+                                "fixedstring" : "V2.Demographics.Episode-Unique-Key"
+                                }, 
+                                "language" : {
+                                "fixedcode" : "application/edi-hl7v2"
+                                },
+                                "map" : {
+                                "fixedstring" : "ADT_A01:PV1.19.1"
+                                }
+                             }
+                         ] 
+                        }                       
+           ]
+        }
+     }
+     
+     
+
+

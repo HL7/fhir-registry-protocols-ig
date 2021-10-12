@@ -13,5 +13,41 @@
             "type": "shell",
             "command": "_genonce.bat ."
         }
+      {
+        "label": "Run FHIR Validator",
+        "type": "shell",
+        "command": "java",
+        "args": [
+          "-jar", "validator_cli.jar",
+          "${workspaceFolder}/test-resources",
+          "-version", "4.0",
+        ],
+        "presentation": {
+          "clear": true
+        },
+        "problemMatcher": [
+          {
+            "source": "FHIR Validator",
+            "fileLocation": "absolute",
+            "pattern": [
+              {
+                "regexp": "^-- (.+) -{5,}$",
+                "file": 1,
+              },
+              {
+                "regexp": "^.*$",
+              },
+              {
+                "regexp": "^  ((?:Info|Warning|Error)).* \\(line ?(\\d+), col ?(\\d+)\\) : (.+)$",
+                "severity": 1,
+                "line": 2,
+                //"column": 3,
+                "message": 4,
+                "loop": true
+              }
+            ]
+          }
+        ]
+      }
     ]
 }

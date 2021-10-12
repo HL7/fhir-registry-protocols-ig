@@ -1,0 +1,23 @@
+@startuml
+:Fetch patient from\nRegistry worklist;
+partition "Fetch FHIR data from\nthe data source" {
+    repeat
+    :Identify the\nData Source;
+    :FHIR API request\nto get the data;
+    repeat while (FHIR Data?)
+}
+
+partition "Fetch Non-FHIR data\nfrom other sources" {
+    repeat
+    :Identify the data source;
+    :Use other methods\nto get the data;
+    repeat while (additional Non-FHIR Data?)
+}
+partition "UI to Complete Review Data" {
+    repeat
+    :Capture additional data\navailable through automation;
+    :Review and Sign the Record;
+    repeat while (Addtional Data?)
+}
+:Locally Aggregate and\nTransmit data to Registry;
+@enduml

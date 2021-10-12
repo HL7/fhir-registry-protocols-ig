@@ -3,13 +3,13 @@ Id: cathPCI
 Title: "Cath-PCI Report Template"
 Description: "This is the base structure of the Cath-PCI data for submission to the Registry"
 * ^baseDefinition = "http://hl7.org/fhir/us/fhir-registry-protocols-ig/StructureDefinition/CREDSStructureDefinition"
-* lastName 1..1 Canonical "Last Name" "Indicate the patient's last name. Hyphenated names should be recorded with a hyphen."
-* firstName 1..1 Canonical "First Name" "Indicate the patient's first name."
-* middleName 0..* Canonical "Middle Name" "Indicate the patient's middle names."
-* episodeUniqueKey 1..1 Canonical "Episode Unique Key" "Indicate the unique key associated with each patient episode record as assigned by the EMR/EHR or your software application."
-
+* lastName 1..1 canonical "Last Name" "Indicate the patient's last name. Hyphenated names should be recorded with a hyphen."
+* firstName 1..1 canonical "First Name" "Indicate the patient's first name."
+* middleName 0..* canonical "Middle Name" "Indicate the patient's middle names."
+* episodeUniqueKey 1..1 canonical "Episode Unique Key" "Indicate the unique key associated with each patient episode record as assigned by the EMR/EHR or your software application."
+/*
 Instance: CathPCI-Report
-InstanceOf: cathPCI
+InstanceOf: StructureDefinition
 Usage: #definition
 Title: "Cath-PCI Submission Report"
 Description: "This is an example of the data that would be used for a Cath-PCI Submission"
@@ -77,4 +77,4 @@ Description: "This is an example of the data that would be used for a Cath-PCI S
   * episodeUniqueKey.mapping[2].identity = "V2.Episode-Information.Episode-Unique-Key"
   * episodeUniqueKey.mapping[2].language = #application/edi-hl7v2
   * episodeUniqueKey.mapping[2].map = "ADT_A01:PV1.19.1"
-  
+  */

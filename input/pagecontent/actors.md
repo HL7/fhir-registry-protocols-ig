@@ -5,11 +5,12 @@ Figure 1.1-1 below shows the actors directly
 involved in the CREDS
 Profile and the relevant transactions between them.
 
-<div>
+<figure>
 {% include ActorsAndTransactions.svg%}
-</div>
+<figcaption>Figure 3-1: CREDS Actor Diagram</figcaption>
+</figure>
 
-**Figure 3-1: CREDS Actor Diagram**
+
 
 Table 3-1 lists the transactions for each actor directly involved in the CREDS Implementation Guide. To claim compliance with this guide, an actor shall
 support all required transactions (labeled "R").
