@@ -4,7 +4,7 @@ Id: CREDSStructureDefinition
 Title: "CREDS Structure Definition"
 Description: "StructureDefinition for use with CREDS mapping"
 * identifier 1..1
-* baseDefinition = "http://hl7.org/fhir/StructureDefinition/Base"
+//* baseDefinition = "http://hl7.org/fhir/StructureDefinition/Base"
 * mapping ^slicing.discriminator.type = #pattern
 * mapping ^slicing.discriminator.path = "identity"
 * mapping ^slicing.rules = #open
