@@ -1,0 +1,24 @@
+@startuml
+rectangle "Treatment Data Sources" {
+    rectangle "Case Management"
+    rectangle "EHR Systems" as EHR 
+    rectangle "Departments" as Dept {
+        rectangle "Departmental Systems" as DS 
+        rectangle "ED System" as ED 
+        rectangle "Laboratory\nInformation System" as LIS
+        LIS -up-> DS
+        ED -up-> DS
+        rectangle "Imaging" {
+            rectangle "Radiology\nInformation Systems" as RIS 
+            rectangle "PACS" as PACS 
+            PACS -up- RIS
+            RIS -up-> DS
+        }
+        rectangle "Labour and Delivery\nSystems" as LDS 
+        rectangle "ICU Monitoring System" as ICU 
+        LDS -up-> DS
+        ICU -up-> DS 
+        DS -up-> EHR
+    }
+}
+@enduml 

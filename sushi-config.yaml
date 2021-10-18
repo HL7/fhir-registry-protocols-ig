@@ -1,7 +1,3 @@
-# ╭──────────────────────────────────────ImplementationGuide───────────────────────────────────────╮
-# │  The properties below are used to create the ImplementationGuide resource. For a list of       │
-# │  supported properties, see: https://fshschool.org/docs/sushi/configuration/                    │
-# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: hl7.fhir.us.fhir-registry-protocols-ig
 canonical: http://hl7.org/fhir/us/fhir-registry-protocols-ig
 name: FHIRRegistryProtocolsIG
@@ -21,10 +17,10 @@ contact:
     telecom:
       - system: url
         value: http://hl7.org/Special/committees/cic/index.cfm
-  - name: Keith W. Boone
+  - name: David Pyke
     telecom:
       - system: email
-        value: mailto:kboone@ainq.com
+        value: mailto:dpyke@ainq.com
 
 description: TBD.
 jurisdiction: urn:iso:std:iso:3166#US "United States of America"

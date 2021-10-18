@@ -13,11 +13,13 @@ partition "Fetch Non-FHIR data\nfrom other sources" {
     :Use other methods\nto get the data;
     repeat while (additional Non-FHIR Data?)
 }
+
 partition "UI to Complete Review Data" {
     repeat
     :Capture additional data\navailable through automation;
     :Review and Sign the Record;
     repeat while (Addtional Data?)
 }
+
 :Locally Aggregate and\nTransmit data to Registry;
 @enduml

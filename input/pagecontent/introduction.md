@@ -1,4 +1,4 @@
-###Introduction
+### Introduction
 This guide profiles how a registry says what needs to be sent, and how a healthcare provider organization can use that to automate the collection and formatting the data into a submission, conforming to registry or FHIR implementation guide defined profiles and protocols.
 This guide describes the steps to:
 * Define the data needed in a registry submission, relying on existing FHIR resources, profiles, and implementation guides
