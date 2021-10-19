@@ -2,3 +2,6 @@ The CREDS IG relies on simple profiles to the StructureDefinition resource to re
 
 Additionally, the logical model shows the mappings for FHIR, CDA and/or HL7 V2 segments.  With none of these mappings, it is assumed that the data will need to be manually sourced from other systems or data exchange methods. Such methods should be included but may not have a direct mapping path.
 
+### Resource Profiles
+[CREDSStructureDefinition](StructureDefinition-CREDSStructureDefinition.html): The StructureDefinition for use with CREDS mapping creating the base mappings for FHIR, CDA and V2.  
+[CREDSElementDefinition](StructureDefinition-CREDSElementDefinition.html):ElementDefinition for use within CREDS that sets the base requirements for creating the logical model including required mappings and Profile for Bundle inclusion

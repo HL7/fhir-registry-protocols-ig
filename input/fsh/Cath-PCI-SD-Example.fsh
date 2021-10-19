@@ -9,13 +9,14 @@ Description: "This is the base structure of the Cath-PCI data for submission to 
   * middleName 0..* CREDSElementDefinition "Middle Name" "Indicate the patient's middle names."
   * episodeUniqueKey 1..1 CREDSElementDefinition "Episode Unique Key" "Indicate the unique key associated with each patient episode record as assigned by the EMR/EHR or your software application."
 
+/*
+** You can't yet do an Instance of a Logical model with sushi.  But goFSH doesn't have an issue creating this syntax**
+*/
 
-
-
+Alias: $CathPCI = http://hl7.org/fhir/us/fhir-registry-protocols-ig/StructureDefinition/cathPCI
 /*
 Instance: CathPCI-Report
-InstanceOf: StructureDefinition
-Usage: #definition
+InstanceOf: $CathPCI 
 Title: "Cath-PCI Submission Report"
 Description: "This is an example of the data that would be used for a Cath-PCI Submission"
 
@@ -39,7 +40,7 @@ Description: "This is an example of the data that would be used for a Cath-PCI S
 * derivation = #specialization
 * type = "cathPci-report"
 * differential // I'm using a mix of indentation and hard paths because it's easier for me
-  * lastName = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient" // profile for Bundle inclusion
+  * lastName.targetProfile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient" // profile for Bundle inclusion
   * lastName.mapping[0].identity = "FHIR.Demographics.LastName" // Always "Source Standard"."Section Name"."Data Element Name"
   * lastName.mapping[0].language = #application/fhir // mimetype of standard 
   * lastName.mapping[0].map = "Patient.name.family" // actual Xpath to data 
@@ -50,7 +51,7 @@ Description: "This is an example of the data that would be used for a Cath-PCI S
   * lastName.mapping[2].language = #application/edi-hl7v2 // discussed in InM but I don't know if it was registered
   * lastName.mapping[2].map = "ADT_A01:PID.5.1" // I could just put PID.5.1 but I'll need the message for other element mappings.  That being said, how do I wildcard ADT? How do I Xpath V2? Should I?
 
-  * firstName = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
+  * firstName.targetProfile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
   * firstName.mapping[0].identity = "FHIR.Demographics.FirstName"
   * firstName.mapping[0].language = #application/fhir
   * firstName.mapping[0].map = "Patient.name.given[0]"
@@ -61,7 +62,7 @@ Description: "This is an example of the data that would be used for a Cath-PCI S
   * firstName.mapping[2].language = #application/edi-hl7v2
   * firstName.mapping[2].map = "ADT_A01:PID.5.2"
 
-  * middleName = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
+  * middleName.targetProfile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
   * middleName.mapping[0].identity = "FHIR.Demographics.FirstName"
   * middleName.mapping[0].language = #application/fhir
   * middleName.mapping[0].map = "Patient.name.given[1]"
@@ -72,7 +73,7 @@ Description: "This is an example of the data that would be used for a Cath-PCI S
   * middleName.mapping[2].language = #application/edi-hl7v2
   * middleName.mapping[2].map = "ADT_A01:PID.5.3"
 
-  * episodeUniqueKey = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"
+  * episodeUniqueKey.targetProfile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"
   * episodeUniqueKey.mapping[0].identity = "FHIR.Episode-Information.Episode-Unique-Key"
   * episodeUniqueKey.mapping[0].language = #application/fhir
   * episodeUniqueKey.mapping[0].map = "iif(Encounter.identifier(type.code='VN').value, Encounter.identifier(type.code='VN').value, Encounter.identifier[0].value)"

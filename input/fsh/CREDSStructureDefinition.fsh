@@ -2,9 +2,8 @@ Profile: CREDSStructureDefinition
 Parent: StructureDefinition
 Id: CREDSStructureDefinition
 Title: "CREDS Structure Definition"
-Description: "StructureDefinition for use with CREDS mapping"
+Description: "StructureDefinition for use with CREDS mapping creating the base mappings for FHIR, CDA and V2"
 * identifier 1..1
-//* baseDefinition = "http://hl7.org/fhir/StructureDefinition/Base"
 * mapping ^slicing.discriminator.type = #pattern
 * mapping ^slicing.discriminator.path = "identity"
 * mapping ^slicing.rules = #open
@@ -32,11 +31,12 @@ Description: "StructureDefinition for use with CREDS mapping"
 * type 1..1 
 * differential 1..1
 
+
 Profile: CREDSElementDefinition
 Parent: ElementDefinition
 Id: CREDSElementDefinition
-Title: "CREDSElementDefiniElementDefinition"
-Description: "ElementDefinition for use within CREDS"
+Title: "CREDSElementDefinition"
+Description: "ElementDefinition for use within CREDS that sets the base requirements for creating the logical model"
 * short 1..1
 * comment 1..1
 * type.code 1..1

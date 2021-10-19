@@ -34,8 +34,6 @@ pages:
     title: Introduction
   use_cases.md:
     title: Use Cases
-  glossary.md:
-    title: Glossary of Terms
   Architecture_and_Implementation.md:
     title: Architecture and Implementation
   security_considerations.md:
@@ -47,11 +45,11 @@ pages:
   transactions.md:
     title: Transactions
   transaction-CURD.md:
-    title: Create / Update Registry Definitions
+    title: Create/Update Registry Definitions
   transaction-SRRD.md:
     title: Search for and Retrieve Registry Submission Definitions
   transaction-CURS.md:
-    title: Create / Update Registry Submission
+    title: Create/Update Registry Submission
   transaction-RRSD.md:
     title: Retrieve Registry Submission Data
   transaction-VRS.md:
@@ -60,12 +58,11 @@ pages:
     title:  Testing and Conformance
   profiles_and_extensions.md:
     title: Profiles and Extensions
-  vocabulary.md:
-    title: Terminology Resources
   test_plan.md:
     title: Test Plan
-  examples.md:
-    title: Examples
+  overview.md:
+    title: Overview
+
 
 
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
@@ -83,7 +80,6 @@ menu:
     Security Considerations: security_considerations.html
     Actors: actors.html
     Profiles and Extensions: profiles_and_extensions.html
-    Terminology: vocabulary.html
   Transactions: 
     Create or Update Registry Definitions: transaction-CURD.html
     Search for and Retrieve Registry Submission Definitions: transaction-SRRD.html
