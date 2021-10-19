@@ -4,14 +4,10 @@ Title: "Cath-PCI Report Template"
 Description: "This is the base structure of the Cath-PCI data for submission to the Registry"
 * ^baseDefinition = "http://hl7.org/fhir/us/fhir-registry-protocols-ig/StructureDefinition/CREDSStructureDefinition"
 * differential 1..1 BackboneElement "Different things" "THe data required for submission"
-  * lastName 1..1 ElementDefinition "Last Name" "Indicate the patient's last name. Hyphenated names should be recorded with a hyphen."
-    * profile 1..1 canonical "FHIR Profile" "PRofile to be used to hold the patient's last name"
-  * firstName 1..1 ElementDefinition "First Name" "Indicate the patient's first name."
-    * profile 1..1 canonical "FHIR Profile" "Profile to be used to hold the patient's last name"
-  * middleName 0..* ElementDefinition "Middle Name" "Indicate the patient's middle names."
-    * profile 1..1 canonical "FHIR Profile" "Profile to be used to hold the patient's last name"
-  * episodeUniqueKey 1..1 ElementDefinition "Episode Unique Key" "Indicate the unique key associated with each patient episode record as assigned by the EMR/EHR or your software application."
-    * profile 1..1 canonical "FHIR Profile" "Profile to be used to hold the patient's last name"
+  * lastName 1..1 CREDSElementDefinition "Last Name" "Indicate the patient's last name. Hyphenated names should be recorded with a hyphen."
+  * firstName 1..1 CREDSElementDefinition "First Name" "Indicate the patient's first name."
+  * middleName 0..* CREDSElementDefinition "Middle Name" "Indicate the patient's middle names."
+  * episodeUniqueKey 1..1 CREDSElementDefinition "Episode Unique Key" "Indicate the unique key associated with each patient episode record as assigned by the EMR/EHR or your software application."
 
 
 

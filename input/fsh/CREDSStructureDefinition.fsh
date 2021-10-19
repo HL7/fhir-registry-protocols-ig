@@ -31,7 +31,7 @@ Description: "StructureDefinition for use with CREDS mapping"
 * abstract = false
 * type 1..1 
 * differential 1..1
-/*
+
 Profile: CREDSElementDefinition
 Parent: ElementDefinition
 Id: CREDSElementDefinition
@@ -46,4 +46,4 @@ Description: "ElementDefinition for use within CREDS"
 * mapping.identity 1..1
 * mapping.language 1..1
 * mapping.map 1..1
-*/
+
