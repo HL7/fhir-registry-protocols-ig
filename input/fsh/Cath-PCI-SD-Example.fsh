@@ -29,10 +29,10 @@ Description: "This is an example of the data that would be used for a Cath-PCI S
 * lastName ^mapping[0].map = "Patient.name.family" // actual Xpath to data 
 * lastName ^mapping[1].identity = "CDA.Demographics.LastName"
 * lastName ^mapping[1].language = #application/hl7-sda+xml // actual registered mimetype
-* lastName ^mapping[1].map = "/ClinicalDocument/recordTarget/patient/name/family"
+* lastName ^mapping[1].map = "ClinicalDocument.recordTarget.patient.name.family"
 * lastName ^mapping[2].identity = "V2.Demographics.LastName"
 * lastName ^mapping[2].language = #application/edi-hl7v2 // discussed in InM but I don't know if it was registered
-* lastName ^mapping[2].map = "ADT_A01:PID.5.1" // I could just put PID.5.1 but I'll need the message for other element mappings.  That being said, how do I wildcard ADT? How do I Xpath V2? Should I?
+* lastName ^mapping[2].map = "ADT_A01.PID.5.1" // I could just put PID.5.1 but I'll need the message for other element mappings.  That being said, how do I wildcard ADT? How do I Xpath V2? Should I?
 
 * firstName ^requirements = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
 * firstName ^mapping[0].identity = "FHIR.Demographics.FirstName"
@@ -40,10 +40,10 @@ Description: "This is an example of the data that would be used for a Cath-PCI S
 * firstName ^mapping[0].map = "Patient.name.given[0]"
 * firstName ^mapping[1].identity = "CDA.Demographics.FirstName"
 * firstName ^mapping[1].language = #application/hl7-sda+xml
-* firstName ^mapping[1].map = "/ClinicalDocument/recordTarget/patient/name/given[1]"
+* firstName ^mapping[1].map = "ClinicalDocument.recordTarget.patient.name.given[1]"
 * firstName ^mapping[2].identity = "V2.Demographics.FirstName"
 * firstName ^mapping[2].language = #application/edi-hl7v2
-* firstName ^mapping[2].map = "ADT_A01:PID.5.2"
+* firstName ^mapping[2].map = "ADT_A01.PID.5.2"
 
 * middleName ^requirements = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
 * middleName ^mapping[0].identity = "FHIR.Demographics.FirstName"
@@ -51,10 +51,10 @@ Description: "This is an example of the data that would be used for a Cath-PCI S
 * middleName ^mapping[0].map = "Patient.name.given[1]"
 * middleName ^mapping[1].identity = "CDA.Demographics.FirstName"
 * middleName ^mapping[1].language = #application/hl7-sda+xml
-* middleName ^mapping[1].map = "/ClinicalDocument/recordTarget/patient/name/given[position()>1]"  
+* middleName ^mapping[1].map = "ClinicalDocument.recordTarget.patient.name.given[position()>1]"  
 * middleName ^mapping[2].identity = "V2.Demographics.FirstName"
 * middleName ^mapping[2].language = #application/edi-hl7v2
-* middleName ^mapping[2].map = "ADT_A01:PID.5.3"
+* middleName ^mapping[2].map = "ADT_A01.PID.5.3"
 
 * episodeUniqueKey ^requirements = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"
 * episodeUniqueKey ^mapping[0].identity = "FHIR.Episode-Information.Episode-Unique-Key"
@@ -62,8 +62,8 @@ Description: "This is an example of the data that would be used for a Cath-PCI S
 * episodeUniqueKey ^mapping[0].map = "iif(Encounter.identifier(type.code='VN').value, Encounter.identifier(type.code='VN').value, Encounter.identifier[0].value)"
 * episodeUniqueKey ^mapping[1].identity = "CDA.Episode-Information.Episode-Unique-Key"
 * episodeUniqueKey ^mapping[1].language = #application/hl7-sda+xml
-* episodeUniqueKey ^mapping[1].map = "/ClinicalDocument/component/section/entry/encounter/id/extension"  
+* episodeUniqueKey ^mapping[1].map = "ClinicalDocument.componentOf.encompassingEncounter.id"  
 * episodeUniqueKey ^mapping[2].identity = "V2.Episode-Information.Episode-Unique-Key"
 * episodeUniqueKey ^mapping[2].language = #application/edi-hl7v2
-* episodeUniqueKey ^mapping[2].map = "ADT_A01:PV1.19.1"
+* episodeUniqueKey ^mapping[2].map = "ADT_A01.PV1.19.1"
   

@@ -22,6 +22,10 @@ THis information is given to the **Registry Submission Definition Repository** f
 
 #### Retrieval
 
+<figure>{%include workflow.svg %}
+<figcaption>Workflow for Retrival and Submission</figcaption>
+</figure>
+
 The **Registry Submitter** uses the **Search/Retrieve Registry Definition [SRRD]** transaction to find and retrieve the appropraite definition from the Repository,
 
 Once the defintion has been ingested, the Registry Submitter or the **Registry Submission Data Source** fetches the required data (the **Retrieve Registry Submission Data [RRSD]** transaction) from those locations in the mappings within the StructureDefinition logical model or from appropriate locations within the EHR or other relevant system.
