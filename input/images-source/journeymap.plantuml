@@ -1,0 +1,67 @@
+@startuml
+'actor "Registry Documenter" as RD 
+'actor "Cath Team" as CT 
+'actor "Registry Validator" as RV 
+
+package "Add to Registry Worklist" {
+usecase ORR as "Open Record, Review
+==
+Trigger: discharge event" 
+    usecase fdemo as "Fill in Demographics"
+}
+
+package "Fetch Data: EHR"{
+    usecase fproc as "Fill in Procedure details"
+}
+
+package "Fetch Data: Other Sources" {
+    usecase "Review Need for\nAdditional History" as RNAH 
+    usecase "Access history electronically" as AHE
+    usecase "Easily obtained history" as EOH 
+    usecase "Access history creatively:\ndata sleuthing" as DS 
+    usecase "Can't locate history, waiting" as NoHist
+}
+
+package "Complete/Review Record" {
+    usecase "Review Registry report" as RRR 
+    usecase "Submit to Registry" as S2R 
+}
+
+package "Receive Data" {
+    usecase "Receive data and evaluate" as RDE 
+    usecase "Partial Data" as PD
+}
+
+package "Transform and Quality Check" {
+    usecase "Transform to Registry Format" as TRF
+    usecase "Quality Check" as QC 
+}
+
+package "Accept Data" {
+    usecase "Accept Data" as AD
+}
+
+ORR --> fdemo
+fdemo --> fproc
+
+fproc --> RNAH
+
+RNAH --> AHE 
+AHE --> EOH
+RNAH --> DS 
+DS <--> NoHist
+EOH -->RRR 
+NoHist -->RRR
+RRR --> S2R
+
+S2R -down-> RDE
+S2R -down-> PD
+
+PD -UP-> RNAH : Potential to address\nat Registry
+RDE --> TRF
+TRF --> QC
+QC -UP-> RRR : Failed QC
+
+QC --> AD
+
+@enduml
