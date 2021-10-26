@@ -19,3 +19,49 @@ And a healthcare provider organization to:
 2. Support processes to automatically extract data from information systems.
 3. Support processes to transform extracted data into appropriate formats for a registry submission.
 
+### Journey Map of Registry Process
+The Journey from a patient discharge to data being merged into the Registry is complex.  There are several important steps and related challenges presented to create the final report and ingest it.
+
+#### Actors
+__Registry Documenter__
+Profile: 
+* Not medically trained
+* Medical terminology
+* On-the-job awareness
+^
+* At beginning of encounter, I gather patient information to support consult and procedure.
+* After an encounter is closed, I create a ‘report’ to send to the registry, I need to find the data
+* I wish all the data was readily available, so I didn’t have to search all over the place 
+
+__Cath Team__
+Profile: 
+* Medically trained
+* Clinically focused
+* Specialty medicine
+^
+* I enter clinical data associated with a specialty encounter
+* I may not be aware of my impact on downstream data quality
+
+__Registry Data Validator__
+Profile: 
+* HealthIT orientation: interoperability
+* Data quality compliance against expected standards
+* Reporting and Analytics
+^
+* I validate data received from reporting health centers in order to perform data analysis
+
+{%include journeymap.svg %}
+
+### Challenges
+#### Data Collection
+
+* If data exists in the EHR, retrieval can be relatively easy: extract data from EHR records and populate report
+* Documenter may be unclear on meaning of clinical data
+* Documenter may not know how/where to locate data.
+* Complexity of encounter and past patient history
+* Event dates 
+* Data sleuthing: delays, quality concerns
+
+#### Quality Control 
+* How to reduce quality deviation earlier in the process?
+* Vendor adoption and business models can complicate data representation
