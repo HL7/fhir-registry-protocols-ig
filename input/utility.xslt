@@ -115,8 +115,9 @@
         </xsl:variable>
 		<div>
 		  <xsl:text>{% include </xsl:text><xsl:value-of select='$file'/>
-		  <xsl:text>%}&#xA;&#xA;**</xsl:text><xsl:value-of select="$title"/><xsl:text>**&#xA;&#xA;</xsl:text>
+		  <xsl:text>%}&#xA;</xsl:text>
 		</div>
+		<xsl:text>**</xsl:text><xsl:value-of select="$title"/><xsl:text>**&#xA;&#xA;</xsl:text>
     </xsl:template>
 
     <xsl:template match='*' mode='copy-as-text'>
