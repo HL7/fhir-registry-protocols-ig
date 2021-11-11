@@ -39,9 +39,20 @@ Profile: CREDSElementDefinition
 Parent: ElementDefinition
 Id: CREDSElementDefinition
 Title: "CREDSElementDefinition"
-Description: "ElementDefinition for use within CREDS that sets the base requirements for creating the logical model"
+Description: """ElementDefinition for use within CREDS that sets the base requirements for creating the logical model
+Elements specific to a Creds model are:
+.short Simple name of the data required
+.comment full description of the data element required
+.requirements is used to hold the Resource/Profile to be used within the submission bundle
+
+Mappings are required (but do not show in the profile view of the IG without going to the XML/JSON source of the profile) Each mapping shows:
+.identity as element path (e.g., Patient.Name.Given)
+.langauge as the mime type of the language (e.g., application/edi-hl7v2 for V2 message)
+.map as the FHIRPath expression for use to find the data required.
+"""
 * short 1..1
 * comment 1..1
+* requirements 1..1
 * type ^code = #canonical
 * mapping 1..*
 * mapping.identity 1..1

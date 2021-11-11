@@ -68,3 +68,5 @@ Description: "This is an example of the data that would be used for a Cath-PCI S
 * episodeUniqueKey ^mapping[2].language = #application/edi-hl7v2
 * episodeUniqueKey ^mapping[2].map = "ADT_A01.PV1.19.1"
   
+// Set if minor example using VXU iff(((today() - 16 years) > VXU_V04.PID.7.value), VXU_V04.NK1.2.value)
+// If age under 16, return name of Next-of-Kin  Would be put in RelatedPerson.name  should be broken down by field (e.g., NK1.2.1) so that it can populate separately.
