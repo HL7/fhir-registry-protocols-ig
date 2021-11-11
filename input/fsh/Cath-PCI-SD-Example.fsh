@@ -11,7 +11,8 @@ Description: "This is the base structure of the Cath-PCI data for submission to 
 
 Alias: $CathPCI = http://hl7.org/fhir/us/fhir-registry-protocols-ig/StructureDefinition/cathPCI
 
-Profile: cathPCI-Report
+Profile: CathPCI_Report
+Id: cathPCIReport
 Parent: CathPCI 
 Title: "Cath-PCI Submission Report"
 Description: "This is an example of the data that would be used for a Cath-PCI Submission"
