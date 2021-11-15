@@ -23,6 +23,8 @@ Title: "Cath-PCI Submission Map"
 Description: """This is an example of the data that would be used for a Cath-PCI Submission
 The full map is a logical model as that allows conformance to the FHIR Standard the way a custom Resource would not.
 Each element has the short name of the data, a full description and the paths to fetch and place the information, by data standard type, for each.
+A section (such as Demographics) is a BackboneElement (holds no values).  All subordinate elements are CREDSElementDefinitions.
+
 """
 * ^baseDefinition = "http://hl7.org/fhir/us/fhir-registry-protocols-ig/StructureDefinition/CREDSStructureDefinition"
 
@@ -65,8 +67,8 @@ Each element has the short name of the data, a full description and the paths to
 * demographics.lastName ^mapping[3].identity = "Output"
 * demographics.lastName ^mapping[3].language = #application/fhir // output is always FHIR 
 * demographics.lastName ^mapping[3].map = "Patient.name.family" // actual Xpath to data within profile in requirements
-* demographics.firstName 1..1 CREDSElementDefinition "First Name" "Indicate the patient's first name."
 
+* demographics.firstName 1..1 CREDSElementDefinition "First Name" "Indicate the patient's first name."
 * demographics.firstName ^requirements = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
 * demographics.firstName ^mapping[0].identity = "FHIR"
 * demographics.firstName ^mapping[0].language = #application/fhir
@@ -80,8 +82,8 @@ Each element has the short name of the data, a full description and the paths to
 * demographics.firstName ^mapping[3].identity = "Output"
 * demographics.firstName ^mapping[3].language = #application/fhir 
 * demographics.firstName ^mapping[3].map = "Patient.name.given" 
-* demographics.middleName 0..* CREDSElementDefinition "Middle Name" "Indicate the patient's middle names."
 
+* demographics.middleName 0..* CREDSElementDefinition "Middle Name" "Indicate the patient's middle names."
 * demographics.middleName ^requirements = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
 * demographics.middleName ^mapping[0].identity = "FHIR"
 * demographics.middleName ^mapping[0].language = #application/fhir
