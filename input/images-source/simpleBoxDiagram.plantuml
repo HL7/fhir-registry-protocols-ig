@@ -1,0 +1,20 @@
+@startuml
+partition "Registry Map Creator" {
+    :Registry creates Mapping StructureDefinition;
+    :Registry places Mapping StructureDefinition
+     on FHIR Server;
+}
+partition "Registry Submitter" {
+    :Submitter retrieves Mapping SD;
+    :Submitter retrieves data according
+     to Mapping SD from Data Sources;
+    :Submitter places data into FHIR Bundle
+     according to Mapping SD Output definitions;
+    :Submitter posts FHIR Bundle to Registry;
+}
+partition "Registry Data Consumer" {
+    :Accepts FHIR Bundle from Submitter;
+    :Verifies data retrieved;
+    :Ingests FHIR Bundle to registry DB;
+}
+@enduml
