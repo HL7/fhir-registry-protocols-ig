@@ -1,4 +1,4 @@
-@startuml
+@startuml simple box diagram 
 partition "Registry Map Creator" {
     :Registry creates Mapping StructureDefinition;
     :Registry places Mapping StructureDefinition
