@@ -51,7 +51,7 @@ Each mapping includes the following:
 * ^mapping[2].uri = "http://www.hl7.eu/refactored/index.html"
 * ^mapping[2].name = "HL7 V2 Messages"
 * ^mapping[2].comment = "Path to where in a HL7 V2 Message the data element is found"
-* ^mapping[2].identity = "Output"
+* ^mapping[3].identity = "Output"
 * ^mapping[3].uri = "http://hl7.org/fhir/us/core"
 * ^mapping[3].name = "Submission Data Output location"
 * ^mapping[3].comment = "Location within the requirements profile to place the data for submission in US Core or FHIR Core Resources"

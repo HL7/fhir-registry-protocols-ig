@@ -37,7 +37,7 @@ Mappings are required for data extraction and inclusion in the submission bundle
 * short 1..1
 * comment 1..1
 * requirements 1..1
-* type ^code = #canonical
+* type ^code = http://hl7.org/fhir/data-types#canonical
 * mapping ^slicing.discriminator.type = #pattern
 * mapping ^slicing.discriminator.path = "identity"
 * mapping ^slicing.rules = #open
@@ -53,6 +53,3 @@ Mappings are required for data extraction and inclusion in the submission bundle
 * mapping.identity 1..1 
 * mapping.language 1..1
 * mapping.map 1..1
-
-// iff(mapping.identity.value = 'Output', mapping.comment.exists)
-

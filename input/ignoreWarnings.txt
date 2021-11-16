@@ -3,3 +3,6 @@
 # Add warning and/or information messages here after you've confirmed that they aren't really a problem
 # (And include comments like this justifying why)
 # See https://github.com/FHIR/sample-ig/blob/master/input/ignoreWarnings.txt for examples
+
+# Error in the cpb-15 constraint xpath value in core 
+WARNING: StructureDefinition/CapabilityStatementWithSlices: StructureDefinition.snapshot.element[0].constraint[6].xpath: value should not start or finish with whitespace
