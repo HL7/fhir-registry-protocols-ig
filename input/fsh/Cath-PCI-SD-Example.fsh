@@ -24,7 +24,11 @@ Description: """This is an example of the data that would be used for a Cath-PCI
 The full map is a logical model as that allows conformance to the FHIR Standard the way a custom Resource would not.
 Each element has the short name of the data, a full description and the paths to fetch and place the information, by data standard type, for each.
 A section (such as Demographics) is a BackboneElement (holds no values).  All subordinate elements are CREDSElementDefinitions.
-
+Each mapping includes the following:
+    identity = standard used for the mapping (e.g., FHIR)
+    language = mime type that matches identity
+    map = FHIRPath expression of the path to the data
+    comment = *Output mapping only* Resource/Profile for inclusion in the Submission Bundle
 """
 * ^baseDefinition = "http://hl7.org/fhir/us/fhir-registry-protocols-ig/StructureDefinition/CREDSStructureDefinition"
 
@@ -45,16 +49,16 @@ A section (such as Demographics) is a BackboneElement (holds no values).  All su
 * ^mapping[1].comment = "Path to where in a CDA 2.0/CCDA 2.1 Document the data element is found"
 * ^mapping[2].identity = "HL7V2"
 * ^mapping[2].uri = "http://www.hl7.eu/refactored/index.html"
-* ^mapping[2].name = "HL7 V2"
+* ^mapping[2].name = "HL7 V2 Messages"
 * ^mapping[2].comment = "Path to where in a HL7 V2 Message the data element is found"
+* ^mapping[2].identity = "Output"
 * ^mapping[3].uri = "http://hl7.org/fhir/us/core"
-* ^mapping[3].name = "Output"
+* ^mapping[3].name = "Submission Data Output location"
 * ^mapping[3].comment = "Location within the requirements profile to place the data for submission in US Core or FHIR Core Resources"
 
 * demographics 1..1 BackboneElement "Patient Demographics"
 
 * demographics.lastName 1..1 CREDSElementDefinition "Last Name" "Indicate the patient's last name. Hyphenated names should be recorded with a hyphen."
-* demographics.lastName ^requirements = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient" // profile for Bundle inclusion
 * demographics.lastName ^mapping[0].identity = "FHIR" // Always "Source Standard"
 * demographics.lastName ^mapping[0].language = #application/fhir // mimetype of standard 
 * demographics.lastName ^mapping[0].map = "Patient.name.family" // actual Xpath to data 
@@ -67,9 +71,9 @@ A section (such as Demographics) is a BackboneElement (holds no values).  All su
 * demographics.lastName ^mapping[3].identity = "Output"
 * demographics.lastName ^mapping[3].language = #application/fhir // output is always FHIR 
 * demographics.lastName ^mapping[3].map = "Patient.name.family" // actual Xpath to data within profile in requirements
+* demographics.lastName ^mapping[3].comment = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient" // profile for Bundle inclusion
 
 * demographics.firstName 1..1 CREDSElementDefinition "First Name" "Indicate the patient's first name."
-* demographics.firstName ^requirements = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
 * demographics.firstName ^mapping[0].identity = "FHIR"
 * demographics.firstName ^mapping[0].language = #application/fhir
 * demographics.firstName ^mapping[0].map = "Patient.name.given[0]"
@@ -82,9 +86,9 @@ A section (such as Demographics) is a BackboneElement (holds no values).  All su
 * demographics.firstName ^mapping[3].identity = "Output"
 * demographics.firstName ^mapping[3].language = #application/fhir 
 * demographics.firstName ^mapping[3].map = "Patient.name.given" 
+* demographics.firstName ^mapping[3].comment = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
 
 * demographics.middleName 0..* CREDSElementDefinition "Middle Name" "Indicate the patient's middle names."
-* demographics.middleName ^requirements = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
 * demographics.middleName ^mapping[0].identity = "FHIR"
 * demographics.middleName ^mapping[0].language = #application/fhir
 * demographics.middleName ^mapping[0].map = "Patient.name.given[1]"
@@ -97,11 +101,11 @@ A section (such as Demographics) is a BackboneElement (holds no values).  All su
 * demographics.middleName ^mapping[3].identity = "Output"
 * demographics.middleName ^mapping[3].language = #application/fhir // mimetype of standard 
 * demographics.middleName ^mapping[3].map = "Patient.name.given" // actual Xpath to data within profile in requirements
+* demographics.middleName ^mapping[3].comment = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
 
 * episodeInformation 1..1 BackboneElement "CathPCI Episode Information"
 
 * episodeInformation.episodeUniqueKey 1..1 CREDSElementDefinition "Episode Unique Key" "Indicate the unique key associated with each patient episode record as assigned by the EMR/EHR or your software application."
-* episodeInformation.episodeUniqueKey ^requirements = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"
 * episodeInformation.episodeUniqueKey ^mapping[0].identity = "FHIR"
 * episodeInformation.episodeUniqueKey ^mapping[0].language = #application/fhir
 * episodeInformation.episodeUniqueKey ^mapping[0].map = "iif(Encounter.identifier(type.code='VN').value, Encounter.identifier(type.code='VN').value, Encounter.identifier[0].value)"
@@ -114,3 +118,5 @@ A section (such as Demographics) is a BackboneElement (holds no values).  All su
 * episodeInformation.episodeUniqueKey ^mapping[3].identity = "Output"
 * episodeInformation.episodeUniqueKey ^mapping[3].language = #application/fhir
 * episodeInformation.episodeUniqueKey ^mapping[3].map = "Encounter.identifier"
+* episodeInformation.episodeUniqueKey ^mapping[3].comment = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"
+

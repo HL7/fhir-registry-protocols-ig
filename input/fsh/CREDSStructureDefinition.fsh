@@ -12,6 +12,10 @@ Description: "StructureDefinition for use with CREDS mapping creating the base m
 * snapshot 0..0
 * differential 0..0
 
+Invariant:  MappingComment
+Description: "Output mappings must have a comment"
+Expression: "iff(mapping.identity.value = 'Output', mapping.comment.exists)"
+Severity:   #error
 
 Profile: CREDSElementDefinition
 Parent: ElementDefinition
@@ -23,11 +27,13 @@ Elements specific to a Creds model are:
 .comment full description of the data element required
 .requirements is used to hold the Resource/Profile to be used within the submission bundle
 
-Mappings are required (but do not show in the profile view of the IG without going to the XML/JSON source of the profile) Each mapping shows:
+Mappings are required for data extraction and inclusion in the submission bundle  Each mapping shows:
 .identity as element path (e.g., Patient.Name.Given)
 .langauge as the mime type of the language (e.g., application/edi-hl7v2 for V2 message)
 .map as the FHIRPath expression for use to find the data required.
+.comment = *Output mapping only* Resource/Profile for inclusion in the Submission Bundle
 """
+* obeys MappingComment
 * short 1..1
 * comment 1..1
 * requirements 1..1
@@ -47,4 +53,6 @@ Mappings are required (but do not show in the profile view of the IG without goi
 * mapping.identity 1..1 
 * mapping.language 1..1
 * mapping.map 1..1
+
+// iff(mapping.identity.value = 'Output', mapping.comment.exists)
 
