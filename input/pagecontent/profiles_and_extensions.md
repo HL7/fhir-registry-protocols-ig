@@ -4,4 +4,8 @@ Additionally, the logical model shows the mappings for FHIR, CDA and/or HL7 V2 s
 
 ### Resource Profiles
 [CREDSStructureDefinition](StructureDefinition-CREDSStructureDefinition.html): The StructureDefinition for use with CREDS mapping creating the base mappings for FHIR, CDA and V2.  
+
+
 [CREDSElementDefinition](StructureDefinition-CREDSElementDefinition.html):ElementDefinition for use within CREDS that sets the base requirements for creating the logical model including required mappings and Profile for Bundle inclusion
+
+For proper setup of the Logical model, the mapping choices (FHIR, CDA, V2, etc.)  should have entries in the StucutreDefinition mapping elements and each element mapping sub-elements.  For example, if there are to be FHIR and Output mappings (Output is required) in the Logical Model then the base mapping elements needs to include both FHIR and Output entries.  Please see the CathPCI example for values and structure.

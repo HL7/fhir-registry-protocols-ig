@@ -7,7 +7,7 @@ This guide describes the steps to:
 * Use applicable FHIR operations defined in existing FHIR Implementation Guides to submit the content
 * Coordinate with other systems to validate and refine registry submissions, as necessary.
 
-The goal of this Implementation Guide is to advance the health IT ecosystem through the accelerated adoption of modern standards in the acquisition of clinical data for registry submission as well as the subsequent use of clinical data to improve care decisions
+The goal of this Implementation Guide is to advance the health IT ecosystem through the accelerated adoption of modern standards in the acquisition of clinical data for registry submission as well as the subsequent use of clinical data to improve care decisions.  Each definition of the needed data is done via a FHIR-defined Logical model that gives information on where the data may be located and what FHIR resource will be the repository for that data inside a submission Bundle resource.
 
  Protocols for Clinical Registry Extraction and Data Submission addresses the need to provide a common way to describe data collection and submission requirements for disease registries that enables a disease registry to:
 1. Describe the data they wish to collect.
