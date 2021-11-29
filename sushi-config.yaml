@@ -55,7 +55,7 @@ pages:
   transaction-VRS.md:
     title: Validate Registry Submission
   conformance.md:
-    title:  Testing and Conformance
+    title:  IG Conformance
   profiles_and_extensions.md:
     title: Profiles and Extensions
   test_plan.md:
@@ -86,6 +86,8 @@ menu:
     Create or Update Registry Submission: transaction-CURS.html
     Retrieve Registry Submission Data: transaction-RRSD.html
     Validate Registry Submission: transaction-VRS.html
-  Testing and Conformance: test_plan.html
+  Testing and Conformance: 
+    Test Plan: test_plan.html
+    IG Conformance: conformance.html
   Artifact Index: artifacts.html
 

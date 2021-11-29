@@ -52,7 +52,8 @@ If HL7 V2 message mapping is used in *any* mapping element, the following MUST b
 ### Mapping Elements
 Each datapoint in the Registry data map corresponds to an element in the logical model.  Elements may be categorized through the use of a BackboneElement which holds no value. Each data point is named with a [camelCase](https://en.wikipedia.org/wiki/Camel_case) version of a short datapoint name without whitespace or punctuation.
 
-Each element has a base definition of cardinality (how many of that element there can be) a short name and a full definition.  The definition may give guidance on the datapoint's formatting or other requirements.  The element also gives specifics on the source mapping (i.e., where the data can be found)in zero or more standards-based formats (e.g., FHIR, CDA).  If no source mapping is found, it is assumed that data requires manual input.
+Each element has a base definition of cardinality (how many of that element there can be) a short name and a full definition.  The definition may give guidance on the datapoint's formatting or other requirements.  The element also gives specifics on the source mapping (i.e., where the data can be found)in zero or more standards-based formats (e.g., FHIR, CDA).  If no "Source Standard" mappings are supplied, it should be assumed that the data is only available through a manual process
+
 
 Each mapping MUST contain the following elements:
 ~~~~
@@ -60,6 +61,7 @@ mapping.identity: the "Source Standard" such as FHIR, CDA, HL7V2
 mapping.language the mimetype of standard (e.g., application/fhir, application/hl7-sda+xml [CDA], application/edi-hl7v2 [HL7 V2])
 mapping.map the actual Xpath to data 
 ~~~~
+
 In addition to the source mapping, the destination element (Output) is structured the same as a FHIR Source Standard element with addition of a Comment that lists the full path to the FHIR resource or Profile that will be used in the submission Bundle.
 ~~~~
 mapping.identity: MUST be FHIR
