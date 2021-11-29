@@ -1,3 +1,6 @@
+<!--
+    This content is automatically generated from CREDS.xml by actorsandtransactions.xslt
+-->
 This section describes the CURS of this guide. This transaction is used by the Registry Submitter and Registry Submission Consumer actors.
 
 ### Scope
@@ -7,10 +10,11 @@ This section describes the CURS of this guide. This transaction is used by the R
 
 
 ### Actors Roles
+
+<figure>
 {% include transaction-CURS-uc.svg%}
-
-**Figure 2.4-1: Create / Update Registry Submission Use Case Diagram**
-
+<figcaption>Figure 2.4-1: Create / Update Registry Submission Use Case Diagram </figcaption>
+</figure>
 <table border='1' borderspacing='0'>
 <caption><b>Table 2.4-1: Actor Roles</b></caption>
 <thead><tr><th>Actor</th><th>Role</th></tr></thead>
@@ -40,10 +44,11 @@ This section describes the CURS of this guide. This transaction is used by the R
 </table>
 
 ### Interactions
-        {% include transaction-CURS-seq.svg%}
-
-**Figure 2.4-2: Create / Update Registry Submission Interactions**
-
+        
+<figure>
+{% include transaction-CURS-seq.svg%}
+<figcaption>Figure 2.4-2: Create / Update Registry Submission Interactions </figcaption>
+</figure>
 
 #### 
 

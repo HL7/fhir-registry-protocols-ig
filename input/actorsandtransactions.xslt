@@ -29,6 +29,10 @@
     <xsl:template name="actorsandtransactions" match="/" mode="actorsandtransactions">
         <xsl:param name="dest" select="'pagecontent/actors.md'"/>
         <xsl:result-document href="{$dir}pagecontent/actors.md" method="text">
+            <xsl:call-template name="result-header-comment">
+        	    <xsl:with-param name="source" select='//profile/@id'/>
+        	    <xsl:with-param name="by">actorsandtransactions.xslt</xsl:with-param>
+        	</xsl:call-template>
 This section defines the actors in this implementation guide.
 
 Figure <xsl:value-of select="/ig:profile/@chapter"/>.1-1 below shows the actors directly
@@ -54,6 +58,15 @@ Profile and the relevant transactions between them.&#xA;
 
         </xsl:result-document>
         <xsl:result-document href="{$dir}pagecontent/transactions.md" method="text">
+            <xsl:call-template name="result-header-comment">
+                <xsl:with-param name="source" select='//profile/@id'/>
+                <xsl:with-param name="by">actorsandtransactions.xslt</xsl:with-param>
+                <xsl:with-param name="format">fsh</xsl:with-param>
+            </xsl:call-template>
+            <xsl:call-template name="result-header-comment">
+                <xsl:with-param name="source" select='//profile/@id'/>
+                <xsl:with-param name="by">actorsandtransactions.xslt</xsl:with-param>
+            </xsl:call-template>
             <xsl:call-template name="transaction-descriptions"/>
         </xsl:result-document>
         <xsl:apply-templates select="/ig:profile/ig:transaction" mode="transaction">
@@ -74,14 +87,29 @@ Profile and the relevant transactions between them.&#xA;
     <xsl:template match="ig:transaction" mode="transaction">
         <xsl:param name='document' required="yes"/>
         <xsl:result-document href="{$dir}pagecontent/transaction-{@id}.md" method="text">
+            <xsl:call-template name="result-header-comment">
+                <xsl:with-param name="source" select='/*/@id'/>
+                <xsl:with-param name="by">actorsandtransactions.xslt</xsl:with-param>
+                <xsl:with-param name="format">md</xsl:with-param>
+            </xsl:call-template>
             <xsl:call-template name="transaction2">
                 <xsl:with-param name="document" select="concat('transaction-',@id,'.md')"></xsl:with-param>
             </xsl:call-template>
         </xsl:result-document>
         <xsl:result-document href="{$dir}images-source/transaction-{@id}-uc.plantuml" method="text">
+            <xsl:call-template name="result-header-comment">
+                <xsl:with-param name="source" select='//profile/@id'/>
+                <xsl:with-param name="by">actorsandtransactions.xslt</xsl:with-param>
+                <xsl:with-param name="format">plantuml</xsl:with-param>
+            </xsl:call-template>
             <xsl:call-template name="transaction-uc"/>
         </xsl:result-document>
         <xsl:result-document href="{$dir}images-source/transaction-{@id}-seq.plantuml" method="text">
+            <xsl:call-template name="result-header-comment">
+                <xsl:with-param name="source" select='//profile/@id'/>
+                <xsl:with-param name="by">actorsandtransactions.xslt</xsl:with-param>
+                <xsl:with-param name="format">plantuml</xsl:with-param>
+            </xsl:call-template>
             <xsl:call-template name="transaction-seq"/>
         </xsl:result-document>
         <xsl:call-template name="transaction-capability">
@@ -380,6 +408,11 @@ See the following CapabilityStatement resources for conformance requirements:
 
     <xsl:template name="actor-transaction-diagram">
         <xsl:result-document href="{$dir}images-source/ActorsAndTransactions.plantuml" method="text">
+            <xsl:call-template name="result-header-comment">
+                <xsl:with-param name="source" select='//profile/@id'/>
+                <xsl:with-param name="by">actorsandtransactions.xslt</xsl:with-param>
+                <xsl:with-param name="format">plantuml</xsl:with-param>
+            </xsl:call-template>
             <xsl:text>@startuml
 skinparam FolderBorderColor white
 skinparam FolderFontColor white
@@ -713,6 +746,11 @@ between options when applicable are specified in notes.
 
     <xsl:template name="generate-gherkin">
         <xsl:result-document href="{$dir}feature/actor-{@id}.feature" method="text">
+            <xsl:call-template name="result-header-comment">
+                <xsl:with-param name="source" select='//profile/@id'/>
+                <xsl:with-param name="by">actorsandtransactions.xslt</xsl:with-param>
+                <xsl:with-param name="format">gherkin</xsl:with-param>
+            </xsl:call-template>
             <xsl:text>&#xA;# </xsl:text>
             <xsl:value-of select="/ig:profile/@id"/>
             <xsl:text> </xsl:text>
@@ -1012,6 +1050,11 @@ between options when applicable are specified in notes.
             <xsl:if test='$tx//ig:message[$actor/@id=(@from, @to)]//ig:operation/@resources'>
                 <xsl:message><xsl:value-of select="$dir"/>fsh/CapabilityStatement-<xsl:value-of select="$name"/>.fsh</xsl:message>
 	            <xsl:result-document href="{$dir}fsh/CapabilityStatement-{$name}.fsh" method="text">
+	                <xsl:call-template name="result-header-comment">
+	                    <xsl:with-param name="source" select='//profile/@id'/>
+	                    <xsl:with-param name="by">actorsandtransactions.xslt</xsl:with-param>
+	                    <xsl:with-param name="format">fsh</xsl:with-param>
+	                </xsl:call-template>
 	                <xsl:value-of select="s:instance($name, 'CapabilityStatementWithSlices',$desc, 'CREDSDefinitionContent', null)"/>
 	                <xsl:value-of select="s:string('name',translate($name,'-','_'))"/>
 	                <xsl:value-of select="s:string('title', substring-after($desc, 'for the '))"/>
@@ -1178,6 +1221,11 @@ between options when applicable are specified in notes.
         <xsl:for-each select="$operations[starts-with(@name,'$') and $mode='server']">
             <xsl:variable name='op' select="."/>
             <xsl:result-document href="{$dir}fsh/OperationDefinition-{s:opName($op)}.fsh" method="text">
+                <xsl:call-template name="result-header-comment">
+                    <xsl:with-param name="source" select='//profile/@id'/>
+                    <xsl:with-param name="by">actorsandtransactions.xslt</xsl:with-param>
+                    <xsl:with-param name="format">fsh</xsl:with-param>
+                </xsl:call-template>
                 <xsl:value-of select="s:instance(s:opName($op), 'OperationDefinition', $op/ig:description, 'CREDSDefinitionContent', '')"/>
                 <xsl:text>&#xA;</xsl:text>
                 <xsl:value-of select="s:code('status','draft','')"/>

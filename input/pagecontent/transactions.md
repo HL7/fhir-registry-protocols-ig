@@ -1,3 +1,9 @@
+/*
+    This content is automatically generated from CREDS.xml by actorsandtransactions.xslt
+*/
+<!--
+    This content is automatically generated from CREDS.xml by actorsandtransactions.xslt
+-->
 The transactions in this profile are summarized in the sections below.
 
 ### Search / Retrieve Registry Definition
@@ -41,3 +47,12 @@ For more details see the detailed [transaction description](transaction-CURS.htm
 
 
 For more details see the detailed [transaction description](transaction-VRS.html)
+
+### Request for Missing Data
+
+This transaction is supports requests missing data or clarifications of existing data.
+
+
+
+
+For more details see the detailed [transaction description](transaction-RMCD.html)

@@ -6,7 +6,7 @@
 agent "Registry Submitter" as RS
 
 agent "Registry Submission Consumer" as RSC
-usecase (Validate Registry Submission) as (VRS)
-RS --> (VRS)
-RSC --> (VRS)
+usecase (Request for Missing Data) as (RMCD)
+RS --> (RMCD)
+RSC --> (RMCD)
 @enduml

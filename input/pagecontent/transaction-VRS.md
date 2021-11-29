@@ -1,3 +1,6 @@
+<!--
+    This content is automatically generated from CREDS.xml by actorsandtransactions.xslt
+-->
 This section describes the VRS of this guide. This transaction is used by the Registry Submitter and Registry Submission Consumer actors.
 
 ### Scope
@@ -7,10 +10,11 @@ This section describes the VRS of this guide. This transaction is used by the Re
 
 
 ### Actors Roles
+
+<figure>
 {% include transaction-VRS-uc.svg%}
-
-**Figure 2.5-1: Validate Registry Submission Use Case Diagram**
-
+<figcaption>Figure 2.5-1: Validate Registry Submission Use Case Diagram </figcaption>
+</figure>
 <table border='1' borderspacing='0'>
 <caption><b>Table 2.5-1: Actor Roles</b></caption>
 <thead><tr><th>Actor</th><th>Role</th></tr></thead>
@@ -40,10 +44,11 @@ This section describes the VRS of this guide. This transaction is used by the Re
 </table>
 
 ### Interactions
-        {% include transaction-VRS-seq.svg%}
-
-**Figure 2.5-2: Validate Registry Submission Interactions**
-
+        
+<figure>
+{% include transaction-VRS-seq.svg%}
+<figcaption>Figure 2.5-2: Validate Registry Submission Interactions </figcaption>
+</figure>
 
 #### 
 

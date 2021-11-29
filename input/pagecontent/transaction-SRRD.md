@@ -1,3 +1,6 @@
+<!--
+    This content is automatically generated from CREDS.xml by actorsandtransactions.xslt
+-->
 This section describes the SRRD of this guide. This transaction is used by the Registry Submission Definition Creator, Registry Submission Definition Repository and Registry Submitter actors.
 
 ### Scope
@@ -8,10 +11,11 @@ Search for and Retrieve Registry Submission Definitions
 
 
 ### Actors Roles
+
+<figure>
 {% include transaction-SRRD-uc.svg%}
-
-**Figure 2.1-1: Search / Retrieve Registry Definition Use Case Diagram**
-
+<figcaption>Figure 2.1-1: Search / Retrieve Registry Definition Use Case Diagram </figcaption>
+</figure>
 <table border='1' borderspacing='0'>
 <caption><b>Table 2.1-1: Actor Roles</b></caption>
 <thead><tr><th>Actor</th><th>Role</th></tr></thead>
@@ -45,10 +49,11 @@ Search for and Retrieve Registry Submission Definitions
 </table>
 
 ### Interactions
-        {% include transaction-SRRD-seq.svg%}
-
-**Figure 2.1-2: Search / Retrieve Registry Definition Interactions**
-
+        
+<figure>
+{% include transaction-SRRD-seq.svg%}
+<figcaption>Figure 2.1-2: Search / Retrieve Registry Definition Interactions </figcaption>
+</figure>
 
 #### Search Request
 

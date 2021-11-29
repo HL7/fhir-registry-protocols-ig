@@ -113,11 +113,10 @@
             <xsl:value-of select="$number"/><xsl:text>: </xsl:text>
             <xsl:value-of select="$name"/>
         </xsl:variable>
-		<div>
-		  <xsl:text>{% include </xsl:text><xsl:value-of select='$file'/>
-		  <xsl:text>%}&#xA;</xsl:text>
-		</div>
-		<xsl:text>**</xsl:text><xsl:value-of select="$title"/><xsl:text>**&#xA;&#xA;</xsl:text>
+        <xsl:text>&#xa;&lt;figure>&#xa;</xsl:text>
+        <xsl:text>{% include </xsl:text><xsl:value-of select='$file'/><xsl:text>%}&#xa;</xsl:text>
+        <xsl:text>&lt;figcaption>Figure </xsl:text><xsl:value-of select='$number'/><xsl:text>: </xsl:text><xsl:value-of select='$name'/><xsl:text> &lt;/figcaption>&#xa;</xsl:text>
+        <xsl:text>&lt;/figure>&#xa;</xsl:text>
     </xsl:template>
 
     <xsl:template match='*' mode='copy-as-text'>
@@ -142,4 +141,25 @@
         <xsl:value-of select='.'/>
         <xsl:text>' </xsl:text>
     </xsl:template>
+    <xsl:template name="result-header-comment">
+        <xsl:param name="source"/>
+        <xsl:param name="by">actorsandtransactions.xslt</xsl:param>
+        <xsl:param name="format">xml</xsl:param>
+        <xsl:choose>
+            <xsl:when test="$format = 'xml'"><xsl:text disable-output-escaping="yes">&lt;</xsl:text>!--&#xa;</xsl:when>
+            <xsl:when test="$format = 'md'"><xsl:text disable-output-escaping="yes">&lt;</xsl:text>!--&#xa;</xsl:when>
+            <xsl:when test="$format = 'fsh'"><xsl:text>/*&#xa;</xsl:text></xsl:when>
+            <xsl:when test="$format = 'plantuml'"><xsl:text>/'&#xa;</xsl:text></xsl:when>
+            <xsl:when test="$format = 'gherkin'"># </xsl:when>
+        </xsl:choose>
+        <xsl:text>    This content is automatically generated from </xsl:text><xsl:value-of select='/*/@id'/><xsl:text>.xml by </xsl:text><xsl:value-of select='$by'/><xsl:text>&#xa;</xsl:text> 
+        <xsl:choose>
+            <xsl:when test="$format = 'xml'">--<xsl:text disable-output-escaping="yes">&gt;&#xa;</xsl:text></xsl:when>
+            <xsl:when test="$format = 'fsh'"><xsl:text>*/&#xa;</xsl:text></xsl:when>
+            <xsl:when test="$format = 'md'">--<xsl:text disable-output-escaping="yes">&gt;&#xa;</xsl:text></xsl:when>
+            <xsl:when test="$format = 'plantuml'"><xsl:text>'/&#xa;</xsl:text></xsl:when>
+            <xsl:when test="$format = 'gherkin'"></xsl:when>
+        </xsl:choose>
+    </xsl:template>
+    
 </xsl:stylesheet>

@@ -15,7 +15,7 @@
 		submission using existing FHIR resource profiles.
 	</description>
 	<!-- overview is optional -->
-	<overview />
+	<overview file='CREDS-overview.md'/>
 	<!-- option is optional and repeatable -->
 	<!-- standard is repeatable -->
 	<standard id="FHIR-R4">

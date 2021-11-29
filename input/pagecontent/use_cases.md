@@ -1,3 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+    This content is automatically generated from CREDS.xml by overview.xslt
+-->
+
+    
 The following use cases were used to identify the requirements addressed by this guide:
 
 * [Define Submission](#define-submission)
@@ -38,11 +43,12 @@ This use case is supported by the following
 #### Define Submission Process Flow 
 
 
-<div>{% include usecase-DefineSubmission-processflow.svg%}
 
-**Figure 2.3.1.1-1: Define Submission Process Flow**
+&lt;figure&gt;
+{% include usecase-DefineSubmission-processflow.svg%}
+&lt;figcaption&gt;Figure 2.3.1.1-1: Define Submission Process Flow &lt;/figcaption&gt;
+&lt;/figure&gt;
 
-</div>
 1. <html:span xmlns:html="http://www.w3.org/1999/xhtml" id="DefineSubmission-1">Create submission definition artifacts.</html:span>
 
    The Registry Authority creates the definition and submits it to a repository for distribution to registry
@@ -90,11 +96,12 @@ This use case is supported by the following
 #### Search and Read Submission Definition Process Flow 
 
 
-<div>{% include usecase-ReadSubmission-processflow.svg%}
 
-**Figure 2.3.1.2-1: Search and Read Submission Definition Process Flow**
+&lt;figure&gt;
+{% include usecase-ReadSubmission-processflow.svg%}
+&lt;figcaption&gt;Figure 2.3.1.2-1: Search and Read Submission Definition Process Flow &lt;/figcaption&gt;
+&lt;/figure&gt;
 
-</div>
 1. <html:span xmlns:html="http://www.w3.org/1999/xhtml" id="ReadSubmission-1">Read submission definition artifacts.</html:span>
 
    The Registry Submitter searches for registry submission definitions and transforms contained in a repository
@@ -131,11 +138,12 @@ This use case is supported by the following
   - [Retrieve Registry Submission Data](transaction-1.html)
 
 #### Get or Refresh Patient Data Process Flow 
-<div>{% include usecase-GetOrRefreshPatientData-processflow.svg%}
 
-**Figure 2.3.1.3-1: Get or Refresh Patient Data Process Flow**
+&lt;figure&gt;
+{% include usecase-GetOrRefreshPatientData-processflow.svg%}
+&lt;figcaption&gt;Figure 2.3.1.3-1: Get or Refresh Patient Data Process Flow &lt;/figcaption&gt;
+&lt;/figure&gt;
 
-</div>
 1. <html:span xmlns:html="http://www.w3.org/1999/xhtml" id="GetOrRefreshPatientData-1">Identify data sources to query for new, missing or stale data</html:span>
 
    
@@ -177,11 +185,12 @@ The registry submitter identifies patients for who a submission is necessary fro
 [Need to determine how triggers for this are determined](#tbd)
 
 
-<div>{% include usecase-GetPatientList-processflow.svg%}
 
-**Figure 2.3.1.4-1: Get PatientList Process Flow**
+&lt;figure&gt;
+{% include usecase-GetPatientList-processflow.svg%}
+&lt;figcaption&gt;Figure 2.3.1.4-1: Get PatientList Process Flow &lt;/figcaption&gt;
+&lt;/figure&gt;
 
-</div>
 ### Get Work Queue
 
 A registry submitter reads reads the work queue for submissions to be created.
@@ -197,11 +206,12 @@ This use case is supported by the following
 
 [This is likely needed by the Registry Submitter, but may be internal and not part of this profile](#tbd)
 
-<div>{% include usecase-GetWorkQueue-processflow.svg%}
 
-**Figure 2.3.1.5-1: Get Work Queue Process Flow**
+&lt;figure&gt;
+{% include usecase-GetWorkQueue-processflow.svg%}
+&lt;figcaption&gt;Figure 2.3.1.5-1: Get Work Queue Process Flow &lt;/figcaption&gt;
+&lt;/figure&gt;
 
-</div>
 ### Get missing, or request clarification on existing patient data
 
 A registry submitter requests missing information or clarification of existing information.
@@ -220,8 +230,8 @@ This use case is supported by the following
 [This is likely an optional transaction using CommunicationRequest and Communication to a Data Source that does not
 exist yet](#tbd)
 
-<div>{% include usecase-RequestMissingOrClarifyExistingData-processflow.svg%}
 
-**Figure 2.3.1.6-1: Get missing, or request clarification on existing patient data Process Flow**
-
-</div>
+&lt;figure&gt;
+{% include usecase-RequestMissingOrClarifyExistingData-processflow.svg%}
+&lt;figcaption&gt;Figure 2.3.1.6-1: Get missing, or request clarification on existing patient data Process Flow &lt;/figcaption&gt;
+&lt;/figure&gt;

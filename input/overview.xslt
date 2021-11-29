@@ -23,10 +23,22 @@
     <xsl:template name="overview" match="/" mode="overview">
         <xsl:param name="dest" select="'pagecontent/overview.md'"/>
         <xsl:result-document href="{$dir}pagecontent/overview.md" method="text">
+            <xsl:call-template name="result-header-comment">
+                <xsl:with-param name="source" select='/*/@id'/>
+                <xsl:with-param name="by">overview.xslt</xsl:with-param>
+                <xsl:with-param name="format">md</xsl:with-param>
+            </xsl:call-template>
+            
 <xsl:apply-templates select="/ig:profile/ig:description|/ig:profile/ig:overview"/>
 
 <xsl:if test="/ig:profile/ig:usecase">
 <xsl:result-document href="{$dir}pagecontent/use_cases.md">
+    <xsl:call-template name="result-header-comment">
+        <xsl:with-param name="source" select='/*/@id'/>
+        <xsl:with-param name="by">overview.xslt</xsl:with-param>
+        <xsl:with-param name="format">md</xsl:with-param>
+    </xsl:call-template>
+    
 The following use cases were used to identify the requirements addressed by this guide:
 
 <xsl:for-each select="/ig:profile/ig:usecase">
@@ -93,6 +105,12 @@ These are described in more detail in the sections that follow.
     <xsl:template match="ig:usecase" mode="process-flow-diagram">
         <xsl:variable name='uc' select='.'/>
         <xsl:result-document href="{$dir}images-source/usecase-{@id}-processflow.plantuml" method="text">
+            <xsl:call-template name="result-header-comment">
+                <xsl:with-param name="source" select='/*/@id'/>
+                <xsl:with-param name="by">overview.xslt</xsl:with-param>
+                <xsl:with-param name="format">plantuml</xsl:with-param>
+            </xsl:call-template>
+            
             <xsl:variable name="actors" select="/ig:profile/ig:actor"/>
             <xsl:text>@startuml&#xA;</xsl:text>
             <xsl:text>hide footbox&#xA;</xsl:text>

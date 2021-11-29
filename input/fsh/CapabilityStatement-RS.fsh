@@ -1,3 +1,6 @@
+/*
+    This content is automatically generated from CREDS.xml by actorsandtransactions.xslt
+*/
 
 Instance: RS
 InstanceOf: CapabilityStatementWithSlices
@@ -7,7 +10,7 @@ Defines the requirements for the Registry Submitter."""
 * insert CREDSDefinitionContent
 * name = "RS"
 * title = "Registry Submitter."
-* date = "2021-07-27"
+* date = "2021-11-29"
 * kind = #requirements
 * description = "Defines the requirements for the Registry Submitter."
 * format[0] = #xml

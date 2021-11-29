@@ -1,3 +1,6 @@
+/*
+    This content is automatically generated from CREDS.xml by actorsandtransactions.xslt
+*/
 
 Instance: RS-SRRD
 InstanceOf: CapabilityStatementWithSlices
@@ -7,7 +10,7 @@ Defines the requirements for the Registry Submitter implementing the Search / Re
 * insert CREDSDefinitionContent
 * name = "RS_SRRD"
 * title = "Registry Submitter implementing the Search / Retrieve Registry Definition transaction."
-* date = "2021-07-27"
+* date = "2021-11-29"
 * kind = #requirements
 * description = "Defines the requirements for the Registry Submitter implementing the Search / Retrieve Registry Definition transaction."
 * format[0] = #xml

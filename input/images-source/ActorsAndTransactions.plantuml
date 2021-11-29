@@ -1,3 +1,6 @@
+/'
+    This content is automatically generated from CREDS.xml by actorsandtransactions.xslt
+'/
 @startuml
 skinparam FolderBorderColor white
 skinparam FolderFontColor white
@@ -11,6 +14,6 @@ agent "Registry Submission Consumer" as RSC
 RSDC -- RSDR : "Search / Retrieve Registry Definition [SRRD] ↓\nCreate / Update Registry Definition [CURD] ↓"
 RSDR -- RS : "Search / Retrieve Registry Definition [SRRD] ↑"
 RS -- RSDS : "Retrieve Registry Submission Data [RRSD] ↓"
-RS -- RSC : "Create / Update Registry Submission [CURS] ↓\nValidate Registry Submission [VRS] ↓"
+RS -- RSC : "Create / Update Registry Submission [CURS] ↓\nValidate Registry Submission [VRS] ↓\nRequest for Missing Data [RMCD] ↓"
 }
 @enduml

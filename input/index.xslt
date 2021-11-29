@@ -23,6 +23,11 @@
         <xsl:param name="dest" select="pagecontent/index.md"/>
         <xsl:result-document href="pagecontent/index.md" method="text">
 <xsl:apply-templates select="/ig:profile/ig:description"/>
+    <xsl:call-template name="result-header-comment">
+        <xsl:with-param name="source" select='/*/@id'/>
+        <xsl:with-param name="by">index.xslt</xsl:with-param>
+        <xsl:with-param name="format">md</xsl:with-param>
+    </xsl:call-template>
 
 ### About This Guide
 

@@ -1,3 +1,6 @@
+<!--
+    This content is automatically generated from CREDS.xml by actorsandtransactions.xslt
+-->
 This section describes the CURD of this guide. This transaction is used by the Registry Submission Definition Creator and Registry Submission Definition Repository actors.
 
 ### Scope
@@ -7,10 +10,11 @@ This section describes the CURD of this guide. This transaction is used by the R
 
 
 ### Actors Roles
+
+<figure>
 {% include transaction-CURD-uc.svg%}
-
-**Figure 2.2-1: Create / Update Registry Definition Use Case Diagram**
-
+<figcaption>Figure 2.2-1: Create / Update Registry Definition Use Case Diagram </figcaption>
+</figure>
 <table border='1' borderspacing='0'>
 <caption><b>Table 2.2-1: Actor Roles</b></caption>
 <thead><tr><th>Actor</th><th>Role</th></tr></thead>
@@ -40,10 +44,11 @@ This section describes the CURD of this guide. This transaction is used by the R
 </table>
 
 ### Interactions
-        {% include transaction-CURD-seq.svg%}
-
-**Figure 2.2-2: Create / Update Registry Definition Interactions**
-
+        
+<figure>
+{% include transaction-CURD-seq.svg%}
+<figcaption>Figure 2.2-2: Create / Update Registry Definition Interactions </figcaption>
+</figure>
 
 #### Create or Update Registry Submission Definition
 
@@ -235,7 +240,7 @@ The Registry Submission Definition Repository <b>shall</b> support the FHIR upda
 
 ##### Expected Actions
 
-###### Send StructureDefinition Resource
+###### Create StructureDefinition Resource
 
 
 The

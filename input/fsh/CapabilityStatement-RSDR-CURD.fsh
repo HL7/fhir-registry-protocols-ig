@@ -1,3 +1,6 @@
+/*
+    This content is automatically generated from CREDS.xml by actorsandtransactions.xslt
+*/
 
 Instance: RSDR-CURD
 InstanceOf: CapabilityStatementWithSlices
@@ -7,7 +10,7 @@ Defines the requirements for the Registry Submission Definition Repository imple
 * insert CREDSDefinitionContent
 * name = "RSDR_CURD"
 * title = "Registry Submission Definition Repository implementing the Create / Update Registry Definition transaction."
-* date = "2021-07-27"
+* date = "2021-11-29"
 * kind = #requirements
 * description = "Defines the requirements for the Registry Submission Definition Repository implementing the Create / Update Registry Definition transaction."
 * format[0] = #xml
