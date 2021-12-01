@@ -8,7 +8,7 @@ Push the completed CathPCI submission Bundle
 POST https://www.acc.org/fhir/Bundle?_format=application/fhir+xml HTTP/1.1
 Host:acc.org
 <Bundle xmlns="http://hl7.org/fhir">
-<!--metadata here -->
+<!--metadata here, type MUST be collection -->
 <!--First entry is MessageHeader with Submitter Information -->
 <!--Second entry is Patient Resource -->
 <!--Other entries with clinical data -->

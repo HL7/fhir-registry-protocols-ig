@@ -1,21 +1,3 @@
-/*Logical: CathPCI
-Id: cathPCI
-Title: "Cath-PCI Submission Mappings Base Template"
-Description: """This is the base structure of the Cath-PCI data for submission to the Registry
-This StructureDefinition sets the basic structure of the logical model.  The Backbone Elements are the CathPCI data sections.
-The only things in the base model are the elements, cardinality, short names and full descriptions.
-A section (such as Demographics) is a BackboneElement (holds no values).  All subordinate elements are CREDSElementDefinitions.
-"""
-* ^baseDefinition = "http://hl7.org/fhir/us/fhir-registry-protocols-ig/StructureDefinition/CREDSStructureDefinition"
-
-* demographics 1..1 BackboneElement "Patient Demographics"
-* demographics.lastName 1..1 CREDSElementDefinition "Last Name" "Indicate the patient's last name. Hyphenated names should be recorded with a hyphen."
-* demographics.firstName 1..1 CREDSElementDefinition "First Name" "Indicate the patient's first name."
-* demographics.middleName 0..* CREDSElementDefinition "Middle Name" "Indicate the patient's middle names."
-* episodeInformation 1..1 BackboneElement "CathPCI Episode Information"
-* episodeInformation.episodeUniqueKey 1..1 CREDSElementDefinition "Episode Unique Key" "Indicate the unique key associated with each patient episode record as assigned by the EMR/EHR or your software application."
-*/
-
 Logical: CathPCI_Submission_Map
 Id: cathPCISubmissionMap
 //Parent: CathPCI 
@@ -91,7 +73,7 @@ Each mapping includes the following:
 * demographics.middleName 0..* CREDSElementDefinition "Middle Name" "Indicate the patient's middle names."
 * demographics.middleName ^mapping[0].identity = "FHIR"
 * demographics.middleName ^mapping[0].language = #application/fhir
-* demographics.middleName ^mapping[0].map = "Patient.name.given[1]"
+* demographics.middleName ^mapping[0].map = "Patient.name.given[position()>0]"
 * demographics.middleName ^mapping[1].identity = "CDA"
 * demographics.middleName ^mapping[1].language = #application/hl7-sda+xml
 * demographics.middleName ^mapping[1].map = "ClinicalDocument.recordTarget.patient.name.given[position()>1]"  
