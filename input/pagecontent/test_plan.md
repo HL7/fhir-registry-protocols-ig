@@ -89,8 +89,76 @@ The following integration test scenarios included in this test plan:
 1. Using a manual or tooled process, the data dictionary mappings are transferred to a CREDSStructureDefinition profile creating the Logical Model of all data points needed for registry ingestion
 2. The Logical Model is validated to have all elements including source standard mappings (where possible) and Output resource or profile element mappings inlcuding full path to any referenced FHIR Profiles
 
-##### Success Criteria
 * A fully complete Logical Model is created with both input and output mappings
 * The Logical Model validates as a FHIR CREDSStructureDefinition profile
 * The FHIR endpoint responds successfully to a search query
 * The FHIR endpoint responds successfully to a retrieve request  
+
+#### Retrieval of the StructureDefinition
+
+##### Preconditions
+* The Registry has implemented the Registry Submission Definition Creator or Registry Submission Definition Repository actor
+* The Logical Model/StructureDefinition is available for search and retrieval
+* The Registry Submission Definition Repository or Registry Submitter have knowedge of the model to be retrieved (identifier, name, etc.)
+
+##### Test Steps
+1. Using a FHIR query, the actor queries for available logical models, e.g., :
+```GET https://www.acc.org/fhir/StructureDefinition?kind=logical&_profile=CREDSStructureDefinition```
+2. Using a manual or automated process, the actor requests the appropriate logical model from those listed in the search results Bundle e.g.,:
+```GET https://www.acc.org/fhir/StructureDefinition/CathPCI?_format=application/fhir+xml```
+   * Note: the _format can be either fhir+xml, fhir+json or unspecified depending on preference of the actor
+
+
+##### Success Criteria
+* The actor has the list of available logical models in a searchset Bundle as a response to Test Step 1. 
+* The actor has a validated StructureDefinition of the Logical model of the Registry data dictionary
+
+#### Parsing of the Logical Model mappings
+
+##### Preconditions
+* The Registry Submitter has a valid CREDS StructureDefinition of the Logical model of the Registry data dictionary
+
+##### Test Steps
+1. The Submitter validates that all the logical model mappings have FHIRPath map elements for each Logical model data dictionary elements for the expected Source Standard where such mappings exist
+1. Each FHIRPath validates as a correct statement for each of the desired Source Standard documents
+1. The Submitter validates that all Logical model data dictionary elements have an Output mapping with the required information and FHIRPath map elements
+1. The Submitter validates that all the FHIRPath statements are able to be converted to a FHIR query
+
+##### Success Criteria
+* All data dictionary elements validate with complete and valid information in each of the mappings
+* All data dictionary elements have correct and valid Output mappings
+* All FHIRPath mappings are convertable to a FHIR query
+
+#### Data retrieval
+
+##### Preconditions
+* The Registry Submitter has a valid Logical Model and is able to correctly parse it
+* A method to input the manually created data (i.e., data not mapped to a standard) has been created or emulated
+
+##### Test Steps
+1. Determine the Registry Submission Data Source for each element, including those that will require manual input
+2. Identify the data dictionary mappings for each Source Standard and their relationship to FHIR, CDA and/or V2 sources available
+2. Have unmapped data entered as appropriate
+3. De-duplicate the mapping sources so that no FHIR resource/CDA document/V2 message is queried more than once
+3. Construct FHIR queries necessary to retrieve the relevant FHIR resources/CDA documents/V2 messages
+4. Execute the queries from the previous step
+
+##### Success Criteria
+* All relevant FHIR resources/CDA documents/V2 messages have been retrieved
+
+
+#### Submission Bundle creation
+
+##### Preconditions
+* The Registry Submitter has successfully retrieved all necessary data
+* All Output mappings are valid and needed Profiles are supported (e.g., US Core, other FHIR IG Profiles)
+
+##### Test Steps
+* Transfer data from the retreived resources/documents/messages according to the Source Standards mapping and Output mapping requirements.
+* Create a MessageHeader resource with all relevant submitter information
+* Ensure the Patient resource exists and is based on the US Core Patient Profile
+* Assemble a Bundle that conforms to the CREDSSubmission Bundle profile
+* Validate the Bundle and all entries
+
+##### Success Criteria
+* A fully validated CREDSSubmission Bundle exists
