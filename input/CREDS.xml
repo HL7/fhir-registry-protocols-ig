@@ -372,9 +372,7 @@ the server requesting information on available resources.
 					<ref actor='SubmissionDefinitionSource' />
 					.
 				</description>
-				<overview>The MeasureReport sends a MeasureReport to the MeasureConsumer using the FHIR
-					[create](https://www.hl7.org/fhir/http.html#create) or [update](https://www.hl7.org/fhir/http.html#update) interactions.
-					A MeasureSource supporting the CSV option sends the CSV file to the MeasureConsumer using the $report-csv operation.
+				<overview>The Submission Definition Creator creates the ...
 				</overview>
 				<interaction protocol='fhir'>
 					<group ref='formats' />
@@ -422,13 +420,14 @@ the server requesting information on available resources.
 		<overview></overview>
 		<message from="RS" to="RSC" />
 	</transaction>
+<!-- This would be MEDMORPH or similar, not us	
 	<transaction id="RMCD" standards="FHIR-R4 RFC-7230">
 		<name>Request for Missing Data</name>
 		<description>This transaction is supports requests missing data or clarifications of existing data.</description>
 		<overview></overview>
 		<message from="RS" to="RSC" />
 	</transaction>
-
+-->
 	<content id="RegistryLogicalModel">
 		<name></name>
 		<description></description>

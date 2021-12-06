@@ -14,7 +14,6 @@ submission using existing FHIR resource profiles.
 
 ### About This Guide
 
-
 ### Organization of This Guide
 This guide is organized into four main sections:
 

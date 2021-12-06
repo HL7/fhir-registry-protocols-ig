@@ -31,18 +31,18 @@
 
 ### About This Guide
 
-
 ### Organization of This Guide
 This guide is organized into four main sections:
 
-1. Volume I: [Overview](overview.html) - Provides an overview of the challenges this effort is trying to address.
+1. [Overview](overview.html) - Provides an overview of the challenges this effort is trying to address.
    1. [Technology Environment](technology_environment.html) - Describes the technology environment for uninitiated.
-   2. [Architecture](architecture.html) - Illustrates the Microservice Architecture
+   2. [Architecture](Architecture_and_Implementation.html) - Illustrates the conversion steps and transactions
    3. [Security Considerations](security_considerations.html) - Documents security concerns and mitigations
    4. [Use Cases](use_cases.html) - Illustrates key use cases
    5. [Actors](actors.html) - Provides an overview of technical components
 <xsl:if test="/ig:profile/ig:transaction">
-2. Volume II: [Transactions](transactions.html)
+2. [Profiles and Transactions](transactions.html)
+   1. [Profiles](profiles_and_extensions.html)
 <xsl:for-each select="/ig:profile/ig:transaction">
     <xsl:text>   </xsl:text><xsl:value-of select='position()'/><xsl:text>. [</xsl:text>
     <xsl:value-of select="ig:name"/>
@@ -51,24 +51,9 @@ This guide is organized into four main sections:
     <xsl:text>.html)&#xA;</xsl:text>
 </xsl:for-each>
 </xsl:if>
-<xsl:if test="/ig:profile/ig:transaction">
-3. Volume III: Content Profiles
-<xsl:for-each select="/ig:profile/ig:content">
-    <xsl:text>   </xsl:text><xsl:value-of select="position()"/>. [<xsl:value-of select="ig:name"/>](StructureDefinition-<xsl:value-of select="lower-case(/ig:profile/@id)"/>-<xsl:value-of select="@id"/>.html)
-</xsl:for-each>
-4. Volume IV: Terminology
-<xsl:for-each select="tokenize(/ig:profile/@codingsystems, ' ')">
-    <xsl:text>   </xsl:text><xsl:value-of select="position()"/>. [<xsl:value-of select="."/> Coding System](CodeSystem-<xsl:value-of select="."/>.html)
-</xsl:for-each>
-<xsl:variable name='count' select="count(tokenize(/ig:profile/@valuesets, ' '))"/>
-<xsl:for-each select="tokenize(/ig:profile/@valuesets, ' ')">
-    <xsl:text>   </xsl:text><xsl:value-of select="position()+$count"/>. [<xsl:value-of select="."/> Value Set](ValueSet-<xsl:value-of select="."/>.html)
-</xsl:for-each>
 
-&#xA;
-</xsl:if>
-Click on any of the links above, head on over the [table of contents](toc.html), or
-if you are looking for a specific artifact, check out the [index](artifacts.html).
+Click on any of the links above or refer to the [table of contents](toc.html), or
+if you are looking for a specific artifact, refer to the [index](artifacts.html).
 
 You can also download:
 
