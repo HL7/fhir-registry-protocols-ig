@@ -420,14 +420,12 @@ the server requesting information on available resources.
 		<overview></overview>
 		<message from="RS" to="RSC" />
 	</transaction>
-<!-- This would be MEDMORPH or similar, not us	
 	<transaction id="RMCD" standards="FHIR-R4 RFC-7230">
 		<name>Request for Missing Data</name>
 		<description>This transaction is supports requests missing data or clarifications of existing data.</description>
 		<overview></overview>
 		<message from="RS" to="RSC" />
 	</transaction>
--->
 	<content id="RegistryLogicalModel">
 		<name></name>
 		<description></description>
