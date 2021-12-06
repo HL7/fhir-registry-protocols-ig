@@ -21,7 +21,9 @@ And a healthcare provider organization to:
 
 ### Journey Map of Registry Process
 The Journey from a patient discharge to data being merged into the Registry is complex.  There are several important steps and related challenges presented to create the final report and ingest it.
-
+<div>
+{%include journeymap.svg %}
+</div>
 #### Actors
 __Registry Documenter__
 Profile: 
@@ -50,7 +52,7 @@ Profile:
 ^
 * I validate data received from reporting health centers in order to perform data analysis
 
-{%include journeymap.svg %}
+
 
 ### Challenges
 #### Data Collection
