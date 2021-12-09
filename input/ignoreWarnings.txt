@@ -10,4 +10,3 @@ WARNING: StructureDefinition/CapabilityStatementWithSlices: StructureDefinition.
 # We're working with profiles so the Examples are listed as such
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/fhir-registry-protocols-ig/StructureDefinition/CREDSElementDefinition'): The Implementation Guide contains no examples for this data type profile
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/fhir-registry-protocols-ig/StructureDefinition/CREDSStructureDefinition'): The Implementation Guide contains no examples for this profile
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/fhir-registry-protocols-ig/StructureDefinition/CREDSSubmission'): The Implementation Guide contains no examples for this profile
