@@ -236,10 +236,10 @@ Each mapping includes the following:
 * episodeInformation.healthInsuranceClaimNumber ^mapping[=].map = "Observation"
 * episodeInformation.healthInsuranceClaimNumber ^mapping[=].comment = "Observation"
 
-* episodeInformation.healthInsurancePaymentSource 1..1 CREDSElementDefinition "Health Insurance Payment Source" "Indicate the patient's health insurance payment type.    Note(s):  If the patient has multiple insurance payors, select all payors.    If there is uncertainty regarding how to identify a specific health insurance plan, please discuss with your billing department to understand how it should be identified in the registry."
+* episodeInformation.healthInsurancePaymentSource 1..* CREDSElementDefinition "Health Insurance Payment Source" "Indicate the patient's health insurance payment type.    Note(s):  If the patient has multiple insurance payors, select all payors.    If there is uncertainty regarding how to identify a specific health insurance plan, please discuss with your billing department to understand how it should be identified in the registry."
 * episodeInformation.healthInsurancePaymentSource ^mapping[+].identity = "FHIR"
 * episodeInformation.healthInsurancePaymentSource ^mapping[=].language = #application/fhir
-* episodeInformation.healthInsurancePaymentSource ^mapping[=].map = "resolve(Claim.where(encounter=Encounter.id).insurance.coverage).something"
+* episodeInformation.healthInsurancePaymentSource ^mapping[=].map = "resolve(Claim.where(encounter=Encounter.id)).insurer.display.value"
 
 * episodeInformation.healthInsurancePaymentSource ^mapping[+].identity = "Output"
 * episodeInformation.healthInsurancePaymentSource ^mapping[=].language = #application/fhir
