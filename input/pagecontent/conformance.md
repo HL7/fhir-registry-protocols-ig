@@ -73,6 +73,6 @@ mapping.comment: the resource name (e.g., Observation) or the full path to the d
 ### Submission Bundle
 The [CREDS submission bundle](StructureDefinition-CREDSSubmission.html) is a FHIR Bundle of type "Collection".  
 * The first entry in the Bundle MUST be a MessageHeader indicating who is sumbitting this data
-* The second entry is the [US Core Patient](https://build.fhir.org/ig/HL7/US-Core/StructureDefinition-us-core-patient.html) resource for the subject of the submission.
+* The second entry MUST be the [US Core Patient](https://build.fhir.org/ig/HL7/US-Core/StructureDefinition-us-core-patient.html) resource for the subject of the submission.
 
 All other entries are dictated by the Registry data dictionary.
