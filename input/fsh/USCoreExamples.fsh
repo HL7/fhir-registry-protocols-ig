@@ -2,16 +2,14 @@ Alias: $v2-0203 = http://terminology.hl7.org/CodeSystem/v2-0203
 
 Instance: USCorePractitionerexample
 InstanceOf: http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner
+Title: "Practitioner 1 Example"
+Description: "This is a practitioner 1 example for the *US Core Practitioner Profile"
 Usage: #example
-* meta.extension[0].url = "http://hl7.org/fhir/StructureDefinition/instance-name"
-* meta.extension[=].valueString = "Practitioner 1 Example"
-* meta.extension[+].url = "http://hl7.org/fhir/StructureDefinition/instance-description"
-* meta.extension[=].valueMarkdown = "This is a practitioner 1 example for the *US Core Practitioner Profile*."
+
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"
-* identifier[0].system = "http://hl7.org.fhir/sid/us-npi"
-* identifier[=].value = "9941339108"
-* identifier[+].system = "http://www.acme.org/practitioners"
-* identifier[=].value = "25456"
+* identifier[NPI].value = "9941339108"
+* identifier[1].system = "http://www.acme.org/practitioners"
+* identifier[1].value = "25456"
 * name.family = "Bone"
 * name.given = "Ronald"
 * name.prefix = "Dr"
@@ -25,11 +23,10 @@ Alias: RaceAndEthnicityCDC = urn:oid:2.16.840.1.113883.6.238
 
 Instance: USCorePatientexample
 InstanceOf: http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient
+Title: "Patient Example"
+Description: "This is a patient example for the *US Core Patient Profile"
 Usage: #example
-* meta.extension[0].url = "http://hl7.org/fhir/StructureDefinition/instance-name"
-* meta.extension[=].valueString = "Patient Example"
-* meta.extension[+].url = "http://hl7.org/fhir/StructureDefinition/instance-description"
-* meta.extension[=].valueMarkdown = "This is a patient example for the *US Core Patient Profile*."
+
 * meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
 * extension[0].extension[0].url = "ombCategory"
 * extension[=].extension[=].valueCoding = RaceAndEthnicityCDC#2106-3 "White"
