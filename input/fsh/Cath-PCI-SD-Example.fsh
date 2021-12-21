@@ -1,5 +1,5 @@
 Logical: CathPCI_Submission_Map
-Id: cathPCISubmissionMap
+Id: ACC-NCDR-CathPCI
 //Parent: CathPCI 
 Title: "Cath-PCI Submission Map"
 Description: """This is an example of the data that would be used for a Cath-PCI Submission
@@ -13,7 +13,7 @@ Each mapping includes the following:
     comment = *Output mapping only* Resource/Profile for inclusion in the Submission Bundle
 """
 * ^baseDefinition = "http://hl7.org/fhir/us/fhir-registry-protocols-ig/StructureDefinition/CREDSStructureDefinition"
-
+* ^version = "5.0"
 * ^identifier.use = #official
 * ^date = "2021-11-01"
 * ^publisher = "American College of Cardiology"
