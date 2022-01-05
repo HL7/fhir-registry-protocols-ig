@@ -111,7 +111,7 @@ Usage:  #example
 * subject = Reference(USCorePatientexample)
 * reasonCode = http://snomed.info/sct#1917008 "Patient discharge, deceased, medicolegal case"
 
-Instance: CREDS-Encounter
+Instance: CREDSEncounter
 InstanceOf: http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter
 Title: "Example Encounter"
 Description: "Example Encounter for use within the Example Notification Bundle"

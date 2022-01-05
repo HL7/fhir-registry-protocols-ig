@@ -8,8 +8,8 @@ Description: "A simple example of the CREDS Submission Bundle"
 * entry[mHeader].resource = CREDSMHExample
 * entry[USPatient].fullUrl = "urn:uuid:1d7c242c-2056-48fd-b4d3-b19012e1d23a"
 * entry[USPatient].resource = USCorePatientexample
-* entry[+].fullUrl = "urn:uuid:ba651db0-7b10-4465-a5c4-411ced9e8254"
-* entry[=]=CREDS-Encounter
+* entry[2].fullUrl = "urn:uuid:ba651db0-7b10-4465-a5c4-411ced9e8254"
+* entry[2].resource = CREDSEncounter
 
 Instance: CREDSMHExample
 InstanceOf: MessageHeader
