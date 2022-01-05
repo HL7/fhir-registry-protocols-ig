@@ -1,6 +1,5 @@
 Logical: CathPCI_Submission_Map
-Id: ACC-NCDR-CathPCI
-//Parent: CathPCI 
+Id: ACCNCDRCathPCI
 Title: "Cath-PCI Submission Map"
 Description: """This is an example of the data that would be used for a Cath-PCI Submission
 The full map is a logical model as that allows conformance to the FHIR Standard the way a custom Resource would not.
@@ -20,6 +19,7 @@ Each mapping includes the following:
 * ^contact.name = "Jane Smith"
 * ^contact.telecom.system = #email
 * ^contact.telecom.value = "mailto:noreply@acc.org"
+* ^kind = #logical
 //Mappings so that things show up in the mappings page on the IG
 * ^mapping[+].identity = "FHIR"
 * ^mapping[=].uri = "http://fhir.hl7.org"
@@ -53,7 +53,7 @@ Each mapping includes the following:
 * demographics.lastName ^mapping[+].identity = "Output"
 * demographics.lastName ^mapping[=].language = #application/fhir // output is always FHIR 
 * demographics.lastName ^mapping[=].map = "Patient.name.family" // actual Xpath to data within profile in requirements
-* demographics.lastName ^mapping[=].comment = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient" // profile for Bundle inclusion
+* demographics.lastName ^mapping[=].comment = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient.name.family" // profile for Bundle inclusion
 
 * demographics.firstName 1..1 CREDSElementDefinition "First Name" "Indicate the patient's first name."
 * demographics.firstName ^mapping[+].identity = "FHIR"
@@ -68,7 +68,7 @@ Each mapping includes the following:
 * demographics.firstName ^mapping[+].identity = "Output"
 * demographics.firstName ^mapping[=].language = #application/fhir 
 * demographics.firstName ^mapping[=].map = "Patient.name.given" 
-* demographics.firstName ^mapping[=].comment = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
+* demographics.firstName ^mapping[=].comment = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient.name.given[0]"
 
 * demographics.middleName 0..* CREDSElementDefinition "Middle Name" "Indicate the patient's middle names."
 * demographics.middleName ^mapping[+].identity = "FHIR"
@@ -83,7 +83,7 @@ Each mapping includes the following:
 * demographics.middleName ^mapping[+].identity = "Output"
 * demographics.middleName ^mapping[=].language = #application/fhir // mimetype of standard 
 * demographics.middleName ^mapping[=].map = "Patient.name.given" // actual Xpath to data within profile in requirements
-* demographics.middleName ^mapping[=].comment = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
+* demographics.middleName ^mapping[=].comment = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient.name.given[position()>1]"
 
 * episodeInformation 1..1 BackboneElement "CathPCI Episode Information"
 
@@ -100,7 +100,7 @@ Each mapping includes the following:
 * episodeInformation.episodeUniqueKey ^mapping[+].identity = "Output"
 * episodeInformation.episodeUniqueKey ^mapping[=].language = #application/fhir
 * episodeInformation.episodeUniqueKey ^mapping[=].map = "Encounter.identifier"
-* episodeInformation.episodeUniqueKey ^mapping[=].comment = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter"
+* episodeInformation.episodeUniqueKey ^mapping[=].comment = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter.identifier[0].value)"
 
 
 * arrivalInformation 1..1 BackboneElement "Patient Arrival Information"
