@@ -53,3 +53,14 @@ Host:example.org
 <!--Other entries with clinical data -->
 </Bundle>
 ```
+
+Submission responses may return only an http success code or may return a OperationOutcome resource depending on the needs of the submitter and registry and/or the requirements of the FHIR IG used for submission.
+
+Submissions can be done on-demand by event-driving immediate submission or via a periodic submission.   Periodic (bulk) submissions can be managed by one of three ways:
+1. a Bundle of type ```transaction``` comprised of Submission Bundles.  The receiver will accept or reject this Bundle of Bundles in total if one or more of the Submission Bundles is or is not accepted.
+2. a Bundle of type ```batch``` comprised of Submission Bundles.  The receiver will only reject individual Submission Bundle entries within the Bundle of Bundles
+3. Asynchronous submission of NDJSON files of Submission Bundles.  This would use a modified version of the [Bulk Data](https://hl7.org/fhir/uv/bulkdata/) FHIR IG.  The trigger in this case would be an NDJSON submission file of Submission Bundles instead of a query.
+
+The first two options are suffient for low numbers of Submission Bundles. For larger periodic submissions (hundreds or thousands of submissions), option 3 is optimal. All three can be managed using [Asynchronous FHIR](https://www.hl7.org/fhir/async.html) or via immediate response.
+
+All three will result in OperationOutcome resources, outlining the accepting or rejecting of the individual submissions. Option 1 or 2 would result in a Bundle of transaction-response or batch-response containing the OperationOutcomes, option 3 would create an NDJSON file of the OperationOutcome resources.
