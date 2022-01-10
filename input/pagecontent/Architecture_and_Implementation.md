@@ -63,4 +63,4 @@ Submissions can be done on-demand by event-driving immediate submission or via a
 
 The first two options are suffient for low numbers of Submission Bundles. For larger periodic submissions (hundreds or thousands of submissions), option 3 is optimal. All three can be managed using [Asynchronous FHIR](https://www.hl7.org/fhir/async.html) or via immediate response.
 
-All three will result in OperationOutcome resources, outlining the accepting or rejecting of the individual submissions. Option 1 or 2 would result in a Bundle of transaction-response or batch-response containing the OperationOutcomes, option 3 would create an NDJSON file of the OperationOutcome resources.
+All three will result in OperationOutcome resources, outlining the accepting or rejecting of the individual submissions. Option 1 or 2 would result in a Bundle of type ```transaction-response``` or ```batch-response``` containing the OperationOutcomes, option 3 would create an NDJSON file of the OperationOutcome resources.
