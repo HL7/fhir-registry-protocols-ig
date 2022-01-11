@@ -59,7 +59,7 @@ Submission responses may return only an http success code or may return a Operat
 Submissions can be done on-demand by event-driving immediate submission or via a periodic submission.   Periodic (bulk) submissions can be managed by one of three ways:
 1. a Bundle of type ```transaction``` comprised of Submission Bundles.  The receiver will accept or reject this Bundle of Bundles in total if one or more of the Submission Bundles is or is not accepted.
 2. a Bundle of type ```batch``` comprised of Submission Bundles.  The receiver will only reject individual Submission Bundle entries within the Bundle of Bundles
-3. Asynchronous submission of NDJSON files of Submission Bundles.  This would use a modified version of the [Bulk Data](https://hl7.org/fhir/uv/bulkdata/) FHIR IG.  The trigger in this case would be an NDJSON submission file of Submission Bundles instead of a query.
+3. Asynchronous submission of NDJSON files of Submission Bundles.  This uses the ```$registryUpload``` Operation attaching the data to a Binary resource as an NDJSON file of individual Submission Bundles. This use the [Asynchronous FHIR](https://www.hl7.org/fhir/async.html) with a 202 Accepted response with the Content-Location parameter holding the polling location for the NDJSON file of OperationOutcome resources for each line of the submission file.
 
 The first two options are suffient for low numbers of Submission Bundles. For larger periodic submissions (hundreds or thousands of submissions), option 3 is optimal. All three can be managed using [Asynchronous FHIR](https://www.hl7.org/fhir/async.html) or via immediate response.
 
