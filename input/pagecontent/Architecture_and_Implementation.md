@@ -64,3 +64,5 @@ Submissions can be done on-demand by event-driving immediate submission or via a
 The first two options are suffient for low numbers of CREDSSubmission Bundles. For larger periodic submissions (hundreds or thousands of submissions), option 3 is optimal. All three can be managed using [Asynchronous FHIR](https://www.hl7.org/fhir/async.html) or via immediate response.
 
 All three will result in OperationOutcome resources, outlining the accepting or rejecting of the individual submissions. Option 1 or 2 would result in a Bundle of type ```transaction-response``` or ```batch-response``` containing the OperationOutcomes, option 3 would create an NDJSON file of the OperationOutcome resources that woudl be polled for and retrieived.
+
+It is suggested that if Option 3 is chosen, that the uploads be done in smaller sections within multiple files to allow for easier management of the upload (i.e., parallelism, re-uploading) and to prevent having to re-upload large files in the case of an upload tranmission error.
