@@ -1,0 +1,54 @@
+@startuml
+skinparam usecase {
+backgroundColor DeepSkyBlue
+BorderColor DarkSlateGray
+ArrowColor Blue
+}
+
+skinparam Note {
+BackgroundColor LightBlue
+BorderColor Blue
+}
+
+skinparam roundcorner 20
+
+skinparam Participant {
+FontName Arial
+Style awesome
+BorderColor DeepSkyBlue
+BackgroundColor LightBlue
+}
+
+Participant Submitter as Sub 
+Participant Registry as Reg 
+
+Sub --> Reg : Upload NDJSON file of records
+Note over Sub
+ POST https://www.example.org/fhir/$registryUpload?_format=application/fhir+ndjson HTTP/1.1
+    Host:example.org
+    Prefer: respond-async
+    Accept: application/fhir+ndjson
+    {
+        "resourceType": "Binary",
+        "id": "example",
+        "contentType": "application/fhir-ndjson",
+        "data": "[NDJSON File of CREDSBundles in base64 format]"
+  }
+end note
+
+Reg --> Sub : 202 Accept
+Note over Reg: Content-Location: https://www.registry.org/634aa4d0-47be-4485-90d0-5a11db28ab66.ndjson
+
+Group Polling
+Sub --> Reg : GET https://www.registry.org/634aa4d0-47be-4485-90d0-5a11db28ab66.ndjson
+Reg --> Sub : 202 Accept
+Note over Reg: Optionally an X-Progress header with a\ntext description of the status of the request that's\nless than 100 characters
+end
+
+Note across:  When processing complete 
+Sub --> Reg : GET https://www.registry.org/634aa4d0-47be-4485-90d0-5a11db28ab66.ndjson
+Reg --> Sub : 200 Success
+Note over Reg : see https://www.hl7.org/fhir/async.html#3.1.6.4.0.4\nfor details of response 
+
+@enduml
+

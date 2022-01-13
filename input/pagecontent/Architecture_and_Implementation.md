@@ -65,4 +65,11 @@ The first two options are suffient for low numbers of CREDSSubmission Bundles. F
 
 All three will result in OperationOutcome resources, outlining the accepting or rejecting of the individual submissions. Option 1 or 2 would result in a Bundle of type ```transaction-response``` or ```batch-response``` containing the OperationOutcomes, option 3 would create an NDJSON file of the OperationOutcome resources that woudl be polled for and retrieived.
 
+An example flow for Option 3 would be as follows:
+
+<figure>
+{%include ndjsonflow.svg %}
+<figcaption>Example Async Submission Flow</figcaption>
+</figure>
+
 It is suggested that if Option 3 is chosen, that the uploads be done in smaller sections within multiple files to allow for easier management of the upload (i.e., parallelism, re-uploading) and to prevent having to re-upload large files in the case of an upload tranmission error.
