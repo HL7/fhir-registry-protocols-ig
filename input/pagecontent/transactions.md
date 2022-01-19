@@ -1,6 +1,3 @@
-/*
-    This content is automatically generated from CREDS.xml by actorsandtransactions.xslt
-*/
 <!--
     This content is automatically generated from CREDS.xml by actorsandtransactions.xslt
 -->
