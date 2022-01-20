@@ -10,7 +10,7 @@ Defines the requirements for the Registry Submission Definition Repository imple
 * insert CREDSDefinitionContent
 * name = "RSDR_SRRD"
 * title = "Registry Submission Definition Repository implementing the Search / Retrieve Registry Definition transaction."
-* date = "2021-11-29"
+* date = "2022-01-20"
 * kind = #requirements
 * description = "Defines the requirements for the Registry Submission Definition Repository implementing the Search / Retrieve Registry Definition transaction."
 * format[0] = #xml

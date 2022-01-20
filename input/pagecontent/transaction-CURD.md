@@ -69,16 +69,14 @@ is communicated to the Registry Submission Definition Source.
 
 
 A StructureDefinition is created or updated by the
-[](s.html#)
+[Registry Submission Definition Creator](actors.html#registry-submission-definition-creator)
 on the
-[](s.html#)
+[Registry Submission Definition Repository](actors.html#registry-submission-definition-repository)
 .
 
 
 
-The MeasureReport sends a MeasureReport to the MeasureConsumer using the FHIR
-[create](https://www.hl7.org/fhir/http.html#create) or [update](https://www.hl7.org/fhir/http.html#update) interactions.
-A MeasureSource supporting the CSV option sends the CSV file to the MeasureConsumer using the $report-csv operation.
+The [Registry Submission Definition Creator](actors.html#registry-submission-definition-creator) creates the ...
 
 
 

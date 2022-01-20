@@ -44,12 +44,3 @@ For more details see the detailed [transaction description](transaction-CURS.htm
 
 
 For more details see the detailed [transaction description](transaction-VRS.html)
-
-### Request for Missing Data
-
-This transaction is supports requests missing data or clarifications of existing data.
-
-
-
-
-For more details see the detailed [transaction description](transaction-RMCD.html)

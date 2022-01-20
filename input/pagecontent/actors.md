@@ -87,7 +87,7 @@ Table 3-1: CREDS Implementation Guide - Actors and Transactions
                     
 <tr>
                         
-<td rowspan="5">
+<td rowspan="4">
 <a href="#registry-submitter">Registry Submitter</a>
 </td>
                         
@@ -105,17 +105,6 @@ Table 3-1: CREDS Implementation Guide - Actors and Transactions
 <td>
 <a href='transaction-RRSD.html'>
                         Retrieve Registry Submission Data [RRSD]</a>
-</td>
-<td align='center'>
-                        R
-</td>
-</tr>
-                    
-<tr>
-                        
-<td>
-<a href='transaction-RMCD.html'>
-                        Request for Missing Data [RMCD]</a>
 </td>
 <td align='center'>
                         R
@@ -146,7 +135,7 @@ Table 3-1: CREDS Implementation Guide - Actors and Transactions
                     
 <tr>
                         
-<td rowspan="2">
+<td rowspan="1">
 <a href="#registry-submission-data-source">Registry Submission Data Source</a>
 </td>
                         
@@ -156,17 +145,6 @@ Table 3-1: CREDS Implementation Guide - Actors and Transactions
 </td>
 <td align='center'>
                         R
-</td>
-</tr>
-                    
-<tr>
-                        
-<td>
-<a href='transaction-RMCD.html'>
-                        Request for Missing Data [RMCD]</a>
-</td>
-<td align='center'>
-                        O
 </td>
 </tr>
                     

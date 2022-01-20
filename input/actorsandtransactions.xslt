@@ -61,11 +61,7 @@ Profile and the relevant transactions between them.&#xA;
             <xsl:call-template name="result-header-comment">
                 <xsl:with-param name="source" select='//profile/@id'/>
                 <xsl:with-param name="by">actorsandtransactions.xslt</xsl:with-param>
-                <xsl:with-param name="format">fsh</xsl:with-param>
-            </xsl:call-template>
-            <xsl:call-template name="result-header-comment">
-                <xsl:with-param name="source" select='//profile/@id'/>
-                <xsl:with-param name="by">actorsandtransactions.xslt</xsl:with-param>
+                <xsl:with-param name="format">md</xsl:with-param>
             </xsl:call-template>
             <xsl:call-template name="transaction-descriptions"/>
         </xsl:result-document>

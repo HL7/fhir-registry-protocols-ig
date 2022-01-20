@@ -17,7 +17,7 @@ submission using existing FHIR resource profiles.
 ### Organization of This Guide
 This guide is organized into four main sections:
 
-1. [Overview:](overview.html) - Provides an overview of the challenges this effort is trying to address.
+1. [Overview](overview.html) - Provides an overview of the challenges this effort is trying to address.
    1. [Technology Environment](technology_environment.html) - Describes the technology environment for uninitiated.
    2. [Architecture](Architecture_and_Implementation.html) - Illustrates the conversion steps and transactions
    3. [Security Considerations](security_considerations.html) - Documents security concerns and mitigations
@@ -25,14 +25,16 @@ This guide is organized into four main sections:
    5. [Actors](actors.html) - Provides an overview of technical components
 
 2. [Profiles and Transactions](transactions.html)
-   6. [Profiles](profiles_and_extensions.html)
+   1. [Profiles](profiles_and_extensions.html)
    1. [Search / Retrieve Registry Definition ](transaction-SRRD.html)
    2. [Create / Update Registry Definition ](transaction-CURD.html)
    3. [Retrieve Registry Submission Data ](transaction-RRSD.html)
    4. [Create / Update Registry Submission ](transaction-CURS.html)
    5. [Validate Registry Submission ](transaction-VRS.html)
 
-Click on any of the links above, review the [table of contents](toc.html), or if you are looking for a specific artifact, check out the [index](artifacts.html).
+
+Click on any of the links above or refer to the [table of contents](toc.html), or
+if you are looking for a specific artifact, refer to the [index](artifacts.html).
 
 You can also download:
 
@@ -42,3 +44,6 @@ You can also download:
 
 The source code for this Implementation Guide can be found on
 [https://github.com/HL7/fhir-registry-protocols-ig](https://github.com/HL7/fhir-registry-protocols-ig).
+
+
+        

@@ -185,9 +185,9 @@
 		<requires-tx transaction="RRSD" as="client">
 			<role>Searches for or reads registry submission data</role>
 		</requires-tx>
-		<requires-tx transaction="RMCD" as="client">
+		<!-- requires-tx transaction="RMCD" as="client">
 			<role>Makes requests for missing data or clarifications of existing data</role>
-		</requires-tx>
+		</requires-tx -->
 		<requires-tx transaction="CURS" as="client">
 			<role>Creates or updates a registry submission</role>
 		</requires-tx>
@@ -205,9 +205,9 @@
 		<requires-tx transaction="RRSD" as="server">
 			<role>Responds to requests to searches for or reads registry submission data</role>
 		</requires-tx>
-		<supports-tx transaction="RMCD" as="server">
+		<!-- supports-tx transaction="RMCD" as="server">
 			<role>Responds to requests for missing data or clarifications of existing data</role>
-		</supports-tx>
+		</supports-tx -->
 	</actor>
 	<actor id="RSC">
 		<name>Registry Submission Consumer</name>
@@ -367,12 +367,12 @@ the server requesting information on available resources.
 			<semantics>
 				<description>
 					A StructureDefinition is created or updated by the
-					<ref actor='SubmissionDefinitionCreator' />
+					<ref actor='RSDC' />
 					on the
-					<ref actor='SubmissionDefinitionSource' />
+					<ref actor='RSDR' />
 					.
 				</description>
-				<overview>The Submission Definition Creator creates the ...
+				<overview>The <ref actor='RSDC' /> creates the ...
 				</overview>
 				<interaction protocol='fhir'>
 					<group ref='formats' />
@@ -420,12 +420,12 @@ the server requesting information on available resources.
 		<overview></overview>
 		<message from="RS" to="RSC" />
 	</transaction>
-	<transaction id="RMCD" standards="FHIR-R4 RFC-7230">
+	<!-- transaction id="RMCD" standards="FHIR-R4 RFC-7230">
 		<name>Request for Missing Data</name>
 		<description>This transaction is supports requests missing data or clarifications of existing data.</description>
 		<overview></overview>
 		<message from="RS" to="RSC" />
-	</transaction>
+	</transaction -->
 	<content id="RegistryLogicalModel">
 		<name></name>
 		<description></description>
