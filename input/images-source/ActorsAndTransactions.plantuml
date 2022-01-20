@@ -14,6 +14,6 @@ agent "Registry Submission Consumer" as RSC
 RSDC -- RSDR : "Search / Retrieve Registry Definition [SRRD] ↓\nCreate / Update Registry Definition [CURD] ↓"
 RSDR -- RS : "Search / Retrieve Registry Definition [SRRD] ↑"
 RS -- RSDS : "Retrieve Registry Submission Data [RRSD] ↓"
-RS -- RSC : "Create / Update Registry Submission [CURS] ↓\nValidate Registry Submission [VRS] ↓\nRequest for Missing Data [RMCD] ↓"
+RS -- RSC : "Create / Update Registry Submission [CURS] ↓\nValidate Registry Submission [VRS] ↓"
 }
 @enduml
