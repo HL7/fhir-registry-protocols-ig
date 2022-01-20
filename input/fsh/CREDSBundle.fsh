@@ -2,7 +2,7 @@ Profile: CREDSSubmission
 Parent: Bundle
 Id: CREDSSubmission
 Title: "CREDS Submission Bundle"
-Description: "Tis is the standard Bundle to be used with a CREDS submission"
+Description: "This is the standard Bundle to be used with a CREDS submission"
 * type = #collection (exactly)
 * entry ^slicing.discriminator.type = #type
 * entry ^slicing.discriminator.path = "resource"
