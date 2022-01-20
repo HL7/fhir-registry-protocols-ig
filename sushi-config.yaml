@@ -5,12 +5,12 @@ title: Protocols for Clinical Registry Extraction and Data Submission (CREDS) IG
 status: draft
 version: 0.1.0
 fhirVersion: 4.0.1
-copyrightYear: 2021+
+copyrightYear: 2022+
 releaseLabel: ci-build
 
 publisher:
   - name: Clinical Interoperability Council
-  - url: http://hl7.org/Special/committees/cic/index.cfm
+  - url: http://hl7.org/Special/committees/cic
   - email: cic@lists.hl7.org
 contact:
   - name: Clinical Interoperability Council
@@ -22,7 +22,7 @@ contact:
       - system: email
         value: mailto:dpyke@ainq.com
 
-description: TBD.
+description: The IG demonstrates a process and workflow to support the needs of clinical registries to define how registry submissions can be automatically extracted from multiple data sources and combined into a registry submission.
 jurisdiction: urn:iso:std:iso:3166#US "United States of America"
 dependencies: 
   hl7.fhir.us.core: 4.0.0
@@ -32,10 +32,12 @@ pages:
     title: Home
   introduction.md:
     title: Introduction
+  overview.md:
+    title: Overview
   use_cases.md:
     title: Use Cases
   Architecture_and_Implementation.md:
-    title: Architecture and Implementation
+    title: Architecture
   security_considerations.md:
     title: Security Considerations
   actors.md:
@@ -55,23 +57,17 @@ pages:
   transaction-VRS.md:
     title: Validate Registry Submission
   conformance.md:
-    title:  IG Conformance
+    title: IG Conformance
   profiles_and_extensions.md:
     title: Profiles and Extensions
   test_plan.md:
     title: Test Plan
-  overview.md:
-    title: Overview
 
-
-
-# ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
-# │  To use a provided input/includes/menu.xml file, delete the "menu" property below.             │
-# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 menu:
   IG Home: index.html
   Contents: toc.html
   Introduction:
+    Overview: overview.html
     Scope: introduction.html
     Use Cases: use_cases.html
   Architecture &amp; Implementation:
