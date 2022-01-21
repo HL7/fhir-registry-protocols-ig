@@ -1,4 +1,23 @@
 @startuml
+skinparam usecase {
+backgroundColor DeepSkyBlue
+BorderColor DarkSlateGray
+ArrowColor Blue
+}
+scale 2/3
+skinparam Note {
+BackgroundColor LightBlue
+BorderColor Blue
+}
+
+skinparam roundcorner 20
+
+skinparam Participant {
+FontName Arial
+Style awesome
+BorderColor DeepSkyBlue
+BackgroundColor LightBlue
+}
 'actor "Registry Documenter" as RD 
 'actor "Cath Team" as CT 
 'actor "Registry Validator" as RV 
@@ -10,32 +29,53 @@ Trigger: discharge event"
     usecase fdemo as "Fill in Demographics"
 }
 
-package "Fetch Data: EHR"{
+note left of FDE
+If data exists in the EHR, retrieval can be relatively easy:
+         extract data from EHR records and populate report
+Challenges:
+*  Documenter may be unclear on meaning of clinical data
+* Documenter may not know how/where to locate data 
+endnote 
+
+package "Fetch Data: EHR"  as FDE {
     usecase fproc as "Fill in Procedure details"
 }
 
-package "Fetch Data: Other Sources" {
+package "Fetch Data: Other Sources" AS FDO {
     usecase "Review Need for\nAdditional History" as RNAH 
+    note left : Connection to additional\ndata sources needed
     usecase "Access history electronically" as AHE
     usecase "Easily obtained history" as EOH 
     usecase "Access history creatively:\ndata sleuthing" as DS 
     usecase "Can't locate history, waiting" as NoHist
+    
 }
 
-package "Complete/Review Record" {
+package "Complete/Review Record" AS CRR {
     usecase "Review Registry report" as RRR 
     usecase "Submit to Registry" as S2R 
 }
+note bottom of  CRR 
+Challenges:
+* Complexity of encounter and past patient history
+* Event dates
+* Data sleuthing: delays, quality concerns
+endnote
 
 package "Receive Data" {
     usecase "Receive data and evaluate" as RDE 
     usecase "Partial Data" as PD
 }
 
-package "Transform and Quality Check" {
+package "Transform and Quality Check" AS TQC {
     usecase "Transform to Registry Format" as TRF
     usecase "Quality Check" as QC 
 }
+note bottom of TQC
+Challenges:
+* How to reduce quality deviation earlier in the process?
+* Vendor adoption and business models
+endnote
 
 package "Accept Data" {
     usecase "Accept Data" as AD

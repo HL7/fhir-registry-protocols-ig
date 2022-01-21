@@ -20,10 +20,23 @@ And a healthcare provider organization to:
 3. Support processes to transform extracted data into appropriate formats for a registry submission.
 
 ### Journey Map of Registry Process
-The Journey from a patient discharge to data being merged into the Registry is complex.  There are several important steps and related challenges presented to create the final report and ingest it.
-<div>
+The Journey from a patient discharge to data being merged into the Registry is complex.  There are several important steps and related challenges presented to create the final report and ingest it.  At each stage, challenges exist that increase the possibility of errors.
+
+<div  style="float:left; margin: 10px;">
 {%include journeymap.svg %}
 </div>
+Each record starts with the patient discharge event.  This creates the record and begins the review process for the data needed for submission.  The Demographics are collected as part of the Worklist addition process
+
+Once the worklist item is opened for data collection the Registry Documenter collects Procedure information and begins the process of determining data elements and sources needed for completing the submission record.
+
+Each data source, including manual sources, is reviewed and entered into the submission record.  This data may be collected through the EHR system, an EMS system or legacy systems which may or may not be connected to the EHR.  Unconnected systems may require transcription into the registry submission record.
+Consultation with the Treatment team may be required to interpret or collect data that may not be part of the data entered during the treatment interval.
+Once complete, the data is packaged and added to the submission queue for immediate or periodic submission to the registry.
+
+Upon receipt, the Registry Data Validator conducts a review to ensure that required information is included and that all information is coded and formatted as necessary for ingestion.  A report is generated with the outcomes of that review.  In case of partial data, the record may be held until an updated record is received.
+
+Finally, the data is ingested into the registry for analysis
+
 #### Actors
 __Registry Documenter__
 Profile: 
@@ -31,16 +44,17 @@ Profile:
 * Medical terminology
 * On-the-job awareness
 ^
+
 * At beginning of encounter, I gather patient information to support consult and procedure.
 * After an encounter is closed, I create a ‘report’ to send to the registry, I need to find the data
 * I wish all the data was readily available, so I didn’t have to search all over the place 
 
-__Cath Team__
+__Treatment Team__
 Profile: 
 * Medically trained
 * Clinically focused
-* Specialty medicine
 ^
+
 * I enter clinical data associated with a specialty encounter
 * I may not be aware of my impact on downstream data quality
 
@@ -50,20 +64,5 @@ Profile:
 * Data quality compliance against expected standards
 * Reporting and Analytics
 ^
+
 * I validate data received from reporting health centers in order to perform data analysis
-
-
-
-### Challenges
-#### Data Collection
-
-* If data exists in the EHR, retrieval can be relatively easy: extract data from EHR records and populate report
-* Documenter may be unclear on meaning of clinical data
-* Documenter may not know how/where to locate data.
-* Complexity of encounter and past patient history
-* Event dates 
-* Data sleuthing: delays, quality concerns
-
-#### Quality Control 
-* How to reduce quality deviation earlier in the process?
-* Vendor adoption and business models can complicate data representation
