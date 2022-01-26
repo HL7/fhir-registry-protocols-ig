@@ -31,7 +31,7 @@ pages:
   index.md:
     title: Home
   introduction.md:
-    title: Introduction
+    title: Introduction and Scope
   overview.md:
     title: Overview
     mapping-to-fhir.md:
@@ -39,13 +39,13 @@ pages:
     mapping-to-cda.md:
       title: Mapping to CDA
     mapping-to-v2.md:
-      title: Mapping to V2
+      title: Mapping to HL7 V2
     querying-from-fhir.md:
       title: Querying From FHIR
     querying-from-cda.md:
       title: Querying From CDA
     querying-from-v2.md:
-      title: Querying From V2
+      title: Querying From HL7 V2
   use_cases.md:
     title: Use Cases
   Architecture_and_Implementation.md:
@@ -79,8 +79,8 @@ menu:
   IG Home: index.html
   Contents: toc.html
   Introduction:
+    Introduction and Scope: introduction.html
     Overview: overview.html
-    Scope: introduction.html
     Use Cases: use_cases.html
   Architecture &amp; Implementation:
     Architecture: Architecture_and_Implementation.html
@@ -89,6 +89,7 @@ menu:
     Actors: actors.html
     Profiles and Extensions: profiles_and_extensions.html
   Transactions:
+    Transactions: transactions.html
     Create or Update Registry Definitions: transaction-CURD.html
     Search for and Retrieve Registry Submission Definitions: transaction-SRRD.html
     Create or Update Registry Submission: transaction-CURS.html
