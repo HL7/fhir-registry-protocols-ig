@@ -1,12 +1,12 @@
 Alias: $v2-0203 = http://terminology.hl7.org/CodeSystem/v2-0203
+Alias: RaceAndEthnicityCDC = urn:oid:2.16.840.1.113883.6.238
+Alias: $v3-NullFlavor = http://terminology.hl7.org/CodeSystem/v3-NullFlavor
 
 Instance: USCorePractitionerexample
-InstanceOf: http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner
+InstanceOf: us-core-practitioner
 Title: "Practitioner 1 Example"
-Description: "This is a practitioner 1 example for the *US Core Practitioner Profile"
+Description: "This is a practitioner 1 example for the US Core Practitioner Profile"
 Usage: #example
-
-* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"
 * identifier[NPI].value = "9941339108"
 * identifier[1].system = "http://www.acme.org/practitioners"
 * identifier[1].value = "25456"
@@ -19,37 +19,37 @@ Usage: #example
 * address.state = "MA"
 * address.postalCode = "01002"
 
-Alias: RaceAndEthnicityCDC = urn:oid:2.16.840.1.113883.6.238
-
 Instance: USCorePatientexample
-InstanceOf: http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient
+InstanceOf: us-core-patient
 Title: "Patient Example"
-Description: "This is a patient example for the *US Core Patient Profile"
+Description: "This is a patient example for the US Core Patient Profile"
 Usage: #example
-
-* meta.profile = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
-* extension[0].extension[0].url = "ombCategory"
-* extension[=].extension[=].valueCoding = RaceAndEthnicityCDC#2106-3 "White"
+* meta.extension[0].url = "http://hl7.org/fhir/StructureDefinition/instance-name"
+* meta.extension[=].valueString = "Patient Example"
+* meta.extension[+].url = "http://hl7.org/fhir/StructureDefinition/instance-description"
+* meta.extension[=].valueMarkdown = "This is a patient example for the *US Core Patient Profile*."
+* extension[0].url = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race"
+* extension[=].extension[0].url = "ombCategory"
+* extension[=].extension[=].valueCoding = urn:oid:2.16.840.1.113883.6.238#2106-3 "White"
 * extension[=].extension[+].url = "ombCategory"
-* extension[=].extension[=].valueCoding = RaceAndEthnicityCDC#1002-5 "American Indian or Alaska Native"
+* extension[=].extension[=].valueCoding = urn:oid:2.16.840.1.113883.6.238#1002-5 "American Indian or Alaska Native"
 * extension[=].extension[+].url = "ombCategory"
-* extension[=].extension[=].valueCoding = RaceAndEthnicityCDC#2028-9 "Asian"
+* extension[=].extension[=].valueCoding = urn:oid:2.16.840.1.113883.6.238#2028-9 "Asian"
 * extension[=].extension[+].url = "detailed"
-* extension[=].extension[=].valueCoding = RaceAndEthnicityCDC#1586-7 "Shoshone"
+* extension[=].extension[=].valueCoding = urn:oid:2.16.840.1.113883.6.238#1586-7 "Shoshone"
 * extension[=].extension[+].url = "detailed"
-* extension[=].extension[=].valueCoding = RaceAndEthnicityCDC#2036-2 "Filipino"
+* extension[=].extension[=].valueCoding = urn:oid:2.16.840.1.113883.6.238#2036-2 "Filipino"
 * extension[=].extension[+].url = "text"
 * extension[=].extension[=].valueString = "Mixed"
-* extension[=].url = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race"
-* extension[+].extension[0].url = "ombCategory"
-* extension[=].extension[=].valueCoding = RaceAndEthnicityCDC#2135-2 "Hispanic or Latino"
+* extension[+].url = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity"
+* extension[=].extension[0].url = "ombCategory"
+* extension[=].extension[=].valueCoding = urn:oid:2.16.840.1.113883.6.238#2135-2 "Hispanic or Latino"
 * extension[=].extension[+].url = "detailed"
-* extension[=].extension[=].valueCoding = RaceAndEthnicityCDC#2184-0 "Dominican"
+* extension[=].extension[=].valueCoding = urn:oid:2.16.840.1.113883.6.238#2184-0 "Dominican"
 * extension[=].extension[+].url = "detailed"
-* extension[=].extension[=].valueCoding = RaceAndEthnicityCDC#2148-5 "Mexican"
+* extension[=].extension[=].valueCoding = urn:oid:2.16.840.1.113883.6.238#2148-5 "Mexican"
 * extension[=].extension[+].url = "text"
 * extension[=].extension[=].valueString = "Hispanic or Latino"
-* extension[=].url = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity"
 * extension[+].url = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex"
 * extension[=].valueCode = #F
 * identifier.use = #usual
@@ -58,7 +58,8 @@ Usage: #example
 * identifier.system = "http://hospital.smarthealthit.org"
 * identifier.value = "1032702"
 * active = true
-* name[0].family = "Shaw"
+* name[0].use = #old
+* name[=].family = "Shaw"
 * name[=].given[0] = "Amy"
 * name[=].given[+] = "V."
 * name[=].period.start = "2016-12-06"
@@ -75,7 +76,8 @@ Usage: #example
 * telecom[=].value = "amy.shaw@example.com"
 * gender = #female
 * birthDate = "1987-02-20"
-* address[0].line = "49 Meadow St"
+* address[0].use = #old
+* address[=].line = "49 Meadow St"
 * address[=].city = "Mounds"
 * address[=].state = "OK"
 * address[=].postalCode = "74047"
@@ -89,9 +91,8 @@ Usage: #example
 * address[=].country = "US"
 * address[=].period.start = "2020-07-22"
 
-
 Instance: VeterinariansHospital
-InstanceOf: http://hl7.org/fhir/us/core/StructureDefinition/us-core-organization
+InstanceOf: us-core-organization
 Title: "Veterinarian's Hospital"
 Description: "Example of a US Core R4 Organization"
 Usage:  #example
@@ -100,7 +101,7 @@ Usage:  #example
 * name = "Veterinarian's Hospital"
 
 Instance: ExampleDischarge
-InstanceOf: http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter
+InstanceOf: us-core-encounter
 Title: "An Example Discharge Encounter"
 Description: "Example of a US Core R4 Encounter"
 Usage:  #example
@@ -112,7 +113,7 @@ Usage:  #example
 * reasonCode = http://snomed.info/sct#1917008 "Patient discharge, deceased, medicolegal case"
 
 Instance: CREDSEncounter
-InstanceOf: http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter
+InstanceOf: us-core-encounter
 Title: "Example Encounter"
 Description: "Example Encounter for use within the Example Notification Bundle"
 Usage: #example
