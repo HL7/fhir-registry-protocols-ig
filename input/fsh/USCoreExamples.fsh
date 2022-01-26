@@ -7,9 +7,10 @@ InstanceOf: us-core-practitioner
 Title: "Practitioner 1 Example"
 Description: "This is a practitioner 1 example for the US Core Practitioner Profile"
 Usage: #example
-* identifier[NPI].value = "9941339108"
-* identifier[1].system = "http://www.acme.org/practitioners"
-* identifier[1].value = "25456"
+* identifier[0].system = "http://hl7.org/fhir/sid/us-npi"
+* identifier[=].value = "9941339108"
+* identifier[+].system = "http://www.acme.org/practitioners"
+* identifier[=].value = "25456"
 * name.family = "Bone"
 * name.given = "Ronald"
 * name.prefix = "Dr"
