@@ -24,7 +24,7 @@ contact:
 
 description: The IG demonstrates a process and workflow to support the needs of clinical registries to define how registry submissions can be automatically extracted from multiple data sources and combined into a registry submission.
 jurisdiction: urn:iso:std:iso:3166#US "United States of America"
-dependencies: 
+dependencies:
   hl7.fhir.us.core: 4.0.0
 
 pages:
@@ -34,6 +34,18 @@ pages:
     title: Introduction
   overview.md:
     title: Overview
+    mapping-to-fhir.md:
+      title: Mapping to FHIR
+    mapping-to-cda.md:
+      title: Mapping to CDA
+    mapping-to-v2.md:
+      title: Mapping to V2
+    querying-from-fhir.md:
+      title: Querying From FHIR
+    querying-from-cda.md:
+      title: Querying From CDA
+    querying-from-v2.md:
+      title: Querying From V2
   use_cases.md:
     title: Use Cases
   Architecture_and_Implementation.md:
@@ -76,13 +88,13 @@ menu:
     Security Considerations: security_considerations.html
     Actors: actors.html
     Profiles and Extensions: profiles_and_extensions.html
-  Transactions: 
+  Transactions:
     Create or Update Registry Definitions: transaction-CURD.html
     Search for and Retrieve Registry Submission Definitions: transaction-SRRD.html
     Create or Update Registry Submission: transaction-CURS.html
     Retrieve Registry Submission Data: transaction-RRSD.html
     Validate Registry Submission: transaction-VRS.html
-  Testing and Conformance: 
+  Testing and Conformance:
     Test Plan: test_plan.html
     IG Conformance: conformance.html
   Artifact Index: artifacts.html

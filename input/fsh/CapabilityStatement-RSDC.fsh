@@ -10,7 +10,7 @@ Defines the requirements for the Registry Submission Definition Creator."""
 * insert CREDSDefinitionContent
 * name = "RSDC"
 * title = "Registry Submission Definition Creator."
-* date = "2022-01-20"
+* date = "2022-01-26"
 * kind = #requirements
 * description = "Defines the requirements for the Registry Submission Definition Creator."
 * format[0] = #xml

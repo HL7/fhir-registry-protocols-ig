@@ -10,7 +10,7 @@ Defines the requirements for the Registry Submitter."""
 * insert CREDSDefinitionContent
 * name = "RS"
 * title = "Registry Submitter."
-* date = "2022-01-20"
+* date = "2022-01-26"
 * kind = #requirements
 * description = "Defines the requirements for the Registry Submitter."
 * format[0] = #xml

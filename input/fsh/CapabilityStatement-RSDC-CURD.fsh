@@ -10,7 +10,7 @@ Defines the requirements for the Registry Submission Definition Creator implemen
 * insert CREDSDefinitionContent
 * name = "RSDC_CURD"
 * title = "Registry Submission Definition Creator implementing the Create / Update Registry Definition transaction."
-* date = "2022-01-20"
+* date = "2022-01-26"
 * kind = #requirements
 * description = "Defines the requirements for the Registry Submission Definition Creator implementing the Create / Update Registry Definition transaction."
 * format[0] = #xml

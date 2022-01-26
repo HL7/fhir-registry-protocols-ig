@@ -50,7 +50,7 @@
 
 	<!-- usecase is optional and repeatable -->
 	<usecase id="DefineSubmission" actors="RSDC RSDR" transactions="CURD"
-		content="RegistryLogicalModel SubmissionTransformation">
+		content="CREDSStructureDefinition RegistrySubmissionTransformation">
 		<name>Define Submission</name>
 		<description>The registry authority defines the logical data model which describes the data to be submitted to the registry,
 			and the transforms
@@ -127,22 +127,9 @@
 		</step>
 	</usecase>
 	<usecase id="GetPatientList" actors="RS RSDC" transactions="RRSD">
-		<name>Get PatientList</name>
+		<name>Get Patient List</name>
 		<description>A registry submitter retrieves the list of patients for whom a submission must be created.</description>
-		<overview>The registry submitter identifies patients for who a submission is necessary from a data source.
-			[Need to determine how triggers for this are determined](#tbd)
-		</overview>
-	</usecase>
-	<usecase id="GetWorkQueue" actors="RS ???" transactions="???">
-		<name>Get Work Queue</name>
-		<description>A registry submitter reads reads the work queue for submissions to be created.</description>
-		<overview>[This is likely needed by the Registry Submitter, but may be internal and not part of this profile](#tbd)</overview>
-	</usecase>
-	<usecase id="RequestMissingOrClarifyExistingData" actors="RS RSDS" transactions="RCD">
-		<name>Get missing, or request clarification on existing patient data</name>
-		<description>A registry submitter requests missing information or clarification of existing information.</description>
-		<overview>[This is likely an optional transaction using CommunicationRequest and Communication to a Data Source that does not
-			exist yet](#tbd)</overview>
+		<overview>The registry submitter identifies patients for whom a submission is necessary.</overview>
 	</usecase>
 
 	<actor id="RSDC">
@@ -426,12 +413,12 @@ the server requesting information on available resources.
 		<overview></overview>
 		<message from="RS" to="RSC" />
 	</transaction -->
-	<content id="RegistryLogicalModel">
-		<name></name>
+	<content id="CREDSStructureDefinition">
+		<name>Registry Logical Model</name>
 		<description></description>
 	</content>
 	<content id="RegistrySubmissionTransformation">
-		<name></name>
+		<name>Registry Submission Transformation</name>
 		<description></description>
 	</content>
 </profile>

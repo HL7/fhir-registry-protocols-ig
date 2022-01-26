@@ -10,7 +10,7 @@ Defines the requirements for the Registry Submitter implementing the Search / Re
 * insert CREDSDefinitionContent
 * name = "RS_SRRD"
 * title = "Registry Submitter implementing the Search / Retrieve Registry Definition transaction."
-* date = "2022-01-20"
+* date = "2022-01-26"
 * kind = #requirements
 * description = "Defines the requirements for the Registry Submitter implementing the Search / Retrieve Registry Definition transaction."
 * format[0] = #xml

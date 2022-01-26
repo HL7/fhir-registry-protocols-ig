@@ -10,7 +10,7 @@ Defines the requirements for the Registry Submission Definition Repository."""
 * insert CREDSDefinitionContent
 * name = "RSDR"
 * title = "Registry Submission Definition Repository."
-* date = "2022-01-20"
+* date = "2022-01-26"
 * kind = #requirements
 * description = "Defines the requirements for the Registry Submission Definition Repository."
 * format[0] = #xml

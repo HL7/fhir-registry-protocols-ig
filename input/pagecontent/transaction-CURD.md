@@ -230,10 +230,10 @@ Accept:=xml|json|text/xml|application/json|application/xml|application/xml+fhir|
 
 </ol>
 
-###### 
+###### create
 The Registry Submission Definition Repository <b>shall</b> support the FHIR create operation on  the StructureDefinition and StructureMap resources.
 
-###### 
+###### update
 The Registry Submission Definition Repository <b>shall</b> support the FHIR update operation on  the StructureDefinition and StructureMap resources.
 
 ##### Expected Actions

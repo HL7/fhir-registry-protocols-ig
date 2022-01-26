@@ -13,6 +13,8 @@
     <xsl:variable name="lrarr" select="'&#x2194;'"/>
     <xsl:variable name="udarr" select="'&#x2195;'"/>
 
+    <xsl:output name='textoutput' method='text' encoding='UTF-8'/>
+
     <!-- Copy the content of ig:description or ig:overview if it does
         not have the file attribute.  Otherwise copy from the specified
         file.
@@ -85,14 +87,12 @@
             </xsl:when>
             <xsl:when test="$item and local-name($item) = 'transaction'">
                 <xsl:text>transaction-</xsl:text>
-                <xsl:value-of select="$index"/>
+                <xsl:value-of select="@id"/>
                 <xsl:text>.html</xsl:text>
             </xsl:when>
             <xsl:when test="$item and local-name($item) = 'content'">
                 <xsl:text>StructureDefinition-</xsl:text>
-                <xsl:value-of select="lower-case(translate(/ig:profile/@id,' ','-'))"/>
-                <xsl:text>-</xsl:text>
-                <xsl:value-of select="lower-case(translate($item/ig:name,' ','-'))"/>
+                <xsl:value-of select="translate($item/@id,' ','-')"/>
                 <xsl:text>.html</xsl:text>
             </xsl:when>
             <xsl:when test="not($item)">
@@ -152,7 +152,7 @@
             <xsl:when test="$format = 'plantuml'"><xsl:text>/'&#xa;</xsl:text></xsl:when>
             <xsl:when test="$format = 'gherkin'"># </xsl:when>
         </xsl:choose>
-        <xsl:text>    This content is automatically generated from </xsl:text><xsl:value-of select='/*/@id'/><xsl:text>.xml by </xsl:text><xsl:value-of select='$by'/><xsl:text>&#xa;</xsl:text> 
+        <xsl:text>    This content is automatically generated from </xsl:text><xsl:value-of select='/*/@id'/><xsl:text>.xml by </xsl:text><xsl:value-of select='$by'/><xsl:text>&#xa;</xsl:text>
         <xsl:choose>
             <xsl:when test="$format = 'xml'">--<xsl:text disable-output-escaping="yes">&gt;&#xa;</xsl:text></xsl:when>
             <xsl:when test="$format = 'fsh'"><xsl:text>*/&#xa;</xsl:text></xsl:when>
@@ -161,5 +161,5 @@
             <xsl:when test="$format = 'gherkin'"></xsl:when>
         </xsl:choose>
     </xsl:template>
-    
+
 </xsl:stylesheet>

@@ -2,6 +2,15 @@
     This content is automatically generated from CREDS.xml by overview.xslt
 -->
 
+The IG demonstrates a process and workflow to support the needs of clinical registries
+to define how registry
+submissions can be automatically extracted from multiple data sources and combined into a
+registry submission. It profiles the
+definitional resources needed to collect data and construct a registry
+submission using existing FHIR resource profiles.
+
+
+
 The IG demonstrates a process and workflow to support the needs of clinical registries to define how registry submissions can be automatically extracted from multiple data sources and combined into a registry submission. It profiles the definitional resources needed to collect data and construct a registry submission using existing FHIR resource profiles.
 
 This implementation guide used the HL7 FHIR Standard to:
@@ -14,7 +23,7 @@ This implementation guide used the HL7 FHIR Standard to:
 The process most commonly used by registries today is to define a registry submission format that maps to their data dictionary/information model, and to specify the appropriate vocabulary (e.g., ICD-10-CM, SNOMED CT, CPT, et cetera) allowed in coded fields to submitters.
 
 Business analysts within submitting facilities coordinate with their HIT information systems teams to map data from these systems to populate a registry submission. Not all data may be available within the local HIT information systems, so the integration teams often also enable
-connections and queries through other health IT information systems to  enable the abstractors to collect and copy data from those systems into the registry submission for a given patient.
+connections and queries through other health IT information systems to enable the abstractors to collect and copy data from those systems into the registry submission for a given patient.
 
 The collected data is then transformed into a registry submission and communicated to the clinical registry.
 
@@ -46,26 +55,30 @@ The first part of the FHIRPath expression in the mapping.map field should indica
 
 Registries may identify additional mapping types for example, to support queries for specializations of CDA documents (e.g., C-CDA) or other standard models (e.g., X12 or NCPDP messages) from repositories supporting those formats.
 
+For more detail on mapping, see the sections below:
+* [Mapping a Logical Model to FHIR](mapping-to-fhir.html)
+* [Mapping a Logical Model to CDA](mapping-to-cda.html)
+* [Mapping a Logical Model to HL7 V2](mapping-to-v2.html)
+
 ## Extracting Registry Data Using the Logical Model
 To extract the necessary data for a registry submission using the logical model, one must have (in addition to the logical model), a patient associated with the data to be collected, a time period associated with the registry submission, and possibly other constraints. One must also have access to repositories which can be queried to obtain access to the standardized artifacts.
 
 A naive data collection algorithm would iterate through each element in the logical model, and for each artifact type (FHIR, CDA, HL7 Version 2), query the available repositories for matching records in the time period, extract the requested data elements (using FHIRPath) to populate these elements into an expression of the logical model for the given patient, and move on to the next element. This would repeatedly query the same repositories for the same data.
 
-A more practical approach would be to collect all the queries to perform (removing any duplicates), and the perform all the extractions appropriate for each query.
+A more practical approach is to collect all the queries to perform, and the perform the extractions appropriate for each unique query.
 
 ### Resolving Patient Identity
 This implementation guide does not specify how patient matches are performed across different information systems. The IHE PIXm and PDQm profiles provide a FHIR API which enables information systems to resolve patient identities using HL7 FHIR. Each repository endpoint may require different patient matching strategies when it is configured. The registry submitter may need to identify policies for how to deal with cases where there is more than one patient match, or no matches.
 
-### Querying for FHIR Resources
-[KB: Not sure what to say yet]
+### Querying for Artifacts
+There's something to say here about the Patient, and time period, and other constraints that may be associated with the query
 
-### Querying for CDA Documents
-[KB: Not sure what to say yet, needs reference to MHD]
+See the sections below for more detail about how to query for standardized artifacts:
+* [Querying for FHIR Resources](querying-from-fhir.html)
+* [Querying for CDA Documents](querying-from-cda.html)
+* [Querying for HL7 V2 Messages](querying-from-v2.html)
 
-### Querying for V2 Messages
-[KB: Not sure what to say yet, reference to QBP message]
+## Transforming the Logical Model Content to a Submission Bundle
 
-## Transforming the Data to a Submission Bundle
-[KB: Not sure what to say yet]
 
 

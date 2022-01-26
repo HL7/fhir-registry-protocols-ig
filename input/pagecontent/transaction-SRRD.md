@@ -79,7 +79,7 @@ The following are general requirements of the interaction.
 
 </ol>
 
-###### Read on Required Resources
+###### read
 
 A client **shall** be able to read individual resources that are returned or referenced within resources
 returned by a query.
@@ -87,7 +87,7 @@ returned by a query.
 
 The Registry Submission Definition Repository <b>shall</b> support the FHIR read operation on  the StructureDefinition and StructureMap resources.
 
-###### Search on Definition Resources
+###### search
 
 A client system **shall** be able to retrieve the definition data by publisher, condition, description or
 other text.

@@ -255,7 +255,7 @@ See the following CapabilityStatement resources for conformance requirements:
         <xsl:text>&lt;b></xsl:text><xsl:value-of select='lower-case(translate(.,"-"," "))'/><xsl:text>&lt;/b></xsl:text>
     </xsl:template>
     <xsl:template match="ig:operation">
-        <xsl:text>&#xA;###### </xsl:text><xsl:value-of select="ig:name"/><xsl:text>&#xA;</xsl:text>
+        <xsl:text>&#xA;###### </xsl:text><xsl:value-of select="@name"/><xsl:text>&#xA;</xsl:text>
         <xsl:apply-templates select="ig:description|ig:overview"/>
         <xsl:if test="@client">
         	<xsl:variable name='from' select='ancestor::ig:message[1]/@from'/>
