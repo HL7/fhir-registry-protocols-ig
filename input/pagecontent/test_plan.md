@@ -5,7 +5,6 @@ The following is the overall test plan for this guide:
 
 1. Unit Tests – automation of testing of the actor alone using a simulator and validator tool
 2. Integration Tests – automation of actors interacting through defined communications mechanism
-3. Validation Tests – user expectation based testing
 
 Tests below support testing for the following actors:
 * Registry Submission Definition Creator: manages the definitional artifacts 
