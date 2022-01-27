@@ -1,6 +1,7 @@
 Alias: $v2-0203 = http://terminology.hl7.org/CodeSystem/v2-0203
 Alias: RaceAndEthnicityCDC = urn:oid:2.16.840.1.113883.6.238
 Alias: $v3-NullFlavor = http://terminology.hl7.org/CodeSystem/v3-NullFlavor
+Alias: SCT = http://snomed.info/sct
 
 Instance: USCorePractitionerexample
 InstanceOf: us-core-practitioner
@@ -109,9 +110,9 @@ Usage:  #example
 
 * status = #finished
 * class = http://terminology.hl7.org/CodeSystem/v3-ActCode#ACUTE
-* type =  http://snomed.info/sct#448337001 "Telemedicine consultation with patient"
+* type =  SCT#448337001 "Telemedicine consultation with patient"
 * subject = Reference(USCorePatientexample)
-* reasonCode = http://snomed.info/sct#1917008 "Patient discharge, deceased, medicolegal case"
+* reasonCode = SCT#1917008 "Patient discharge, deceased, medicolegal case"
 
 Instance: CREDSEncounter
 InstanceOf: us-core-encounter
@@ -134,5 +135,5 @@ Title: "Example Location"
 Description: "Example Location for use within the Example Encounter"
 Usage: #example
 * status = #active
-* name = "North Wing of Verteranairan's Hospital"
+* name = "North Wing of Veterinarian's Hospital"
 * managingOrganization = Reference(VeterinariansHospital)

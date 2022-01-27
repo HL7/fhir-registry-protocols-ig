@@ -26,7 +26,9 @@ description: The IG demonstrates a process and workflow to support the needs of 
 jurisdiction: urn:iso:std:iso:3166#US "United States of America"
 dependencies:
   hl7.fhir.us.core: 4.0.0
-
+parameters:
+  show-inherited-invariants: false
+  path-expansion-params: '../../exp-params.json'
 pages:
   index.md:
     title: Home
