@@ -6,3 +6,11 @@ Thumbs.db
 /temp
 /template
 /bin/
+.project
+.vscode
+.classpath
+build.bat
+build-content.cmd
+validator_cli.jar
+*.sh
+_gencontinuous.bat
