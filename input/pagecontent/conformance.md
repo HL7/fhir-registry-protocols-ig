@@ -17,10 +17,10 @@ Each Repository's data requiements are expressed as a FHIR Logical Models using 
 Each Logical Model will follow this basic structure:
 **Publisher information:**
 The following elements MUST be populated
-date: publishing date of the current version 
-publisher: The organization publishing the data requirements
-contact.name: Name of the primary contact for questions regarding the data map
-contact.telecom.system: either email and/or telephone
+* date: publishing date of the current version 
+* publisher: The organization publishing the data requirements
+* contact.name: Name of the primary contact for questions regarding the data map
+* contact.telecom.system: either email and/or telephone
 
 **Core Map Information**
 The mapping elements MUST be populated as follows:
@@ -52,7 +52,7 @@ If HL7 V2 message mapping is used in *any* mapping element, the following MUST b
 ### Mapping Elements
 Each datapoint in the Registry data map corresponds to an element in the logical model.  Elements may be categorized through the use of a BackboneElement which holds no value. Each data point is named with a [camelCase](https://en.wikipedia.org/wiki/Camel_case) version of a short datapoint name without whitespace or punctuation.
 
-Each element has a base definition of cardinality (how many of that element there can be) a short name and a full definition.  The definition may give guidance on the datapoint's formatting or other requirements.  The element also gives specifics on the source mapping (i.e., where the data can be found)in zero or more standards-based formats (e.g., FHIR, CDA).  If no "Source Standard" mappings are supplied, it should be assumed that the data is only available through a manual process
+Each element has a base definition of cardinality (how many of that element there can be) a short name and a full definition.  The definition may give guidance on the datapoint's formatting or other requirements.  The element also gives specifics on the source mapping (i.e., where the data can be found)in zero or more standards-based formats (e.g., FHIR, CDA).  If no "Source Standard" mappings are supplied, it should be assumed that the data is only available through a manual process.
 
 
 Each mapping MUST contain the following elements:

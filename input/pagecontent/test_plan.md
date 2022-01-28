@@ -22,9 +22,9 @@ The Registry Submission Definition Creator creates abd manages the definitional 
 
  * Be able to produce a CREDS Logical Model StructureDefinition resource for the example Registry Data Dictionary as per Create / Update Registry Definition 
  * The Logical Model should conform to the CREDSStructureDefinition as a profile.  
- * THe Logical Model should conform to the registry Data Dictionary
- * The Model should have mappings to at least the FHIR standard and include all Output mappings.
- * If you’re doing the publication scenario, have a client that can do a  fetch of the Logical Model.
+ * The Logical Model should conform to the registry Data Dictionary
+ * Where possible, all elements in the Model should have mappings to at least one standard (e.g., FHIR) and must include Output mappings.
+ * If you’re doing the publication scenario, have a client that can do a fetch of the Logical Model.
  
 **Registry Submission Definition Creator Success Criteria**
 
@@ -33,7 +33,7 @@ The Registry Submission Definition Creator creates abd manages the definitional 
 #### Registry Submission Definition Repository
 
 **Registry Submission Definition Repository Preparation**
- * Be able to search for a CREDS Logical Model StructureDefinition resource from the Registry Submission Definition Creator RESTful endpoint as per Search / Retrieve Registry Definition 
+ * Be able to search for a CREDS Logical Model StructureDefinition resource from the Registry Submission Definition Creator RESTful endpoint as per [Search / Retrieve Registry Definition](transaction-SRRD.html) 
  * Be able to fetch the discovered resource and store it locally. 
 
  **Registry Submission Definition Repository Success Criteria**
@@ -56,7 +56,7 @@ The Registry Submission Definition Creator creates abd manages the definitional 
 * Data is mapped from the model to data sources
 * Data is successfully retrieved from the Registry Submission Data Source(s)
 * The submission Bundle is created and populated correctly accorind to the data model
-* The submission Bundle is pushed to the Registry Submission Consumer and validates correctly using a FHIR-based transaction using [MEDMORPH](http://hl7.org/fhir/us/medmorph/) or similar FHIR Implementation Guides
+* The submission Bundle is pushed to the Registry Submission Consumer and validates correctly using a FHIR-based transaction using [MEDMORPH](http://hl7.org/fhir/us/medmorph/) or similar FHIR Implementation Guides or using a CREDS Submission Bundle.
 
 #### Registry Submission Consumer
 
@@ -110,7 +110,7 @@ The following integration test scenarios included in this test plan:
 
 ##### Success Criteria
 * The actor has the list of available logical models in a searchset Bundle as a response to Test Step 1. 
-* The actor has a validated StructureDefinition of the Logical model of the Registry data dictionary
+* The actor has a validated StructureDefinition of the Logical model of the Registry data dictionary.
 
 #### Parsing of the Logical Model mappings
 
@@ -145,7 +145,6 @@ The following integration test scenarios included in this test plan:
 ##### Success Criteria
 * All relevant FHIR resources/CDA documents/V2 messages have been retrieved
 
-
 #### Submission Bundle creation
 
 ##### Preconditions
@@ -156,8 +155,8 @@ The following integration test scenarios included in this test plan:
 * Transfer data from the retreived resources/documents/messages according to the Source Standards mapping and Output mapping requirements.
 * Create a MessageHeader resource with all relevant submitter information
 * Ensure the Patient resource exists and is based on the US Core Patient Profile
-* Assemble a Bundle that conforms to the CREDSSubmission Bundle profile
+* Assemble a Bundle that conforms to the CREDSSubmission Bundle profile or the appropriate FHIR Implementation Guide requirements
 * Validate the Bundle and all entries
 
 ##### Success Criteria
-* A fully validated CREDSSubmission Bundle exists
+* A fully validated Submission Bundle exists

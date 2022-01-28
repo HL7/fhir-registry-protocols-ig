@@ -1,16 +1,3 @@
-<!--
-    This content is automatically generated from CREDS.xml by overview.xslt
--->
-
-The IG demonstrates a process and workflow to support the needs of clinical registries
-to define how registry
-submissions can be automatically extracted from multiple data sources and combined into a
-registry submission. It profiles the
-definitional resources needed to collect data and construct a registry
-submission using existing FHIR resource profiles.
-
-
-
 The IG demonstrates a process and workflow to support the needs of clinical registries to define how registry submissions can be automatically extracted from multiple data sources and combined into a registry submission. It profiles the definitional resources needed to collect data and construct a registry submission using existing FHIR resource profiles.
 
 This implementation guide used the HL7 FHIR Standard to:
@@ -20,10 +7,9 @@ This implementation guide used the HL7 FHIR Standard to:
 3. Enable health IT systems to query for the necessary information resources hosting that data from various sources, and
 4. Capture and transform that information into a collection of FHIR Resources that can be collected by the registry in submissions.
 
-The process most commonly used by registries today is to define a registry submission format that maps to their data dictionary/information model, and to specify the appropriate vocabulary (e.g., ICD-10-CM, SNOMED CT, CPT, et cetera) allowed in coded fields to submitters.
+The process most commonly used by registries today is to define a registry submission format that maps to their data dictionary/information model, and to specify the appropriate vocabulary (e.g., ICD-10-CM, SNOMED CT, CPT, etc.) allowed in coded fields to submitters.
 
-Business analysts within submitting facilities coordinate with their HIT information systems teams to map data from these systems to populate a registry submission. Not all data may be available within the local HIT information systems, so the integration teams often also enable
-connections and queries through other health IT information systems to enable the abstractors to collect and copy data from those systems into the registry submission for a given patient.
+Business analysts within submitting facilities coordinate with their health IT (HIT) information systems teams to map data from these systems to populate a registry submission. Not all data may be available within the local HIT information systems, so the integration teams often also enable connections and queries through other HIT information systems to enable the abstractors to collect and copy data from those systems into the registry submission for a given patient.
 
 The collected data is then transformed into a registry submission and communicated to the clinical registry.
 
@@ -78,7 +64,4 @@ See the sections below for more detail about how to query for standardized artif
 * [Querying for CDA Documents](querying-from-cda.html)
 * [Querying for HL7 V2 Messages](querying-from-v2.html)
 
-## Transforming the Logical Model Content to a Submission Bundle
-
-
-
+### Transforming the Logical Model Content to a Submission Bundle

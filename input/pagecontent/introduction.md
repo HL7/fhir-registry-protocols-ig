@@ -25,17 +25,16 @@ The Journey from a patient discharge to data being merged into the Registry is c
 <div  style="float:left; margin: 10px;">
 {%include journeymap.svg %}
 </div>
-Each record starts with the patient discharge event.  This creates the record and begins the review process for the data needed for submission.  The Demographics are collected as part of the Worklist addition process
+Each record starts with the patient discharge event.  This creates the record and begins the review process for the data needed for submission.  The demographics are collected as part of the worklist addition process.
 
-Once the worklist item is opened for data collection the Registry Documenter collects Procedure information and begins the process of determining data elements and sources needed for completing the submission record.
+Once the worklist item is opened for data collection the Registry Documenter collects procedure information and begins the process of determining data elements and sources needed for completing the submission record.
 
 Each data source, including manual sources, is reviewed and entered into the submission record.  This data may be collected through the EHR system, an EMS system or legacy systems which may or may not be connected to the EHR.  Unconnected systems may require transcription into the registry submission record.
-Consultation with the Treatment team may be required to interpret or collect data that may not be part of the data entered during the treatment interval.
-Once complete, the data is packaged and added to the submission queue for immediate or periodic submission to the registry.
+Consultation with the Treatment team may be required to interpret or collect data that may not be part of the data entered during the treatment interval. Once complete, the data is packaged and added to the submission queue for immediate or periodic submission to the registry.
 
 Upon receipt, the Registry Data Validator conducts a review to ensure that required information is included and that all information is coded and formatted as necessary for ingestion.  A report is generated with the outcomes of that review.  In case of partial data, the record may be held until an updated record is received.
 
-Finally, the data is ingested into the registry for analysis
+Finally, the data is ingested into the registry for analysis.
 
 #### Actors
 __Registry Documenter__
