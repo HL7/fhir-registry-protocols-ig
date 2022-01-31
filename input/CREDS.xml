@@ -50,7 +50,7 @@
 
 	<!-- usecase is optional and repeatable -->
 	<usecase id="DefineSubmission" actors="RSDC RSDR" transactions="CURD"
-		content="CREDSStructureDefinition RegistrySubmissionTransformation">
+		content="CREDSStructureDefinition">
 		<name>Define Submission</name>
 		<description>The registry authority defines the logical data model which describes the data to be submitted to the registry,
 			and the transforms
@@ -98,8 +98,7 @@
 		<step id="ReadSubmission-2" from="RSDC" to="RS" returns="now">
 			<name>Read submission definition artifacts.</name>
 			<description>The Registry Submitter read the registry submission definitions and transforms contained in a repository
-				necessary
-				for creating a submission.
+				necessary for creating a submission.
 			</description>
 			<overview></overview>
 		</step>
@@ -172,9 +171,6 @@
 		<requires-tx transaction="RRSD" as="client">
 			<role>Searches for or reads registry submission data</role>
 		</requires-tx>
-		<!-- requires-tx transaction="RMCD" as="client">
-			<role>Makes requests for missing data or clarifications of existing data</role>
-		</requires-tx -->
 		<requires-tx transaction="CURS" as="client">
 			<role>Creates or updates a registry submission</role>
 		</requires-tx>
@@ -192,9 +188,6 @@
 		<requires-tx transaction="RRSD" as="server">
 			<role>Responds to requests to searches for or reads registry submission data</role>
 		</requires-tx>
-		<!-- supports-tx transaction="RMCD" as="server">
-			<role>Responds to requests for missing data or clarifications of existing data</role>
-		</supports-tx -->
 	</actor>
 	<actor id="RSC">
 		<name>Registry Submission Consumer</name>
@@ -407,18 +400,8 @@ the server requesting information on available resources.
 		<overview></overview>
 		<message from="RS" to="RSC" />
 	</transaction>
-	<!-- transaction id="RMCD" standards="FHIR-R4 RFC-7230">
-		<name>Request for Missing Data</name>
-		<description>This transaction is supports requests missing data or clarifications of existing data.</description>
-		<overview></overview>
-		<message from="RS" to="RSC" />
-	</transaction -->
 	<content id="CREDSStructureDefinition">
 		<name>Registry Logical Model</name>
-		<description></description>
-	</content>
-	<content id="RegistrySubmissionTransformation">
-		<name>Registry Submission Transformation</name>
 		<description></description>
 	</content>
 </profile>
