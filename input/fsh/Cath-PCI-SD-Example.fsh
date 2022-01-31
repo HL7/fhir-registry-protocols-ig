@@ -1,15 +1,15 @@
 Logical: CathPCI_Submission_Map
 Id: ACCNCDRCathPCI
 Title: "Cath-PCI Submission Map"
-Description: """This is an example of the data that would be used for a Cath-PCI Submission
+Description: """This is an example of the data that would be used for a Cath-PCI Submission.
 The full map is a logical model as that allows conformance to the FHIR Standard the way a custom Resource would not.
 Each element has the short name of the data, a full description and the paths to fetch and place the information, by data standard type, for each.
 A section (such as Demographics) is a BackboneElement (holds no values).  All subordinate elements are CREDSElementDefinitions.
 Each mapping includes the following:
-    identity = standard used for the mapping (e.g., FHIR)
-    language = mime type that matches identity
-    map = FHIRPath expression of the path to the data
-    comment = *Output mapping only* Resource/Profile for inclusion in the Submission Bundle
+* identity = standard used for the mapping (e.g., FHIR)
+* language = mime type that matches identity
+* map = FHIRPath expression of the path to the data
+* comment = *Output mapping only* Resource/Profile for inclusion in the Submission Bundle
 """
 * ^baseDefinition = "http://hl7.org/fhir/us/fhir-registry-protocols-ig/StructureDefinition/CREDSStructureDefinition"
 * ^version = "5.0"

@@ -4,7 +4,7 @@ Usage: #definition
 Title: "The Registry Upload of NDJSON data"
 Description: """When the Registry periodic submission upload would exceed timeout limits or 
 is requested as an [NDJSON](https://www.hl7.org/fhir/nd-json.html) file, use of this Upload operation is suggested.
- See https://www.hl7.org/fhir/async.html for more details on asynchronous FHIR exchange.
+ See the FHIR [Asynchronous API](https://www.hl7.org/fhir/async.html) for more details on asynchronous FHIR exchange.
 """
 * name = "RegistryUpload"
 * status = #active

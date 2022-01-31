@@ -6,8 +6,8 @@ Additionally, the logical model shows the mappings for FHIR, CDA and/or HL7 V2 s
 [CREDSStructureDefinition](StructureDefinition-CREDSStructureDefinition.html): The StructureDefinition for use with CREDS mapping creating the base mappings for FHIR, CDA and V2.  
 
 
-[CREDSElementDefinition](StructureDefinition-CREDSElementDefinition.html):ElementDefinition for use within CREDS that sets the base requirements for creating the logical model including required mappings and Profile for Bundle inclusion
+[CREDSElementDefinition](StructureDefinition-CREDSElementDefinition.html): ElementDefinition for use within CREDS that sets the base requirements for creating the logical model including required mappings and Profile for Bundle inclusion.
 
-For proper setup of the Logical model, the mapping choices (FHIR, CDA, V2, etc.)  should have entries in the StucutreDefinition mapping elements and each element mapping sub-elements.  For example, if there are to be FHIR and Output mappings (Output is required) in the Logical Model then the base mapping elements needs to include both FHIR and Output entries.  Please see the CathPCI example for values and structure.
+For proper setup of the logical model, the mapping choices (FHIR, CDA, V2, etc.)  should have entries in the StucutreDefinition mapping elements and each element mapping sub-elements, where appropriate.  For example, if there are to be FHIR and Output mappings (Output is required) in the logical model then the base mapping elements needs to include both FHIR and Output entries.  Please see the [CathPCI example](StructureDefinition-ACCNCDRCathPCI.html) for an example structure.
 
 [CREDSSubmission](StructureDefinition-CREDSSubmission.html): The Primary Bundle for use with CREDS.  This includes basic structure to outline how submitter and subject information is used.  If not using the CREDS Bundle for submission due to the requirements of another FHIR IG, you should refer to that FHIR IG for details.
