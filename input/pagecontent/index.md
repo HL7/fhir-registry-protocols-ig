@@ -11,7 +11,7 @@ This guide is organized into four main sections:
    1. [Technology Environment](technology_environment.html) - Describes the technology environment for uninitiated.
    2. [Security Considerations](security_considerations.html) - Documents security concerns and mitigations
    3. [Actors](actors.html) - Provides an overview of technical components
-   4. [Profiles](profiles_and_extensions.html)
+   4. [Profiles](profiles_and_extensions.html) - FHIR Resource Profiles created by this IG
 
 3. [Transactions](transactions.html)
    1. [Search / Retrieve Registry Definition ](transaction-SRRD.html)
