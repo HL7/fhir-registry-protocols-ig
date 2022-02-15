@@ -1,6 +1,6 @@
 == Suppressed Messages ==
 # Error in the cpb-15 constraint xpath value in core 
-WARNING: StructureDefinition/CapabilityStatementWithSlices: StructureDefinition.snapshot.element[0].constraint[6].xpath: value should not start or finish with whitespace
+WARNING: StructureDefinition/CapabilityStatementWithSlices: StructureDefinition.snapshot.element[0].constraint[6].xpath: value should not start or finish with whitespace ' not(f:kind/@value='instance')...exists(f:software))'
 
 # We're working with profiles so the Examples are listed as such
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/fhir-registry-protocols-ig/StructureDefinition/CREDSElementDefinition'): The Implementation Guide contains no examples for this data type profile
