@@ -3,6 +3,7 @@ Parent: Bundle
 Id: CREDSSubmission
 Title: "CREDS Submission Bundle"
 Description: "This is the standard Bundle to be used with a CREDS submission"
+* insert CREDSStructureDefinitionContent
 * type = #collection (exactly)
 * entry ^slicing.discriminator.type = #type
 * entry ^slicing.discriminator.path = "resource"

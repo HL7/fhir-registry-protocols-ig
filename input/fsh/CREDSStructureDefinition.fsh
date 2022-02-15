@@ -3,7 +3,7 @@ Parent: StructureDefinition
 Id: CREDSStructureDefinition
 Title: "CREDS Structure Definition"
 Description: "StructureDefinition for use with CREDS mapping creating the base mappings for FHIR, CDA and V2"
-//* insert CREDSStructureDefinitionContent
+* insert CREDSStructureDefinitionContent
 
 * identifier 1..1
 
@@ -39,7 +39,8 @@ Mappings are required for data extraction and inclusion in the submission bundle
 .map as the FHIRPath expression for use to find the data required.
 .comment = *Output mapping only* Resource/Profile for inclusion in the Submission Bundle
 """
-//* insert CREDSStructureDefinitionContent
+* insert CREDSStructureDefinitionContent
+
 * obeys MappingComment
 * short 1..1
 * comment 1..1
