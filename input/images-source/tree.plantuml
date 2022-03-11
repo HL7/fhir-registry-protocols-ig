@@ -1,0 +1,29 @@
+@startuml
+skinparam usecase {
+backgroundColor DeepSkyBlue
+BorderColor DarkSlateGray
+ArrowColor Blue
+}
+
+skinparam Note {
+BackgroundColor LightBlue
+BorderColor Blue
+}
+
+skinparam roundcorner 20
+
+skinparam Component {
+FontName Arial
+Style awesome
+BorderColor DeepSkyBlue
+BackgroundColor LightBlue
+}
+
+[Encounter.participant]
+[participant.firstName]
+[participant.lastName]
+[participant.NPI]
+[Encounter.participant] --> [participant.firstName]
+[Encounter.participant] --> [participant.lastName]
+[Encounter.participant] --> [participant.NPI]
+@enduml

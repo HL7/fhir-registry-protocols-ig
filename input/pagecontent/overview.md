@@ -39,6 +39,22 @@ A StructureDefinition resource contains a collection [ElementDefinition](http://
 
 The first part of the FHIRPath expression in the mapping.map field should indicate the type of resource to be retrieved in the case of FHIR or V2 messages, since these artifacts have different models depending on the resource or message. It should always be ClinicalDocument in the case of resources retrieved from a CDA document.
 
+Elements in the logical model can be bound to ValueSets and CodeSystems to allow for easier querying of data.  These ValueSets should be available from either a terminology service or included in a Bundle with the logical model for ease of reference.  
+
+Where optimal, organizing the logical model in a tree-like structure that is aligned with how the FHIR resources should be populated can ease both submission and ingestion of the FHIR data.
+
+E.g.,
+<figure>{%include tree.svg %}
+<figcaption>Sub-element Structure</figcaption>
+</figure>
+In you model, this could be set as
+
+    CareProviders.provider.npi
+    CareProviders.provider.lastname
+    CareProviders.provider.firstname
+This would allow the output to be linked to CareProvider.provider and the output mapping in each sub-element pointing to the resource listed in the Output mapping in CareProvider.provider.  This would indicate where the information needs to be for ingestion and cut down on the resources submitted where individual datapoints could be combined.
+
+
 Registries may identify additional mapping types for example, to support queries for specializations of CDA documents (e.g., C-CDA) or other standard models (e.g., X12 or NCPDP messages) from repositories supporting those formats.
 
 For more detail on mapping, see the sections below:
