@@ -383,8 +383,7 @@ Each mapping includes the following:
 * researchStudy.researchStudyPatientId 1..1 CREDSElementDefinition "Research Study Patient ID" "Indicate the research study patient identification number as assigned by the research protocol.    Note(s):  If the patient is in more than one research study, list each separately."
 * researchStudy.researchStudyPatientId ^mapping[+].identity = "FHIR"
 * researchStudy.researchStudyPatientId ^mapping[=].language = #application/fhir
-* researchStudy.researchStudyPatientId ^mapping[=].map = "ResearchSubject.where( individual = Patient.id and ((( Encounter.period.start >= period.start ) and (Encounter.period.start <= period.end)) or ((Encounter.period.end >= period.start) and  (Encounter.period.end <= period.end )))).identifier
-"
+* researchStudy.researchStudyPatientId ^mapping[=].map = "ResearchSubject.where( individual = Patient.id and ((( Encounter.period.start >= period.start ) and (Encounter.period.start <= period.end)) or ((Encounter.period.end >= period.start) and  (Encounter.period.end <= period.end )))).identifier"
 
 * researchStudy.researchStudyPatientId ^mapping[+].identity = "Output"
 * researchStudy.researchStudyPatientId ^mapping[=].language = #application/fhir
