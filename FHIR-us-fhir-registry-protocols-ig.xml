@@ -14,6 +14,7 @@
 <artifact id="StructureDefinition/ACCNCDRCathPCI" key="StructureDefinition-ACCNCDRCathPCI" name="Cath-PCI Submission Map"/>
 <artifact id="Encounter/CREDSEncounter" key="Encounter-CREDSEncounter" name="Example Encounter"/>
 <artifact id="Location/Enc-location" key="Location-Enc-location" name="Example Location"/>
+<artifact id="ValueSet/FamilyPrematureCAD" key="ValueSet-FamilyPrematureCAD" name="Family History of Premature CAD"/>
 <artifact id="MessageHeader/CREDSMHExample" key="MessageHeader-CREDSMHExample" name="MessageHeader for CREDSSubmission Example"/>
 <artifact id="Patient/USCorePatientexample" key="Patient-USCorePatientexample" name="Patient Example"/>
 <artifact id="Practitioner/USCorePractitionerexample" key="Practitioner-USCorePractitionerexample" name="Practitioner 1 Example"/>
@@ -26,7 +27,6 @@
 <artifact id="CapabilityStatement/RSDR-SRRD" key="CapabilityStatement-RSDR-SRRD" name="RSDR-SRRD"/>
 <artifact id="OperationDefinition/RegistryUpload" key="OperationDefinition-RegistryUpload" name="The Registry Upload of NDJSON data"/>
 <artifact id="Organization/VeterinariansHospital" key="Organization-VeterinariansHospital" name="Veterinarian's Hospital"/>
-<artifact id="Parameters/exp-params" key="Parameters-exp-params" name="exp-params"/>
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>
 <page key="actors" name="Actors"/>
