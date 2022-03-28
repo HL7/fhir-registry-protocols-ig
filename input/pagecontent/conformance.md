@@ -70,6 +70,9 @@ mapping.map: the actual Xpath for the data to be entered
 mapping.comment: the resource name (e.g., Observation) or the full path to the destionation profile (e.g., http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient for the USCore Patient profile)
 ~~~~
 
+#### Query ValueSet Binding
+Where needed a Logical Model may have a binding to a ValueSet that outlines the codes needed for a query.  For example, a bound ValueSet may have a list of SNOMED and/or LOINC, etc. codes that would match a condition that a needed may have in their history.  This may allow for better targetted queries from the Submitter to its sources.
+
 ### Submission Bundle
 The [CREDS submission bundle](StructureDefinition-CREDSSubmission.html) is a FHIR Bundle of type "Collection".  
 * The first entry in the Bundle MUST be a MessageHeader indicating who is sumbitting this data
