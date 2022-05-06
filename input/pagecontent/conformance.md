@@ -79,3 +79,30 @@ The [CREDS submission bundle](StructureDefinition-CREDSSubmission.html) is a FHI
 * The second entry MUST be the [US Core Patient](https://build.fhir.org/ig/HL7/US-Core/StructureDefinition-us-core-patient.html) resource for the subject of the submission.
 
 All other entries are dictated by the Registry data dictionary.
+
+When using the CREDS submission bundle, the Resources for all Data Dictionary elements should have the element(s) path as a tag within the Resource .meta.tag elements.  This will allow the Registry to better map the Bundle entries back to the data dictionary.  As example:
+```
+ "tag": [
+    {
+      "system": "http://www.acc.org/CathPCIelement",
+      "value": "discharge.discharge.datetime"
+    },
+    {
+      "system": "http://www.acc.org/CathPCIelement",
+      "value": "discharge.dischargeProvider.firstName"
+    },
+    {
+      "system": "http://www.acc.org/CathPCIelement",
+      "value": "discharge.dischargeProvider.lastName"
+    },
+    {
+      "system": "http://www.acc.org/CathPCIelement",
+      "value": "discharge.dischargeProvider.npi"
+    },
+    {
+      "system": "http://www.acc.org/CathPCIelement",
+      "value": "discharge.discharge.location"
+    }
+  ],
+  ```
+  THis would be the entries for location, date and time and the provider within the Discharge encounter.
