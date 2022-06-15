@@ -38,8 +38,6 @@ This use case is supported by the following
 
   - [Registry Logical Model](StructureDefinition-CREDSStructureDefinition.html)
 
-  - [Registry Submission Transformation](StructureDefinition-RegistrySubmissionTransformation.html)
-
 #### Define Submission Process Flow 
 
 
@@ -113,8 +111,7 @@ This use case is supported by the following
 1. Read submission definition artifacts.
 
    The Registry Submitter read the registry submission definitions and transforms contained in a repository
-necessary
-for creating a submission.
+necessary for creating a submission.
 
 
 
