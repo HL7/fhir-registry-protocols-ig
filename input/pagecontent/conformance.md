@@ -105,4 +105,4 @@ When using the CREDS submission bundle, the Resources for all Data Dictionary el
     }
   ],
   ```
-  THis would be the entries for location, date and time and the provider within the Discharge encounter.
+  This would be the entries for location, date and time and the provider within the Discharge encounter. 

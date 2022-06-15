@@ -12,12 +12,16 @@
 <artifact id="StructureDefinition/CREDSElementDefinition" key="StructureDefinition-CREDSElementDefinition" name="CREDSElementDefinition"/>
 <artifact id="StructureDefinition/CapabilityStatementWithSlices" key="StructureDefinition-CapabilityStatementWithSlices" name="Capability Statements with Slices"/>
 <artifact id="StructureDefinition/ACCNCDRCathPCI" key="StructureDefinition-ACCNCDRCathPCI" name="Cath-PCI Submission Map"/>
+<artifact id="ValueSet/ChronicLungDisease" key="ValueSet-ChronicLungDisease" name="Chronic Lung Disease"/>
 <artifact id="Encounter/CREDSEncounter" key="Encounter-CREDSEncounter" name="Example Encounter"/>
 <artifact id="Location/Enc-location" key="Location-Enc-location" name="Example Location"/>
 <artifact id="ValueSet/FamilyPrematureCAD" key="ValueSet-FamilyPrematureCAD" name="Family History of Premature CAD"/>
 <artifact id="MessageHeader/CREDSMHExample" key="MessageHeader-CREDSMHExample" name="MessageHeader for CREDSSubmission Example"/>
+<artifact id="ValueSet/MyocardialInfarction" key="ValueSet-MyocardialInfarction" name="Myocardial Infarction"/>
 <artifact id="Patient/USCorePatientexample" key="Patient-USCorePatientexample" name="Patient Example"/>
 <artifact id="Practitioner/USCorePractitionerexample" key="Practitioner-USCorePractitionerexample" name="Practitioner 1 Example"/>
+<artifact id="ValueSet/PriorCABG" key="ValueSet-PriorCABG" name="Prior History of Coronary Artery Bypass Graft"/>
+<artifact id="ValueSet/PercutaneousCoronaryIntervention" key="ValueSet-PercutaneousCoronaryIntervention" name="Prior History of percutaneous coronary intervention"/>
 <artifact id="CapabilityStatement/RS" key="CapabilityStatement-RS" name="RS"/>
 <artifact id="CapabilityStatement/RS-SRRD" key="CapabilityStatement-RS-SRRD" name="RS-SRRD"/>
 <artifact id="CapabilityStatement/RSDC" key="CapabilityStatement-RSDC" name="RSDC"/>
