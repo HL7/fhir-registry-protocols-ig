@@ -1,37 +1,17 @@
-<!--
-    This content is automatically generated from CREDS.xml by overview.xslt
--->
+The IG demonstrates a process and workflow to support the needs of clinical registries to define how registry submissions can be automatically extracted from multiple data sources and combined into a registry submission. It profiles the definitional resources needed to collect data and construct a registry submission using existing FHIR resource profiles.
 
-The IG demonstrates a process and workflow to support the needs of clinical registries
-to define how registry
-submissions can be automatically extracted from multiple data sources and combined into a
-registry submission. It profiles the
-definitional resources needed to collect data and construct a registry
-submission using existing FHIR resource profiles.
+The IG demonstrates a process and workflow to support the needs of clinical registries to define how registry submissions can be automatically extracted from multiple data sources and combined into a registry submission. It profiles the definitional resources needed to collect data and construct a registry submission using existing FHIR resource profiles.
 
+This implementation guide uses the HL7 FHIR Standard to:
 
-
-The IG demonstrates a process and workflow to support the needs of clinical registries to define how registry submissions can be automatically
-extracted from multiple data sources and combined into a registry submission. It profiles the definitional resources needed to collect data and
-construct a registry submission using existing FHIR resource profiles.
-
-This implementation guide used the HL7 FHIR Standard to:
-
-1. Enable Clinical Registries hosted by organizations such as the American College of Cardiology to communicate their registry data dictionaries
-and/or information models to others,
-2. Enable registry business analysts to define where information in the data dictionary can be found in standard formats used to access routine
-information stored or communicated between provider information systems (e.g., EHR systems, national and regional health information networks
-(e.g., Carequality, CommonWell), and Health Information Exchanges,
+1. Enable Clinical Registries hosted by organizations such as the American College of Cardiology to communicate their registry data dictionaries and/or information models to others,
+2. Enable registry business analysts to define where information in the data dictionary can be found in standard formats used to access routine information stored or communicated between provider information systems (e.g., EHR systems, national and regional health information networks (e.g., Carequality, CommonWell), and Health Information Exchanges,
 3. Enable health IT systems to query for the necessary information resources hosting that data from various sources, and
 4. Capture and transform that information into a collection of FHIR Resources that can be collected by the registry in submissions.
 
-The process most commonly used by registries today is to define a registry submission format that maps to their data dictionary/information model,
-and to specify the appropriate vocabulary (e.g., ICD-10-CM, SNOMED CT, CPT, et cetera) allowed in coded fields to submitters.
+The process most commonly used by registries today is to define a registry submission format that maps to their data dictionary/information model, and to specify the appropriate vocabulary (e.g., ICD-10-CM, SNOMED CT, CPT, et cetera) allowed in coded fields to submitters.
 
-Business analysts within submitting facilities coordinate with their HIT information systems teams to map data from these systems to populate a
-registry submission. Not all data may be available within the local HIT information systems, so the integration teams often also enable
-connections and queries through other health IT information systems to enable the abstractors to collect and copy data from those systems
-into the registry submission for a given patient.
+Business analysts within submitting facilities coordinate with their HIT information systems teams to map data from these systems to populate a registry submission. Not all data may be available within the local HIT information systems, so the integration teams often also enable connections and queries through other health IT information systems to enable the abstractors to collect and copy data from those systems into the registry submission for a given patient.
 
 The collected data is then transformed into a registry submission and communicated to the clinical registry.
 
@@ -40,8 +20,7 @@ The framework proposed in this guide is one in which:
 2. The logical model describes how the data dictionary maps to standards artifacts such as FHIR resources, CDA documents or HL7 V2 messages.
 3. Health Information Systems are able to query for the necessary artifacts from multiple sources to extract registry data.
 4. The information collected for a logical model can be transformed into a FHIR Bundle for submission.
-5. The information models used for collection are based on those used by Certified EHR
-systems to enable the broadest support for interoperability.
+5. The information models used for collection are based on those used by Certified EHR systems to enable the broadest support for interoperability.
 
 ## The Logical Model
 A logical model is a collection of metadata that describes the data used by an information system. It may alternatively be known as an information model, data dictionary, or schema. The logical model providing the names, identifiers, data types, terminology and cardinalities for the collected information.
@@ -68,7 +47,7 @@ The first part of the FHIRPath expression in the mapping.map field **shall** ind
 Registries **may** identify additional mapping types for example, to support queries for specializations of CDA documents (e.g., C-CDA) or other standard models (e.g., X12 or NCPDP messages) from repositories supporting those formats.
 
 ### Canonical Information Models
-When mapping from the Registries information model to HL7 FHIR, CDA or Version 2 resources, this guide defines the canonical model used for the target resoruce type
+When mapping from the Registries information model to HL7 FHIR, CDA or Version 2 resources, this guide defines the canonical model used for the target resource type
 (FHIR, CDA or V2) to ensure consistent mappings. Registries may also define mappings for other sources of information (e.g., older versions of FHIR), but the
 mapping identifiers for FHIR, CDA, and V2 are defined based on specific versions of these standards expected to be in use at the time of publication of this guide.
 
@@ -115,9 +94,9 @@ mappings:
 |---|---|
 |%patient| This variable is a FHIR [Patient](http://www.hl7.org/fhir/R4/Patient.html) resource that describes the patient for whom the data is being collected as they are known to the collecting system.|
 |%period| This variable is a FHIR [Period]() data type that defines the period associated with the registry activity. |
-|%encounter| This variable is a FHIR [Encounter](http://www.hl7.org/fhir/R4/Encounter.html) resource that describes the relevant encounter associated with the registry activitity. |
-|%procedure| This variable is a FHIR [Procedure](http://www.hl7.org/fhir/R4/Procedure.html) resource that describes the relevant procedure associated with the registry activitity. |
-|%condition| This variable is a FHIR [Condition](http://www.hl7.org/fhir/R4/Condition.html) resource that describes the relevant condition associated with the registry activitity. |
+|%encounter| This variable is a FHIR [Encounter](http://www.hl7.org/fhir/R4/Encounter.html) resource that describes the relevant encounter associated with the registry activity. |
+|%procedure| This variable is a FHIR [Procedure](http://www.hl7.org/fhir/R4/Procedure.html) resource that describes the relevant procedure associated with the registry activity. |
+|%condition| This variable is a FHIR [Condition](http://www.hl7.org/fhir/R4/Condition.html) resource that describes the relevant condition associated with the registry activity. |
 
 In addition, this guide also allows an implementation to define environment variables to reference value sets which are used in FHIRPath expressions. [How are these declared](#todo)
 
