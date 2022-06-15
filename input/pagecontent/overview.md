@@ -66,29 +66,19 @@ See [Vocabularies](vocabularies.html) for more information on the selected vocab
 
 
 ## Extracting Registry Data Using the Logical Model
-To extract the necessary data for a registry submission using the logical model, one must have (in addition to the logical model), a patient
-associated with the data to be collected, a time period associated with the registry submission, and possibly other constraints. One must also
-have access to repositories which can be queried to obtain access to the standardized artifacts.
+To extract the necessary data for a registry submission using the logical model, one must have (in addition to the logical model), a patient associated with the data to be collected, a time period associated with the registry submission, and possibly other constraints. One must also have access to repositories which can be queried to obtain access to the standardized artifacts.
 
-A naive data collection algorithm would collect all available information for the patient for each artifact type (FHIR, CDA, HL7 Version 2) during
-the relevant time period, and then filter and extract the results (using FHIRPath) to populate these elements into an expression of the logical model
-for the given patient.
+A naive data collection algorithm would collect all available information for the patient for each artifact type (FHIR, CDA, HL7 Version 2) during the relevant time period, and then filter and extract the results (using FHIRPath) to populate these elements into an expression of the logical model for the given patient.
 
-More efficient algorithms certainly exist, for example, the data collection could identify a set of FHIR Queries to perform to collect the FHIR
-resources to populate the logical model, and then extract the relevant data elements from the performed FHIR queries, and then do the same for
-CDA and HL7 Version 2 content.
+More efficient algorithms certainly exist, for example, the data collection could identify a set of FHIR Queries to perform to collect the FHIR resources to populate the logical model, and then extract the relevant data elements from the performed FHIR queries, and then do the same for CDA and HL7 Version 2 content.
 
-This guide does not require any specific implementation, but does **require** that the system behave as if a system performing the naive implementation
-would.  This allows for an implementable verification procedure given a test data set.
+This guide does not require any specific implementation, but does **require** that the system behave as if a system performing the naive implementation would.  This allows for an implementable verification procedure given a test data set.
 
 ### Resolving Patient Identity
-This implementation guide does not specify how patient matches are performed across different information systems. The IHE PIXm and PDQm profiles provide a FHIR API which enables
-information systems to resolve patient identities using HL7 FHIR. Each repository endpoint may require different patient matching strategies when it is configured. The registry
-submitter may need to identify policies for how to deal with cases where there is more than one patient match, or no matches.
+This implementation guide does not specify how patient matches are performed across different information systems. The IHE PIXm and PDQm profiles provide a FHIR API which enables information systems to resolve patient identities using HL7 FHIR. Each repository endpoint may require different patient matching strategies when it is configured. The registry submitter may need to identify policies for how to deal with cases where there is more than one patient match, or no matches.
 
 ### Querying for Artifacts
-FHIRPath allows an implementation to define environment variables.  This guide defines three variables associated with the FHIRPath expressions used in
-mappings:
+FHIRPath allows an implementation to define environment variables.  This guide defines three variables associated with the FHIRPath expressions used in mappings:
 
 |Environment Variable|Description|
 |---|---|
@@ -106,8 +96,4 @@ See the sections below for more detail about how to query for standardized artif
 * [Querying for HL7 V2 Messages](querying-from-v2.html)
 
 ## Mapping the Logical Model Content to a Submission Bundle
-To submit data, the Registry Submission Creator actor must map the logical model to a Bundle resource. These mappings are defined using the BUNDLE
-mapping identifier. If the Registry logical model is defined as if it were a collection of FHIR Resources, then this transformation is simply a
-matter of copying the resources in the registry logical model to resource into the submission Bundle.
-
-
+To submit data, the Registry Submission Creator actor must map the logical model to a collection of resources submitted using a Bundle resource. These mappings are defined using the Output mapping identifier. If the Registry logical model is defined as if it were a collection of FHIR Resources, then this transformation is simply a matter of copying the resources in the registry logical model to resource into the submission Bundle.
