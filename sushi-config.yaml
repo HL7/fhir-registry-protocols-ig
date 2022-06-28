@@ -25,7 +25,7 @@ contact:
 description: The IG demonstrates a process and workflow to support the needs of clinical registries to define how registry submissions can be automatically extracted from multiple data sources and combined into a registry submission.
 jurisdiction: urn:iso:std:iso:3166#US "United States of America"
 dependencies:
-  hl7.fhir.us.core: 4.0.0
+  hl7.fhir.us.core: 5.0.1
 parameters:
   show-inherited-invariants: false
   path-expansion-params: '../../exp-params.json'
