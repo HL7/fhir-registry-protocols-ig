@@ -12,16 +12,26 @@
 <artifact id="StructureDefinition/CREDSElementDefinition" key="StructureDefinition-CREDSElementDefinition" name="CREDSElementDefinition"/>
 <artifact id="StructureDefinition/CapabilityStatementWithSlices" key="StructureDefinition-CapabilityStatementWithSlices" name="Capability Statements with Slices"/>
 <artifact id="StructureDefinition/ACCNCDRCathPCI" key="StructureDefinition-ACCNCDRCathPCI" name="Cath-PCI Submission Map"/>
+<artifact id="StructureDefinition/ACCNCDRCathPCI-Detailed" key="StructureDefinition-ACCNCDRCathPCI" name="Cath-PCI Submission Map"/>
+<artifact id="ValueSet/CerebrovascularDisease" key="ValueSet-CerebrovascularDisease" name="Cerebrovascular Disease"/>
 <artifact id="ValueSet/ChronicLungDisease" key="ValueSet-ChronicLungDisease" name="Chronic Lung Disease"/>
+<artifact id="ValueSet/CABG" key="ValueSet-CABG" name="Coronary artery bypass grafting"/>
+<artifact id="ValueSet/DiabetesMellitus" key="ValueSet-DiabetesMellitus" name="Diabetes Mellitus"/>
+<artifact id="ValueSet/Dyslipidemia" key="ValueSet-Dyslipidemia" name="Dyslipidemia"/>
 <artifact id="Encounter/CREDSEncounter" key="Encounter-CREDSEncounter" name="Example Encounter"/>
 <artifact id="Location/Enc-location" key="Location-Enc-location" name="Example Location"/>
 <artifact id="ValueSet/FamilyPrematureCAD" key="ValueSet-FamilyPrematureCAD" name="Family History of Premature CAD"/>
+<artifact id="ValueSet/HealthInsurancePaymentSource" key="ValueSet-HealthInsurancePaymentSource" name="Health Insurance Payment Source"/>
+<artifact id="CodeSystem/HealthInsurancePaymentSourceCS" key="CodeSystem-HealthInsurancePaymentSourceCS" name="Health Insurance Payment Source CodeSystem"/>
+<artifact id="ValueSet/Hypertension" key="ValueSet-Hypertension" name="Hypertension"/>
 <artifact id="MessageHeader/CREDSMHExample" key="MessageHeader-CREDSMHExample" name="MessageHeader for CREDSSubmission Example"/>
 <artifact id="ValueSet/MyocardialInfarction" key="ValueSet-MyocardialInfarction" name="Myocardial Infarction"/>
+<artifact id="ValueSet/PriorMyocardialInfarction" key="ValueSet-PriorMyocardialInfarction" name="Myocardial Infarction"/>
+<artifact id="ValueSet/PercutaneousCoronaryIntervention" key="ValueSet-PercutaneousCoronaryIntervention" name="PCI"/>
 <artifact id="Patient/USCorePatientexample" key="Patient-USCorePatientexample" name="Patient Example"/>
+<artifact id="ValueSet/PeripheralArterialOcclusiveDisease" key="ValueSet-PeripheralArterialOcclusiveDisease" name="Peripheral Arterial Occlusive Disease"/>
 <artifact id="Practitioner/USCorePractitionerexample" key="Practitioner-USCorePractitionerexample" name="Practitioner 1 Example"/>
 <artifact id="ValueSet/PriorCABG" key="ValueSet-PriorCABG" name="Prior History of Coronary Artery Bypass Graft"/>
-<artifact id="ValueSet/PercutaneousCoronaryIntervention" key="ValueSet-PercutaneousCoronaryIntervention" name="Prior History of percutaneous coronary intervention"/>
 <artifact id="CapabilityStatement/RS" key="CapabilityStatement-RS" name="RS"/>
 <artifact id="CapabilityStatement/RS-SRRD" key="CapabilityStatement-RS-SRRD" name="RS-SRRD"/>
 <artifact id="CapabilityStatement/RSDC" key="CapabilityStatement-RSDC" name="RSDC"/>
@@ -29,8 +39,10 @@
 <artifact id="CapabilityStatement/RSDR" key="CapabilityStatement-RSDR" name="RSDR"/>
 <artifact id="CapabilityStatement/RSDR-CURD" key="CapabilityStatement-RSDR-CURD" name="RSDR-CURD"/>
 <artifact id="CapabilityStatement/RSDR-SRRD" key="CapabilityStatement-RSDR-SRRD" name="RSDR-SRRD"/>
+<artifact id="ValueSet/SmokingStatus" key="ValueSet-SmokingStatus" name="Smoking Status"/>
 <artifact id="OperationDefinition/RegistryUpload" key="OperationDefinition-RegistryUpload" name="The Registry Upload of NDJSON data"/>
 <artifact id="Organization/VeterinariansHospital" key="Organization-VeterinariansHospital" name="Veterinarian's Hospital"/>
+<artifact id="ValueSet/HemodialysisOrPeritonealDialysis" key="ValueSet-HemodialysisOrPeritonealDialysis" name="hemodialysis or peritoneal dialysis"/>
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>
 <page key="actors" name="Actors"/>

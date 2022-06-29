@@ -58,18 +58,20 @@ Element mapping should include an Output mapping unless the mapping is in a pare
 * mapping[FHIR].identity 1..1 
 * mapping[FHIR].identity = "FHIR"
 * mapping[FHIR].language 1..1
+* mapping[FHIR].map 1..1
 * mapping[FHIR].language = #application/fhir
 * mapping[CDA].identity 1..1 
 * mapping[CDA].identity = "CDA"
 * mapping[CDA].language 1..1
 * mapping[CDA].language = #application/hl7-sda+xml
+* mapping[CDA].map 1..1
 * mapping[HL7V2].identity 1..1 
 * mapping[HL7V2].identity = "HL7V2"
 * mapping[HL7V2].language 1..1
 * mapping[HL7V2].language = #application/edi-hl7v2
+* mapping[HL7V2]..map 1..1
 * mapping[Output].identity 1..1 
 * mapping[Output].identity = "Output"
 * mapping[Output].language 1..1
 * mapping[Output].language = #application/fhir
-* mapping[Output].comment 1..1
-* mapping.map 1..1
+* mapping[Output].map 1..1
