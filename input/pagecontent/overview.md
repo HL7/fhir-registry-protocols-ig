@@ -57,14 +57,6 @@ For more detail on the canonical models and mappings for FHIR, CDA and HL7 Versi
 * [Mapping a Logical Model to HL7 V2](mapping-to-v2.html)
 
 
-### Vocabularies
-Clinical vocabularies are essential in registries to identify conditions, laboratory tests and results, medications, procedures, et cetera.
-This guide adopts the clinical vocabularies used in USCDI and required of EHR vendors through the ONC certification program for the canonical
-implementation models for mapping.
-
-See [Vocabularies](vocabularies.html) for more information on the selected vocabulary standards.
-
-
 ## Extracting Registry Data Using the Logical Model
 To extract the necessary data for a registry submission using the logical model, one must have (in addition to the logical model), a patient associated with the data to be collected, a time period associated with the registry submission, and possibly other constraints. One must also have access to repositories which can be queried to obtain access to the standardized artifacts.
 

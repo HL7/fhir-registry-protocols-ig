@@ -59,15 +59,26 @@ Each mapping MUST contain the following elements:
 ~~~~
 mapping.identity: the "Source Standard" such as FHIR, CDA, HL7V2
 mapping.language the mimetype of standard (e.g., application/fhir, application/hl7-sda+xml [CDA], application/edi-hl7v2 [HL7 V2])
-mapping.map the actual Xpath to data 
+mapping.map the FHIRPath to to be used as a query for the data 
 ~~~~
 
-In addition to the source mapping, the destination element (Output) is structured the same as a FHIR Source Standard element with addition of a Comment that lists the full path to the FHIR resource or Profile that will be used in the submission Bundle.
+In addition to the source mapping, the destination element (Output) is structured the same as a FHIR Source Standard element that has the mapping point to the full path to the FHIR resource or Profile that will be used in the submission Bundle.
 ~~~~
 mapping.identity: MUST be Output
 mapping.language: MUST be application/fhir
-mapping.map: the resource name (e.g., Observation) or the full path to the destination profile (e.g., http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient for the USCore Patient profile) with requirements for specific elements appended in FHIRPath  e.g., .where([element] = [value])
+mapping.map: the resource name (e.g., Observation) or the full path to the destination profile (e.g., http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient for the USCore Patient profile) 
 ~~~~
+```mapping.map``` may have requirements for specific elements appended in FHIRPath  e.g., .where([element] = [value]) or have ValueSet requirements for response (e.g., Observation.valueCodeableConcept.code.memberOf([ValueSet])).  Where a ValueSet is appended, responses must be a selection from that ValueSet. This should only be specified for manual response entry.
+
+
+Requirements for the Output resources are shown as .where() requirements.  If a certain element requires a specific value, that is shown as equivalence.  WHere choices are needed from a value set, those are shown as .memberOf(); this is most often with Manual entry requirements. If the manual value entered is of a certain type, that will be shown as .exists()
+
+    e.g., Observation.where(code.coding.system='http://loinc.org' and code.coding.code=89440-2 and component.code.memberOf(RoseDyspneaQ) and component.valueCodeableConcept.memberOf(YesNo))
+    or 
+    Observation.where( code.coding.system='http://hl7.org/fhir/us/fhir-registry-protocols-ig/CodeSystem/NCDRQuestionCodesCS' and code.coding.code=10001424782 and valueBoolean.exists())
+ 
+
+If an element has a minimum requirement, i.e., minimum cardinality of 1 then [Data Absent Reason](https://hl7.org/fhir/valueset-data-absent-reason.html) must be supplied via a resource element or via the [Data Absent Reason Extension](https://build.fhir.org/extension-data-absent-reason.html) if no response is available due to query failure and manual prompt gives no response.
 
 #### Query ValueSet Binding
 Where needed a Logical Model may have a binding to one or more ValueSets that outline the codes needed for a query.  For example, a bound ValueSet may have a list of SNOMED and/or LOINC, etc. codes that would match a condition that a needed may have in their history.  This may allow for better targeted queries from the Submitter to its sources.  This can be specified best using the FHIRPath function memberOf() in the FHIR mapping.
