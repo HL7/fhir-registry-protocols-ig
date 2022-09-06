@@ -739,7 +739,7 @@ Environment Variables used:
 * procedureInformation.coronaryAnatomy.nativeVessel.lesionSegmentNumber 0..* CREDSElementDefinition "Native Lesion Segment Number"
 * procedureInformation.coronaryAnatomy.nativeVessel.lesionSegmentNumber ^mapping[+].identity = "Output"
 * procedureInformation.coronaryAnatomy.nativeVessel.lesionSegmentNumber ^mapping[=].language = #application/fhir
-//* procedureInformation.coronaryAnatomy.nativeVessel.lesionSegmentNumber ^mapping[=].map = "Observation.where(code.coding.system='http://hl7.org/fhir/us/fhir-registry-protocols-ig/CodeSystem/NCDRQuestionCodesCS' and code.coding.code=100012984 and valueCodeableConcept.memberOf(http://hl7.org/fhir/us/fhir-registry-protocols-ig/ValueSet/LesionSegmentNumber)"
+* procedureInformation.coronaryAnatomy.nativeVessel.lesionSegmentNumber ^mapping[=].map = "Observation.where(code.coding.system='http://hl7.org/fhir/us/fhir-registry-protocols-ig/CodeSystem/NCDRQuestionCodesCS' and code.coding.code=100012984 and valueCodeableConcept.memberOf(http://hl7.org/fhir/us/fhir-registry-protocols-ig/ValueSet/LesionSegmentNumber)"
 
 * procedureInformation.coronaryAnatomy.nativeVessel.coronaryVesselStenosis 0..* CREDSElementDefinition "Coronary Vessel Stenosis" "Indicate the best estimate of the most severe percent stenosis in the segment of the native coronary vessel identified."
 * procedureInformation.coronaryAnatomy.nativeVessel.coronaryVesselStenosis ^mapping[+].identity = "Output"
