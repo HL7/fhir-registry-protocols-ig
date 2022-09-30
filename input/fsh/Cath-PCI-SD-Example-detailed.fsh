@@ -1,6 +1,6 @@
 Logical: CathPCI_Submission_Map_detailed
 Id: ACCNCDRCathPCIDetailed
-Title: "Cath-PCI Submission Map"
+Title: "Cath-PCI Detailed Submission Map"
 Description: """This is an example of the data that would be used for a Cath-PCI Submission.
 The full map is a logical model as that allows conformance to the FHIR Standard the way a custom Resource would not.
 Each element has the short name of the data, a full description and the paths to fetch and place the information, by data standard type, for each.
@@ -96,7 +96,7 @@ Environment Variables used:
 * administration.submissionType ^mapping[=].language = #application/fhir
 * administration.submissionType ^mapping[=].map = "MessageHeader.reason.memberOf(http://hl7.org/fhir/us/fhir-registry-protocols-ig/ValueSet/SubmissionType)"
 
-* administration.date 1..1 CREDSElementDefinition "Submission DateTime " "Date and Time of the Submission"
+* administration.date 1..1 CREDSElementDefinition "Submission DateTime" "Date and Time of the Submission"
 * administration.date ^mapping[+].identity = "FHIR"
 * administration.date ^mapping[=].language = #application/fhir
 * administration.date ^mapping[=].map = "now()"
@@ -104,7 +104,7 @@ Environment Variables used:
 * administration.date ^mapping[=].language = #application/fhir
 * administration.date ^mapping[=].map = "Composition.date"
 
-* administration.author 1..1 CREDSElementDefinition "Submission Organization " "Organization Submitting the Record"
+* administration.author 1..1 CREDSElementDefinition "Submission Organization" "Organization Submitting the Record"
 * administration.author ^mapping[+].identity = "FHIR"
 * administration.author ^mapping[=].language = #application/fhir
 * administration.author ^mapping[=].map = "Organization"
@@ -123,8 +123,6 @@ Environment Variables used:
 * episodeInformation 1..1 BackboneElement "Episode information"
 
 * episodeInformation.episodeUniqueKey 1..1 CREDSElementDefinition "Episode Unique Key" "Indicate the unique key associated with each patient episode record as assigned by the EMR/EHR or your software application."
-* episodeInformation.episodeUniqueKey ^type.code = Identifier 
-* episodeInformation.episodeUniqueKey ^patternIdentifier.system  = "http://cathpci.acc.org/episodeUniqueKey"
 * episodeInformation.episodeUniqueKey ^mapping[+].identity = "FHIR"
 * episodeInformation.episodeUniqueKey ^mapping[=].language = #application/fhir
 * episodeInformation.episodeUniqueKey ^mapping[=].map = "Encounter.where(reason.resolve().is(FHIR.Procedure) and reason.resolve().code.codable.code=415070008 )"

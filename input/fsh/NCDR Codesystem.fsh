@@ -2,7 +2,8 @@ CodeSystem: NCDRCathPCI
 Id: ncdr
 Title: "CathPCI Associated NCDR Selection Codes"
 Description: "This is the complete list of all codes from the NCDR code list used in selections for the CathPCI questionnaire."
-
+* ^caseSensitive = false
+* ^experimental = true
 * #100000349 "Patient delays in providing consent for PCI"
 * #100000350 "Difficulty crossing the culprit lesion"
 * #100000351 "Other"
@@ -239,6 +240,8 @@ Description: "This is the complete list of all codes from the NCDR code list use
 CodeSystem: NCDRQuestionCodesCS
 Title: "NCDR Question Codes"
 Description: "Codes used for CathPCI Question Codes"
+* ^caseSensitive = false
+* ^experimental = true
 * #100000180 "STEMI or STEMI Equivalent First Noted"
 * #100000290 "Chronic Total Occlusion"
 * #100000517 "Health Insurance Claim Number (HIC)"
@@ -406,5 +409,6 @@ Description: "Codes used for CathPCI Question Codes"
 ValueSet: NCDRQuestionVS
 Id: ncdrq
 Title: "All codes used as NCDR questions for CathPCI"
-Description: ""
+Description: "Full NCDR Question Set"
+* ^experimental = true
 * include codes from system NCDRQuestionCodesCS

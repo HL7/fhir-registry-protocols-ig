@@ -1,5 +1,8 @@
 ValueSet: Antiarrhythmics
 Title: "All Antiarrhythmics"
+Description: "Listing of all antiarrythmics used in CathPCI procedures"
+* ^experimental = true
+
 //Injectable
 * $rxnorm#1010846 "5 ML lidocaine hydrochloride 40 MG/ML Injection [Xylocaine]"
 * $rxnorm#1046408 "100 ML amiodarone hydrochloride 1.5 MG/ML Injection [Nexterone]"

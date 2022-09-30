@@ -1,11 +1,16 @@
 ValueSet: SubmissionType
 Id: SubmissionType
 Title: "Submission Type"
+Description: "Submission Type"
+* ^experimental = true
 * ncdr#1000142424
 * ncdr#1000142425
 
 ValueSet: NewYorkHeartAssociationAnswers
 Title: "New York Heart Association OA Answer List"
+Description: "NYHA Loinc AnsWerlist"
+* ^experimental = true
+
 * $loinc#LA28408-5 "No objective evidence of cardiovascular disease"
 * $loinc#LA28409-3 "Objective evidence of minimal cardiovascular disease"
 * $loinc#LA28410-1 "Objective evidence of moderately severe cardiovascular disease"
@@ -13,13 +18,15 @@ Title: "New York Heart Association OA Answer List"
 
 ValueSet: FirstCardiacArrestRhythm
 Title: "First Cardiac Arrest Rhythm"
-Description: ""
+Description: "First Cardiac Arrest Rhythm"
+* ^experimental = true
 * ncdr#100013034
 * ncdr#100013035
 
 ValueSet: ElectrocardiacAssessmentResults
 Title: "Electrocardiac Assessment Results"
-Description: ""
+Description: "Electrocardiac Assessment Results"
+* ^experimental = true
 * $sct#17621005
 * $sct#263654008
 * ncdr#1000142468
@@ -27,6 +34,8 @@ Description: ""
 ValueSet: ElectrocardiacAbnormalityType
 Id: ElectrocardiacAbnormalityType
 Title: "Electrocardiac Abnormality Type"
+Description: "Electrocardiac Abnormality Type"
+* ^experimental = true
 * $sct#71908006
 * $sct#426525004
 * $sct#444658006
@@ -46,12 +55,16 @@ Title: "Electrocardiac Abnormality Type"
 
 ValueSet: NonSustainedVentricularTachycardiaType
 Title: "Non-Sustained Ventricular Tachycardia Type"
+Description: "Non-Sustained Ventricular Tachycardia Type"
+* ^experimental = true
 * ncdr#1000142351
 * ncdr#10001424781
 * ncdr#100000351
 
 ValueSet: ElectrocardiacAssessmentMethod
 Title: "Electrocardiac Assessment Method"
+Description: "Electrocardiac Assessment Method"
+* ^experimental = true
 * $sct#164847006
 * ncdr#10001424802
 * $sct#86184003
@@ -61,6 +74,8 @@ Title: "Electrocardiac Assessment Method"
 ValueSet: StressTestResults
 Id: StressTestResults
 Title: "Stress Test Results"
+Description: "Stress Test Results"
+* ^experimental = true
 * ncdr#100013083
 * ncdr#100013093
 * ncdr#100013094
@@ -68,6 +83,8 @@ Title: "Stress Test Results"
 
 ValueSet: StressTestRiskExtentofIschemia
 Title: "Stress Test Risk/Extent of Ischemia"
+Description: "Stress Test Risk/Extent of Ischemia"
+* ^experimental = true
 * ncdr#100013097
 * ncdr#100000584
 * ncdr#100013098
@@ -76,6 +93,8 @@ Title: "Stress Test Risk/Extent of Ischemia"
 ValueSet: CardiacCTAResults
 Id: CardiacCTAResults
 Title: "Cardiac CTA Results"
+Description: "Cardiac CTA Results"
+* ^experimental = true
 * ncdr#10001424786
 * ncdr#10001424787
 * ncdr#100001262
@@ -84,6 +103,8 @@ Title: "Cardiac CTA Results"
 
 ValueSet: PriorDiagnosticCoronaryAngiographyProcedureResults
 Title: "Prior Diagnostic Coronary Angiography Procedure Results"
+Description: "Prior Diagnostic Coronary Angiography Procedure Results"
+* ^experimental = true
 * ncdr#10001424786
 * ncdr#10001424787
 * ncdr#100001262
@@ -92,11 +113,13 @@ Title: "Prior Diagnostic Coronary Angiography Procedure Results"
 
 ValueSet: ConcomitantProceduresPerformedType
 Title: "Concomitant Procedures Performed Type"
+Description: "Concomitant Procedures Performed Type"
+* ^experimental = true
 * $sct#197042001
 * ncdr#100001273
 * $sct#233032004
 * ncdr#1000142393
-* $sct#112000000208
+* ncdr#112000000208
 * $sct#441873006
 * $sct#40403005
 * $sct#252425004
@@ -112,6 +135,8 @@ Title: "Concomitant Procedures Performed Type"
 
 ValueSet: ArterialAccessSite
 Title: "Arterial Access Site"
+Description: "Arterial Access Site"
+* ^experimental = true
 * $sct#7657000
 * $sct#17137000
 * $sct#45631007
@@ -120,6 +145,7 @@ Title: "Arterial Access Site"
 ValueSet: CardiacValves
 Title: "Cardiac Valves"
 Description: "aortic valve, mitral valve, pulmonary valve and tricuspid valve"
+* ^experimental = true
 * $sct#34202007 "Aortic Valve"
 * $sct#91134007 "Mitral Valve"
 * $sct#39057004 "Pulmonary Valve"
@@ -127,12 +153,16 @@ Description: "aortic valve, mitral valve, pulmonary valve and tricuspid valve"
 
 ValueSet: ValvularDiseaseStenosisSeverity
 Title: "Valvular Disease Stenosis Severity"
+Description: "Valvular Disease Stenosis Severity"
+* ^experimental = true
 * ncdr#112000000377
 * ncdr#112000000378
 * ncdr#112000000379
 
 ValueSet: ValvularDiseaseRegurgitationSeverity
 Title: "Valvular Disease Regurgitation Severity"
+Description: "Valvular Disease Regurgitation Severity"
+* ^experimental = true
 * ncdr#112000000380
 * ncdr#112000000381
 * ncdr#1000142345
@@ -141,6 +171,7 @@ Title: "Valvular Disease Regurgitation Severity"
 ValueSet: LesionSegmentNumber
 Title: "Lesion Segment Number"
 Description: "Lesion Segment Number"
+* ^experimental = true
 * $sct#91083009 "1 - pRCA" 
 * $sct#450960006 "2 - mRCA" 
 * $sct#41879009 "3 - dRCA" 
@@ -184,6 +215,7 @@ Description: "Lesion Segment Number"
 ValueSet: GraftVesselCABGVessel
 Title: "Graft Vessel CABG Vessel"
 Description: "Vessels used for the coronary artery bypass graft"
+* ^experimental = true
 * $sct#261402001
 * $sct#261403006
 * $sct#362072009
@@ -192,6 +224,7 @@ Description: "Vessels used for the coronary artery bypass graft"
 ValueSet: PCIStatus
 Title: "PCI Status Options"
 Description: "The status of the PCI"
+* ^experimental = true
 * ncdr#100012987
 * ncdr#100012988
 * ncdr#100012989
@@ -200,11 +233,13 @@ Description: "The status of the PCI"
 ValueSet: HypothermiaInduced
 Title: "Induced Hypothermia Codes"
 Description: "All SNOMED codes about Induced Hypothermia"
+* ^experimental = true
 * include codes from system $sct where concept is-a #308693008
 
 ValueSet: CardiovascularTreatmentDecision
 Title: "Cardiovascular Treatment Decision Options"
 Description: "Decision options for Cardiovascular Treatment consult"
+* ^experimental = true
 * ncdr#1000142368
 * ncdr#1000142369
 * ncdr#1000142370
@@ -212,12 +247,14 @@ Description: "Decision options for Cardiovascular Treatment consult"
 ValueSet: MultivesselProcedureType
 Title: "Multi-vessel Procedure Type"
 Description: "Type of Multi-vessel Procedure Performed"
+* ^experimental = true
 * ncdr#10001424793
 * ncdr#10001424794
 
 ValueSet: PCIIndications
 Title: "Percutaneous Coronary Intervention Indication"
 Description: "Reasons the percutaneous coronary intervention PCI may be performed"
+* ^experimental = true
 * ncdr#100000570
 * ncdr#100012991
 * ncdr#100000572
@@ -233,6 +270,7 @@ Description: "Reasons the percutaneous coronary intervention PCI may be performe
 ValueSet: SyntaxScore
 Title: "Syntax Score for the PCI procedure"
 Description: "Syntax Score options for the PCI procedure"
+* ^experimental = true
 * ncdr#10001424799
 * ncdr#10001424798
 * ncdr#10001424797
@@ -240,12 +278,14 @@ Description: "Syntax Score options for the PCI procedure"
 ValueSet: STEMIFirstNoted
 Title: "STEMI or STEMI Equivalent First Noted"
 Description: "ECG where STEMI or STEMI Equivalent First Noted"
+* ^experimental = true
 * ncdr#100000578
 * ncdr#100000579
 
 ValueSet: PatientCenteredReasonforDelay
 Title: "Patient Centered Reason for Delay"
 Description: "Patient Centered Reason for Delay in PCI Reason"
+* ^experimental = true
 * ncdr#100000881
 * ncdr#100000350
 * ncdr#100013001
@@ -257,6 +297,7 @@ ValueSet: VentricularSupportDeviceType
 Id: VentricularSupportDeviceType
 Title: "Ventricular Support Device Type"
 Description: "Specific Options for Ventricular Support Devices"
+* ^experimental = true
 * ncdr#1000142428
 * $sct#233573008
 * ncdr#100014011
@@ -271,6 +312,7 @@ Description: "Specific Options for Ventricular Support Devices"
 ValueSet: TIMIFlow
 Title: "TIMI Flow"
 Description: "TIMI (Thrombolysis in Myocardial Infarction) flow grades"
+* ^experimental = true
 * $sct#371867000
 * $sct#371866009
 * $sct#371864007
@@ -279,6 +321,7 @@ Description: "TIMI (Thrombolysis in Myocardial Infarction) flow grades"
 ValueSet: StentType
 Title: "CathPCI List of Stent Types"
 Description: "Major Types of Stents used in CathPCI procedures"
+* ^experimental = true
 * $sct#464052002
 * $sct#411191007
 * $sct#705632009
@@ -286,13 +329,15 @@ Description: "Major Types of Stents used in CathPCI procedures"
 ValueSet: CABGType
 Title: "Coronary Artery Bypass Graft Type"
 Description: "Major Types of CABG"
+* ^experimental = true
 * $sct#261402001
 * $sct#181367001
 * ncdr#100013029
 
 ValueSet: LocationInGraft
 Title: "Location in the CABG Graft"
-Description: ""
+Description: "Location in the CABG Graft"
+* ^experimental = true
 * ncdr#1000142355
 * ncdr#1000142354
 * ncdr#1000142353
@@ -300,15 +345,17 @@ Description: ""
 ValueSet: LesionComplexity
 Title: "Complexity of the Lesion"
 Description: "ACC categories for complexity"
+* ^experimental = true
 * ncdr#100000583
 * ncdr#100000584
 
 ValueSet: IntraAndPostEvents
 Title: "Cath PCI qualified list of Events"
-Description: ""
+Description: "Cath PCI qualified list of Events"
+* ^experimental = true
 * ncdr#1000142440
 * $sct#74474003
-* $sct#17941003
+* $sct#417941003
 * ncdr#1000142371
 * $sct#95549001
 * $sct#410429000
@@ -321,12 +368,13 @@ Description: ""
 * $sct#230713003
 * $sct#385494008
 * $sct#35304003
-* $sct#1000142419
+* ncdr#1000142419
 
 ValueSet: InterventionTypes
 Id: InterventionTypes
 Title: "Intervention Types"
 Description: "Intervention Types Listed at Discharge"
+* ^experimental = true
 * $sct#232717009
 * ncdr#100014071
 * ncdr#100014068
@@ -339,6 +387,7 @@ ValueSet: CABGStatus
 Id: CABGStatus
 Title: "CABG Status"
 Description: "Coronary Artery Bypass Status"
+* ^experimental = true
 * ncdr#100001285
 * ncdr#100001286
 * ncdr#100001287
@@ -348,6 +397,7 @@ ValueSet: CABGIndication
 Id: CABGIndication
 Title: "CABG Indication"
 Description: "ACC coronary artery bypass graft (CABG) Indications"
+* ^experimental = true
 * ncdr#100000712
 * ncdr#100001291
 * ncdr#100001292
@@ -357,6 +407,7 @@ ValueSet: CardiacRehabilitationReferral
 Id: CardiacRehabilitationReferral
 Title: "Cardiac Rehabilitation Referral"
 Description: "Was Patient Referred for Cardiac Rehab"
+* ^experimental = true
 * ncdr#100013072
 * ncdr#100014064
 * ncdr#100014066
@@ -366,6 +417,7 @@ ValueSet: ChestPainSymptomAssessment
 Id: ChestPainSymptomAssessment
 Title: "Chest Pain Symptom Assessment"
 Description: "Chest Pain Symptom Assessment Options"
+* ^experimental = true
 * $sct#429559004
 * $sct#371807002
 * ncdr#100001275
@@ -374,7 +426,8 @@ Description: "Chest Pain Symptom Assessment Options"
 ValueSet: CardiacInstabilityType
 Id: CardiacInstabilityType 
 Title: "Cardiac Instability Type"
-Description: "" 
+Description: "Cardiac Instability Type" 
+* ^experimental = true
 * ncdr#100014006
 * $sct#422773005
 * $sct#44103008
@@ -386,6 +439,7 @@ ValueSet: VentricularSupport
 Id: VentricularSupport
 Title: "VentricularSupport"
 Description: "Forms Of Mechanical Support"
+* ^experimental = true
 * ncdr#1000142428
 * $sct#233573008
 * ncdr#100014011
@@ -402,6 +456,7 @@ ValueSet: MechanicalVentricularSupportTiming
 Id: MechanicalVentricularSupportTiming
 Title: "Mechanical Ventricular Support Timing"
 Description: "Mechanical Ventricular Support Timing"
+* ^experimental = true
 * ncdr#100001280
 * ncdr#100001281
 * ncdr#100013042
@@ -410,6 +465,7 @@ ValueSet: FunctionalCapacity
 Id: FunctionalCapacity
 Title: "Functional Capacity"
 Description: "Functional Capacity in METS"
+* ^experimental = true
 * ncdr#100014023
 * ncdr#100014025
 * ncdr#100014024
@@ -418,7 +474,20 @@ ValueSet: SurgicalRisk
 Id: SurgicalRisk
 Title: "SurgicalRisk"
 Description: "Surgeon Identified Risk"
+* ^experimental = true
 * ncdr#112000000375
 * ncdr#112000000376
 * ncdr#100014029
 * ncdr#100014030
+
+ValueSet: FamilyPrematureCAD
+Id: FamilyPrematureCAD
+Title: "Family History of Premature CAD"
+Description: """All codes in SNOMED and LOINC indicating a family history of Premature Coronary Artery Disease
+Where premature means under 55 if male and under 65 if female"""
+* ^experimental = true
+
+* $sct#134439009
+* $sct#275121006
+* include codes from system $sct where concept is-a #266897007
+* $loinc#80985-5

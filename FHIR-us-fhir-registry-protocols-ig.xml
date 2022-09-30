@@ -18,7 +18,7 @@
 <artifact id="StructureDefinition/CREDSElementDefinition" key="StructureDefinition-CREDSElementDefinition" name="CREDSElementDefinition"/>
 <artifact id="ValueSet/CardiacCTA" key="ValueSet-CardiacCTA" name="CTA Heart and Coronary arteries"/>
 <artifact id="StructureDefinition/CapabilityStatementWithSlices" key="StructureDefinition-CapabilityStatementWithSlices" name="Capability Statements with Slices"/>
-<artifact id="ValueSet/CardiacArrest" key="ValueSet-CardiacArrest" name="Cardiac Arrest "/>
+<artifact id="ValueSet/CardiacArrest" key="ValueSet-CardiacArrest" name="Cardiac Arrest"/>
 <artifact id="ValueSet/CardiacCTAResults" key="ValueSet-CardiacCTAResults" name="Cardiac CTA Results"/>
 <artifact id="ValueSet/CardiacInstabilityType" key="ValueSet-CardiacInstabilityType" name="Cardiac Instability Type"/>
 <artifact id="ValueSet/CardiacRehabilitationReferral" key="ValueSet-CardiacRehabilitationReferral" name="Cardiac Rehabilitation Referral"/>
@@ -26,8 +26,8 @@
 <artifact id="ValueSet/CardiovascularTreatmentDecision" key="ValueSet-CardiovascularTreatmentDecision" name="Cardiovascular Treatment Decision Options"/>
 <artifact id="ValueSet/StressTest" key="ValueSet-StressTest" name="Cath PCI Selected Stress Test"/>
 <artifact id="ValueSet/IntraAndPostEvents" key="ValueSet-IntraAndPostEvents" name="Cath PCI qualified list of Events"/>
+<artifact id="StructureDefinition/ACCNCDRCathPCIDetailed" key="StructureDefinition-ACCNCDRCathPCIDetailed" name="Cath-PCI Detailed Submission Map"/>
 <artifact id="StructureDefinition/ACCNCDRCathPCI" key="StructureDefinition-ACCNCDRCathPCI" name="Cath-PCI Submission Map"/>
-<artifact id="StructureDefinition/ACCNCDRCathPCIDetailed" key="StructureDefinition-ACCNCDRCathPCI" name="Cath-PCI Submission Map"/>
 <artifact id="CodeSystem/ncdr" key="CodeSystem-ncdr" name="CathPCI Associated NCDR Selection Codes"/>
 <artifact id="ValueSet/StentType" key="ValueSet-StentType" name="CathPCI List of Stent Types"/>
 <artifact id="ValueSet/CerebrovascularDisease" key="ValueSet-CerebrovascularDisease" name="Cerebrovascular Disease"/>
