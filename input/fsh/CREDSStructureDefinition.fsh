@@ -14,13 +14,8 @@ Description: "StructureDefinition for use with CREDS mapping creating the base m
 * kind = #logical
 * abstract = false
 * type 1..1 
-* snapshot 0..0
+// * snapshot 0..0
 * differential 0..0
-
-Invariant:  MappingComment
-Description: "Output mappings must have a comment"
-Expression: "iff(mapping.identity.value = 'Output', mapping.comment.exists)"
-Severity:   #error
 
 Profile: CREDSElementDefinition
 Parent: ElementDefinition
@@ -41,7 +36,6 @@ Element mapping should include an Output mapping unless the mapping is in a pare
 """
 * insert CREDSStructureDefinitionContent
 
-//* obeys MappingComment
 * short 1..1
 * comment 1..1
 * type ^code = http://hl7.org/fhir/data-types#canonical

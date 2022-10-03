@@ -4,7 +4,7 @@
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
-<artifact id="ValueSet/AbnormalElectrocardiacAssessment" key="ValueSet-AbnormalElectrocardiacAssessment" name="Abnormal Electrocardiac Assessment  "/>
+<artifact id="ValueSet/AbnormalElectrocardiacAssessment" key="ValueSet-AbnormalElectrocardiacAssessment" name="Abnormal Electrocardiac Assessment"/>
 <artifact id="ValueSet/Antiarrhythmics" key="ValueSet-Antiarrhythmics" name="All Antiarrhythmics"/>
 <artifact id="ValueSet/ncdrq" key="ValueSet-ncdrq" name="All codes used as NCDR questions for CathPCI"/>
 <artifact id="Encounter/ExampleDischarge" key="Encounter-ExampleDischarge" name="An Example Discharge Encounter"/>

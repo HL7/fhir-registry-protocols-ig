@@ -10,6 +10,7 @@ ValueSet: NewYorkHeartAssociationAnswers
 Title: "New York Heart Association OA Answer List"
 Description: "NYHA Loinc AnsWerlist"
 * ^experimental = true
+* ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc"
 
 * $loinc#LA28408-5 "No objective evidence of cardiovascular disease"
 * $loinc#LA28409-3 "Objective evidence of minimal cardiovascular disease"
@@ -27,6 +28,7 @@ ValueSet: ElectrocardiacAssessmentResults
 Title: "Electrocardiac Assessment Results"
 Description: "Electrocardiac Assessment Results"
 * ^experimental = true
+* ^copyright = "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement"
 * $sct#17621005
 * $sct#263654008
 * ncdr#1000142468
@@ -36,6 +38,7 @@ Id: ElectrocardiacAbnormalityType
 Title: "Electrocardiac Abnormality Type"
 Description: "Electrocardiac Abnormality Type"
 * ^experimental = true
+* ^copyright = "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement"
 * $sct#71908006
 * $sct#426525004
 * $sct#444658006
@@ -65,6 +68,7 @@ ValueSet: ElectrocardiacAssessmentMethod
 Title: "Electrocardiac Assessment Method"
 Description: "Electrocardiac Assessment Method"
 * ^experimental = true
+* ^copyright = "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement"
 * $sct#164847006
 * ncdr#10001424802
 * $sct#86184003
@@ -95,6 +99,7 @@ Id: CardiacCTAResults
 Title: "Cardiac CTA Results"
 Description: "Cardiac CTA Results"
 * ^experimental = true
+* ^copyright = "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement"
 * ncdr#10001424786
 * ncdr#10001424787
 * ncdr#100001262
@@ -105,6 +110,7 @@ ValueSet: PriorDiagnosticCoronaryAngiographyProcedureResults
 Title: "Prior Diagnostic Coronary Angiography Procedure Results"
 Description: "Prior Diagnostic Coronary Angiography Procedure Results"
 * ^experimental = true
+* ^copyright = "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement"
 * ncdr#10001424786
 * ncdr#10001424787
 * ncdr#100001262
@@ -115,6 +121,7 @@ ValueSet: ConcomitantProceduresPerformedType
 Title: "Concomitant Procedures Performed Type"
 Description: "Concomitant Procedures Performed Type"
 * ^experimental = true
+* ^copyright = "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement"
 * $sct#197042001
 * ncdr#100001273
 * $sct#233032004
@@ -137,6 +144,7 @@ ValueSet: ArterialAccessSite
 Title: "Arterial Access Site"
 Description: "Arterial Access Site"
 * ^experimental = true
+* ^copyright = "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement"
 * $sct#7657000
 * $sct#17137000
 * $sct#45631007
@@ -146,6 +154,7 @@ ValueSet: CardiacValves
 Title: "Cardiac Valves"
 Description: "aortic valve, mitral valve, pulmonary valve and tricuspid valve"
 * ^experimental = true
+* ^copyright = "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement"
 * $sct#34202007 "Aortic Valve"
 * $sct#91134007 "Mitral Valve"
 * $sct#39057004 "Pulmonary Valve"
@@ -172,6 +181,7 @@ ValueSet: LesionSegmentNumber
 Title: "Lesion Segment Number"
 Description: "Lesion Segment Number"
 * ^experimental = true
+* ^copyright = "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement"
 * $sct#91083009 "1 - pRCA" 
 * $sct#450960006 "2 - mRCA" 
 * $sct#41879009 "3 - dRCA" 
@@ -216,6 +226,7 @@ ValueSet: GraftVesselCABGVessel
 Title: "Graft Vessel CABG Vessel"
 Description: "Vessels used for the coronary artery bypass graft"
 * ^experimental = true
+* ^copyright = "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement"
 * $sct#261402001
 * $sct#261403006
 * $sct#362072009
@@ -234,6 +245,7 @@ ValueSet: HypothermiaInduced
 Title: "Induced Hypothermia Codes"
 Description: "All SNOMED codes about Induced Hypothermia"
 * ^experimental = true
+* ^copyright = "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement"
 * include codes from system $sct where concept is-a #308693008
 
 ValueSet: CardiovascularTreatmentDecision
@@ -255,6 +267,7 @@ ValueSet: PCIIndications
 Title: "Percutaneous Coronary Intervention Indication"
 Description: "Reasons the percutaneous coronary intervention PCI may be performed"
 * ^experimental = true
+* ^copyright = "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement"
 * ncdr#100000570
 * ncdr#100012991
 * ncdr#100000572
@@ -298,6 +311,7 @@ Id: VentricularSupportDeviceType
 Title: "Ventricular Support Device Type"
 Description: "Specific Options for Ventricular Support Devices"
 * ^experimental = true
+* ^copyright = "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement"
 * ncdr#1000142428
 * $sct#233573008
 * ncdr#100014011
@@ -307,12 +321,13 @@ Description: "Specific Options for Ventricular Support Devices"
 * $sct#360065002
 * ncdr#1000142429
 * ncdr#100014010
-* $sct#112000001980
+* ncdr#112000001980
 
 ValueSet: TIMIFlow
 Title: "TIMI Flow"
 Description: "TIMI (Thrombolysis in Myocardial Infarction) flow grades"
 * ^experimental = true
+* ^copyright = "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement"
 * $sct#371867000
 * $sct#371866009
 * $sct#371864007
@@ -322,6 +337,7 @@ ValueSet: StentType
 Title: "CathPCI List of Stent Types"
 Description: "Major Types of Stents used in CathPCI procedures"
 * ^experimental = true
+* ^copyright = "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement"
 * $sct#464052002
 * $sct#411191007
 * $sct#705632009
@@ -330,6 +346,7 @@ ValueSet: CABGType
 Title: "Coronary Artery Bypass Graft Type"
 Description: "Major Types of CABG"
 * ^experimental = true
+* ^copyright = "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement"
 * $sct#261402001
 * $sct#181367001
 * ncdr#100013029
@@ -353,6 +370,7 @@ ValueSet: IntraAndPostEvents
 Title: "Cath PCI qualified list of Events"
 Description: "Cath PCI qualified list of Events"
 * ^experimental = true
+* ^copyright = "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement"
 * ncdr#1000142440
 * $sct#74474003
 * $sct#417941003
@@ -375,6 +393,7 @@ Id: InterventionTypes
 Title: "Intervention Types"
 Description: "Intervention Types Listed at Discharge"
 * ^experimental = true
+* ^copyright = "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement"
 * $sct#232717009
 * ncdr#100014071
 * ncdr#100014068
@@ -418,6 +437,7 @@ Id: ChestPainSymptomAssessment
 Title: "Chest Pain Symptom Assessment"
 Description: "Chest Pain Symptom Assessment Options"
 * ^experimental = true
+* ^copyright = "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement"
 * $sct#429559004
 * $sct#371807002
 * ncdr#100001275
@@ -428,6 +448,7 @@ Id: CardiacInstabilityType
 Title: "Cardiac Instability Type"
 Description: "Cardiac Instability Type" 
 * ^experimental = true
+* ^copyright = "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement"
 * ncdr#100014006
 * $sct#422773005
 * $sct#44103008
@@ -440,6 +461,7 @@ Id: VentricularSupport
 Title: "VentricularSupport"
 Description: "Forms Of Mechanical Support"
 * ^experimental = true
+* ^copyright = "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement"
 * ncdr#1000142428
 * $sct#233573008
 * ncdr#100014011
@@ -486,7 +508,10 @@ Title: "Family History of Premature CAD"
 Description: """All codes in SNOMED and LOINC indicating a family history of Premature Coronary Artery Disease
 Where premature means under 55 if male and under 65 if female"""
 * ^experimental = true
-
+* ^copyright = """
+* This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement
+* This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc
+"""
 * $sct#134439009
 * $sct#275121006
 * include codes from system $sct where concept is-a #266897007
