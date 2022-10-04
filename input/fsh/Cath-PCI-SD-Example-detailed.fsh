@@ -365,13 +365,13 @@ Environment Variables used:
 * procedureInformation.systolicBloodPressure ^mapping[=].language = #application/fhir
 * procedureInformation.systolicBloodPressure ^mapping[=].map = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-blood-pressure"
 
-* procedureInformation.PCIprocedure  1..1 string "PCI Procedure" "Results of this query will fill the %Procedure and %procedure.period environment variables"
-* procedureInformation.PCIprocedure ^mapping[+].identity = "FHIR"
-* procedureInformation.PCIprocedure ^mapping[=].language = #application/fhir
-* procedureInformation.PCIprocedure ^mapping[=].map = "Procedure.where(code.coding.code.memberOf(http://hl7.org/fhir/us/fhir-registry-protocols-ig/ValueSet/'PercutaneousCoronaryIntervention') and performedPeriod.exists() )"
-* procedureInformation.PCIprocedure ^mapping[+].identity = "Output"
-* procedureInformation.PCIprocedure ^mapping[=].language = #application/fhir
-* procedureInformation.PCIprocedure ^mapping[=].map = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure"
+* procedureInformation.pciProcedure  1..1 string "PCI Procedure" "Results of this query will fill the %Procedure and %procedure.period environment variables"
+* procedureInformation.pciProcedure ^mapping[+].identity = "FHIR"
+* procedureInformation.pciProcedure ^mapping[=].language = #application/fhir
+* procedureInformation.pciProcedure ^mapping[=].map = "Procedure.where(code.coding.code.memberOf(http://hl7.org/fhir/us/fhir-registry-protocols-ig/ValueSet/'PercutaneousCoronaryIntervention') and performedPeriod.exists() )"
+* procedureInformation.pciProcedure ^mapping[+].identity = "Output"
+* procedureInformation.pciProcedure ^mapping[=].language = #application/fhir
+* procedureInformation.pciProcedure ^mapping[=].map = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure"
 
 * procedureInformation.diagnosticCoronaryAngiographyProcedure  0..1 string "Diagnostic Coronary Angiography"
 * procedureInformation.diagnosticCoronaryAngiographyProcedure ^mapping[+].identity = "FHIR"
