@@ -21,7 +21,7 @@ Usage: #example
 * address.state = "MA"
 * address.postalCode = "01002"
 
-Instance: USCorePatientexample
+Instance: 261989c3-688c-4941-b767-d8d4c871217c
 InstanceOf: us-core-patient
 Title: "Patient Example"
 Description: "This is a patient example for the US Core Patient Profile"
@@ -111,7 +111,7 @@ Usage:  #example
 * status = #finished
 * class = http://terminology.hl7.org/CodeSystem/v3-ActCode#ACUTE
 * type =  SCT#448337001 "Telemedicine consultation with patient"
-* subject = Reference(USCorePatientexample)
+* subject = Reference(261989c3-688c-4941-b767-d8d4c871217c)
 * reasonCode = SCT#1917008 "Patient discharge, deceased, medicolegal case"
 
 Instance: CREDSEncounter
@@ -123,7 +123,7 @@ Usage: #example
 * status = #finished
 * class = http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB
 * type = http://www.ama-assn.org/go/cpt#99201
-* subject = Reference(USCorePatientexample)
+* subject = Reference(261989c3-688c-4941-b767-d8d4c871217c)
 * participant.individual = Reference(USCorePractitionerexample)
 * location.location = Reference(Enc-location)
 * period.start = 2020-10-01T17:00:14-05:00

@@ -70,7 +70,7 @@
 <artifact id="ValueSet/PCIStatus" key="ValueSet-PCIStatus" name="PCI Status Options"/>
 <artifact id="ValueSet/PackedRedBloodCells" key="ValueSet-PackedRedBloodCells" name="Packed Red Blood Ceels"/>
 <artifact id="ValueSet/PatientCenteredReasonforDelay" key="ValueSet-PatientCenteredReasonforDelay" name="Patient Centered Reason for Delay"/>
-<artifact id="Patient/USCorePatientexample" key="Patient-USCorePatientexample" name="Patient Example"/>
+<artifact id="Patient/261989c3-688c-4941-b767-d8d4c871217c" key="Patient-USCorePatientexample" name="Patient Example"/>
 <artifact id="ValueSet/PCIIndications" key="ValueSet-PCIIndications" name="Percutaneous Coronary Intervention Indication"/>
 <artifact id="ValueSet/PeripheralArterialOcclusiveDisease" key="ValueSet-PeripheralArterialOcclusiveDisease" name="Peripheral Arterial Occlusive Disease"/>
 <artifact id="Practitioner/USCorePractitionerexample" key="Practitioner-USCorePractitionerexample" name="Practitioner 1 Example"/>
