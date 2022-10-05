@@ -15,7 +15,7 @@
 <artifact id="StructureDefinition/CREDSStructureDefinition" key="StructureDefinition-CREDSStructureDefinition" name="CREDS Structure Definition"/>
 <artifact id="StructureDefinition/CREDSSubmission" key="StructureDefinition-CREDSSubmission" name="CREDS Submission Bundle"/>
 <artifact id="Bundle/CREDSBundle-Example" key="Bundle-CREDSBundle-Example" name="CREDS Submission Bundle Example"/>
-<artifact id="StructureDefinition/CREDSElementDefinition" key="StructureDefinition-CREDSElementDefinition" name="CREDSElementDefinition"/>
+<artifact deprecated="true" id="StructureDefinition/CREDSElementDefinition" key="StructureDefinition-CREDSElementDefinition" name="CREDSElementDefinition"/>
 <artifact id="ValueSet/CardiacCTA" key="ValueSet-CardiacCTA" name="CTA Heart and Coronary arteries"/>
 <artifact id="StructureDefinition/CapabilityStatementWithSlices" key="StructureDefinition-CapabilityStatementWithSlices" name="Capability Statements with Slices"/>
 <artifact id="ValueSet/CardiacArrest" key="ValueSet-CardiacArrest" name="Cardiac Arrest"/>

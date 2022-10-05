@@ -14,7 +14,24 @@ Description: "StructureDefinition for use with CREDS mapping creating the base m
 * kind = #logical
 * abstract = false
 * type 1..1 
-// * snapshot 0..0
+* ^mapping[+].identity = "FHIR"
+* ^mapping[=].uri = "http://fhir.hl7.org"
+* ^mapping[=].name = "Fast Health Interoperability Resources"
+* ^mapping[=].comment = "Path to where in a FHIR Resource the data element is found"
+* ^mapping[+].identity = "CDA"
+* ^mapping[=].uri = "http://build.fhir.org/ig/HL7/cda-core-2.0/"
+* ^mapping[=].name = "Clinical Document Architecture"
+* ^mapping[=].comment = "Path to where in a CDA 2.0/CCDA 2.1 Document the data element is found"
+* ^mapping[+].identity = "HL7V2"
+* ^mapping[=].uri = "http://www.hl7.eu/refactored/index.html"
+* ^mapping[=].name = "HL7 V2 Messages"
+* ^mapping[=].comment = "Path to where in a HL7 V2 Message the data element is found"
+* ^mapping[+].identity = "Output"
+* ^mapping[=].uri = "http://hl7.org/fhir/us/core"
+* ^mapping[=].name = "Submission Data Output location"
+* ^mapping[=].comment = "Location within the requirements profile to place the data for submission in US Core or FHIR Core Resources"
+
+/* * snapshot 0..0
 * differential 0..0
 
 Profile: CREDSElementDefinition
@@ -69,3 +86,4 @@ Element mapping should include an Output mapping unless the mapping is in a pare
 * mapping[Output].language 1..1
 * mapping[Output].language = #application/fhir
 * mapping[Output].map 1..1
+*/

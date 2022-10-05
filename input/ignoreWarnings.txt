@@ -2,7 +2,7 @@
 # Error in the cpb-15 constraint xpath value in core 
 WARNING: StructureDefinition/CapabilityStatementWithSlices: StructureDefinition.snapshot.element[0].constraint[6].xpath: value should not start or finish with whitespace ' not(f:kind/@value='instance')...exists(f:software))'
 
-# We're working with profiles so the Examples are listed as such
+# We're working with Logical Models so the Examples are listed as such
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/fhir-registry-protocols-ig/StructureDefinition/CREDSElementDefinition'): The Implementation Guide contains no examples for this data type profile
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/us/fhir-registry-protocols-ig/StructureDefinition/CREDSStructureDefinition'): The Implementation Guide contains no examples for this profile
 
@@ -15,3 +15,4 @@ INFORMATION: Bundle/CREDSBundle-Example: Bundle.entry[2]: This element does not 
 INFORMATION: Bundle/CREDSBundle-Example: Bundle.entry[2].resource.ofType(Encounter).type[0].coding[0]: Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated
 INFORMATION: Encounter/CREDSEncounter: Encounter.type[0].coding[0]: Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated
 INFORMATION: Practitioner/USCorePractitionerexample: Practitioner.identifier[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner
+Code System URI 'urn:oid:2.16.840.1.113883.6.238' is unknown so the code cannot be validated

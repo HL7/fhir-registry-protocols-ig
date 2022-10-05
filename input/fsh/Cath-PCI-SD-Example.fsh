@@ -4,7 +4,7 @@ Title: "Cath-PCI Submission Map"
 Description: """This is an example of the data that would be used for a Cath-PCI Submission.
 The full map is a logical model as that allows conformance to the FHIR Standard the way a custom Resource would not.
 Each element has the short name of the data, a full description and the paths to fetch and place the information, by data standard type, for each.
-A section (such as Demographics) is a BackboneElement (holds no values).  All subordinate elements are CREDSElementDefinitions.
+A section (such as Demographics) is a BackboneElement (holds no values).  All subordinate elements are strings.
 Each mapping includes the following:
 * identity = standard used for the mapping (e.g., FHIR)
 * language = mime type that matches identity
@@ -40,7 +40,7 @@ Each mapping includes the following:
 
 * demographics 1..1 BackboneElement "Patient Demographics"
 
-* demographics.lastName 1..1 CREDSElementDefinition "Last Name" "Indicate the patient's last name. Hyphenated names should be recorded with a hyphen."
+* demographics.lastName 1..1 string "Last Name" "Indicate the patient's last name. Hyphenated names should be recorded with a hyphen."
 * demographics.lastName ^mapping[+].identity = "FHIR" // Always "Source Standard"
 * demographics.lastName ^mapping[=].language = #application/fhir // mimetype of standard 
 * demographics.lastName ^mapping[=].map = "Patient.name.family" // actual Xpath to data 
@@ -55,7 +55,7 @@ Each mapping includes the following:
 * demographics.lastName ^mapping[=].map = "Patient.name.family" // actual Xpath to data within profile in requirements
 * demographics.lastName ^mapping[=].comment = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient.name.family" // profile for Bundle inclusion
 
-* demographics.firstName 1..1 CREDSElementDefinition "First Name" "Indicate the patient's first name."
+* demographics.firstName 1..1 string "First Name" "Indicate the patient's first name."
 * demographics.firstName ^mapping[+].identity = "FHIR"
 * demographics.firstName ^mapping[=].language = #application/fhir
 * demographics.firstName ^mapping[=].map = "Patient.name.given[0]"
@@ -70,7 +70,7 @@ Each mapping includes the following:
 * demographics.firstName ^mapping[=].map = "Patient.name.given" 
 * demographics.firstName ^mapping[=].comment = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient.name.given[0]"
 
-* demographics.middleName 0..* CREDSElementDefinition "Middle Name" "Indicate the patient's middle names."
+* demographics.middleName 0..* string "Middle Name" "Indicate the patient's middle names."
 * demographics.middleName ^mapping[+].identity = "FHIR"
 * demographics.middleName ^mapping[=].language = #application/fhir
 * demographics.middleName ^mapping[=].map = "Patient.name.given[position()>0]"
@@ -87,7 +87,7 @@ Each mapping includes the following:
 
 * episodeInformation 1..1 BackboneElement "CathPCI Episode Information"
 
-* episodeInformation.episodeUniqueKey 1..1 CREDSElementDefinition "Episode Unique Key" "Indicate the unique key associated with each patient episode record as assigned by the EMR/EHR or your software application."
+* episodeInformation.episodeUniqueKey 1..1 string "Episode Unique Key" "Indicate the unique key associated with each patient episode record as assigned by the EMR/EHR or your software application."
 * episodeInformation.episodeUniqueKey ^mapping[+].identity = "FHIR"
 * episodeInformation.episodeUniqueKey ^mapping[=].language = #application/fhir
 * episodeInformation.episodeUniqueKey ^mapping[=].map = "iif(Encounter.identifier(type.code='VN').value, Encounter.identifier(type.code='VN').value, Encounter.identifier[0].value)"
@@ -104,7 +104,7 @@ Each mapping includes the following:
 
 
 * arrivalInformation 1..1 BackboneElement "Patient Arrival Information"
-* arrivalInformation.numberOfTransferringFacilityUnavailable 1..1 CREDSElementDefinition "Number of Transferring Facility Unavailable"
+* arrivalInformation.numberOfTransferringFacilityUnavailable 1..1 string "Number of Transferring Facility Unavailable"
 * arrivalInformation.numberOfTransferringFacilityUnavailable ^mapping[+].identity = "FHIR"
 * arrivalInformation.numberOfTransferringFacilityUnavailable ^mapping[=].language = #application/fhir
 * arrivalInformation.numberOfTransferringFacilityUnavailable ^mapping[=].map = "resolve(Encounter.hospital.where(admitSource.coding.where(code ='hosp-trans' and system='http://terminology.hl7.org/CodeSystem/admit-source')).origin).identifier.where(system='').exists().not()"
@@ -114,7 +114,7 @@ Each mapping includes the following:
 * arrivalInformation.numberOfTransferringFacilityUnavailable ^mapping[=].map = "Observation"
 * arrivalInformation.numberOfTransferringFacilityUnavailable ^mapping[=].comment = "Observation"
 
-* arrivalInformation.transferringFacilityAmericanHospitalAssociationName 1..1 CREDSElementDefinition "Transferring Facility American Hospital Association Name"
+* arrivalInformation.transferringFacilityAmericanHospitalAssociationName 1..1 string "Transferring Facility American Hospital Association Name"
 * arrivalInformation.transferringFacilityAmericanHospitalAssociationName ^mapping[+].identity = "FHIR"
 * arrivalInformation.transferringFacilityAmericanHospitalAssociationName ^mapping[=].language = #application/fhir
 * arrivalInformation.transferringFacilityAmericanHospitalAssociationName ^mapping[=].map = "resolve(Encounter.hospital.where(admitSource.coding.where(code ='hosp-trans' and system='http://terminology.hl7.org/CodeSystem/admit-source')).origin).name"
@@ -124,7 +124,7 @@ Each mapping includes the following:
 * arrivalInformation.transferringFacilityAmericanHospitalAssociationName ^mapping[=].map = "Observation"
 * arrivalInformation.transferringFacilityAmericanHospitalAssociationName ^mapping[=].comment = "Observation"
 
-* arrivalInformation.transferringFacilityAmericanHospitalAssociationNumber 1..1 CREDSElementDefinition "Transferring Facility American Hospital Association Number"
+* arrivalInformation.transferringFacilityAmericanHospitalAssociationNumber 1..1 string "Transferring Facility American Hospital Association Number"
 * arrivalInformation.transferringFacilityAmericanHospitalAssociationNumber ^mapping[+].identity = "FHIR"
 * arrivalInformation.transferringFacilityAmericanHospitalAssociationNumber ^mapping[=].language = #application/fhir
 * arrivalInformation.transferringFacilityAmericanHospitalAssociationNumber ^mapping[=].map = "resolve(Encounter.hospital.where(admitSource.coding.where(code ='hosp-trans' and system='http://terminology.hl7.org/CodeSystem/admit-source')).origin).identifier.where(system='').value"
@@ -136,7 +136,7 @@ Each mapping includes the following:
 
 * cardiacStatus 1..1 BackboneElement "Patient Cardiac Status"
 
-* cardiacStatus.bystanderCardiopulmonaryResuscitation 1..1 CREDSElementDefinition "Bystander Cardiopulmonary Resuscitation"
+* cardiacStatus.bystanderCardiopulmonaryResuscitation 1..1 string "Bystander Cardiopulmonary Resuscitation"
 * cardiacStatus.bystanderCardiopulmonaryResuscitation ^mapping[+].identity = "FHIR"
 * cardiacStatus.bystanderCardiopulmonaryResuscitation ^mapping[=].language = #application/fhir
 * cardiacStatus.bystanderCardiopulmonaryResuscitation ^mapping[=].map = "Observation.where(code='112000000186' and system='https://cvquality.acc.org/NCDR' and effectiveDateTime > %Encounter.period.start).first()"
@@ -146,7 +146,7 @@ Each mapping includes the following:
 * cardiacStatus.bystanderCardiopulmonaryResuscitation ^mapping[=].map = "Observation"
 * cardiacStatus.bystanderCardiopulmonaryResuscitation ^mapping[=].comment = "Observation"
 
-* cardiacStatus.cardiacArrestAfterArrivalOfEmergencyMedicalServices 1..1 CREDSElementDefinition "Cardiac Arrest After Arrival of Emergency Medical Services" "Indicate if the out-of-hospital cardiac arrest occurred after arrival of Emergency Medical Services (EMS)."
+* cardiacStatus.cardiacArrestAfterArrivalOfEmergencyMedicalServices 1..1 string "Cardiac Arrest After Arrival of Emergency Medical Services" "Indicate if the out-of-hospital cardiac arrest occurred after arrival of Emergency Medical Services (EMS)."
 * cardiacStatus.cardiacArrestAfterArrivalOfEmergencyMedicalServices ^mapping[+].identity = "FHIR"
 * cardiacStatus.cardiacArrestAfterArrivalOfEmergencyMedicalServices ^mapping[=].language = #application/fhir
 * cardiacStatus.cardiacArrestAfterArrivalOfEmergencyMedicalServices ^mapping[=].map = "Observation.where(code='100014081' and system='https://cvquality.acc.org/NCDR' and effectiveDateTime > %Encounter.period.start).first()"
@@ -156,7 +156,7 @@ Each mapping includes the following:
 * cardiacStatus.cardiacArrestAfterArrivalOfEmergencyMedicalServices ^mapping[=].map = "Observation"
 * cardiacStatus.cardiacArrestAfterArrivalOfEmergencyMedicalServices ^mapping[=].comment = "Observation"
 
-* cardiacStatus.cardiacArrestAtTransferringHealthcareFacility 1..1 CREDSElementDefinition "Cardiac Arrest at Transferring Healthcare Facility" "Indicate if the patient had cardiac arrest at the transferring healthcare facility prior to arrival at the current facility."
+* cardiacStatus.cardiacArrestAtTransferringHealthcareFacility 1..1 string "Cardiac Arrest at Transferring Healthcare Facility" "Indicate if the patient had cardiac arrest at the transferring healthcare facility prior to arrival at the current facility."
 * cardiacStatus.cardiacArrestAtTransferringHealthcareFacility ^mapping[+].identity = "FHIR"
 * cardiacStatus.cardiacArrestAtTransferringHealthcareFacility ^mapping[=].language = #application/fhir
 * cardiacStatus.cardiacArrestAtTransferringHealthcareFacility ^mapping[=].map = "Observation.where(code='100014016' and system='https://cvquality.acc.org/NCDR' and effectiveDateTime > %Encounter.period.start).first()"
@@ -166,7 +166,7 @@ Each mapping includes the following:
 * cardiacStatus.cardiacArrestAtTransferringHealthcareFacility ^mapping[=].map = "Observation"
 * cardiacStatus.cardiacArrestAtTransferringHealthcareFacility ^mapping[=].comment = "Observation"
 
-* cardiacStatus.cardiacArrestOutOfHealthcareFacility 1..1 CREDSElementDefinition "Cardiac Arrest Out of Healthcare Facility" "Indicate if a cardiac arrest event occurred outside of any healthcare facility."
+* cardiacStatus.cardiacArrestOutOfHealthcareFacility 1..1 string "Cardiac Arrest Out of Healthcare Facility" "Indicate if a cardiac arrest event occurred outside of any healthcare facility."
 * cardiacStatus.cardiacArrestOutOfHealthcareFacility ^mapping[+].identity = "FHIR"
 * cardiacStatus.cardiacArrestOutOfHealthcareFacility ^mapping[=].language = #application/fhir
 * cardiacStatus.cardiacArrestOutOfHealthcareFacility ^mapping[=].map = "Observation.where(code='10001424808' and system='https://cvquality.acc.org/NCDR' and effectiveDateTime > %Encounter.period.start).first()"
@@ -176,7 +176,7 @@ Each mapping includes the following:
 * cardiacStatus.cardiacArrestOutOfHealthcareFacility ^mapping[=].map = "Observation"
 * cardiacStatus.cardiacArrestOutOfHealthcareFacility ^mapping[=].comment = "Observation"
 
-* cardiacStatus.cardiacArrestWitnessed 1..1 CREDSElementDefinition "Cardiac Arrest Witnessed" "Indicate if the out-of-hospital cardiac arrest was witnessed by another person."
+* cardiacStatus.cardiacArrestWitnessed 1..1 string "Cardiac Arrest Witnessed" "Indicate if the out-of-hospital cardiac arrest was witnessed by another person."
 * cardiacStatus.cardiacArrestWitnessed ^mapping[+].identity = "FHIR"
 * cardiacStatus.cardiacArrestWitnessed ^mapping[=].language = #application/fhir
 * cardiacStatus.cardiacArrestWitnessed ^mapping[=].map = "Observation.where(code='100014082' and system='https://cvquality.acc.org/NCDR' and effectiveDateTime > %Encounter.period.start).first()"
@@ -186,7 +186,7 @@ Each mapping includes the following:
 * cardiacStatus.cardiacArrestWitnessed ^mapping[=].map = "Observation"
 * cardiacStatus.cardiacArrestWitnessed ^mapping[=].comment = "Observation"
 
-* cardiacStatus.firstCardiacArrestRhythm 1..1 CREDSElementDefinition "First Cardiac Arrest Rhythm" "Indicate if the initial out-of-hospital cardiac arrest rhythm was a shockable rhythm."
+* cardiacStatus.firstCardiacArrestRhythm 1..1 string "First Cardiac Arrest Rhythm" "Indicate if the initial out-of-hospital cardiac arrest rhythm was a shockable rhythm."
 * cardiacStatus.firstCardiacArrestRhythm ^mapping[+].identity = "FHIR"
 * cardiacStatus.firstCardiacArrestRhythm ^mapping[=].language = #application/fhir
 * cardiacStatus.firstCardiacArrestRhythm ^mapping[=].map = "Observation.where(code='100014013' and system='https://cvquality.acc.org/NCDR' and effectiveDateTime > %Encounter.period.start).first()"
@@ -196,7 +196,7 @@ Each mapping includes the following:
 * cardiacStatus.firstCardiacArrestRhythm ^mapping[=].map = "Observation"
 * cardiacStatus.firstCardiacArrestRhythm ^mapping[=].comment = "Observation"
 
-* cardiacStatus.firstCardiacArrestRhythmUnknown 1..1 CREDSElementDefinition "First Cardiac Arrest Rhythm Unknown" "Indicate if the initial out-of-hospital cardiac arrest rhythm was unknown."
+* cardiacStatus.firstCardiacArrestRhythmUnknown 1..1 string "First Cardiac Arrest Rhythm Unknown" "Indicate if the initial out-of-hospital cardiac arrest rhythm was unknown."
 * cardiacStatus.firstCardiacArrestRhythmUnknown ^mapping[+].identity = "FHIR"
 * cardiacStatus.firstCardiacArrestRhythmUnknown ^mapping[=].language = #application/fhir
 * cardiacStatus.firstCardiacArrestRhythmUnknown ^mapping[=].map = "Observation.where(code='100014013' and system='https://cvquality.acc.org/NCDR' and effectiveDateTime > %Encounter.period.start).first()"
@@ -206,7 +206,7 @@ Each mapping includes the following:
 * cardiacStatus.firstCardiacArrestRhythmUnknown ^mapping[=].map = "Observation"
 * cardiacStatus.firstCardiacArrestRhythmUnknown ^mapping[=].comment = "Observation"
 
-* episodeInformation.admissionDateAndTime 1..1 CREDSElementDefinition "Admission Date and Time"
+* episodeInformation.admissionDateAndTime 1..1 string "Admission Date and Time"
 * episodeInformation.admissionDateAndTime ^mapping[+].identity = "FHIR"
 * episodeInformation.admissionDateAndTime ^mapping[=].language = #application/fhir
 * episodeInformation.admissionDateAndTime ^mapping[=].map = "Encounter.period.start"
@@ -216,7 +216,7 @@ Each mapping includes the following:
 * episodeInformation.admissionDateAndTime ^mapping[=].map = "Observation"
 * episodeInformation.admissionDateAndTime ^mapping[=].comment = "Observation"
 
-* episodeInformation.healthInsurance 1..1 CREDSElementDefinition "Health Insurance""Indicate if the patient has health insurance."
+* episodeInformation.healthInsurance 1..1 string "Health Insurance""Indicate if the patient has health insurance."
 * episodeInformation.healthInsurance ^mapping[+].identity = "FHIR"
 * episodeInformation.healthInsurance ^mapping[=].language = #application/fhir
 * episodeInformation.healthInsurance ^mapping[=].map = "Claim.where(encounter=Encounter.id).insurance.coverage.exists()"
@@ -226,7 +226,7 @@ Each mapping includes the following:
 * episodeInformation.healthInsurance ^mapping[=].map = "Observation"
 * episodeInformation.healthInsurance ^mapping[=].comment = "Observation"
 
-* episodeInformation.healthInsuranceClaimNumber 1..1 CREDSElementDefinition "Health Insurance Claim Number (HIC)" "Indicate the patient's Health Insurance Claim (HIC) number.    Note(s):  Enter the Health Insurance Claim (HIC) number for those patients covered by Medicare. Patients with other insurances will not have a HIC number."
+* episodeInformation.healthInsuranceClaimNumber 1..1 string "Health Insurance Claim Number (HIC)" "Indicate the patient's Health Insurance Claim (HIC) number.    Note(s):  Enter the Health Insurance Claim (HIC) number for those patients covered by Medicare. Patients with other insurances will not have a HIC number."
 * episodeInformation.healthInsuranceClaimNumber ^mapping[+].identity = "FHIR"
 * episodeInformation.healthInsuranceClaimNumber ^mapping[=].language = #application/fhir
 * episodeInformation.healthInsuranceClaimNumber ^mapping[=].map = "resolve(Claim.where(encounter=Encounter.id).insurance.coverage).identifier.value"
@@ -236,7 +236,7 @@ Each mapping includes the following:
 * episodeInformation.healthInsuranceClaimNumber ^mapping[=].map = "Observation"
 * episodeInformation.healthInsuranceClaimNumber ^mapping[=].comment = "Observation"
 
-* episodeInformation.healthInsurancePaymentSource 1..* CREDSElementDefinition "Health Insurance Payment Source" "Indicate the patient's health insurance payment type.    Note(s):  If the patient has multiple insurance payors, select all payors.    If there is uncertainty regarding how to identify a specific health insurance plan, please discuss with your billing department to understand how it should be identified in the registry."
+* episodeInformation.healthInsurancePaymentSource 1..* string "Health Insurance Payment Source" "Indicate the patient's health insurance payment type.    Note(s):  If the patient has multiple insurance payors, select all payors.    If there is uncertainty regarding how to identify a specific health insurance plan, please discuss with your billing department to understand how it should be identified in the registry."
 * episodeInformation.healthInsurancePaymentSource ^mapping[+].identity = "FHIR"
 * episodeInformation.healthInsurancePaymentSource ^mapping[=].language = #application/fhir
 * episodeInformation.healthInsurancePaymentSource ^mapping[=].map = "resolve(Claim.where(encounter=Encounter.id)).insurer.display.value"
@@ -246,7 +246,7 @@ Each mapping includes the following:
 * episodeInformation.healthInsurancePaymentSource ^mapping[=].map = "Observation"
 * episodeInformation.healthInsurancePaymentSource ^mapping[=].comment = "Observation"
 
-* episodeInformation.medicareBeneficiaryIdentifier 1..1 CREDSElementDefinition "Medicare Beneficiary Identifier"
+* episodeInformation.medicareBeneficiaryIdentifier 1..1 string "Medicare Beneficiary Identifier"
 * episodeInformation.medicareBeneficiaryIdentifier ^mapping[+].identity = "FHIR"
 * episodeInformation.medicareBeneficiaryIdentifier ^mapping[=].language = #application/fhir
 * episodeInformation.medicareBeneficiaryIdentifier ^mapping[=].map = "Patient.identifier.where(system='http://hl7.org/fhir/sid/us-mbi').value"
@@ -256,7 +256,7 @@ Each mapping includes the following:
 * episodeInformation.medicareBeneficiaryIdentifier ^mapping[=].map = "Observation"
 * episodeInformation.medicareBeneficiaryIdentifier ^mapping[=].comment = "Observation"
 
-* episodeInformation.patientEnrolledInResearchStudy 1..1 CREDSElementDefinition "Patient Enrolled in Research Study" "Indicate if the patient is enrolled in an ongoing ACC - NCDR research study related to this registry."
+* episodeInformation.patientEnrolledInResearchStudy 1..1 string "Patient Enrolled in Research Study" "Indicate if the patient is enrolled in an ongoing ACC - NCDR research study related to this registry."
 * episodeInformation.patientEnrolledInResearchStudy ^mapping[+].identity = "FHIR"
 * episodeInformation.patientEnrolledInResearchStudy ^mapping[=].language = #application/fhir
 * episodeInformation.patientEnrolledInResearchStudy ^mapping[=].map = "ResearchSubject.where(patient=Patient.id and period.overlaps(Encounter.period)).exists()"
@@ -266,7 +266,7 @@ Each mapping includes the following:
 * episodeInformation.patientEnrolledInResearchStudy ^mapping[=].map = "Observation"
 * episodeInformation.patientEnrolledInResearchStudy ^mapping[=].comment = "Observation"
 
-* episodeInformation.patientRestriction 1..1 CREDSElementDefinition "Patient Restriction" "Indicate if the patient requested for their information not to be used for any research or studies for the associated episode of care.    Note(s):  Documentation must be found in the patient record to support the request of removal of their information."
+* episodeInformation.patientRestriction 1..1 string "Patient Restriction" "Indicate if the patient requested for their information not to be used for any research or studies for the associated episode of care.    Note(s):  Documentation must be found in the patient record to support the request of removal of their information."
 * episodeInformation.patientRestriction ^mapping[+].identity = "FHIR"
 * episodeInformation.patientRestriction ^mapping[=].language = #application/fhir
 * episodeInformation.patientRestriction ^mapping[=].map = "Patient.meta.securityLabel.memberOf(%Restricted)"
@@ -278,7 +278,7 @@ Each mapping includes the following:
 
 * historyAndRiskFactors  1..1 BackboneElement "Patient History and Risk Factors"
 
-* historyAndRiskFactors.basicActivitiesOfDailyLiving 1..1 CREDSElementDefinition "Basic Activities of Daily Living"
+* historyAndRiskFactors.basicActivitiesOfDailyLiving 1..1 string "Basic Activities of Daily Living"
 * historyAndRiskFactors.basicActivitiesOfDailyLiving ^mapping[+].identity = "FHIR"
 * historyAndRiskFactors.basicActivitiesOfDailyLiving ^mapping[=].language = #application/fhir
 * historyAndRiskFactors.basicActivitiesOfDailyLiving ^mapping[=].map = "Observation.where(code='112000000180' and system='https://cvquality.acc.org/NCDR' and effectiveDateTime > %Encounter.period.start).first()"
@@ -288,7 +288,7 @@ Each mapping includes the following:
 * historyAndRiskFactors.basicActivitiesOfDailyLiving ^mapping[=].map = "Observation"
 * historyAndRiskFactors.basicActivitiesOfDailyLiving ^mapping[=].comment = "Observation"
 
-* historyAndRiskFactors.basicActivitiesOfDailyLivingUnknown 1..1 CREDSElementDefinition "Basic Activities of Daily Living Unknown"
+* historyAndRiskFactors.basicActivitiesOfDailyLivingUnknown 1..1 string "Basic Activities of Daily Living Unknown"
 * historyAndRiskFactors.basicActivitiesOfDailyLivingUnknown ^mapping[+].identity = "FHIR"
 * historyAndRiskFactors.basicActivitiesOfDailyLivingUnknown ^mapping[=].language = #application/fhir
 * historyAndRiskFactors.basicActivitiesOfDailyLivingUnknown ^mapping[=].map = "Observation.where(code='112000000180' and system='https://cvquality.acc.org/NCDR' and effectiveDateTime > %Encounter.period.start).first()"
@@ -298,7 +298,7 @@ Each mapping includes the following:
 * historyAndRiskFactors.basicActivitiesOfDailyLivingUnknown ^mapping[=].map = "Observation"
 * historyAndRiskFactors.basicActivitiesOfDailyLivingUnknown ^mapping[=].comment = "Observation"
 
-* historyAndRiskFactors.cognition 1..1 CREDSElementDefinition "Cognition"
+* historyAndRiskFactors.cognition 1..1 string "Cognition"
 * historyAndRiskFactors.cognition ^mapping[+].identity = "FHIR"
 * historyAndRiskFactors.cognition ^mapping[=].language = #application/fhir
 * historyAndRiskFactors.cognition ^mapping[=].map = "Observation.where(code='112000000140' and system='https://cvquality.acc.org/NCDR' and effectiveDateTime > %Encounter.period.start).first()"
@@ -308,7 +308,7 @@ Each mapping includes the following:
 * historyAndRiskFactors.cognition ^mapping[=].map = "Observation"
 * historyAndRiskFactors.cognition ^mapping[=].comment = "Observation"
 
-* historyAndRiskFactors.cognitionUnknown 1..1 CREDSElementDefinition "Cognition Unknown"
+* historyAndRiskFactors.cognitionUnknown 1..1 string "Cognition Unknown"
 * historyAndRiskFactors.cognitionUnknown ^mapping[+].identity = "FHIR"
 * historyAndRiskFactors.cognitionUnknown ^mapping[=].language = #application/fhir
 * historyAndRiskFactors.cognitionUnknown ^mapping[=].map = "Observation.where(code='112000000140' and system='https://cvquality.acc.org/NCDR' and effectiveDateTime > %Encounter.period.start).first()"
@@ -318,7 +318,7 @@ Each mapping includes the following:
 * historyAndRiskFactors.cognitionUnknown ^mapping[=].map = "Observation"
 * historyAndRiskFactors.cognitionUnknown ^mapping[=].comment = "Observation"
 
-* historyAndRiskFactors.smokingAmount 1..1 CREDSElementDefinition "Smoking Amount" "Indicate the amount of cigarette smoking reported by the patient."
+* historyAndRiskFactors.smokingAmount 1..1 string "Smoking Amount" "Indicate the amount of cigarette smoking reported by the patient."
 * historyAndRiskFactors.smokingAmount ^mapping[+].identity = "FHIR"
 * historyAndRiskFactors.smokingAmount ^mapping[=].language = #application/fhir
 * historyAndRiskFactors.smokingAmount ^mapping[=].map = "Observation.where(code='100001256' and system='https://cvquality.acc.org/NCDR' and effectiveDateTime > %Encounter.period.start).first()"
@@ -328,7 +328,7 @@ Each mapping includes the following:
 * historyAndRiskFactors.smokingAmount ^mapping[=].map = "Observation"
 * historyAndRiskFactors.smokingAmount ^mapping[=].comment = "Observation"
 
-* historyAndRiskFactors.tobaccoType 1..1 CREDSElementDefinition "Tobacco Type" "<<< CathPCI - Instruction >>> Indicate the type of tobacco product the patient uses. <<< CPMI - Instruction >>> Indicate the frequency that the patient uses tobacco.    Note(s): Consider use of any tobacco product as equivalent to a cigarette for referenced definitions.     "
+* historyAndRiskFactors.tobaccoType 1..1 string "Tobacco Type" "<<< CathPCI - Instruction >>> Indicate the type of tobacco product the patient uses. <<< CPMI - Instruction >>> Indicate the frequency that the patient uses tobacco.    Note(s): Consider use of any tobacco product as equivalent to a cigarette for referenced definitions.     "
 * historyAndRiskFactors.tobaccoType ^mapping[+].identity = "FHIR"
 * historyAndRiskFactors.tobaccoType ^mapping[=].language = #application/fhir
 * historyAndRiskFactors.tobaccoType ^mapping[=].map = "Observation.where(code='266918002' and system='http://snomed.info/sct' and effectiveDateTime > %Encounter.period.start).first()"
@@ -338,7 +338,7 @@ Each mapping includes the following:
 * historyAndRiskFactors.tobaccoType ^mapping[=].map = "Observation"
 * historyAndRiskFactors.tobaccoType ^mapping[=].comment = "Observation"
 
-* historyAndRiskFactors.tobaccoUse 1..1 CREDSElementDefinition "Tobacco Use" "Indicate the frequency that the patient uses tobacco. Note(s): Consider use of any tobacco product as equivalent to a cigarette for referenced definitions."
+* historyAndRiskFactors.tobaccoUse 1..1 string "Tobacco Use" "Indicate the frequency that the patient uses tobacco. Note(s): Consider use of any tobacco product as equivalent to a cigarette for referenced definitions."
 * historyAndRiskFactors.tobaccoUse ^mapping[+].identity = "FHIR"
 * historyAndRiskFactors.tobaccoUse ^mapping[=].language = #application/fhir
 * historyAndRiskFactors.tobaccoUse ^mapping[=].map = "Observation.where(code='110483000' and system='http://snomed.info/sct' and effectiveDateTime > %Encounter.period.start).first()"
@@ -348,7 +348,7 @@ Each mapping includes the following:
 * historyAndRiskFactors.tobaccoUse ^mapping[=].map = "Observation"
 * historyAndRiskFactors.tobaccoUse ^mapping[=].comment = "Observation"
 
-* historyAndRiskFactors.walking 1..1 CREDSElementDefinition "Walking"
+* historyAndRiskFactors.walking 1..1 string "Walking"
 * historyAndRiskFactors.walking ^mapping[+].identity = "FHIR"
 * historyAndRiskFactors.walking ^mapping[=].language = #application/fhir
 * historyAndRiskFactors.walking ^mapping[=].map = "Observation.where(code='116329008' and system='http://snomed.info/sct' and effectiveDateTime > %Encounter.period.start).first()"
@@ -358,7 +358,7 @@ Each mapping includes the following:
 * historyAndRiskFactors.walking ^mapping[=].map = "Observation"
 * historyAndRiskFactors.walking ^mapping[=].comment = "Observation"
 
-* historyAndRiskFactors.walkingUnknown 1..1 CREDSElementDefinition "Walking Unknown"
+* historyAndRiskFactors.walkingUnknown 1..1 string "Walking Unknown"
 * historyAndRiskFactors.walkingUnknown ^mapping[+].identity = "FHIR"
 * historyAndRiskFactors.walkingUnknown ^mapping[=].language = #application/fhir
 * historyAndRiskFactors.walkingUnknown ^mapping[=].map = "Observation.where(code='116329008' and system='http://snomed.info/sct' and effectiveDateTime > %Encounter.period.start).first()"
@@ -370,7 +370,7 @@ Each mapping includes the following:
 
 * researchStudy  0..1 BackboneElement "Research Study Information"
 
-* researchStudy.researchStudyName 1..1 CREDSElementDefinition "Research Study Name" "Indicate the research study name as provided by the research study protocol.    Note(s):  If the patient is in more than one research study, list each separately."
+* researchStudy.researchStudyName 1..1 string "Research Study Name" "Indicate the research study name as provided by the research study protocol.    Note(s):  If the patient is in more than one research study, list each separately."
 * researchStudy.researchStudyName ^mapping[+].identity = "FHIR"
 * researchStudy.researchStudyName ^mapping[=].language = #application/fhir
 * researchStudy.researchStudyName ^mapping[=].map = "resolve(ResearchSubject.where(patient=Patient.id and period.overlaps(Encounter.period)).researchStudy).title"
@@ -380,7 +380,7 @@ Each mapping includes the following:
 * researchStudy.researchStudyName ^mapping[=].map = "Observation"
 * researchStudy.researchStudyName ^mapping[=].comment = "Observation"
 
-* researchStudy.researchStudyPatientId 1..1 CREDSElementDefinition "Research Study Patient ID" "Indicate the research study patient identification number as assigned by the research protocol.    Note(s):  If the patient is in more than one research study, list each separately."
+* researchStudy.researchStudyPatientId 1..1 string "Research Study Patient ID" "Indicate the research study patient identification number as assigned by the research protocol.    Note(s):  If the patient is in more than one research study, list each separately."
 * researchStudy.researchStudyPatientId ^mapping[+].identity = "FHIR"
 * researchStudy.researchStudyPatientId ^mapping[=].language = #application/fhir
 * researchStudy.researchStudyPatientId ^mapping[=].map = "ResearchSubject.where( individual = Patient.id and ((( Encounter.period.start >= period.start ) and (Encounter.period.start <= period.end)) or ((Encounter.period.end >= period.start) and  (Encounter.period.end <= period.end )))).identifier"
