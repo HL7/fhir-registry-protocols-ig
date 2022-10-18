@@ -76,6 +76,8 @@ pages:
     title: Profiles and Extensions
   test_plan.md:
     title: Test Plan
+  techanalysis.md:
+    Title: Implementation Guide Technical Analysis
 
 menu:
   IG Home: index.html
@@ -101,4 +103,5 @@ menu:
     Test Plan: test_plan.html
     IG Conformance: conformance.html
   Artifact Index: artifacts.html
+  Technical Analysis: techanalysis.html
 

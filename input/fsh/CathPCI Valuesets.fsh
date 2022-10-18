@@ -20,7 +20,7 @@ Description: "ValueSet listing payment source codes used by ACC"
 * ncdr#100000812
 
 ValueSet: PriorMyocardialInfarction
-Title: "Myocardial Infarction"
+Title: "Prior Myocardial Infarction"
 Description: "SNOMED CT codes for MI"
 
 * ^experimental = true

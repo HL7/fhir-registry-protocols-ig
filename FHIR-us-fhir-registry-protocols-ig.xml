@@ -116,6 +116,7 @@
 <page key="index" name="Home"/>
 <page key="conformance" name="IG Conformance"/>
 <page key="introduction" name="Introduction and Scope"/>
+<page key="legal" name="Legal"/>
 <page key="mapping-to-cda" name="Mapping to CDA"/>
 <page key="mapping-to-fhir" name="Mapping to FHIR"/>
 <page key="mapping-to-v2" name="Mapping to HL7 V2"/>

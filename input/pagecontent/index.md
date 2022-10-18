@@ -41,3 +41,6 @@ CREDS focuses on providing healthcare provider organizations information on how 
 The MedMorph Reference Architecture (RA) specifies the use of standard FHIR APIs to collect data from EHRs and potentially other systems and exchange with systems that can receive data in FHIR format. The RA can support multiple use cases through content IGs based on the MedMorph RA IG, including but not limited to case-based surveillance, registry reporting, national health care surveys, and research.
 
 Use cases that can obtain all the needed data via FHIR APIs should consider the use of the MedMorph RA as the basis for their efforts. Use cases that need to obtain data not available via FHIR APIs should consider the use of CREDS. Once there is a CREDS FHIR bundle, the MedMorph RA could be used for transport.
+
+#### Legal Statements
+{% include ip-statements.xhtml %}
