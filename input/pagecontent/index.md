@@ -35,12 +35,12 @@ The source code for this Implementation Guide can be found on
 [https://github.com/HL7/fhir-registry-protocols-ig](https://github.com/HL7/fhir-registry-protocols-ig).
 
 
-#### CREDS and MedMorph
+### CREDS and MedMorph
 CREDS focuses on providing healthcare provider organizations information on how to collect the data needed to submit to registries. This may include but is not limited to data sources such as EHRs, HIEs and other sources using FHIR, HL7 CDA documents, and HL7 V3 messages that are not available via FHIR APIs.
 
 The MedMorph Reference Architecture (RA) specifies the use of standard FHIR APIs to collect data from EHRs and potentially other systems and exchange with systems that can receive data in FHIR format. The RA can support multiple use cases through content IGs based on the MedMorph RA IG, including but not limited to case-based surveillance, registry reporting, national health care surveys, and research.
 
 Use cases that can obtain all the needed data via FHIR APIs should consider the use of the MedMorph RA as the basis for their efforts. Use cases that need to obtain data not available via FHIR APIs should consider the use of CREDS. Once there is a CREDS FHIR bundle, the MedMorph RA could be used for transport.
 
-#### Legal Statements
+### Legal Statements
 {% include ip-statements.xhtml %}

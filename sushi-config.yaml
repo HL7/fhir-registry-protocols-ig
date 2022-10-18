@@ -77,7 +77,7 @@ pages:
   test_plan.md:
     title: Test Plan
   techanalysis.md:
-    Title: Implementation Guide Technical Analysis
+    title: Implementation Guide Technical Analysis
 
 menu:
   IG Home: index.html
