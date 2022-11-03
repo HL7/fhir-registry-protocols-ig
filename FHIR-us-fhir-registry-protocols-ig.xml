@@ -60,7 +60,6 @@
 <artifact id="MessageHeader/CREDSMHExample" key="MessageHeader-CREDSMHExample" name="MessageHeader for CREDSSubmission Example"/>
 <artifact id="ValueSet/MultivesselProcedureType" key="ValueSet-MultivesselProcedureType" name="Multi-vessel Procedure Type"/>
 <artifact id="ValueSet/MyocardialInfarction" key="ValueSet-MyocardialInfarction" name="Myocardial Infarction"/>
-<artifact id="ValueSet/PriorMyocardialInfarction" key="ValueSet-PriorMyocardialInfarction" name="Myocardial Infarction"/>
 <artifact id="CodeSystem/NCDRQuestionCodesCS" key="CodeSystem-NCDRQuestionCodesCS" name="NCDR Question Codes"/>
 <artifact id="ValueSet/NewYorkHeartAssociation" key="ValueSet-NewYorkHeartAssociation" name="New York Heart Association Assessment Scale"/>
 <artifact id="ValueSet/NewYorkHeartAssociationAnswers" key="ValueSet-NewYorkHeartAssociationAnswers" name="New York Heart Association OA Answer List"/>
@@ -76,6 +75,7 @@
 <artifact id="Practitioner/USCorePractitionerexample" key="Practitioner-USCorePractitionerexample" name="Practitioner 1 Example"/>
 <artifact id="ValueSet/PriorDiagnosticCoronaryAngiographyProcedureResults" key="ValueSet-PriorDiagnosticCoronaryAngiographyProcedureResults" name="Prior Diagnostic Coronary Angiography Procedure Results"/>
 <artifact id="ValueSet/PriorCABG" key="ValueSet-PriorCABG" name="Prior History of Coronary Artery Bypass Graft"/>
+<artifact id="ValueSet/PriorMyocardialInfarction" key="ValueSet-PriorMyocardialInfarction" name="Prior Myocardial Infarction"/>
 <artifact id="CapabilityStatement/RS" key="CapabilityStatement-RS" name="RS"/>
 <artifact id="CapabilityStatement/RS-SRRD" key="CapabilityStatement-RS-SRRD" name="RS-SRRD"/>
 <artifact id="CapabilityStatement/RSDC" key="CapabilityStatement-RSDC" name="RSDC"/>
@@ -115,8 +115,8 @@
 <page key="transaction-CURS" name="Create/Update Registry Submission"/>
 <page key="index" name="Home"/>
 <page key="conformance" name="IG Conformance"/>
+<page key="techanalysis" name="Implementation Guide Technical Analysis"/>
 <page key="introduction" name="Introduction and Scope"/>
-<page key="legal" name="Legal"/>
 <page key="mapping-to-cda" name="Mapping to CDA"/>
 <page key="mapping-to-fhir" name="Mapping to FHIR"/>
 <page key="mapping-to-v2" name="Mapping to HL7 V2"/>
