@@ -11,7 +11,7 @@ Each mapping includes the following:
 * map = FHIRPath expression of the path to the data
 * comment = *Output mapping only* Resource/Profile for inclusion in the Submission Bundle
 """
-* ^baseDefinition = "http://hl7.org/fhir/us/fhir-registry-protocols-ig/StructureDefinition/CREDSStructureDefinition"
+// * ^baseDefinition = "http://hl7.org/fhir/StructureDefinition/base"
 * ^version = "5.0"
 * ^identifier.use = #official
 * ^date = "2021-11-01"

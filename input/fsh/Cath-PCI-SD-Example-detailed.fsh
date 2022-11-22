@@ -17,7 +17,7 @@ Environment Variables used:
 %procedure (Cath PCI Procedure resource)
 %procedure.period (CathPCI Procedure period i.e., Procedure.performedPeriod)
 """
-* ^baseDefinition = "http://hl7.org/fhir/us/fhir-registry-protocols-ig/StructureDefinition/CREDSStructureDefinition"
+// * ^baseDefinition = "http://hl7.org/fhir//StructureDefinition/base"
 * ^version = "5.0"
 * ^identifier.use = #official
 * ^date = "2021-11-01"

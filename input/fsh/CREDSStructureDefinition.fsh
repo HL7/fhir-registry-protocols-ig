@@ -4,7 +4,7 @@ Id: CREDSStructureDefinition
 Title: "CREDS Structure Definition"
 Description: "StructureDefinition for use with CREDS mapping creating the base mappings for FHIR, CDA and V2"
 * insert CREDSStructureDefinitionContent
-
+// * ^kind = #logical
 * identifier 1..1
 
 * date 1..1
