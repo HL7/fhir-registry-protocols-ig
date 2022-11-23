@@ -2,7 +2,7 @@
     "package-id" : "hl7.fhir.us.fhir-registry-protocols-ig", 
     "title" : "Protocols for Clinical Registry Extraction and Data Submission (CREDS) IG", 
     "canonical" : "http://hl7.org/fhir/us/fhir-registry-protocols-ig", 
-    "category" : "Public Health and Reseach", 
+    "category" : "Public Health and Research", 
     "list" : [
         {
             "version" : "current",
