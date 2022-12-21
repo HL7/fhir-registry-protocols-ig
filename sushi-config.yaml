@@ -106,7 +106,7 @@ menu:
   Technical Analysis: techanalysis.html
 
 resources:
-  StructureDefinition/ACCNCDRCathPCI:
+  StructureDefinition/ExampleMap:
     exampleCanonical: http://hl7.org/fhir/us/fhir-registry-protocols-ig/StructureDefinition/CREDSStructureDefinition
   StructureDefinition/ACCNCDRCathPCIDetailed:
     exampleCanonical: http://hl7.org/fhir/us/fhir-registry-protocols-ig/StructureDefinition/CREDSStructureDefinition

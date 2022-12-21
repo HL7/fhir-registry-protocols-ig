@@ -23,7 +23,7 @@
 <artifact id="ValueSet/StentType" key="ValueSet-StentType" name="CathPCI List of Stent Types"/>
 <artifact id="ValueSet/IntraAndPostEvents" key="ValueSet-IntraAndPostEvents" name="Cath PCI qualified list of Events"/>
 <artifact id="ValueSet/StressTest" key="ValueSet-StressTest" name="Cath PCI Selected Stress Test"/>
-<artifact id="StructureDefinition/ACCNCDRCathPCI" key="StructureDefinition-ACCNCDRCathPCI" name="Cath-PCI Submission Map"/>
+<artifact deprecated="true" id="StructureDefinition/ACCNCDRCathPCI" key="StructureDefinition-ACCNCDRCathPCI" name="Cath-PCI Submission Map"/>
 <artifact id="ValueSet/CerebrovascularDisease" key="ValueSet-CerebrovascularDisease" name="Cerebrovascular Disease"/>
 <artifact id="ValueSet/ChestPainSymptomAssessment" key="ValueSet-ChestPainSymptomAssessment" name="Chest Pain Symptom Assessment"/>
 <artifact id="ValueSet/ChronicLungDisease" key="ValueSet-ChronicLungDisease" name="Chronic Lung Disease"/>
@@ -44,6 +44,7 @@
 <artifact id="ValueSet/ElectrocardiacAssessmentResults" key="ValueSet-ElectrocardiacAssessmentResults" name="Electrocardiac Assessment Results"/>
 <artifact id="Encounter/CREDSEncounter" key="Encounter-CREDSEncounter" name="Example Encounter"/>
 <artifact id="Location/Enc-location" key="Location-Enc-location" name="Example Location"/>
+<artifact id="StructureDefinition/ExampleMap" key="StructureDefinition-ExampleMap" name="Example Submission Map"/>
 <artifact id="ValueSet/FamilyPrematureCAD" key="ValueSet-FamilyPrematureCAD" name="Family History of Premature CAD"/>
 <artifact id="ValueSet/FirstCardiacArrestRhythm" key="ValueSet-FirstCardiacArrestRhythm" name="First Cardiac Arrest Rhythm"/>
 <artifact id="ValueSet/FunctionalCapacity" key="ValueSet-FunctionalCapacity" name="Functional Capacity"/>
