@@ -36,18 +36,18 @@ pages:
     title: Introduction and Scope
   overview.md:
     title: Overview
-    mapping-to-fhir.md:
-      title: Mapping to FHIR
-    mapping-to-cda.md:
-      title: Mapping to CDA
-    mapping-to-v2.md:
-      title: Mapping to HL7 V2
-    querying-from-fhir.md:
-      title: Querying From FHIR
-    querying-from-cda.md:
-      title: Querying From CDA
-    querying-from-v2.md:
-      title: Querying From HL7 V2
+#    mapping-to-fhir.md:
+#      title: Mapping to FHIR
+#    mapping-to-cda.md:
+#      title: Mapping to CDA
+#    mapping-to-v2.md:
+#      title: Mapping to HL7 V2
+#    querying-from-fhir.md:
+#      title: Querying From FHIR
+#    querying-from-cda.md:
+#      title: Querying From CDA
+#    querying-from-v2.md:
+#      title: Querying From HL7 V2
   use_cases.md:
     title: Use Cases
   Architecture_and_Implementation.md:

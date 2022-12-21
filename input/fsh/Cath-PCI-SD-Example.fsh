@@ -1,5 +1,5 @@
-Logical: CathPCI_Submission_Map
-Id: ACCNCDRCathPCI
+Logical: Example_Submission_map
+Id: ExampleMap
 Title: "Cath-PCI Submission Map"
 Description: """This is an example of the data that would be used for a Cath-PCI Submission.
 The full map is a logical model as that allows conformance to the FHIR Standard the way a custom Resource would not.

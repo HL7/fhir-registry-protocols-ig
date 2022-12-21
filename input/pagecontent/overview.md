@@ -47,14 +47,7 @@ The first part of the FHIRPath expression in the mapping.map field **shall** ind
 Registries **may** identify additional mapping types for example, to support queries for specializations of CDA documents (e.g., C-CDA) or other standard models (e.g., X12 or NCPDP messages) from repositories supporting those formats.
 
 ### Canonical Information Models
-When mapping from the Registries information model to HL7 FHIR, CDA or Version 2 resources, this guide defines the canonical model used for the target resource type
-(FHIR, CDA or V2) to ensure consistent mappings. Registries may also define mappings for other sources of information (e.g., older versions of FHIR), but the
-mapping identifiers for FHIR, CDA, and V2 are defined based on specific versions of these standards expected to be in use at the time of publication of this guide.
-
-For more detail on the canonical models and mappings for FHIR, CDA and HL7 Version 2, see the sections below:
-* [Mapping a Logical Model to FHIR](mapping-to-fhir.html)
-* [Mapping a Logical Model to CDA](mapping-to-cda.html)
-* [Mapping a Logical Model to HL7 V2](mapping-to-v2.html)
+When mapping from the Registries information model to HL7 FHIR, CDA or Version 2 resources, this guide defines the canonical model used for the target resource type (FHIR, CDA or V2) to ensure consistent mappings. Registries may also define mappings for other sources of information (e.g., older versions of FHIR), but the mapping identifiers for FHIR, CDA, and V2 are defined based on specific versions of these standards expected to be in use at the time of publication of this guide.
 
 
 ## Extracting Registry Data Using the Logical Model
@@ -80,12 +73,7 @@ FHIRPath allows an implementation to define environment variables.  This guide d
 |%procedure| This variable is a FHIR [Procedure](http://www.hl7.org/fhir/R4/Procedure.html) resource that describes the relevant procedure associated with the registry activity. |
 |%condition| This variable is a FHIR [Condition](http://www.hl7.org/fhir/R4/Condition.html) resource that describes the relevant condition associated with the registry activity. |
 
-In addition, this guide also allows an implementation to define environment variables to reference value sets which are used in FHIRPath expressions. [How are these declared](#todo)
-
-See the sections below for more detail about how to query for standardized artifacts:
-* [Querying for FHIR Resources](querying-from-fhir.html)
-* [Querying for CDA Documents](querying-from-cda.html)
-* [Querying for HL7 V2 Messages](querying-from-v2.html)
+In addition, this guide also allows an implementation to define environment variables to reference value sets which are used in FHIRPath expressions by placing the name of the variable in the Output mapping.
 
 ## Mapping the Logical Model Content to a Submission Bundle
 To submit data, the Registry Submission Creator actor must map the logical model to a collection of resources submitted using a Bundle resource. These mappings are defined using the Output mapping identifier. If the Registry logical model is defined as if it were a collection of FHIR Resources, then this transformation is simply a matter of copying the resources in the registry logical model to resource into the submission Bundle.
