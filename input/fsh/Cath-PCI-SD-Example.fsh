@@ -1,7 +1,7 @@
 Logical: Example_Submission_map
 Id: ExampleMap
-Title: "Cath-PCI Submission Map"
-Description: """This is an example of the data that would be used for a Cath-PCI Submission.
+Title: "Example Submission Map"
+Description: """This is an example of the data that would be used for a Resgistry Submission.
 The full map is a logical model as that allows conformance to the FHIR Standard the way a custom Resource would not.
 Each element has the short name of the data, a full description and the paths to fetch and place the information, by data standard type, for each.
 A section (such as Demographics) is a BackboneElement (holds no values).  All subordinate elements are strings.
@@ -15,10 +15,10 @@ Each mapping includes the following:
 * ^version = "5.0"
 * ^identifier.use = #official
 * ^date = "2021-11-01"
-* ^publisher = "American College of Cardiology"
+* ^publisher = "Example Registry"
 * ^contact.name = "Jane Smith"
 * ^contact.telecom.system = #email
-* ^contact.telecom.value = "mailto:noreply@acc.org"
+* ^contact.telecom.value = "mailto:noreply@example.org"
 * ^kind = #logical
 //Mappings so that things show up in the mappings page on the IG
 * ^mapping[+].identity = "FHIR"
