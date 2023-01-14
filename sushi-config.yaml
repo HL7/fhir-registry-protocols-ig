@@ -20,7 +20,7 @@ contact:
   - name: David Pyke
     telecom:
       - system: email
-        value: mailto:dpyke@ainq.com
+        value: mailto:David.Pyke@pointclickcare.com
 
 description: The IG demonstrates a process and workflow to support the needs of clinical registries to define how registry submissions can be automatically extracted from multiple data sources and combined into a registry submission.
 jurisdiction: urn:iso:std:iso:3166#US "United States of America"
@@ -86,7 +86,7 @@ menu:
     Introduction and Scope: introduction.html
     Overview: overview.html
     Use Cases: use_cases.html
-  Architecture &amp; Implementation:
+  Architecture & Implementation:
     Architecture: Architecture_and_Implementation.html
     Technology Environment: technology_environment.html
     Security Considerations: security_considerations.html
