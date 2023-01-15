@@ -833,9 +833,9 @@ Environment Variables used:
 * procedureInformation.pciProcedure.syntaxScore ^mapping[=].map = "Observation.where(code.coding.system='http://hl7.org/fhir/us/fhir-registry-protocols-ig/CodeSystem/NCDRQuestionCodesCS' and code.coding.code=10001424796 and valueCodeableConcept.memberOf(http://hl7.org/fhir/us/fhir-registry-protocols-ig/ValueSet/SyntaxScore))"
 
 * procedureInformation.pciProcedure.stemiOrStemiEquivalentFirstNoted  0..1 string "STEMI or STEMI Equivalent First Noted" "Indicate if a STEMI or STEMI equivalent was noted on either the first ECG or a subsequent ECG."
-* procedureInformation.pciProcedure.syntaxScore ^mapping[+].identity = "Output"
-* procedureInformation.pciProcedure.syntaxScore ^mapping[=].language = #application/fhir
-* procedureInformation.pciProcedure.syntaxScore ^mapping[=].map = "Observation.where(code.coding.system='http://hl7.org/fhir/us/fhir-registry-protocols-ig/CodeSystem/NCDRQuestionCodesCS' and code.coding.code=100000180 and valueCodeableConcept.memberOf(http://hl7.org/fhir/us/fhir-registry-protocols-ig/ValueSet/STEMIFirstNoted))"
+* procedureInformation.pciProcedure.stemiOrStemiEquivalentFirstNoted ^mapping[+].identity = "Output"
+* procedureInformation.pciProcedure.stemiOrStemiEquivalentFirstNoted ^mapping[=].language = #application/fhir
+* procedureInformation.pciProcedure.stemiOrStemiEquivalentFirstNoted     ^mapping[=].map = "Observation.where(code.coding.system='http://hl7.org/fhir/us/fhir-registry-protocols-ig/CodeSystem/NCDRQuestionCodesCS' and code.coding.code=100000180 and valueCodeableConcept.memberOf(http://hl7.org/fhir/us/fhir-registry-protocols-ig/ValueSet/STEMIFirstNoted))"
 
 * procedureInformation.pciProcedure.subsequentEcgWithStemiOrStemiEquivalent  0..1 string "Subsequent ECG with STEMI or STEMI Equivalent" "Indicate the Subsequent ECG date and time."
 * procedureInformation.pciProcedure.subsequentEcgWithStemiOrStemiEquivalent ^mapping[+].identity = "Output"
@@ -923,19 +923,19 @@ At least one lesion must be specified for each PCI procedure."""
 * procedureInformation.pciProcedure.lesionsAndDevices.nativeLesionSegmentNumber ^mapping[=].map = "Observation.where(code.coding.system='http://hl7.org/fhir/us/fhir-registry-protocols-ig/CodeSystem/NCDRQuestionCodesCS' and code.coding.code=100012984 and valueCodeableConcept.memberOf(http://hl7.org/fhir/us/fhir-registry-protocols-ig/ValueSet/LesionSegmentNumber))"
 
 * procedureInformation.pciProcedure.lesionsAndDevices.culpritStenosis 1..1 string "Culprit Stenosis" "Indicate if the stenosis is considered to be responsible for the acute coronary syndrome."
-* procedureInformation.pciProcedure.mechanicalVentilatorSupport ^mapping[+].identity = "Output"
-* procedureInformation.pciProcedure.mechanicalVentilatorSupport ^mapping[=].language = #application/fhir
-* procedureInformation.pciProcedure.mechanicalVentilatorSupport ^mapping[=].map = "Observation.where(code.coding.system='http://hl7.org/fhir/us/fhir-registry-protocols-ig/CodeSystem/NCDRQuestionCodesCS' and code.coding.code=371895000 and valueBoolean.exists())"
+* procedureInformation.pciProcedure.lesionsAndDevices.culpritStenosis ^mapping[+].identity = "Output"
+* procedureInformation.pciProcedure.lesionsAndDevices.culpritStenosis ^mapping[=].language = #application/fhir
+* procedureInformation.pciProcedure.lesionsAndDevices.culpritStenosis ^mapping[=].map = "Observation.where(code.coding.system='http://hl7.org/fhir/us/fhir-registry-protocols-ig/CodeSystem/NCDRQuestionCodesCS' and code.coding.code=371895000 and valueBoolean.exists())"
 
 * procedureInformation.pciProcedure.lesionsAndDevices.stenosisImmediatelyPriorToTreatment 0..* string "Stenosis Immediately Prior to Treatment" "Indicate the percent diameter stenosis immediately prior to the treatment of this lesion."
-* procedureInformation.pciProcedure.lesionsAndDevices.lesionCounter ^mapping[+].identity = "Output"
-* procedureInformation.pciProcedure.lesionsAndDevices.lesionCounter ^mapping[=].language = #application/fhir
-* procedureInformation.pciProcedure.lesionsAndDevices.lesionCounter ^mapping[=].map = "Observation.where(code.coding.system='http://hl7.org/fhir/us/fhir-registry-protocols-ig/CodeSystem/NCDRQuestionCodesCS' and code.coding.code=1000142442 and valueQuantity.exists())"
+* procedureInformation.pciProcedure.lesionsAndDevices.stenosisImmediatelyPriorToTreatment ^mapping[+].identity = "Output"
+* procedureInformation.pciProcedure.lesionsAndDevices.stenosisImmediatelyPriorToTreatment ^mapping[=].language = #application/fhir
+* procedureInformation.pciProcedure.lesionsAndDevices.stenosisImmediatelyPriorToTreatment ^mapping[=].map = "Observation.where(code.coding.system='http://hl7.org/fhir/us/fhir-registry-protocols-ig/CodeSystem/NCDRQuestionCodesCS' and code.coding.code=1000142442 and valueQuantity.exists())"
 
 * procedureInformation.pciProcedure.lesionsAndDevices.chronicTotalOcclusion 1..1 string "Chronic Total Occlusion" "Indicate if the segment with 100% pre-procedure stenosis was presumed to be 100% occluded for at least 3 months previous to this procedure AND not related to a clinical event prompting (or leading to) this procedure."
-* procedureInformation.pciProcedure.mechanicalVentilatorSupport ^mapping[+].identity = "Output"
-* procedureInformation.pciProcedure.mechanicalVentilatorSupport ^mapping[=].language = #application/fhir
-* procedureInformation.pciProcedure.mechanicalVentilatorSupport ^mapping[=].map = "Observation.where(code.coding.system='http://hl7.org/fhir/us/fhir-registry-protocols-ig/CodeSystem/NCDRQuestionCodesCS' and code.coding.code=100000290 and valueBoolean.exists())"
+* procedureInformation.pciProcedure.lesionsAndDevices.chronicTotalOcclusion ^mapping[+].identity = "Output"
+* procedureInformation.pciProcedure.lesionsAndDevices.chronicTotalOcclusion ^mapping[=].language = #application/fhir
+* procedureInformation.pciProcedure.lesionsAndDevices.chronicTotalOcclusion ^mapping[=].map = "Observation.where(code.coding.system='http://hl7.org/fhir/us/fhir-registry-protocols-ig/CodeSystem/NCDRQuestionCodesCS' and code.coding.code=100000290 and valueBoolean.exists())"
 
 * procedureInformation.pciProcedure.lesionsAndDevices.timiFlowPreIntervention 0..* string "TIMI Flow (Pre-Intervention)" "Indicate the pre-intervention TIMI flow."
 * procedureInformation.pciProcedure.lesionsAndDevices.timiFlowPreIntervention ^comment = "If a lesion spans multiple segments with different TIMI flow, code the lowest TIMI flow within the entire lesion."

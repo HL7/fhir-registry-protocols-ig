@@ -108,3 +108,8 @@ When using the CREDS submission bundle, the Resources for all Data Dictionary el
   ],
   ```
   This would be the entries for location, date and time and the provider within the Discharge encounter. 
+
+### Submission Response
+  A Submission using CREDS can have different result sets.  Using a single Bundle submission should receive a 201 Immediately with a CREDSOperationOutcome attached immediately.  Where the system is unable to respond to the validation in within a timeout requirement, following the [ASync Bulk Pattern](https://build.fhir.org/async-bulk.html#3.2.6.1.4).
+
+  Where Submissions have been in bulk, a response of 202 Accepted should be returned if the Bundle is valid NDJSON with the URL for status requests.  Once the processing and validation is complete, a Bundle of CREDSOperationOutcomes should be placed, in NDJSON format at the status url for pickup.
