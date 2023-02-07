@@ -43,4 +43,8 @@ The MedMorph Reference Architecture (RA) specifies the use of standard FHIR APIs
 Use cases that can obtain all the needed data via FHIR APIs should consider the use of the MedMorph RA as the basis for their efforts. Use cases that need to obtain data not available via FHIR APIs should consider the use of CREDS. Once there is a CREDS FHIR bundle, the MedMorph RA could be used for transport.
 
 ### Legal Statements
+ While this implementation guide and the underlying FHIR are licensed as public domain under the FHIR license. The license page also describes rules for the use of the FHIR name and logo.
+
+This guide includes examples making use of terminologies such as LOINC, SNOMED CT and RxNorm codes that have more restrictive licensing requirements. Implementers should make themselves familiar with licensing and any other constraints of terminologies, questionnaires, and other components used as part of their implementation process. In some cases, licensing requirements may limit the systems that data captured using certain questionnaires may be shared with. 
+
 {% include ip-statements.xhtml %}
