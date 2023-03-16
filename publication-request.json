@@ -1,12 +1,13 @@
 {
     "package-id" : "hl7.fhir.us.fhir-registry-protocols-ig", 
     "title" : "Protocols for Clinical Registry Extraction and Data Submission (CREDS) IG", 
-    "canonical" : "http://hl7.org/fhir/us/fhir-registry-protocols-ig", 
     "category" : "Public Health and Research", 
-    "version" : "0.8.0",
+    "version" : "0.8.0-ballot",
+	"mode" : "milestone",
     "desc" : "Publication for May 2023 ballot",
-    "path" : "https://www.hl7.org/fhir/us/may2023/fhir-registry-protocols-ig",
+    "path" : "http://www.hl7.org/fhir/us/fhir-registry-protocols-ig",
     "status" : "ballot",
+	"ci-build" : "https://build.fhir.org/ig/HL7/fhir-registry-protocols-ig/"
     "sequence" : "STU1",
     "introduction" : "The IG demonstrates a process and workflow to support the needs of clinical registries to define how registry submissions can be automatically extracted from multiple data sources and combined into a registry submission. It profiles the definitional resources needed to collect data and construct a registry submission using existing FHIR resource profiles."
 }

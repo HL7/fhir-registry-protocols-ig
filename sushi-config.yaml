@@ -3,7 +3,7 @@ canonical: http://hl7.org/fhir/us/fhir-registry-protocols-ig
 name: FHIRRegistryProtocolsIG
 title: Protocols for Clinical Registry Extraction and Data Submission (CREDS) IG
 status: draft
-version: 0.8.0
+version: 0.8.0-ballot
 fhirVersion: 4.0.1
 copyrightYear: 2022+
 releaseLabel: STU1

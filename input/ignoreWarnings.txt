@@ -5,10 +5,10 @@ WARNING: StructureDefinition/CapabilityStatementWithSlices: StructureDefinition.
 # CPT doesn't have any members
 WARNING: Bundle/CREDSBundle-Example: Bundle.entry[2].resource.ofType(Encounter).type[0]: [Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/core/ValueSet/us-core-encounter-type because the value set or a code system it depends on is not known to the validator, Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated]
 WARNING: Encounter/CREDSEncounter: Encounter.type[0]: [Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/core/ValueSet/us-core-encounter-type because the value set or a code system it depends on is not known to the validator, Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated]
-INFORMATION: Bundle/CREDSBundle-Example: Bundle.entry[2].resource.ofType(Encounter).type[0].coding[0]: Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated
+INFORMATION: Bundle/CREDSBundle-Example: Bundle.entry[2].resource/*Encounter/CREDSEncounter*/.type[0].coding[0]: Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated
 INFORMATION: Encounter/CREDSEncounter: Encounter.type[0].coding[0]: Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated
 
 # Informational and Slicing Hints
 Code System URI 'urn:oid:2.16.840.1.113883.6.238' is unknown so the code cannot be validated
-INFORMATION: Bundle/CREDSBundle-Example: Bundle.entry[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/fhir-registry-protocols-ig/StructureDefinition/CREDSSubmission|0.1.0
 INFORMATION: Practitioner/USCorePractitionerexample: Practitioner.identifier[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|5.0.1
+INFORMATION: Bundle/CREDSBundle-Example: Bundle.entry[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/fhir-registry-protocols-ig/StructureDefinition/CREDSSubmission|0.8.0-ballot
