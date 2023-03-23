@@ -13,4 +13,4 @@ Code System URI 'urn:oid:2.16.840.1.113883.6.238' is unknown so the code cannot 
 
 #Not expected to match slices
 INFORMATION: Practitioner/USCorePractitionerexample: Practitioner.identifier[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|5.0.1
-INFORMATION: Bundle/CREDSBundle-Example: Bundle.entry[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/fhir-registry-protocols-ig/StructureDefinition/CREDSSubmission|0.8.0-ballot
+INFORMATION: Bundle/CREDSBundle-Example: Bundle.entry[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/registry-protocols/StructureDefinition/CREDSSubmission|1.0.0-ballot
