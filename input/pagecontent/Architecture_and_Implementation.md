@@ -13,9 +13,9 @@ The first four functions are described in more detail in the sections below.
 
 #### Definition
 
-The **Registry Submission Definition Creator** executes the **Create/Update Registry Definition [CURD]** transaction and uses a tool to create a logical model in the form of a StructureDefinition that references the data needed, the possible locations in FHIR, CDA or other locations, including manual input, and the local profile necessary to store the infomation for submission.
+The **Registry Submission Definition Creator** executes the **Create/Update Registry Definition [CURD]** transaction and uses a tool to create a logical model in the form of a StructureDefinition that references the data needed, the possible locations in FHIR, CDA or other locations, including manual input, and the local profile necessary to store the information for submission.
 
-The overall StructureDefinition will have each datapoint as an element definition with mappings to the data locaitons and the resource or profile for storage within the submission Bundle.
+The overall StructureDefinition will have each datapoint as an element definition with mappings to the data locations and the resource or profile for storage within the submission Bundle.
 
 THis information is given to the **Registry Submission Definition Repository** for storage and distribution.
 
@@ -23,18 +23,18 @@ THis information is given to the **Registry Submission Definition Repository** f
 #### Retrieval
 
 <figure>{%include workflow.svg %}
-<figcaption>Workflow for Retrival and Submission</figcaption>
+<figcaption>Workflow for Retrieval and Submission</figcaption>
 </figure>
 
-The **Registry Submitter** uses the **Search/Retrieve Registry Definition [SRRD]** transaction to find and retrieve the appropraite definition from the Repository,
+The **Registry Submitter** uses the **Search/Retrieve Registry Definition [SRRD]** transaction to find and retrieve the appropriate definition from the Repository,
 
-Once the defintion has been ingested, the Registry Submitter or the **Registry Submission Data Source** fetches the required data (the **Retrieve Registry Submission Data [RRSD]** transaction) from those locations in the mappings within the StructureDefinition logical model or from appropriate locations within the EHR or other relevant system.
+Once the definition has been ingested, the Registry Submitter or the **Registry Submission Data Source** fetches the required data (the **Retrieve Registry Submission Data [RRSD]** transaction) from those locations in the mappings within the StructureDefinition logical model or from appropriate locations within the EHR or other relevant system.
 
 #### Submission Creation
 
 The Registry Submitter executes the **Create / Update Registry Submission [CURS]** transaction, placing the data in the relevant resources/profiles and assembling the [CREDSSubmission](StructureDefinition-CREDSSubmission.html) Bundle or other FHIR IG mandated Bundle for submission.
 
-Alternately, the **Registry Submission Consumer** may work with individual datapoints in the Regitry Definition and assemble the Submission itself, rather than relying on an external actor.
+Alternately, the **Registry Submission Consumer** may work with individual datapoints in the Registry Definition and assemble the Submission itself, rather than relying on an external actor.
 
 The actor then **Validate Registry Submission [VRS]** through automatic and/or manual process as defined by organization policy to ensure completeness and correctness.
 
@@ -61,9 +61,9 @@ Submissions can be done on-demand by event-driving immediate submission or via a
 2. a Bundle of type ```batch``` comprised of Submission Bundles.  The receiver will only reject individual CREDSSubmission Bundle entries within the Bundle of Bundles
 3. Asynchronous submission of [NDJSON](https://www.hl7.org/fhir/nd-json.html) files of Submission Bundles.  This uses the ```$registryUpload``` Operation attaching the data to a Binary resource as an NDJSON file of individual CREDSSubmission Bundles. This use the [Asynchronous FHIR](https://www.hl7.org/fhir/async.html) with a 202 Accepted response with the Content-Location parameter holding the polling location for the NDJSON file of OperationOutcome resources for each line of the submission file.
 
-The first two options are suffient for low numbers of CREDSSubmission Bundles. For larger periodic submissions (hundreds or thousands of submissions), option 3 is optimal. All three can be managed using [Asynchronous FHIR](https://www.hl7.org/fhir/async.html) or via immediate response.
+The first two options are sufficient for low numbers of CREDSSubmission Bundles. For larger periodic submissions (hundreds or thousands of submissions), option 3 is optimal. All three can be managed using [Asynchronous FHIR](https://www.hl7.org/fhir/async.html) or via immediate response.
 
-All three will result in OperationOutcome resources, outlining the accepting or rejecting of the individual submissions. Option 1 or 2 would result in a Bundle of type ```transaction-response``` or ```batch-response``` containing the OperationOutcomes, option 3 would create an NDJSON file of the OperationOutcome resources that woudl be polled for and retrieived.
+All three will result in OperationOutcome resources, outlining the accepting or rejecting of the individual submissions. Option 1 or 2 would result in a Bundle of type ```transaction-response``` or ```batch-response``` containing the OperationOutcomes, option 3 would create an NDJSON file of the OperationOutcome resources that would be polled for and retrieved.
 
 An example flow for Option 3 would be as follows:
 
@@ -72,4 +72,4 @@ An example flow for Option 3 would be as follows:
 <figcaption>Example Async Submission Flow</figcaption>
 </figure>
 
-It is suggested that if Option 3 is chosen, that the uploads be done in smaller sections within multiple files to allow for easier management of the upload (i.e., parallelism, re-uploading) and to prevent having to re-upload large files in the case of an upload tranmission error.
+It is suggested that if Option 3 is chosen, that the uploads be done in smaller sections within multiple files to allow for easier management of the upload (i.e., parallelism, re-uploading) and to prevent having to re-upload large files in the case of an upload transmission error.
