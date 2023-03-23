@@ -5,7 +5,7 @@
     "version" : "1.0.0-ballot",
 	"mode" : "milestone",
     "desc" : "Publication for May 2023 ballot",
-    "path" : "http://hl7.org/fhir/us/fhir-registry-protocols-ig",
+    "path" : "http://hl7.org/fhir/us/fhir-registry-protocols-ig/2023May",
     "status" : "ballot",
 	"ci-build" : "https://build.fhir.org/ig/HL7/fhir-registry-protocols-ig/",
     "sequence" : "STU1",
