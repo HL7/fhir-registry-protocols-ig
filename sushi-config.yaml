@@ -1,5 +1,5 @@
-id: hl7.fhir.us.fhir-registry-protocols-ig
-canonical: http://hl7.org/fhir/us/fhir-registry-protocols-ig
+id: hl7.fhir.us.registry-protocols
+canonical: http://hl7.org/fhir/us/registry-protocols
 name: FHIRRegistryProtocolsIG
 title: Protocols for Clinical Registry Extraction and Data Submission (CREDS) IG
 status: draft
@@ -29,6 +29,7 @@ dependencies:
 parameters:
   show-inherited-invariants: false
   path-expansion-params: '../../exp-params.json'
+  jira-code: "fhir-registry-protocols-ig"
 pages:
   index.md:
     title: Home
@@ -36,18 +37,6 @@ pages:
     title: Introduction and Scope
   overview.md:
     title: Overview
-#    mapping-to-fhir.md:
-#      title: Mapping to FHIR
-#    mapping-to-cda.md:
-#      title: Mapping to CDA
-#    mapping-to-v2.md:
-#      title: Mapping to HL7 V2
-#    querying-from-fhir.md:
-#      title: Querying From FHIR
-#    querying-from-cda.md:
-#      title: Querying From CDA
-#    querying-from-v2.md:
-#      title: Querying From HL7 V2
   use_cases.md:
     title: Use Cases
   Architecture_and_Implementation.md:
@@ -107,6 +96,6 @@ menu:
 
 resources:
   StructureDefinition/ExampleMap:
-    exampleCanonical: http://hl7.org/fhir/us/fhir-registry-protocols-ig/StructureDefinition/CREDSStructureDefinition
+    exampleCanonical: http://hl7.org/fhir/us/registry-protocols/StructureDefinition/CREDSStructureDefinition
   StructureDefinition/ACCNCDRCathPCIDetailed:
-    exampleCanonical: http://hl7.org/fhir/us/fhir-registry-protocols-ig/StructureDefinition/CREDSStructureDefinition
+    exampleCanonical: http://hl7.org/fhir/us/registry-protocols/StructureDefinition/CREDSStructureDefinition
