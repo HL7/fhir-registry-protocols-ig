@@ -3,7 +3,7 @@
     "title" : "Protocols for Clinical Registry Extraction and Data Submission (CREDS) IG", 
     "category" : "Public Health and Research", 
     "version" : "1.0.0-ballot",
-	"mode" : "milestone",
+	"mode" : "working",
     "desc" : "Publication for May 2023 ballot",
     "path" : "http://hl7.org/fhir/us/registry-protocols/2023May",
     "status" : "ballot",
