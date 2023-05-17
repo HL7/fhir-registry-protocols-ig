@@ -1,12 +1,12 @@
 Information for submission may come from myriad sources, some of which are available for automatic retrieval, such as:
 
-*  Electronic Health Record (EHR) systems
-    * Departmental Systems
-    * Emergency Department (ED) systems
-    * ICU and/or Nursing Central Monitoring systems (or stations)
-    * Labor and Delivery systems
-    * Laboratory Information Systems (LIS)
-    * Picture Archival and Communication Systems (PACS)
+* Electronic Health Record (EHR) systems
+* Departmental Systems
+* Emergency Department (ED) systems
+* ICU and/or Nursing Central Monitoring systems (or stations)
+* Labor and Delivery systems
+* Laboratory Information Systems (LIS)
+* Picture Archival and Communication Systems (PACS)
 * Radiology Information Systems (RIS)
 * Clinical Data Repository (CDR)
 * Care Management Systems
@@ -24,6 +24,9 @@ Systems in this category have access to some or all of the health records (probl
 #### EHR Systems
 
 Comprehensive Hospital EHR solutions may include the capabilities of the other systems listed above, or may be integrated with other systems but not have direct access to all data available to the other systems. Even when those capabilities are available in the comprehensive EHR solution, other solutions may still be chosen by the facility for a variety of reasons (features, cost, legacy, etc.).
+
+#### Clinical Data Repository
+A Clinical Data Repository may be used by a facility as a master source of data collecting information from multiple systems including the EHR and departmental systems.
 
 #### Departmental Systems
 

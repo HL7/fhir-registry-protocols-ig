@@ -18,7 +18,7 @@ partition "UI to Complete Review Data" {
     repeat
     :Capture additional data\navailable through automation;
     :Review and Sign the Record;
-    repeat while (Addtional Data?)
+    repeat while (Additional FHIR Data?)
 }
 
 :Locally Aggregate and\nTransmit data to Registry;

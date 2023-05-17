@@ -10,7 +10,7 @@ Defines the requirements for the Registry Submission Definition Repository imple
 * insert CREDSDefinitionContent
 * name = "RSDR_CURD"
 * title = "Registry Submission Definition Repository implementing the Create / Update Registry Definition transaction."
-* date = "2022-01-26"
+* date = "2023-05-09"
 * kind = #requirements
 * description = "Defines the requirements for the Registry Submission Definition Repository implementing the Create / Update Registry Definition transaction."
 * format[0] = #xml
@@ -28,13 +28,3 @@ Defines the requirements for the Registry Submission Definition Repository imple
 * rest[serverSlice].resource[StructureDefinitionSlice].interaction[1].code = #update
 * rest[serverSlice].resource[StructureDefinitionSlice].interaction[1].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest[serverSlice].resource[StructureDefinitionSlice].interaction[1].extension.valueCode = #SHALL
-
-* rest[serverSlice].resource[StructureMapSlice].type = #StructureMap
-
-* rest[serverSlice].resource[StructureMapSlice].interaction[0].code = #create
-* rest[serverSlice].resource[StructureMapSlice].interaction[0].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest[serverSlice].resource[StructureMapSlice].interaction[0].extension.valueCode = #SHALL
-
-* rest[serverSlice].resource[StructureMapSlice].interaction[1].code = #update
-* rest[serverSlice].resource[StructureMapSlice].interaction[1].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest[serverSlice].resource[StructureMapSlice].interaction[1].extension.valueCode = #SHALL

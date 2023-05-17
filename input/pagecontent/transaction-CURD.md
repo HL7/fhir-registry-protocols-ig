@@ -68,15 +68,7 @@ is communicated to the Registry Submission Definition Source.
 ##### Message Semantics
 
 
-A StructureDefinition is created or updated by the
-[Registry Submission Definition Creator](actors.html#registry-submission-definition-creator)
-on the
-[Registry Submission Definition Repository](actors.html#registry-submission-definition-repository)
-.
-
-
-
-The [Registry Submission Definition Creator](actors.html#registry-submission-definition-creator) creates the ...
+The [Registry Submission Definition Creator](actors.html#registry-submission-definition-creator) creates or updates StructureDefinition on the [Registry Submission Definition Repository](actors.html#registry-submission-definition-repository).
 
 
 
@@ -231,10 +223,10 @@ Accept:=xml|json|text/xml|application/json|application/xml|application/xml+fhir|
 </ol>
 
 ###### create
-The Registry Submission Definition Repository <b>shall</b> support the FHIR create operation on  the StructureDefinition and StructureMap resources.
+The Registry Submission Definition Repository <b>shall</b> support the FHIR create operation on  the StructureDefinition resource.
 
 ###### update
-The Registry Submission Definition Repository <b>shall</b> support the FHIR update operation on  the StructureDefinition and StructureMap resources.
+The Registry Submission Definition Repository <b>shall</b> support the FHIR update operation on  the StructureDefinition resource.
 
 ##### Expected Actions
 
@@ -243,13 +235,13 @@ The Registry Submission Definition Repository <b>shall</b> support the FHIR upda
 
 The
 [Registry Submission Definition Creator](actors.html#registry-submission-definition-creator)
-creates resources and sends them to a
+creates or updates StructureDefinition resources and sends them to a
 [Registry Submission Definition Repository](actors.html#registry-submission-definition-repository)
 
 
 
-The Measure Source performs the FHIR create
-operation on the MeasureReport resource at a Measure Consumer.
+The [Registry Submission Definition Creator](actors.html#registry-submission-definition-creator) performs the FHIR create
+operation on the StructureDefinition resource at a [Registry Submission Definition Repository](actors.html#registry-submission-definition-repository).
 
 
 
@@ -261,12 +253,6 @@ create or update.
 
 
 
-
-##### Trigger Event - 
-
-##### Message Semantics
-
-##### Expected Actions
 
 ### Conformance
 See the following CapabilityStatement resources for conformance requirements:

@@ -53,11 +53,5 @@ This section describes the CURS of this guide. This transaction is used by the R
 #### 
 
 
-##### Trigger Event - 
-
-##### Message Semantics
-
-##### Expected Actions
-
 ### Conformance
 See the following CapabilityStatement resources for conformance requirements:

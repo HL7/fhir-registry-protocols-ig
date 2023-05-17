@@ -1,5 +1,5 @@
 This guide uses structures that define the report in steps from the base profile on StructureDefinition, to the Logical Model that defines the information requirements, to the final StructureDefinition that outlays the individual record and the mappings to the final bundle required.  
-#### Major Components
+### Major Components
 
 The major design components described by this guide support the following functions:
 
@@ -11,7 +11,7 @@ The major design components described by this guide support the following functi
 
 The first four functions are described in more detail in the sections below.
 
-#### Definition
+### Definition
 
 The **Registry Submission Definition Creator** executes the **Create/Update Registry Definition [CURD]** transaction and uses a tool to create a logical model in the form of a StructureDefinition that references the data needed, the possible locations in FHIR, CDA or other locations, including manual input, and the local profile necessary to store the information for submission.
 
@@ -20,7 +20,7 @@ The overall StructureDefinition will have each datapoint as an element definitio
 THis information is given to the **Registry Submission Definition Repository** for storage and distribution.
 
 
-#### Retrieval
+### Retrieval
 
 <figure>{%include workflow.svg %}
 <figcaption>Workflow for Retrieval and Submission</figcaption>
@@ -30,7 +30,7 @@ The **Registry Submitter** uses the **Search/Retrieve Registry Definition [SRRD]
 
 Once the definition has been ingested, the Registry Submitter or the **Registry Submission Data Source** fetches the required data (the **Retrieve Registry Submission Data [RRSD]** transaction) from those locations in the mappings within the StructureDefinition logical model or from appropriate locations within the EHR or other relevant system.
 
-#### Submission Creation
+### Submission Creation
 
 The Registry Submitter executes the **Create / Update Registry Submission [CURS]** transaction, placing the data in the relevant resources/profiles and assembling the [CREDSSubmission](StructureDefinition-CREDSSubmission.html) Bundle or other FHIR IG mandated Bundle for submission.
 
@@ -38,7 +38,7 @@ Alternately, the **Registry Submission Consumer** may work with individual datap
 
 The actor then **Validate Registry Submission [VRS]** through automatic and/or manual process as defined by organization policy to ensure completeness and correctness.
 
-#### Submission 
+### Submission 
 
 This may fall outside of this IG, if using MedMorph or another IG for submission requirements.
 

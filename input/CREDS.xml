@@ -210,11 +210,6 @@
 		<message id="SRRD-1" from="RS" to="RSDR">
 			<name>Search Request</name>
 			<description></description>
-			<trigger id="TRIGGER1">
-				<name></name>
-				<description></description>
-				<overview></overview>
-			</trigger>
 			<semantics>
 				<description>The client sends a query using an HTTP GET or POST transaction to
 the server requesting information on available resources.
@@ -256,7 +251,7 @@ the server requesting information on available resources.
 							_include=*.
 						</description>
 						<overview>This guide does not further specify specify resource includes beyond required support for *.
-							Systems that support _include gernally handle _include=*, in fact, in some ways it is easier to implement
+							Systems that support _include generally handle _include=*, in fact, in some ways it is easier to implement
 							than more selective _include operations. Recursive includes can be a source of server loading issues, as
 							an incorrectly implemented include with recursive includes could wind up retrieving far more data than
 							the client expected. Thus, these are not recommended.
@@ -264,17 +259,16 @@ the server requesting information on available resources.
 						<parameter name='_include' min='0' max='1' values='*' type='string' expect='shall' />
 						<parameter name='_include:iterate' type='string' expect='should-not' />
 					</group>
-					<operation name='read' resources='StructureDefinition StructureMap' expect='shall'>
+					<operation name='read' resources='StructureDefinition' expect='shall'>
 						<name>Read on Required Resources</name>
 						<description>A client **shall** be able to read individual resources that are returned or referenced within resources
 							returned by a query.
 						</description>
 					</operation>
-					<operation id='search' name='search' resources='StructureDefinition StructureMap' expect='shall'>
+					<operation id='search' name='search' resources='StructureDefinition' expect='shall'>
 						<name>Search on Definition Resources</name>
 						<description>A client system **shall** be able to retrieve the definition data by publisher, condition, description or
 							other text.</description>
-						<overview></overview>
 						<group id="_id">
 							<name>Search by _id</name>
 							<description>A client **shall** be able to read individual resources that are returned or referenced within resources
@@ -346,19 +340,13 @@ the server requesting information on available resources.
 			</trigger>
 			<semantics>
 				<description>
-					A StructureDefinition is created or updated by the
-					<ref actor='RSDC' />
-					on the
-					<ref actor='RSDR' />
-					.
+					The <ref actor='RSDC' /> creates or updates the StructureDefinition resource on the <ref actor='RSDR' />.
 				</description>
-				<overview>The <ref actor='RSDC' /> creates the ...
-				</overview>
 				<interaction protocol='fhir'>
 					<group ref='formats' />
 					<!-- what about xml+fhir and json+fhir variants? -->
-					<operation name='create' resources='StructureDefinition StructureMap' expect='shall' />
-					<operation name='update' resources='StructureDefinition StructureMap' expect='shall' />
+					<operation name='create' resources='StructureDefinition' expect='shall' />
+					<operation name='update' resources='StructureDefinition' expect='shall' />
 				</interaction>
 			</semantics>
 			<action by="RSDC">
@@ -366,16 +354,16 @@ the server requesting information on available resources.
 				<description>
 					The
 					<ref actor="RSDC" />
-					creates resources and sends them to a
+					creates or updates StructureDefinition resources and sends them to a
 					<ref actor="RSDR" />
 				</description>
-				<overview>The Measure Source performs the FHIR create
-					operation on the MeasureReport resource at a Measure Consumer.
+				<overview>The <ref actor="RSDC" /> performs the FHIR create
+					operation on the StructureDefinition resource at a <ref actor="RSDR" />.
 				</overview>
 			</action>
 			<result>
 				<name>Accept Resource</name>
-				<description>The Measure Consumer reports success using 200 OK, 201 Created, or 204 No Content to indicate a successful
+				<description>The <ref actor="RSDR" /> reports success using 200 OK, 201 Created, or 204 No Content to indicate a successful
 					create or update.</description>
 				<overview />
 			</result>

@@ -208,24 +208,29 @@ Profile and the relevant transactions between them.&#xA;
             <xsl:text>&#xA;</xsl:text>
             <xsl:apply-templates select="ig:description|ig:overview"/>
 
-            <xsl:text>&#xA;##### Trigger Event - </xsl:text><xsl:value-of select="ig:trigger/ig:name"/><xsl:text>&#xA;</xsl:text>
-            <xsl:apply-templates select="ig:trigger/ig:description|ig:trigger/ig:overview"/>
-
-            <xsl:text>&#xA;##### Message Semantics&#xA;</xsl:text>
-            <xsl:apply-templates select="ig:semantics/ig:description|ig:semantics/ig:overview"/>
-
-            <xsl:if test='ig:semantics/ig:interaction/ig:group'>
-                <xsl:text>&#xA;The following are general requirements of the interaction.&#xA;</xsl:text>
-                <xsl:text>&#xA;&lt;ol>&#xA;</xsl:text>
-                <xsl:apply-templates select="ig:semantics/ig:interaction/ig:group"/>
-                <xsl:text>&#xA;&lt;/ol>&#xA;</xsl:text>
-                <xsl:apply-templates select="ig:semantics/ig:interaction/ig:operation"/>
+            <xsl:if test="ig:trigger/ig:description/text()|ig:trigger/ig:overview/text()">
+	            <xsl:text>&#xA;##### Trigger Event - </xsl:text><xsl:value-of select="ig:trigger/ig:name"/><xsl:text>&#xA;</xsl:text>
+	            <xsl:apply-templates select="ig:trigger/ig:description|ig:trigger/ig:overview"/>
             </xsl:if>
-            <xsl:text>&#xA;##### Expected Actions&#xA;</xsl:text>
-            <xsl:for-each select="ig:action">
-                <xsl:text>&#xA;###### </xsl:text><xsl:value-of select="ig:name"/><xsl:text>&#xA;</xsl:text>
-                <xsl:apply-templates select="ig:description|ig:overview"/>
-            </xsl:for-each>
+            <xsl:if test="ig:semantics/ig:description/text()|ig:semantics/ig:overview/text()|ig:semantics/ig:interaction/ig:group|ig:action">
+	            <xsl:text>&#xA;##### Message Semantics&#xA;</xsl:text>
+	            <xsl:apply-templates select="ig:semantics/ig:description|ig:semantics/ig:overview"/>
+	
+	            <xsl:if test='ig:semantics/ig:interaction/ig:group'>
+	                <xsl:text>&#xA;The following are general requirements of the interaction.&#xA;</xsl:text>
+	                <xsl:text>&#xA;&lt;ol>&#xA;</xsl:text>
+	                <xsl:apply-templates select="ig:semantics/ig:interaction/ig:group"/>
+	                <xsl:text>&#xA;&lt;/ol>&#xA;</xsl:text>
+	            </xsl:if>
+                <xsl:apply-templates select="ig:semantics/ig:interaction/ig:operation"/>
+	            <xsl:if test='ig:action'>
+		            <xsl:text>&#xA;##### Expected Actions&#xA;</xsl:text>
+		            <xsl:for-each select="ig:action">
+		                <xsl:text>&#xA;###### </xsl:text><xsl:value-of select="ig:name"/><xsl:text>&#xA;</xsl:text>
+		                <xsl:apply-templates select="ig:description|ig:overview"/>
+		            </xsl:for-each>
+	            </xsl:if>
+            </xsl:if>
         </xsl:for-each>
 <xsl:text>
 ### Conformance
@@ -241,7 +246,7 @@ See the following CapabilityStatement resources for conformance requirements:
 
     <xsl:template match="ig:group">
     	<xsl:variable name='ref' select='@ref'/>
-        <xsl:for-each select='self::ig:group[@ref]|//ig:group[@id=$ref]'>
+        <xsl:for-each select='self::ig:group|//ig:group[@id=$ref]'>
 	        <xsl:text>&#xA;&lt;li>&#xA;</xsl:text>
     	    <xsl:value-of select="ig:name"/>
         	<xsl:text>&#xA;&lt;div>&#xA;</xsl:text>
