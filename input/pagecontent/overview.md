@@ -1,15 +1,4 @@
-<!--
-    This content is automatically generated from CREDS.xml by overview.xslt
--->
-
-The IG demonstrates a process and workflow to support the needs of clinical registries
-to define how registry
-submissions can be automatically extracted from multiple data sources and combined into a
-registry submission. It profiles the
-definitional resources needed to collect data and construct a registry
-submission using existing FHIR resource profiles.
-
-
+The IG demonstrates a process and workflow to support the needs of clinical registries to define how registry submissions can be automatically extracted from multiple data sources and combined into a registry submission. It profiles the definitional resources needed to collect data and construct a registry submission using existing FHIR resource profiles.
 
 The IG demonstrates a process and workflow to support the needs of clinical registries to define how registry submissions can be automatically extracted from multiple data sources and combined into a registry submission. It profiles the definitional resources needed to collect data and construct a registry submission using existing FHIR resource profiles.
 
@@ -22,6 +11,8 @@ This implementation guide used the HL7 FHIR Standard to:
 
 The process most commonly used by registries today is to define a registry submission format that maps to their data dictionary/information model, and to specify the appropriate vocabulary (e.g., ICD-10-CM, SNOMED CT, CPT, et cetera) allowed in coded fields to submitters.
 
+Business analysts within submitting facilities coordinate with their HIT information systems teams to map data from these systems to populate a registry submission. Not all data may be available within the local HIT information systems, so the integration teams often also enable
+connections and queries through other health IT information systems to enable the abstractors to collect and copy data from those systems into the registry submission for a given patient.
 Business analysts within submitting facilities coordinate with their HIT information systems teams to map data from these systems to populate a registry submission. Not all data may be available within the local HIT information systems, so the integration teams often also enable
 connections and queries through other health IT information systems to enable the abstractors to collect and copy data from those systems into the registry submission for a given patient.
 
@@ -49,16 +40,17 @@ The mappings in this guide by convention use FHIR, CDA and HL7V2 as the identifi
 |CDA| https://build.fhir.org/ig/HL7/cda-core-2.0/ |
 |HL7V2| https://v2plus.hl7.org/ |
 
+In expressing mappings to these standards, a clinical registry **shall** use the identifiers listed above when mapping from the standards they reference.
+
 A StructureDefinition resource contains a collection [ElementDefinition](http://www.hl7.org/fhir/elementdefinition.html) components which describe the data elements in the logical model. Each ElementDefinition can map the field it describes to these information models by expressing a [mapping](http://www.hl7.org/fhir/elementdefinition-definitions.html#ElementDefinition.mapping) within the element definition. The identity of the element expresses the standard artifact used (e.g., FHIR, CDA, HL7V2). The computable language used to express mappings is text/fhirpath, as the [FHIRPath](http://hl7.org/fhirpath/) language can be used on any artifact for which there is a logical model.
 
 The first part of the FHIRPath expression in the mapping.map field should indicate the type of resource to be retrieved in the case of FHIR or V2 messages, since these artifacts have different models depending on the resource or message. It should always be ClinicalDocument in the case of resources retrieved from a CDA document.
 
 Registries may identify additional mapping types for example, to support queries for specializations of CDA documents (e.g., C-CDA) or other standard models (e.g., X12 or NCPDP messages) from repositories supporting those formats.
 
-For more detail on mapping, see the sections below:
-* [Mapping a Logical Model to FHIR](mapping-to-fhir.html)
-* [Mapping a Logical Model to CDA](mapping-to-cda.html)
-* [Mapping a Logical Model to HL7 V2](mapping-to-v2.html)
+### Canonical Information Models
+When mapping from the Registries information model to HL7 FHIR, CDA or Version 2 resources, this guide defines the canonical model used for the target resource type (FHIR, CDA or V2) to ensure consistent mappings. Registries may also define mappings for other sources of information (e.g., older versions of FHIR), but the mapping identifiers for FHIR, CDA, and V2 are defined based on specific versions of these standards expected to be in use at the time of publication of this guide.
+
 
 ## Extracting Registry Data Using the Logical Model
 To extract the necessary data for a registry submission using the logical model, one must have (in addition to the logical model), a patient associated with the data to be collected, a time period associated with the registry submission, and possibly other constraints. One must also have access to repositories which can be queried to obtain access to the standardized artifacts.
@@ -71,14 +63,17 @@ A more practical approach is to collect all the queries to perform, and the perf
 This implementation guide does not specify how patient matches are performed across different information systems. The IHE PIXm and PDQm profiles provide a FHIR API which enables information systems to resolve patient identities using HL7 FHIR. Each repository endpoint may require different patient matching strategies when it is configured. The registry submitter may need to identify policies for how to deal with cases where there is more than one patient match, or no matches.
 
 ### Querying for Artifacts
-There's something to say here about the Patient, and time period, and other constraints that may be associated with the query
+FHIRPath allows an implementation to define environment variables.  This guide defines three variables associated with the FHIRPath expressions used in mappings:
 
-See the sections below for more detail about how to query for standardized artifacts:
-* [Querying for FHIR Resources](querying-from-fhir.html)
-* [Querying for CDA Documents](querying-from-cda.html)
-* [Querying for HL7 V2 Messages](querying-from-v2.html)
+|Environment Variable|Description|
+|---|---|
+|%patient| This variable is a FHIR [Patient](http://www.hl7.org/fhir/R4/Patient.html) resource that describes the patient for whom the data is being collected as they are known to the collecting system.|
+|%period| This variable is a FHIR [Period]() data type that defines the period associated with the registry activity. |
+|%encounter| This variable is a FHIR [Encounter](http://www.hl7.org/fhir/R4/Encounter.html) resource that describes the relevant encounter associated with the registry activity. |
+|%procedure| This variable is a FHIR [Procedure](http://www.hl7.org/fhir/R4/Procedure.html) resource that describes the relevant procedure associated with the registry activity. |
+|%condition| This variable is a FHIR [Condition](http://www.hl7.org/fhir/R4/Condition.html) resource that describes the relevant condition associated with the registry activity. |
 
-## Transforming the Logical Model Content to a Submission Bundle
+In addition, this guide also allows an implementation to define environment variables to reference value sets which are used in FHIRPath expressions by placing the name of the variable in the Output mapping.
 
-
-
+## Mapping the Logical Model Content to a Submission Bundle
+To submit data, the Registry Submission Creator actor must map the logical model to a collection of resources submitted using a Bundle resource. These mappings are defined using the Output mapping identifier. If the Registry logical model is defined as if it were a collection of FHIR Resources, then this transformation is simply a matter of copying the resources in the registry logical model to resource into the submission Bundle.
