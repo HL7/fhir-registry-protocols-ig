@@ -10,7 +10,7 @@ Defines the requirements for the Registry Submission Definition Creator implemen
 * insert CREDSDefinitionContent
 * name = "RSDC_CURD"
 * title = "Registry Submission Definition Creator implementing the Create / Update Registry Definition transaction."
-* date = "2022-01-26"
+* date = "2023-05-09"
 * kind = #requirements
 * description = "Defines the requirements for the Registry Submission Definition Creator implementing the Create / Update Registry Definition transaction."
 * format[0] = #xml
@@ -28,13 +28,3 @@ Defines the requirements for the Registry Submission Definition Creator implemen
 * rest[clientSlice].resource[StructureDefinitionSlice].interaction[1].code = #update
 * rest[clientSlice].resource[StructureDefinitionSlice].interaction[1].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
 * rest[clientSlice].resource[StructureDefinitionSlice].interaction[1].extension.valueCode = #SHALL
-
-* rest[clientSlice].resource[StructureMapSlice].type = #StructureMap
-
-* rest[clientSlice].resource[StructureMapSlice].interaction[0].code = #create
-* rest[clientSlice].resource[StructureMapSlice].interaction[0].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest[clientSlice].resource[StructureMapSlice].interaction[0].extension.valueCode = #SHALL
-
-* rest[clientSlice].resource[StructureMapSlice].interaction[1].code = #update
-* rest[clientSlice].resource[StructureMapSlice].interaction[1].extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
-* rest[clientSlice].resource[StructureMapSlice].interaction[1].extension.valueCode = #SHALL
