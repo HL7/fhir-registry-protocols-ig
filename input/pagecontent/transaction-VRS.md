@@ -53,11 +53,5 @@ This section describes the VRS of this guide. This transaction is used by the Re
 #### 
 
 
-##### Trigger Event - 
-
-##### Message Semantics
-
-##### Expected Actions
-
 ### Conformance
 See the following CapabilityStatement resources for conformance requirements:

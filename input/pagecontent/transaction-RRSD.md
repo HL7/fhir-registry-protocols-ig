@@ -54,11 +54,5 @@ Search for and Retrieve Registry Submission Data
 #### 
 
 
-##### Trigger Event - 
-
-##### Message Semantics
-
-##### Expected Actions
-
 ### Conformance
 See the following CapabilityStatement resources for conformance requirements:

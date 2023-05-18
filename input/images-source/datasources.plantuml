@@ -1,8 +1,9 @@
 @startuml
 rectangle "Treatment Data Sources" {
-    rectangle "Case Management"
+    rectangle "Care Management"
+    rectangle "Clinical Data Repository"
     rectangle "EHR Systems" as EHR 
-    rectangle "Departments" as Dept {
+    rectangle "Departmental" as Dept {
         rectangle "Departmental Systems" as DS 
         rectangle "ED System" as ED 
         rectangle "Laboratory\nInformation System" as LIS
