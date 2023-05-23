@@ -52,6 +52,9 @@ This use case is supported by the following
 * Actors
   - [Registry Submission Definition Repository](actors.html#registry-submission-definition-repository)
   - [Registry Submitter](actors.html#registry-submitter)
+* Transactions
+ - [Search/Retrieve Registry Definition](transaction-SRRD.html)
+
 #### Search and Read Submission Definition Process Flow 
 
 <figure>
