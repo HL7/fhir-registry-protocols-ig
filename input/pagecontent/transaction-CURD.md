@@ -1,6 +1,3 @@
-<!--
-    This content is automatically generated from CREDS.xml by actorsandtransactions.xslt
--->
 This section describes the CURD of this guide. This transaction is used by the Registry Submission Definition Creator and Registry Submission Definition Repository actors.
 ### Scope
 
@@ -43,16 +40,13 @@ This section describes the CURD of this guide. This transaction is used by the R
 #### Create or Update Registry Submission Definition
 
 ##### Trigger Event - Create or Update Registry Submission Definition
-A SubmissionDefinitionCreator requests creation of a new Submission Definition
-A logical model or submission transformation created by the Registry Submission Definition Creator
-is communicated to the Registry Submission Definition Source.
+A Registry Submission Definition Creator requests creation of a new Submission Definition. A logical model or submission transformation created by the Registry Submission Definition Creator is communicated to the Registry Submission Definition Source.
 
 ##### Message Semantics
 The [Registry Submission Definition Creator](actors.html#registry-submission-definition-creator) creates or updates StructureDefinition on the [Registry Submission Definition Repository](actors.html#registry-submission-definition-repository).
 
 The following are general requirements of the interaction.
-<ol>
-<li>
+
 Formats 
 <table class='grid'>
 <thead><tr>
@@ -119,13 +113,7 @@ Accept:=xml|json|text/xml|application/json|application/xml|application/xml+fhir|
 </tr>
 </tbody>
 </table>
-        
-</li>
-<li>
-<div>
-</div>
-</li>
-</ol>
+
 ###### create
 The Registry Submission Definition Repository <b>shall</b> support the FHIR create operation on  the StructureDefinition resource.
 ###### update
