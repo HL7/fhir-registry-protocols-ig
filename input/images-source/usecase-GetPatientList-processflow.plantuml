@@ -26,7 +26,7 @@ participant "Registry Submission Definition Creator" as RSDC
 participant "Registry Submitter" as RS
 participant "Registry Submission Data Source" as RSDS
 
-RS -> RSDC : 1. Read submission definition artifacts.
+RS -> RSDC : 1. Read submission definition artifacts (logical model).
 activate "RSDC"
 activate "RS"
 return

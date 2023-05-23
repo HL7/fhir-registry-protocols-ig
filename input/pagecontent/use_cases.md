@@ -5,7 +5,7 @@ The following use cases were used to identify the requirements addressed by this
 * [Get Patient List](#get-patient-list)
 
 These are described in more detail in the sections that follow.
-
+ 
 ### Define Submission
 The registry authority defines the logical data model which describes the data to be submitted to the registry,
 and the transforms
