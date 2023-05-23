@@ -1,6 +1,3 @@
-<!--
-    This content is automatically generated from CREDS.xml by actorsandtransactions.xslt
--->
 This section describes the RRSD of this guide. This transaction is used by the Registry Submitter and Registry Submission Data Source actors.
 ### Scope
 Search for and Retrieve Registry Submission Data

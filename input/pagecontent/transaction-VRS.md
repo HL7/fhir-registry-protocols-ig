@@ -1,6 +1,3 @@
-<!--
-    This content is automatically generated from CREDS.xml by actorsandtransactions.xslt
--->
 This section describes the VRS of this guide. This transaction is used by the Registry Submitter and Registry Submission Consumer actors.
 ### Scope
 
@@ -41,7 +38,3 @@ This section describes the VRS of this guide. This transaction is used by the Re
 {% include transaction-VRS-seq.svg%}
 <figcaption>Figure 2.5-2: Validate Registry Submission Interactions </figcaption>
 </figure>
-#### 
-
-### Conformance
-See the following CapabilityStatement resources for conformance requirements:

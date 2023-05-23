@@ -1,6 +1,4 @@
-<!--
-    This content is automatically generated from CREDS.xml by actorsandtransactions.xslt
--->
+
 This section describes the CURS of this guide. This transaction is used by the Registry Submitter and Registry Submission Consumer actors.
 ### Scope
 

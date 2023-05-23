@@ -1,9 +1,6 @@
-<!--
-    This content is automatically generated from CREDS.xml by actorsandtransactions.xslt
--->
 This section describes the SRRD of this guide. This transaction is used by the Registry Submission Definition Creator, Registry Submission Definition Repository and Registry Submitter actors.
 ### Scope
-Search for and Retrieve Registry Submission Definitions
+Search/Retrieve Registry Definition (SRRD) 
 
 
 ### Actors Roles
