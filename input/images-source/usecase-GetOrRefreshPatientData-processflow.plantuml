@@ -1,7 +1,24 @@
-/'
-    This content is automatically generated from CREDS.xml by overview.xslt
-'/
+
 @startuml
+skinparam usecase {
+backgroundColor DeepSkyBlue
+BorderColor DarkSlateGray
+ArrowColor Blue
+}
+
+skinparam Note {
+BackgroundColor LightBlue
+BorderColor Blue
+}
+
+skinparam roundcorner 20
+
+skinparam Component {
+FontName Arial
+Style awesome
+BorderColor DeepSkyBlue
+BackgroundColor LightBlue
+}
 hide footbox
 participant "Registry Submitter [Registry Submitter]" as RS
 participant "Registry Submission Data Source [Registry Submission Data Source]" as RSDS

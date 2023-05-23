@@ -3,6 +3,25 @@
 '/
 @startuml
 hide footbox
+skinparam usecase {
+backgroundColor DeepSkyBlue
+BorderColor DarkSlateGray
+ArrowColor Blue
+}
+
+skinparam Note {
+BackgroundColor LightBlue
+BorderColor Blue
+}
+
+skinparam roundcorner 20
+
+skinparam Component {
+FontName Arial
+Style awesome
+BorderColor DeepSkyBlue
+BackgroundColor LightBlue
+}
 participant "Registry Submission Definition Creator" as RSDC
 participant "Registry Submitter [Registry Submitter]" as RS
 "RSDC" -> "RS" : 1. Search submission definition artifacts.
