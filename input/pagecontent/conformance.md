@@ -81,8 +81,7 @@ Requirements for the Output resources are shown as .where() requirements.  If a 
 If an element has a minimum requirement, i.e., minimum cardinality of 1 then [Data Absent Reason](https://hl7.org/fhir/valueset-data-absent-reason.html) must be supplied via a resource element or via the [Data Absent Reason Extension](https://build.fhir.org/extension-data-absent-reason.html) if no response is available due to query failure and manual prompt gives no response.
 
 #### Query ValueSet Binding  
-#FIXME 40869
-Where needed a Logical Model may have a binding to one or more ValueSets that outline the codes needed for a query.  For example, a bound ValueSet may have a list of SNOMED and/or LOINC, etc. codes that would match a condition that a needed may have in their history.  This may allow for better targeted queries from the Submitter to its sources.  This can be specified best using the FHIRPath function memberOf() in the FHIR mapping.
+Where needed, a Logical Model may have a binding to one or more ValueSets that outline the codes needed for a query. For example, a bound ValueSet with list of SNOMED and/or LOINC, etc. codes that would match a needed condition could be used to tightly specify a query.  This may allow for better targeted queries from the Submitter to its sources.  This can be specified best using the FHIRPath function memberOf() in the FHIR mapping.
 
 ### Submission Bundle
 The [CREDS submission bundle](StructureDefinition-CREDSSubmission.html) is a FHIR Bundle of type "Collection".  
