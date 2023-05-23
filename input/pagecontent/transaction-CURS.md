@@ -29,7 +29,7 @@ This section describes the CURS of this guide. This transaction is used by the R
 <caption><b>Table 3.71.3-1: Referenced Standards</b></caption>
 <thead><tr><th>Standard</th><th>Name</th></tr></thead>
 <tbody>
-            <tr><td>FHIR-R4</td><td><a href='http://www.hl7.org/FHIR/R4'>HL7 FHIR Release 4.0</a></td></tr>
+            <tr><td>FHIR-R4</td><td><a href='http://www.hl7.org/FHIR/R4'>HL7 FHIR Release 4</a></td></tr>
         
             <tr><td>RFC-7230</td><td><a href='https://ietf.org/rfc/rfc7230.html'>Hypertext Transfer Protocol - HTTP/1.1</a></td></tr>
         
