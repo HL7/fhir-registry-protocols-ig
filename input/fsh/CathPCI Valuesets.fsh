@@ -267,7 +267,8 @@ Description: "Affirmative or Negative"
 * ^experimental = true
 * ^copyright = "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement"
 * $sct#373066001 
-* $sct#373067005 
+* $sct#373067005
+* include codes from system "https://terminology.hl7.org/CodeSystem-v2-0532.html"
 
 ValueSet: MyocardialInfarction
 Id: MyocardialInfarction
