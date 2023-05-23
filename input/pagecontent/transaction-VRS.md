@@ -1,6 +1,6 @@
-This section describes the VRS of this guide. This transaction is used by the Registry Submitter and Registry Submission Consumer actors.
 ### Scope
-
+Validate Registry Submission (VRS)
+This section describes the VRS of this guide. This transaction is used by the Registry Submitter and Registry Submission Consumer actors.
 
 ### Actors Roles
 <figure>

@@ -1,5 +1,7 @@
-This section describes the CURD of this guide. This transaction is used by the Registry Submission Definition Creator and Registry Submission Definition Repository actors.
 ### Scope
+Create / Update Registry Definition (CURD)
+This section describes the CURD of this guide. This transaction is used by the Registry Submission Definition Creator and Registry Submission Definition Repository actors.
+
 
 ### Actors Roles
 <figure>

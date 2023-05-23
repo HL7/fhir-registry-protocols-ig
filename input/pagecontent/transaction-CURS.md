@@ -1,7 +1,6 @@
-
-This section describes the CURS of this guide. This transaction is used by the Registry Submitter and Registry Submission Consumer actors.
 ### Scope
-
+Create / Update Registry Submission (CURS)
+This section describes the CURS of this guide. This transaction is used by the Registry Submitter and Registry Submission Consumer actors.
 
 ### Actors Roles
 <figure>

@@ -1,6 +1,6 @@
-This section describes the SRRD of this guide. This transaction is used by the Registry Submission Definition Creator, Registry Submission Definition Repository and Registry Submitter actors.
 ### Scope
 Search/Retrieve Registry Definition (SRRD) 
+This section describes the SRRD of this guide. This transaction is used by the Registry Submission Definition Creator, Registry Submission Definition Repository and Registry Submitter actors.
 
 
 ### Actors Roles

@@ -1,6 +1,6 @@
-This section describes the RRSD of this guide. This transaction is used by the Registry Submitter and Registry Submission Data Source actors.
 ### Scope
-Search for and Retrieve Registry Submission Data
+Retrieve Registry Submission Data (RRSD)
+This section describes the RRSD of this guide. This transaction is used by the Registry Submitter and Registry Submission Data Source actors.
 
 
 ### Actors Roles
