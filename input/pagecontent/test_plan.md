@@ -55,8 +55,8 @@ The Registry Submission Definition Creator creates abd manages the definitional 
 * The data model is retrieved from the repository
 * Data is mapped from the model to data sources
 * Data is successfully retrieved from the Registry Submission Data Source(s)
-* The submission Bundle is created and populated correctly accorind to the data model
-* The submission Bundle is pushed to the Registry Submission Consumer and validates correctly using a FHIR-based transaction using [MEDMORPH](http://hl7.org/fhir/us/medmorph/) or similar FHIR Implementation Guides or using a CREDS Submission Bundle.
+* The submission Bundle is created and populated correctly according to the data model
+* The submission Bundle is pushed to the Registry Submission Consumer and validates correctly using a FHIR-based transaction using content FHIR Implementation Guides (such as MedMorph or UDS+) or using a CREDS Submission Bundle.
 
 #### Registry Submission Consumer
 

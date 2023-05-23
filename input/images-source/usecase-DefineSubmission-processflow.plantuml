@@ -17,13 +17,13 @@ activate "RSDR"
 return
 deactivate "RSDC"
 deactivate "RSDR"
-"RSDC" -> "RSDR" : 3. Create submission definition artifacts.
+"RSDC" -> "RSDR" : 3. Create submission definition transformation.
 activate "RSDC"
 activate "RSDR"
 return
 deactivate "RSDC"
 deactivate "RSDR"
-"RSDC" -> "RSDR" : 4. Update submission definition artifacts.
+"RSDC" -> "RSDR" : 4. Update submission definition transformation.
 activate "RSDC"
 activate "RSDR"
 return

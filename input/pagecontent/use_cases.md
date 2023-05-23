@@ -62,7 +62,7 @@ submitters.
 
    
 
-1. Create submission definition artifacts.
+1. Create submission definition transformation.
 
    The Registry Authority creates a transformation and submits it to a repository for distribution to registry
 submitters.
@@ -70,7 +70,7 @@ submitters.
 
    
 
-1. Update submission definition artifacts.
+1. Update submission definition transformation.
 
    The Registry Authority updates a transformation and submits it to a repository for distribution to registry
 submitters.
@@ -80,7 +80,7 @@ submitters.
 
 ### Search and Read Submission Definition
 
-A registry submitter reads the logical data model and transformations .
+A registry submitter reads the logical data model and transformations.
 
 
 This use case is supported by the following
@@ -100,7 +100,7 @@ This use case is supported by the following
 <figcaption>Figure 2.3.1.2-1: Search and Read Submission Definition Process Flow </figcaption>
 </figure>
 
-1. Read submission definition artifacts.
+1. Search submission definition artifacts.
 
    The Registry Submitter searches for registry submission definitions and transforms contained in a repository
 
