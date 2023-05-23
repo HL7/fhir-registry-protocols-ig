@@ -1,24 +1,43 @@
 @startuml
+skinparam activityDiagram  {
+backgroundColor DeepSkyBlue
+BorderColor DarkSlateGray
+ArrowColor Blue
+}
+
+skinparam Note {
+BackgroundColor LightBlue
+BorderColor Blue
+}
+
+skinparam roundcorner 20
+
+skinparam partition {
+FontName Arial
+Style awesome
+BorderColor DeepSkyBlue
+BackgroundColor LightBlue
+}
 :Fetch patient from\nRegistry worklist;
 partition "Fetch FHIR data from\nthe data source" {
     repeat
     :Identify the\nData Source;
     :FHIR API request\nto get the data;
-    repeat while (FHIR Data?)
+    repeat while (additional\nFHIR Data?)
 }
 
 partition "Fetch Non-FHIR data\nfrom other sources" {
     repeat
     :Identify the data source;
     :Use other methods\nto get the data;
-    repeat while (additional Non-FHIR Data?)
+    repeat while (additional\nNon-FHIR Data?)
 }
 
 partition "UI to Complete Review Data" {
     repeat
     :Capture additional data\navailable through automation;
     :Review and Sign the Record;
-    repeat while (Additional FHIR Data?)
+    repeat while (Additional\nFHIR Data?)
 }
 
 :Locally Aggregate and\nTransmit data to Registry;
