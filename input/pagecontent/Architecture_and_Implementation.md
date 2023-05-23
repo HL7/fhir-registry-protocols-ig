@@ -6,8 +6,7 @@ The major design components described by this guide support the following functi
 1. Definition - gives an overall structure and requirements with references to major standards (FHIR, CDA, V2) and the relevant FHIR Profile (such as [USCore Patient](http://hl7.org/fhir/us/core/StructureDefinition-us-core-patient.html) or [International Patient Summary Patient](http://hl7.org/fhir/uv/ips/StructureDefinition-Patient-uv-ips.html)) for final submission.
 3. Retrieval - fetching the data from the listed sources or from non-automated locations requiring human intervention
 3. Submission creation - Entering patient data in the elements in the FHIR Resources and/or profiles that will comprise the submission Bundle.
-5. Submission - use of a base CREDSBundle or other FHIR IGs such as [Making EHR Data More Available for Research and Public Health (MedMorph)](http://hl7.org/fhir/us/medmorph/) for submission of the resulting Bundle.
-
+5. Submission - use of a base CREDSBundle or other FHIR IGs such as [UDS+](http://fhir.drajer.com/site/index.html) or [MedMorph](https://hl7.org/fhir/us/medmorph/) for submission of the resulting Bundle.
 
 The first four functions are described in more detail in the sections below.
 
