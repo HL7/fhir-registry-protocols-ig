@@ -53,18 +53,7 @@ The [Registry Submission Definition Creator](actors.html#registry-submission-def
 The following are general requirements of the interaction.
 <ol>
 <li>
-Formats
-<div>
-All servers **shall** support the _format parameter for any read or search and the standard values
-defined by FHIR for JSON and XML output. This value **shall** override the Accept: header when present in an exchange.
-Servers **shall** also support the Accept: header, and **shall** support any value in Accept: that can be given to _format
-for consistency. Servers are also free to support other output formats (e.g. turtle as defined in the base FHIR
-specifications, or other formats such as CSV which might be easier for clients to present or use). Servers
-should support other commonly used expressions representing JSON or XML outputs without complaint, including
-those specified in prior releases (e.g., the DSTU2 application/xml+fhir or application/json+fhir types that
-have since changed in R4).
-
-</div>
+Formats 
 <table class='grid'>
 <thead><tr>
 <th>Parameter</th><th>Cardinality</th><th>

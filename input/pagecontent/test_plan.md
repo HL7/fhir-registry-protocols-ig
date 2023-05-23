@@ -38,7 +38,7 @@ The Registry Submission Definition Creator creates abd manages the definitional 
 
  **Registry Submission Definition Repository Success Criteria**
 * The example CREDS StructureDefinition is found in a list of available resources
-* The example CREDS StructureDefinition is retrieved and made available to the Registry Sumbitter
+* The example CREDS StructureDefinition is retrieved and made available to the Registry Submitter
 
 #### Registry Submitter
 
@@ -82,11 +82,11 @@ The following integration test scenarios included in this test plan:
 * The Registry has a defined Data Dictionary for data used within the registry
 * The Registry fully supports the CREDSStructureDefinition profile
 * Each element in the Data Dictionary has been mapped to a relevant profile both on input and output
-* The Registry has a RESTful enpoint that enables search and retrieval of the CREDSStructureDefinition Logical Models
+* The Registry has a RESTful endpoint that enables search and retrieval of the CREDSStructureDefinition Logical Models
 
 ##### Test Steps
 1. Using a manual or tooled process, the data dictionary mappings are transferred to a CREDSStructureDefinition profile creating the Logical Model of all data points needed for registry ingestion
-2. The Logical Model is validated to have all elements including source standard mappings (where possible) and Output resource or profile element mappings inlcuding full path to any referenced FHIR Profiles
+2. The Logical Model is validated to have all elements including source standard mappings (where possible) and Output resource or profile element mappings including full path to any referenced FHIR Profiles
 
 * A fully complete Logical Model is created with both input and output mappings
 * The Logical Model validates as a FHIR CREDSStructureDefinition profile
@@ -98,7 +98,7 @@ The following integration test scenarios included in this test plan:
 ##### Preconditions
 * The Registry has implemented the Registry Submission Definition Creator or Registry Submission Definition Repository actor
 * The Logical Model/StructureDefinition is available for search and retrieval
-* The Registry Submission Definition Repository or Registry Submitter have knowedge of the model to be retrieved (identifier, name, etc.)
+* The Registry Submission Definition Repository or Registry Submitter have knowledge of the model to be retrieved (identifier, name, etc.)
 
 ##### Test Steps
 1. Using a FHIR query, the actor queries for available logical models, e.g., :
@@ -126,7 +126,7 @@ The following integration test scenarios included in this test plan:
 ##### Success Criteria
 * All data dictionary elements validate with complete and valid information in each of the mappings
 * All data dictionary elements have correct and valid Output mappings
-* All FHIRPath mappings are convertable to a FHIR query
+* All FHIRPath mappings are convertible to a FHIR query
 
 #### Data retrieval
 
@@ -152,7 +152,7 @@ The following integration test scenarios included in this test plan:
 * All Output mappings are valid and needed Profiles are supported (e.g., US Core, other FHIR IG Profiles)
 
 ##### Test Steps
-* Transfer data from the retreived resources/documents/messages according to the Source Standards mapping and Output mapping requirements.
+* Transfer data from the retrieved resources/documents/messages according to the Source Standards mapping and Output mapping requirements.
 * Create a MessageHeader resource with all relevant submitter information
 * Ensure the Patient resource exists and is based on the US Core Patient Profile
 * Assemble a Bundle that conforms to the CREDSSubmission Bundle profile or the appropriate FHIR Implementation Guide requirements
