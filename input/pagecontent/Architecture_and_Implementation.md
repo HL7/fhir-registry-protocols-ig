@@ -16,7 +16,7 @@ The **Registry Submission Definition Creator** executes the **Create/Update Regi
 
 The overall StructureDefinition will have each datapoint as an element definition with mappings to the data locations and the resource or profile for storage within the submission Bundle.
 
-THis information is given to the **Registry Submission Definition Repository** for storage and distribution.
+This information is given to the **Registry Submission Definition Repository** for storage and distribution.
 
 
 ### Retrieval
