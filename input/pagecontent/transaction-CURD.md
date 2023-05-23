@@ -2,15 +2,9 @@
     This content is automatically generated from CREDS.xml by actorsandtransactions.xslt
 -->
 This section describes the CURD of this guide. This transaction is used by the Registry Submission Definition Creator and Registry Submission Definition Repository actors.
-
 ### Scope
 
-
-
-
-
 ### Actors Roles
-
 <figure>
 {% include transaction-CURD-uc.svg%}
 <figcaption>Figure 2.2-1: Create / Update Registry Definition Use Case Diagram </figcaption>
@@ -29,9 +23,7 @@ This section describes the CURD of this guide. This transaction is used by the R
         
 </tbody>
 </table>
-
 ### Referenced Standards
-
 <table border='1' borderspacing='0'>
 <caption><b>Table 3.71.3-1: Referenced Standards</b></caption>
 <thead><tr><th>Standard</th><th>Name</th></tr></thead>
@@ -42,44 +34,27 @@ This section describes the CURD of this guide. This transaction is used by the R
         
 </tbody>
 </table>
-
 ### Interactions
         
 <figure>
 {% include transaction-CURD-seq.svg%}
 <figcaption>Figure 2.2-2: Create / Update Registry Definition Interactions </figcaption>
 </figure>
-
 #### Create or Update Registry Submission Definition
 
-
-
-
 ##### Trigger Event - Create or Update Registry Submission Definition
-
 A SubmissionDefinitionCreator requests creation of a new Submission Definition
-
-
 A logical model or submission transformation created by the Registry Submission Definition Creator
 is communicated to the Registry Submission Definition Source.
 
-
-
 ##### Message Semantics
-
-
 The [Registry Submission Definition Creator](actors.html#registry-submission-definition-creator) creates or updates StructureDefinition on the [Registry Submission Definition Repository](actors.html#registry-submission-definition-repository).
 
-
-
 The following are general requirements of the interaction.
-
 <ol>
-
 <li>
 Formats
 <div>
-
 All servers **shall** support the _format parameter for any read or search and the standard values
 defined by FHIR for JSON and XML output. This value **shall** override the Accept: header when present in an exchange.
 Servers **shall** also support the Accept: header, and **shall** support any value in Accept: that can be given to _format
@@ -89,173 +64,97 @@ should support other commonly used expressions representing JSON or XML outputs 
 those specified in prior releases (e.g., the DSTU2 application/xml+fhir or application/json+fhir types that
 have since changed in R4).
 
-
-
 </div>
-
-
 <table class='grid'>
-
 <thead><tr>
-
 <th>Parameter</th><th>Cardinality</th><th>
 Registry Submission Definition Repository Expectation</th><th>
 Registry Submitter Expectation</th>
-
 </tr></thead>
-
 <tbody>
-
-
 <tr>
-
 <td>
-
 _format=application/fhir+xml|application/fhir+json
-
 </td>
-
 <td>
-
 0..1
 </td>
 <td>
-
 <b>shall</b>
-
 </td>
 <td>
-
 <b>shall</b>
-
 </td>
 </tr>
-
-
 <tr>
-
 <td>
-
 _format=xml|json|text/xml|application/json|application/xml|application/xml+fhir|application/json+fhir
-
 </td>
-
 <td>
-
 0..1
 </td>
 <td>
-
 <b>should</b>
-
 </td>
 <td>
-
 <b>should not</b>
-
 </td>
 </tr>
-
-
 <tr>
-
 <td>
-
 Accept:=application/fhir+xml|application/fhir+json
-
 </td>
-
 <td>
-
 0..1
 </td>
 <td>
-
 <b>shall</b>
-
 </td>
 <td>
-
 <b>shall</b>
-
 </td>
 </tr>
-
-
 <tr>
-
 <td>
-
 Accept:=xml|json|text/xml|application/json|application/xml|application/xml+fhir|application/json+fhir
-
 </td>
-
 <td>
-
 0..1
 </td>
 <td>
-
 <b>should</b>
-
 </td>
 <td>
-
 <b>should not</b>
-
 </td>
 </tr>
-
 </tbody>
 </table>
-
         
 </li>
-
 <li>
-
 <div>
-
 </div>
-
 </li>
-
 </ol>
-
 ###### create
 The Registry Submission Definition Repository <b>shall</b> support the FHIR create operation on  the StructureDefinition resource.
-
 ###### update
 The Registry Submission Definition Repository <b>shall</b> support the FHIR update operation on  the StructureDefinition resource.
-
 ##### Expected Actions
-
 ###### Create StructureDefinition Resource
-
-
 The
 [Registry Submission Definition Creator](actors.html#registry-submission-definition-creator)
 creates or updates StructureDefinition resources and sends them to a
 [Registry Submission Definition Repository](actors.html#registry-submission-definition-repository)
 
-
-
 The [Registry Submission Definition Creator](actors.html#registry-submission-definition-creator) performs the FHIR create
 operation on the StructureDefinition resource at a [Registry Submission Definition Repository](actors.html#registry-submission-definition-repository).
 
-
-
 #### Accept Resource
-
-
-The Measure Consumer reports success using 200 OK, 201 Created, or 204 No Content to indicate a successful
-create or update.
-
-
-
+The [Registry Submission Consumer](actors.html#registry-submission-consumer) reports success using 200 OK, 201 Created, or 202 Accepted to indicate a successful create or update.
 
 ### Conformance
 See the following CapabilityStatement resources for conformance requirements:
-
 * [CapabilityStatement-RSDC-CURD](CapabilityStatement-RSDC-CURD.html) Defines the requirements for the Registry Submission Definition Creator implementing the Create / Update Registry Definition transaction.
 * [CapabilityStatement-RSDR-CURD](CapabilityStatement-RSDR-CURD.html) Defines the requirements for the Registry Submission Definition Repository implementing the Create / Update Registry Definition transaction.

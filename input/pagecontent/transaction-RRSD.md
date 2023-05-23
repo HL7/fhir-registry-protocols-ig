@@ -2,16 +2,11 @@
     This content is automatically generated from CREDS.xml by actorsandtransactions.xslt
 -->
 This section describes the RRSD of this guide. This transaction is used by the Registry Submitter and Registry Submission Data Source actors.
-
 ### Scope
-
 Search for and Retrieve Registry Submission Data
 
 
-
-
 ### Actors Roles
-
 <figure>
 {% include transaction-RRSD-uc.svg%}
 <figcaption>Figure 2.3-1: Retrieve Registry Submission Data Use Case Diagram </figcaption>
@@ -30,9 +25,7 @@ Search for and Retrieve Registry Submission Data
         
 </tbody>
 </table>
-
 ### Referenced Standards
-
 <table border='1' borderspacing='0'>
 <caption><b>Table 3.71.3-1: Referenced Standards</b></caption>
 <thead><tr><th>Standard</th><th>Name</th></tr></thead>
@@ -43,16 +36,13 @@ Search for and Retrieve Registry Submission Data
         
 </tbody>
 </table>
-
 ### Interactions
         
 <figure>
 {% include transaction-RRSD-seq.svg%}
 <figcaption>Figure 2.3-2: Retrieve Registry Submission Data Interactions </figcaption>
 </figure>
-
 #### 
-
 
 ### Conformance
 See the following CapabilityStatement resources for conformance requirements:
