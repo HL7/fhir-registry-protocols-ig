@@ -11,3 +11,4 @@ Alias: $dar = http://terminology.hl7.org/CodeSystem/data-absent-reason
 Alias: $hl7-discharge = http://terminology.hl7.org/CodeSystem/discharge-disposition
 Alias: $ncdrq = http://hl7.org/fhir/us/registry-protocols/ValueSet/ncdrq
 Alias: $accerror = http://hl7.org/fhir/us/registry-protocols/CodeSystem/NCDRValidationErrors
+Alias: $yn = http://terminology.hl7.org/CodeSystem/v2-0532
