@@ -1,8 +1,9 @@
 The following use cases were used to identify the requirements addressed by this guide:
 * [Define Submission](#define-submission)
 * [Search and Read Submission Definition](#search-and-read-submission-definition)
-* [Get or Refresh Patient Data](#get-or-refresh-patient-data)
 * [Get Patient List](#get-patient-list)
+* [Get or Refresh Patient Data](#get-or-refresh-patient-data)
+
 
 These are described in more detail in the sections that follow.
  
@@ -65,6 +66,24 @@ This use case is supported by the following
    The Registry Submitter reads the registry submission definitions and transforms contained in a repository
 necessary for creating a submission.
 
+### Get Patient List
+A registry submitter retrieves the list of patients for whom a submission must be created.
+
+This use case is supported by the following
+* Actors
+  - [Registry Submission Definition Creator](actors.html#registry-submission-definition-creator)
+  - [Registry Submitter](actors.html#registry-submitter)
+  - [Registry Submission Data Source](actors.html#registry-submission-data-source)
+* Transactions
+  - [Retrieve Registry Submission Data](transaction-RRSD.html)
+#### Get Patient List Process Flow 
+The registry submitter identifies patients for whom a submission is necessary.
+
+<figure>
+{% include usecase-GetPatientList-processflow.svg%}
+<figcaption>Figure 2.3.1.4-1: Get Patient List Process Flow </figcaption>
+</figure>
+
    
 ### Get or Refresh Patient Data
 Collect new or refresh existing patient data from data sources.
@@ -88,20 +107,3 @@ This use case is supported by the following
    
 1. Store essential data for later submission.
    
-### Get Patient List
-A registry submitter retrieves the list of patients for whom a submission must be created.
-
-This use case is supported by the following
-* Actors
-  - [Registry Submission Definition Creator](actors.html#registry-submission-definition-creator)
-  - [Registry Submitter](actors.html#registry-submitter)
-  - [Registry Submission Data Source](actors.html#registry-submission-data-source)
-* Transactions
-  - [Retrieve Registry Submission Data](transaction-RRSD.html)
-#### Get Patient List Process Flow 
-The registry submitter identifies patients for whom a submission is necessary.
-
-<figure>
-{% include usecase-GetPatientList-processflow.svg%}
-<figcaption>Figure 2.3.1.4-1: Get Patient List Process Flow </figcaption>
-</figure>
