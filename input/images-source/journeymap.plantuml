@@ -29,14 +29,6 @@ Trigger: discharge event"
     usecase fdemo as "Fill in Demographics"
 }
 
-note left of FDE
-If data exists in the EHR, retrieval can be relatively easy:
-         extract data from EHR records and populate report
-Challenges:
-*  Documenter may be unclear on meaning of clinical data
-* Documenter may not know how/where to locate data 
-endnote 
-
 package "Fetch Data: EHR"  as FDE {
     usecase fproc as "Fill in Procedure details"
 }
@@ -50,6 +42,14 @@ package "Fetch Data: Other Sources" AS FDO {
     usecase "Can't locate history, waiting" as NoHist
     
 }
+
+note left of FDE
+If data exists in the EHR, retrieval can be relatively easy:
+         extract data from EHR records and populate report
+Challenges:
+* Documenter may be unclear on meaning of clinical data
+* Documenter may not know how/where to locate data 
+endnote 
 
 package "Complete/Review Record" AS CRR {
     usecase "Review Registry report" as RRR 
