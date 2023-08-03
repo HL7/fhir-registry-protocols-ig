@@ -40,7 +40,7 @@ The source code for this Implementation Guide can be found on
 ### CREDS and Content IGs
 CREDS focuses on providing healthcare provider organizations information on how to collect the data needed to submit to registries. This may include but is not limited to data sources such as EHRs, HIEs and other sources using FHIR, HL7 CDA documents, and HL7 V3 messages that are not available via FHIR APIs.
 
-Other content IGs such as MedMorph and UDS+ specify the use of standard FHIR APIs to collect data from EHRs and potentially other systems and exchange with systems that can receive data in FHIR format. This IG can support multiple use cases through content IGs, including but not limited to case-based surveillance, registry reporting, national health care surveys, and research.
+Other content IGs such as MedMorph and [UDS+](https://bphc.hrsa.gov/data-reporting/uds-training-and-technical-assistance/uds-frequently-asked-questions) specify the use of standard FHIR APIs to collect data from EHRs and potentially other systems and exchange with systems that can receive data in FHIR format. This IG can support multiple use cases through content IGs, including but not limited to case-based surveillance, registry reporting, national health care surveys, and research.
 
 Use cases that need to obtain data not available via FHIR APIs should consider the use of CREDS. Once there is a CREDS FHIR bundle, the MedMorph or UDS+ profiles could be used for transport.
 
