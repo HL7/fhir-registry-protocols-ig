@@ -2,21 +2,23 @@ id: hl7.fhir.us.registry-protocols
 canonical: http://hl7.org/fhir/us/registry-protocols
 name: FHIRRegistryProtocolsIG
 title: Protocols for Clinical Registry Extraction and Data Submission (CREDS) IG
-status: draft
-version: 1.0.0-ballot
+status: active
+version: 1.0.0
 fhirVersion: 4.0.1
 copyrightYear: 2022+
 releaseLabel: STU1
-
+extension:
+  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg
+    valueCode: cic
 publisher:
-  - name: Clinical Interoperability Council
-  - url: http://hl7.org/Special/committees/cic
+  - name: HL7 International / Clinical Interoperability Council
+  - url: http://www.hl7.org/Special/committees/cic
   - email: cic@lists.hl7.org
 contact:
   - name: Clinical Interoperability Council
     telecom:
       - system: url
-        value: http://hl7.org/Special/committees/cic/index.cfm
+        value: http://www.hl7.org/Special/committees/cic
   - name: David Pyke
     telecom:
       - system: email
@@ -26,6 +28,7 @@ description: The IG demonstrates a process and workflow to support the needs of 
 jurisdiction: urn:iso:std:iso:3166#US "United States of America"
 dependencies:
   hl7.fhir.us.core: 5.0.1
+  hl7.fhir.uv.extensions: current
 parameters:
   show-inherited-invariants: false
   path-expansion-params: '../../exp-params.json'

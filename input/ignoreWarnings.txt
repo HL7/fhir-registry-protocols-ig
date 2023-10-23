@@ -3,14 +3,18 @@
 WARNING: StructureDefinition/CapabilityStatementWithSlices: StructureDefinition.snapshot.element[0].constraint[6].xpath: value should not start or finish with whitespace ' not(f:kind/@value='instance') or (not(exists(f:implementation)) and exists(f:software))'
 
 # CPT doesn't have any members
-WARNING: Encounter/CREDSEncounter: Encounter.type[0]: [Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/core/ValueSet/us-core-encounter-type because the value set or a code system it depends on is not known to the validator, Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated]
-INFORMATION: Bundle/CREDSBundle-Example: Bundle.entry[2].resource/*Encounter/CREDSEncounter*/.type[0].coding[0]: Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated
-INFORMATION: Encounter/CREDSEncounter: Encounter.type[0].coding[0]: Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated
-WARNING: Bundle/CREDSBundle-Example: Bundle.entry[2].resource/*Encounter/CREDSEncounter*/.type[0]: [Unable to determine whether the provided codes are in the value set http://hl7.org/fhir/us/core/ValueSet/us-core-encounter-type because the value set or a code system it depends on is not known to the validator, Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated]
+The definition for the Code System with URI 'http://www.ama-assn.org/go/cpt' doesnt provide any codes so the code cannot be validated
 
 # OID is correct, has been verified
 Code System URI 'urn:oid:2.16.840.1.113883.6.238' is unknown so the code cannot be validated
+The definition for the Code System with URI 'urn:oid:2.16.840.1.113883.6.238' doesnt provide any codes so the code cannot be validated
 
 # Not expected to match slices
 INFORMATION: Practitioner/USCorePractitionerexample: Practitioner.identifier[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|5.0.1
-INFORMATION: Bundle/CREDSBundle-Example: Bundle.entry[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/registry-protocols/StructureDefinition/CREDSSubmission|1.0.0-ballot
+INFORMATION: Bundle/CREDSBundle-Example: Bundle.entry[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/registry-protocols/StructureDefinition/CREDSSubmission|1.0.0
+
+#cic is only in the current WG List
+Reference to draft item http://hl7.org/fhir/hl7-work-group|5.1.0-cibuild
+
+#using the current version of the extensions dependency due to above problem
+Reference to draft item http://hl7.org/fhir/standards-status|5.1.0-cibuild
