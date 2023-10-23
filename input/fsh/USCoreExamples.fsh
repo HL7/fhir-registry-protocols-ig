@@ -109,7 +109,7 @@ Description: "Example of a US Core R4 Encounter"
 Usage:  #example
 
 * status = #finished
-* class = http://terminology.hl7.org/CodeSystem/v3-ActCode#ACUTE
+* class = $v3-ActCode#ACUTE
 * type =  SCT#448337001 "Telemedicine consultation with patient"
 * subject = Reference(261989c3-688c-4941-b767-d8d4c871217c)
 * reasonCode = SCT#1917008 "Patient discharge, deceased, medicolegal case"
@@ -121,8 +121,8 @@ Description: "Example Encounter for use within the Example Notification Bundle"
 Usage: #example
 
 * status = #finished
-* class = http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB
-* type = http://www.ama-assn.org/go/cpt#99201
+* class = $v3-ActCode#AMB
+* type = $cpt#99211
 * subject = Reference(261989c3-688c-4941-b767-d8d4c871217c)
 * participant.individual = Reference(USCorePractitionerexample)
 * location.location = Reference(Enc-location)
