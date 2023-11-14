@@ -3,7 +3,6 @@
     "version" : "1.0.0",
 	"mode" : "milestone",
     "desc" : "This is the published version of the first release in the STU1 sequence.",
-    "first" : true,
     "path" : "http://hl7.org/fhir/us/registry-protocols/STU1",
     "status" : "trial-use",
     "sequence" : "STU1"
