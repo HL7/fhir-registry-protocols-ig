@@ -14,7 +14,7 @@ Description:    "A Capability Statement with slicing defined"
 * rest[serverSlice].mode = #server (exactly)
 
 
-* rest.resource ^slicing.discriminator.type = #value
+* rest.resource ^slicing.discriminator.type = #pattern
 * rest.resource ^slicing.discriminator.path = "type"
 * rest.resource ^slicing.rules = #open
 * rest.resource ^slicing.description = "Slice based on the rest.resource.type pattern"
