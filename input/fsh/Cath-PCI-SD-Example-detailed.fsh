@@ -127,7 +127,7 @@ Environment Variables used:
 * episodeInformation.episodeUniqueKey ^mapping[=].map = "Encounter.where(reason.resolve().is(FHIR.Procedure) and reason.resolve().code.codable.code=415070008 )"
 * episodeInformation.episodeUniqueKey ^mapping[+].identity = "Output"
 * episodeInformation.episodeUniqueKey ^mapping[=].language = #application/fhir
-* episodeInformation.episodeUniqueKey ^mapping[=].map = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter and %encounter"
+* episodeInformation.episodeUniqueKey ^mapping[=].map = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-encounter and %25;encounter"
 
 * episodeInformation.healthInsurancePaymentSource  1..* string "Health Insurers" "Health Insurance Provider"
 * episodeInformation.healthInsurancePaymentSource ^mapping[+].identity = "FHIR"
@@ -187,10 +187,10 @@ Environment Variables used:
 * historyAndRiskFactors.priorMyocardialInfarction  0..1 string "Prior MI Incidence"
 * historyAndRiskFactors.priorMyocardialInfarction ^mapping[+].identity = "FHIR"
 * historyAndRiskFactors.priorMyocardialInfarction ^mapping[=].language = #application/fhir
-* historyAndRiskFactors.priorMyocardialInfarction ^mapping[=].map = "Condition.where(code.coding.code.memberOf(http://hl7.org/fhir/us/fhir-registry-protocols-ig/ValueSet/PriorMyocardialInfarction) and %encounter.actualPeriod.start > (occurrenceDateTime - 1 day))"
+* historyAndRiskFactors.priorMyocardialInfarction ^mapping[=].map = "Condition.where(code.coding.code.memberOf(http://hl7.org/fhir/us/fhir-registry-protocols-ig/ValueSet/PriorMyocardialInfarction) and %25;encounter.actualPeriod.start > (occurrenceDateTime - 1 day))"
 * historyAndRiskFactors.priorMyocardialInfarction ^mapping[+].identity = "FHIR"
 * historyAndRiskFactors.priorMyocardialInfarction ^mapping[=].language = #application/fhir
-* historyAndRiskFactors.priorMyocardialInfarction ^mapping[=].map = "Observation.where(code.coding.code.memberOf(http://hl7.org/fhir/us/fhir-registry-protocols-ig/ValueSet/PriorMyocardialInfarction) and %encounter.actualPeriod.start > (effectiveDateTime - 1 day))"
+* historyAndRiskFactors.priorMyocardialInfarction ^mapping[=].map = "Observation.where(code.coding.code.memberOf(http://hl7.org/fhir/us/fhir-registry-protocols-ig/ValueSet/PriorMyocardialInfarction) and %25;encounter.actualPeriod.start > (effectiveDateTime - 1 day))"
 * historyAndRiskFactors.priorMyocardialInfarction ^mapping[+].identity = "Output"
 * historyAndRiskFactors.priorMyocardialInfarction ^mapping[=].language = #application/fhir
 * historyAndRiskFactors.priorMyocardialInfarction ^mapping[=].map = "http://hl7.org/fhir/us/core//StructureDefinition/us-core-condition-problems-health-concerns.where(category = 'problem-list-item')"
@@ -198,10 +198,10 @@ Environment Variables used:
 * historyAndRiskFactors.priorPercutaneousCoronaryIntervention  0..1 string "Prior PCI Incidence"
 * historyAndRiskFactors.priorPercutaneousCoronaryIntervention ^mapping[+].identity = "FHIR"
 * historyAndRiskFactors.priorPercutaneousCoronaryIntervention ^mapping[=].language = #application/fhir
-* historyAndRiskFactors.priorPercutaneousCoronaryIntervention ^mapping[=].map = "Procedure.where(code.coding.code.memberOf(http://hl7.org/fhir/us/fhir-registry-protocols-ig/ValueSet/priorPercutaneousCoronaryIntervention) and %encounter.actualPeriod.start > (occurrenceDateTime - 1 day))"
+* historyAndRiskFactors.priorPercutaneousCoronaryIntervention ^mapping[=].map = "Procedure.where(code.coding.code.memberOf(http://hl7.org/fhir/us/fhir-registry-protocols-ig/ValueSet/priorPercutaneousCoronaryIntervention) and %25;encounter.actualPeriod.start > (occurrenceDateTime - 1 day))"
 * historyAndRiskFactors.priorPercutaneousCoronaryIntervention ^mapping[+].identity = "FHIR"
 * historyAndRiskFactors.priorPercutaneousCoronaryIntervention ^mapping[=].language = #application/fhir
-* historyAndRiskFactors.priorPercutaneousCoronaryIntervention ^mapping[=].map = "Observation.where(code.coding.code.memberOf(http://hl7.org/fhir/us/fhir-registry-protocols-ig/ValueSet/priorPercutaneousCoronaryIntervention) and %encounter.actualPeriod.start > (effectiveDateTime - 1 day))"
+* historyAndRiskFactors.priorPercutaneousCoronaryIntervention ^mapping[=].map = "Observation.where(code.coding.code.memberOf(http://hl7.org/fhir/us/fhir-registry-protocols-ig/ValueSet/priorPercutaneousCoronaryIntervention) and %25;encounter.actualPeriod.start > (effectiveDateTime - 1 day))"
 * historyAndRiskFactors.priorPercutaneousCoronaryIntervention ^mapping[+].identity = "Output"
 * historyAndRiskFactors.priorPercutaneousCoronaryIntervention ^mapping[=].language = #application/fhir
 * historyAndRiskFactors.priorPercutaneousCoronaryIntervention ^mapping[=].map = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation"
@@ -209,10 +209,10 @@ Environment Variables used:
 * historyAndRiskFactors.priorCoronaryArteryBypassGraft  0..1 string "Prior CABG Incidence"
 * historyAndRiskFactors.priorCoronaryArteryBypassGraft ^mapping[+].identity = "FHIR"
 * historyAndRiskFactors.priorCoronaryArteryBypassGraft ^mapping[=].language = #application/fhir
-* historyAndRiskFactors.priorCoronaryArteryBypassGraft ^mapping[=].map = "Procedure.where(code.coding.code.memberOf(http://hl7.org/fhir/us/fhir-registry-protocols-ig/ValueSet/PriorCABG) and %encounter.actualPeriod.start > (occurrenceDateTime - 1 day))"
+* historyAndRiskFactors.priorCoronaryArteryBypassGraft ^mapping[=].map = "Procedure.where(code.coding.code.memberOf(http://hl7.org/fhir/us/fhir-registry-protocols-ig/ValueSet/PriorCABG) and %25;encounter.actualPeriod.start > (occurrenceDateTime - 1 day))"
 * historyAndRiskFactors.priorCoronaryArteryBypassGraft ^mapping[+].identity = "FHIR"
 * historyAndRiskFactors.priorCoronaryArteryBypassGraft ^mapping[=].language = #application/fhir
-* historyAndRiskFactors.priorCoronaryArteryBypassGraft ^mapping[=].map = "Observation.where(code.coding.code.memberOf(http://hl7.org/fhir/us/fhir-registry-protocols-ig/ValueSet/PriorCABG) and %encounter.actualPeriod.start > (effectiveDateTime - 1 day))"
+* historyAndRiskFactors.priorCoronaryArteryBypassGraft ^mapping[=].map = "Observation.where(code.coding.code.memberOf(http://hl7.org/fhir/us/fhir-registry-protocols-ig/ValueSet/PriorCABG) and %25;encounter.actualPeriod.start > (effectiveDateTime - 1 day))"
 * historyAndRiskFactors.priorCoronaryArteryBypassGraft ^mapping[+].identity = "Output"
 * historyAndRiskFactors.priorCoronaryArteryBypassGraft ^mapping[=].language = #application/fhir
 * historyAndRiskFactors.priorCoronaryArteryBypassGraft ^mapping[=].map = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation"
@@ -220,10 +220,10 @@ Environment Variables used:
 * historyAndRiskFactors.cerebrovascularDisease 0..1 string "Current Cerebrovascual Disease"
 * historyAndRiskFactors.cerebrovascularDisease ^mapping[+].identity = "FHIR"
 * historyAndRiskFactors.cerebrovascularDisease ^mapping[=].language = #application/fhir
-* historyAndRiskFactors.cerebrovascularDisease ^mapping[=].map = "Condition.where(code.coding.code.memberOf(http://hl7.org/fhir/us/fhir-registry-protocols-ig/ValueSet/PriorCerebrovascularDisease) and %encounter.actualPeriod.start > (effectiveDateTime - 1 day))"
+* historyAndRiskFactors.cerebrovascularDisease ^mapping[=].map = "Condition.where(code.coding.code.memberOf(http://hl7.org/fhir/us/fhir-registry-protocols-ig/ValueSet/PriorCerebrovascularDisease) and %25;encounter.actualPeriod.start > (effectiveDateTime - 1 day))"
 * historyAndRiskFactors.cerebrovascularDisease ^mapping[+].identity = "FHIR"
 * historyAndRiskFactors.cerebrovascularDisease ^mapping[=].language = #application/fhir
-* historyAndRiskFactors.cerebrovascularDisease ^mapping[=].map = "Observation.where(code.coding.code.memberOf(http://hl7.org/fhir/us/fhir-registry-protocols-ig/ValueSet/PriorCerebrovascularDisease) and %encounter.actualPeriod.start > (effectiveDateTime - 1 day))"
+* historyAndRiskFactors.cerebrovascularDisease ^mapping[=].map = "Observation.where(code.coding.code.memberOf(http://hl7.org/fhir/us/fhir-registry-protocols-ig/ValueSet/PriorCerebrovascularDisease) and %25;encounter.actualPeriod.start > (effectiveDateTime - 1 day))"
 * historyAndRiskFactors.cerebrovascularDisease ^mapping[+].identity = "Output"
 * historyAndRiskFactors.cerebrovascularDisease ^mapping[=].language = #application/fhir
 * historyAndRiskFactors.cerebrovascularDisease ^mapping[=].map = "http://hl7.org/fhir/us/core//StructureDefinition/us-core-condition-problems-health-concerns.where(category = 'problem-list-item')"
@@ -231,10 +231,10 @@ Environment Variables used:
 * historyAndRiskFactors.diabetesMellitus 0..1 string "Current Diabetes Mellitus"
 * historyAndRiskFactors.diabetesMellitus ^mapping[+].identity = "FHIR"
 * historyAndRiskFactors.diabetesMellitus ^mapping[=].language = #application/fhir
-* historyAndRiskFactors.diabetesMellitus ^mapping[=].map = "Condition.where(code.coding.code.memberOf(http://hl7.org/fhir/us/fhir-registry-protocols-ig/ValueSet/PriorOrCurrentDiabetesMellitus) and %encounter.actualPeriod.start > (effectiveDateTime - 1 day))"
+* historyAndRiskFactors.diabetesMellitus ^mapping[=].map = "Condition.where(code.coding.code.memberOf(http://hl7.org/fhir/us/fhir-registry-protocols-ig/ValueSet/PriorOrCurrentDiabetesMellitus) and %25;encounter.actualPeriod.start > (effectiveDateTime - 1 day))"
 * historyAndRiskFactors.diabetesMellitus ^mapping[+].identity = "FHIR"
 * historyAndRiskFactors.diabetesMellitus ^mapping[=].language = #application/fhir
-* historyAndRiskFactors.diabetesMellitus ^mapping[=].map = "Observation.where(code.coding.code.memberOf(http://hl7.org/fhir/us/fhir-registry-protocols-ig/ValueSet/PriorOrCurrentDiabetesMellitus) and %encounter.actualPeriod.start > (effectiveDateTime - 1 day))"
+* historyAndRiskFactors.diabetesMellitus ^mapping[=].map = "Observation.where(code.coding.code.memberOf(http://hl7.org/fhir/us/fhir-registry-protocols-ig/ValueSet/PriorOrCurrentDiabetesMellitus) and %25;encounter.actualPeriod.start > (effectiveDateTime - 1 day))"
 * historyAndRiskFactors.diabetesMellitus ^mapping[+].identity = "Output"
 * historyAndRiskFactors.diabetesMellitus ^mapping[=].language = #application/fhir
 * historyAndRiskFactors.diabetesMellitus ^mapping[=].map = "http://hl7.org/fhir/us/core//StructureDefinition/us-core-condition-problems-health-concerns.where(category = 'problem-list-item')"
@@ -242,10 +242,10 @@ Environment Variables used:
 * historyAndRiskFactors.currentlyOnDialysis 0..1 string "Patient on Dialysis"
 * historyAndRiskFactors.currentlyOnDialysis ^mapping[+].identity = "FHIR"
 * historyAndRiskFactors.currentlyOnDialysis ^mapping[=].language = #application/fhir
-* historyAndRiskFactors.currentlyOnDialysis ^mapping[=].map = "Condition.where(code.coding.code.memberOf(http://hl7.org/fhir/us/fhir-registry-protocols-ig/ValueSet/HemodialysisOrPeritonealDialysis) and %encounter.actualPeriod.start > (effectiveDateTime - 1 day))"
+* historyAndRiskFactors.currentlyOnDialysis ^mapping[=].map = "Condition.where(code.coding.code.memberOf(http://hl7.org/fhir/us/fhir-registry-protocols-ig/ValueSet/HemodialysisOrPeritonealDialysis) and %25;encounter.actualPeriod.start > (effectiveDateTime - 1 day))"
 * historyAndRiskFactors.currentlyOnDialysis ^mapping[+].identity = "FHIR"
 * historyAndRiskFactors.currentlyOnDialysis ^mapping[=].language = #application/fhir
-* historyAndRiskFactors.currentlyOnDialysis ^mapping[=].map = "Observation.where(code.coding.code.memberOf(http://hl7.org/fhir/us/fhir-registry-protocols-ig/ValueSet/HemodialysisOrPeritonealDialysis) and %encounter.actualPeriod.start > (effectiveDateTime - 1 day))"
+* historyAndRiskFactors.currentlyOnDialysis ^mapping[=].map = "Observation.where(code.coding.code.memberOf(http://hl7.org/fhir/us/fhir-registry-protocols-ig/ValueSet/HemodialysisOrPeritonealDialysis) and %25;encounter.actualPeriod.start > (effectiveDateTime - 1 day))"
 * historyAndRiskFactors.currentlyOnDialysis ^mapping[+].identity = "Output"
 * historyAndRiskFactors.currentlyOnDialysis ^mapping[=].language = #application/fhir
 * historyAndRiskFactors.currentlyOnDialysis ^mapping[=].map = "http://hl7.org/fhir/us/core//StructureDefinition/us-core-condition-problems-health-concerns.where(category = 'problem-list-item')"
@@ -253,7 +253,7 @@ Environment Variables used:
 * historyAndRiskFactors.canadianStudyOfHealthAndAgingClinicalFrailtyScale 0..1 string "Frailty Scale"
 * historyAndRiskFactors.canadianStudyOfHealthAndAgingClinicalFrailtyScale ^mapping[+].identity = "FHIR"
 * historyAndRiskFactors.canadianStudyOfHealthAndAgingClinicalFrailtyScale ^mapping[=].language = #application/fhir
-* historyAndRiskFactors.canadianStudyOfHealthAndAgingClinicalFrailtyScale ^mapping[=].map = "Observation.where(code.coding.code = '763264000' ) and %encounter.actualPeriod.start > (effectiveDateTime - 1 day))"
+* historyAndRiskFactors.canadianStudyOfHealthAndAgingClinicalFrailtyScale ^mapping[=].map = "Observation.where(code.coding.code = '763264000' ) and %25;encounter.actualPeriod.start > (effectiveDateTime - 1 day))"
 * historyAndRiskFactors.canadianStudyOfHealthAndAgingClinicalFrailtyScale ^mapping[+].identity = "Output"
 * historyAndRiskFactors.canadianStudyOfHealthAndAgingClinicalFrailtyScale ^mapping[=].language = #application/fhir
 * historyAndRiskFactors.canadianStudyOfHealthAndAgingClinicalFrailtyScale ^mapping[=].map = "http://hl7.org/fhir/us/core//StructureDefinition/us-core-observation"
@@ -261,10 +261,10 @@ Environment Variables used:
 * historyAndRiskFactors.chronicLungDisease  0..1 string "Current Chronic Lung Disease"
 * historyAndRiskFactors.chronicLungDisease ^mapping[+].identity = "FHIR"
 * historyAndRiskFactors.chronicLungDisease ^mapping[=].language = #application/fhir
-* historyAndRiskFactors.chronicLungDisease ^mapping[=].map = "Condition.where(code.coding.code.memberOf(http://hl7.org/fhir/us/fhir-registry-protocols-ig/ValueSet/ChronicLungDisease) and %encounter.actualPeriod.start > (effectiveDateTime - 1 day))"
+* historyAndRiskFactors.chronicLungDisease ^mapping[=].map = "Condition.where(code.coding.code.memberOf(http://hl7.org/fhir/us/fhir-registry-protocols-ig/ValueSet/ChronicLungDisease) and %25;encounter.actualPeriod.start > (effectiveDateTime - 1 day))"
 * historyAndRiskFactors.chronicLungDisease ^mapping[+].identity = "FHIR"
 * historyAndRiskFactors.chronicLungDisease ^mapping[=].language = #application/fhir
-* historyAndRiskFactors.chronicLungDisease ^mapping[=].map = "Observation.where(code.coding.code.memberOf(http://hl7.org/fhir/us/fhir-registry-protocols-ig/ValueSet/ChronicLungDisease) and %encounter.actualPeriod.start > (effectiveDateTime - 1 day))"
+* historyAndRiskFactors.chronicLungDisease ^mapping[=].map = "Observation.where(code.coding.code.memberOf(http://hl7.org/fhir/us/fhir-registry-protocols-ig/ValueSet/ChronicLungDisease) and %25;encounter.actualPeriod.start > (effectiveDateTime - 1 day))"
 * historyAndRiskFactors.chronicLungDisease ^mapping[+].identity = "Output"
 * historyAndRiskFactors.chronicLungDisease ^mapping[=].language = #application/fhir
 * historyAndRiskFactors.chronicLungDisease ^mapping[=].map = "http://hl7.org/fhir/us/core//StructureDefinition/us-core-condition-problems-health-concerns.where(category = 'problem-list-item')"
@@ -272,10 +272,10 @@ Environment Variables used:
 * historyAndRiskFactors.peripheralArterialDisease  0..1 string "Peripheral Arterial Disease Instance"
 * historyAndRiskFactors.peripheralArterialDisease ^mapping[+].identity = "FHIR"
 * historyAndRiskFactors.peripheralArterialDisease ^mapping[=].language = #application/fhir
-* historyAndRiskFactors.peripheralArterialDisease ^mapping[=].map = "Condition.where(code.coding.code.memberOf(http://hl7.org/fhir/us/fhir-registry-protocols-ig/ValueSet/PeripheralArterialOcclusiveDisease) and %encounter.actualPeriod.start > (effectiveDateTime - 1 day))"
+* historyAndRiskFactors.peripheralArterialDisease ^mapping[=].map = "Condition.where(code.coding.code.memberOf(http://hl7.org/fhir/us/fhir-registry-protocols-ig/ValueSet/PeripheralArterialOcclusiveDisease) and %25;encounter.actualPeriod.start > (effectiveDateTime - 1 day))"
 * historyAndRiskFactors.peripheralArterialDisease ^mapping[+].identity = "FHIR"
 * historyAndRiskFactors.peripheralArterialDisease ^mapping[=].language = #application/fhir
-* historyAndRiskFactors.peripheralArterialDisease ^mapping[=].map = "Observation.where(code.coding.code.memberOf(http://hl7.org/fhir/us/fhir-registry-protocols-ig/ValueSet/PeripheralArterialOcclusiveDisease) and %encounter.actualPeriod.start > (effectiveDateTime - 1 day))"
+* historyAndRiskFactors.peripheralArterialDisease ^mapping[=].map = "Observation.where(code.coding.code.memberOf(http://hl7.org/fhir/us/fhir-registry-protocols-ig/ValueSet/PeripheralArterialOcclusiveDisease) and %25;encounter.actualPeriod.start > (effectiveDateTime - 1 day))"
 * historyAndRiskFactors.peripheralArterialDisease ^mapping[+].identity = "Output"
 * historyAndRiskFactors.peripheralArterialDisease ^mapping[=].language = #application/fhir
 * historyAndRiskFactors.peripheralArterialDisease ^mapping[=].map = "http://hl7.org/fhir/us/core//StructureDefinition/us-core-condition-problems-health-concerns.where(category = 'problem-list-item')"
@@ -473,7 +473,7 @@ Environment Variables used:
 * procedureInformation.preprocedureInformation.diagnosticTest.newAntiarrhythmicTherapyInitiatedPriorToCathLab 1..* string "New Antiarrhythmic Therapy Initiated Prior to Cath Lab" "Indicate if the patient received a NEW antiarrhythmic therapy PRIOR to evaluation within the cath lab."
 * procedureInformation.preprocedureInformation.diagnosticTest.newAntiarrhythmicTherapyInitiatedPriorToCathLab ^mapping[+].identity = "FHIR"
 * procedureInformation.preprocedureInformation.diagnosticTest.newAntiarrhythmicTherapyInitiatedPriorToCathLab ^mapping[=].language = #application/fhir
-* procedureInformation.preprocedureInformation.diagnosticTest.newAntiarrhythmicTherapyInitiatedPriorToCathLab ^mapping[=].map = "MedicationStatement.where(medicationCodeableConcept.memberOf(http://hl7.org/fhir/us/fhir-registry-protocols-ig/ValueSet/Antiarrhythmics) and effectiveDateTime < %Encounter.period.start and effeciveDateTime < %Encounter.period.start - 30 days)"
+* procedureInformation.preprocedureInformation.diagnosticTest.newAntiarrhythmicTherapyInitiatedPriorToCathLab ^mapping[=].map = "MedicationStatement.where(medicationCodeableConcept.memberOf(http://hl7.org/fhir/us/fhir-registry-protocols-ig/ValueSet/Antiarrhythmics) and effectiveDateTime < %25;encounter.period.start and effeciveDateTime < %25;encounter.period.start - 30 days)"
 * procedureInformation.preprocedureInformation.diagnosticTest.newAntiarrhythmicTherapyInitiatedPriorToCathLab ^mapping[+].identity = "Output"
 * procedureInformation.preprocedureInformation.diagnosticTest.newAntiarrhythmicTherapyInitiatedPriorToCathLab ^mapping[=].language = #application/fhir
 * procedureInformation.preprocedureInformation.diagnosticTest.newAntiarrhythmicTherapyInitiatedPriorToCathLab ^mapping[=].map = "MedicationStatement"
