@@ -22,10 +22,10 @@ contact:
   - name: David Pyke
     telecom:
       - system: email
-        value: mailto:David.Pyke@pointclickcare.com
+        value: mailto:David@pyke.ca
 
 description: The IG demonstrates a process and workflow to support the needs of clinical registries to define how registry submissions can be automatically extracted from multiple data sources and combined into a registry submission.
-jurisdiction: urn:iso:std:iso:3166#US "United States of America"
+jurisdiction: urn:iso:std:iso:3166#us "United States of America"
 dependencies:
   hl7.fhir.us.core: 6.1.0
   hl7.fhir.uv.extensions: 5.3.0
