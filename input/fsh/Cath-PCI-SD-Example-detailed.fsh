@@ -117,7 +117,7 @@ Environment Variables used:
 * demographics ^mapping[=].map = "Patient"
 * demographics ^mapping[+].identity = "Output"
 * demographics ^mapping[=].language = #application/fhir 
-* demographics ^mapping[=].map = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient and %patient" 
+* demographics ^mapping[=].map = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient and %25;patient" 
 
 * episodeInformation 1..1 BackboneElement "Episode information"
 
